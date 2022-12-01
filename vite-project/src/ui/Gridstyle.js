@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Fondo = styled.body`
+export const GridRegisterLogin = styled.body`
     position: relative;
     width: 428px;
     height: 926px;
