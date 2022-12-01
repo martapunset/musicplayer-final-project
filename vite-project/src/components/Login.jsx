@@ -1,5 +1,11 @@
 import React from "react";
+import { Button } from "../ui/Buttons.style";
 
 export const Login = () => {
-  return <div>Login</div>;
+  return <div>
+
+
+
+    <Button>Holas</Button>
+  </div>;
 };
