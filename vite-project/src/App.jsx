@@ -1,12 +1,11 @@
-import { useState } from "react";
-import "./App.css";
+import Router from "./router/Router";
+
 import HomePage from "./pages/HomePage";
 function App() {
-
   return (
-    <div className="App">
-      <HomePage />
-    </div>
+    <>
+      <Router />
+    </>
   );
 }
 
