@@ -1,9 +1,7 @@
 import styled from "styled-components"
-import React from 'react'
 
 export const Button = styled.button`
 /* Rectangle 19 */
-
 
 position: absolute;
 width: 325px;
