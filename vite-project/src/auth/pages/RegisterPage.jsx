@@ -1,6 +1,6 @@
 import React from "react";
 import { RegisterForm } from "../../components/RegisterForm";
-import { GridRegisterLogin } from "../../ui/Gridstyle";
+import { GridRegisterLogin } from "../../ui";
 
 export const RegisterPage = () => {
   return <>

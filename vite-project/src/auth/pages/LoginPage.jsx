@@ -1,6 +1,6 @@
 import React from "react"
-import { Button, Input } from "../../ui/Buttons.style";
-import { GridRegisterLogin } from "../../ui/Gridstyle";
+import { Button, Input } from "../../ui";
+import { GridRegisterLogin } from "../../ui";
 
 
 export const LoginPage = () => {

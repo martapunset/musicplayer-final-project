@@ -1,6 +1,6 @@
 import { Login } from "./auth/pages/Login";
 import Router from "./router/Router";
-import { GlobalStyle } from "./styles/globalStyles";
+import { GlobalStyle } from "./ui/globalStyles";
 
 function App() {
 

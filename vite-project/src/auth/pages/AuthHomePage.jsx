@@ -1,7 +1,5 @@
 import React from 'react'
-import { Button , Input } from '../../ui/Buttons.style'
-import { GridRegisterLogin } from '../../ui/Gridstyle'
-import { Img, Img2 } from '../../ui/Img'
+import { Button , Input, GridRegisterLogin, Img, Img2 } from '../../ui'
 
 
 export const AuthHomePage = () => {

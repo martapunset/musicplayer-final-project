@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Button, Input, InputSmall } from "../ui/Buttons.style";
+import { Button, InputSmall } from "../ui";
 
 import { Form } from "../ui/Form";
 
