@@ -1,10 +1,7 @@
 
-import { Column, Container, Header, IconBack, Sidebar, Widget, Main, Spam } from '../../ui/model'
-import { Textsmall, Title } from '../../ui/TextStyle'
-import { Column, Container, Header, IconBack, Sidebar, Widget, Main, Footer  } from '../../styles/model'
-import { Textsmall, Title, Spam } from '../../styles/TextStyle'
+
 import facebook from '../../assets/img/face.png'
-import { Input, Button } from '../../styles/Buttons.style'
+import { Header, Sidebar, Container, Widget, IconBack, Title, Textsmall, Spam, Column, Input, Button, Footer, Main } from '../../ui'
 
 
 export const Login = () => {
@@ -43,8 +40,10 @@ export const Login = () => {
                 </Column>
             </Widget>
 
-            <Footer className="footer"><Textsmall> Not a member ? <Spam href="1">Register now</Spam></Textsmall></Footer> {/* LINK */}
+            <Footer className="footer"><Textsmall> Not a member ? <Spam >Register now</Spam></Textsmall></Footer> {/* LINK */}
 
         </Container>
     )
 }
+
+

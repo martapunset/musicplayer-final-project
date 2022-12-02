@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const GridRegisterLogin = styled.body`
+export const GridRegisterLogin = styled.section`
     position: relative;
   // width: 428px;
     height: 926px;
