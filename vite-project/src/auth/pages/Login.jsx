@@ -1,7 +1,10 @@
 
 import { Column, Container, Header, IconBack, Sidebar, Widget, Main, Spam } from '../../ui/model'
 import { Textsmall, Title } from '../../ui/TextStyle'
+import { Column, Container, Header, IconBack, Sidebar, Widget, Main, Footer  } from '../../styles/model'
+import { Textsmall, Title, Spam } from '../../styles/TextStyle'
 import facebook from '../../assets/img/face.png'
+import { Input, Button } from '../../styles/Buttons.style'
 
 
 export const Login = () => {
@@ -19,18 +22,18 @@ export const Login = () => {
             </Main>
 
             <Sidebar className="sidebar">
-                <input placeholder="Enter username or email" />
+                <Input placeholder="Enter username or email" />
             </Sidebar>
 
             <Widget className="widget-1">
                 <Column>
-                    <input placeholder="Password" />
+                    <Input placeholder="Password" />
                      <Textsmall>Recovery password</Textsmall> {/* LINK */}
                 </Column>
             </Widget>
             <Widget className="widget-2">
                 <Column>
-                    <button type="input">Sign In</button>
+                    <Button type="input">Sign In</Button>
                     <Textsmall>or sign in with</Textsmall>
                     <div>
                         <img src={facebook} alt="icon" width="30" />
