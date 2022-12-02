@@ -1,6 +1,6 @@
 
-import { Column, Container, Header, IconBack, Sidebar, Widget, Main, Spam } from '../../styles/model'
-import { Textsmall, Title } from '../../styles/TextStyle'
+import { Column, Container, Header, IconBack, Sidebar, Widget, Main, Footer  } from '../../styles/model'
+import { Textsmall, Title, Spam } from '../../styles/TextStyle'
 import facebook from '../../assets/img/face.png'
 
 
