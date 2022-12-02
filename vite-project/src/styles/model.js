@@ -57,3 +57,12 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
+
+export const IconBack = styled.i`
+${'' /* position: absolute; */}
+width: 24px;
+height: 24px;
+${'' /* left: 51px;
+top: 100px; */}
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+`
