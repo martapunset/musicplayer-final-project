@@ -1,6 +1,6 @@
 import { Column, Container, Footer, Header, IconBack, Main, Sidebar, Widget } from "../styles/model";
 import facebook from '../assets/img/face.png'
-import { Textsmall, Title } from "../styles/TextStyle";
+import { Spam, Textsmall, Title } from "../styles/TextStyle";
 
 export const Login = () => {
 
@@ -13,7 +13,7 @@ export const Login = () => {
 
             <Main className="contenido">
                 <Title> Sign In</Title>
-                <Textsmall>If you need any support click here</Textsmall> {/* LINK */}
+                <Textsmall>If you need any support <Spam green>Click here</Spam></Textsmall> {/* LINK */}
             </Main>
 
             <Sidebar className="sidebar">
@@ -38,7 +38,7 @@ export const Login = () => {
                 </Column>
             </Widget>
 
-            <Footer className="footer"><Textsmall>Not a member ? register now</Textsmall></Footer> {/* LINK */}
+            <Footer className="footer"><Textsmall> Not a member ? <Spam href="1">Register now</Spam></Textsmall></Footer> {/* LINK */}
 
         </Container>
     )
