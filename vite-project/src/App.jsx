@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import { Login } from "./components/Login";
+import { GlobalStyle } from "./styles/globalStyles";
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <div className="App">
-
-    </div>
-  )
+    <>
+      <GlobalStyle />
+      <Login />
+    </>
+  );
 }
 
 export default App
