@@ -1,12 +1,17 @@
+import { Login } from "./components/Login";
 import Router from "./router/Router";
+import { GlobalStyle } from "./styles/globalStyles";
 
-import HomePage from "./pages/HomePage";
 function App() {
+
+
   return (
     <>
-      <Router />
+    <Router/>
+      <GlobalStyle />
+      <Login />
     </>
   );
 }
 
-export default App;
+export default App
