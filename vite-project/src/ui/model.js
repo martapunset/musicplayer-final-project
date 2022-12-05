@@ -21,7 +21,8 @@ grid-area: header;
 `
 
 export const Main = styled.main`
-padding-left: 2%;
+
+height: 200px;
 grid-area: contenido;
 `
 
@@ -37,7 +38,7 @@ justify-content: center;
 
 export const Widget = styled.div`
 ${'' /* background: orchid; */}
-height: 100px;
+height: 180px;
 grid-area: ${props => props.className === "widget-1" ? "widget-1" : "widget-2"}; 
 /*flexbox para acomodar elementos*/
 display: flex;
@@ -46,6 +47,7 @@ justify-content: center;
 `
 
 export const Footer = styled.footer`
+height: 150px;
 padding: 20px;
 ${'' /* background: maroon; */}
 color: #fff;

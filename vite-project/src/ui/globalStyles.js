@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
@@ -20,9 +21,10 @@ code {
 
 /*min 640px*/
 .contenedor {
+  
 grid-template-areas: "header header header"
                     "contenido contenido contenido"
-                    "sidebar sidebar sidebar"
+                    
                     "widget-1 widget-1 widget-1"
                     "widget-2 widget-2 widget-2"
                     "footer footer footer"
@@ -35,8 +37,8 @@ grid-template-areas: "header header header"
 .contenedor{
 grid-template-areas:    "header header header"
                         "contenido contenido contenido"
-                        "sidebar sidebar sidebar"
-                        "widget-1 widget-1 widget-2"
+                        "widget-1 widget-1 widget-1"
+                       "widget-2 widget-2 widget-2"
                         "footer footer footer"
 ;
 }    
@@ -46,10 +48,10 @@ grid-template-areas:    "header header header"
 @media screen and (min-width: 1024px){
 .contenedor{
 grid-template-areas:    "header header header"
-                        "contenido contenido sidebar"
-                        "widget-1 widget-2 sidebar"
+                        "contenido contenido contenido"
+                        "widget-1 widget-1 widget-1"
+                       "widget-2 widget-2 widget-2"
                         "footer footer footer"
-;
 }
 
 }
@@ -59,8 +61,8 @@ grid-template-areas:    "header header header"
   .contenedor{
   grid-template-areas:    "header header header"
                           "contenido contenido sidebar"
-                          "widget-1 widget-1 sidebar"
-                          "widget-2 widget-2 sidebar"
+                          "sidebar sidebar  widget-1 "
+                          "sidebar sidebar widget-2"
                           "footer footer footer"
                           ;
   }
