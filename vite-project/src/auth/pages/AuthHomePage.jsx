@@ -5,7 +5,7 @@ import { Button , Input, GridRegisterLogin, Img, Img2 } from '../../ui'
 export const AuthHomePage = () => {
     return (
         <>
-            <GridRegisterLogin>
+        <GridRegisterLogin>
           <Img></Img>
           <Input />
             <Button>login</Button>
