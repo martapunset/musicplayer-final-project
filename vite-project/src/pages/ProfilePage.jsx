@@ -9,14 +9,13 @@ import {
   Main,
   Widget,
 } from "../styles/model";
-
-export const HomePage = () => {
+export const ProfilePage = () => {
   return (
     <>
       <GlobalStyle />
       <Container className="contenedor">
         <Header className="header">
-          <h1>Home Page</h1>
+          <h1>Profile Page</h1>
         </Header>
 
         <Main className="contenido">
