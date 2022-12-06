@@ -1,9 +1,30 @@
+<<<<<<< HEAD
+import React from "react";
+import { Link } from "react-router-dom";
+=======
 import { Link } from "react-router-dom"
 import fondo from '../../assets/img/ejemplo1.jpg'
 import cara from '../../assets/img/ejemplo2.jpg'
 import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
 import { ResponsiveStyles } from "../../ui/homegrid/responsiveStyles"
+>>>>>>> ca2ba10824259d84f46e442ea3e33b40311d0991
 
+import { GlobalStyle, LinkStyled } from "../../ui";
+import {
+  Header,
+  Sidebar,
+  Container,
+  Widget,
+  IconBack,
+  Title,
+  Textsmall,
+  Spam,
+  Column,
+  Input,
+  Button,
+  Footer,
+  Main,
+} from "../../ui";
 
 export const AuthHomePage = () => {
   return (
