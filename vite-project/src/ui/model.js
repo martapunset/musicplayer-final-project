@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-width: 90%;
-max-width: 1000px;
+width: 100%;
+${'' /* max-width: 1000px; */}
 margin:20px auto;
 display: grid;
 grid-gap: 20px;
@@ -29,7 +29,7 @@ grid-area: contenido;
 export const Sidebar = styled.aside`
 ${'' /* background: orange; */}
 min-height: 100px;
-grid-area: sidebar;
+grid-area: aside;
 /*flexbox para acomodar elementos*/
 display: flex;
 align-items: center;

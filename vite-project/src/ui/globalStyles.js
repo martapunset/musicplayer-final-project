@@ -50,7 +50,7 @@ grid-template-areas:    "header header header"
 grid-template-areas:    "header header header"
                         "contenido contenido contenido"
                         "widget-1 widget-1 widget-1"
-                       "widget-2 widget-2 widget-2"
+                        "widget-2 widget-2 widget-2"
                         "footer footer footer"
 }
 
