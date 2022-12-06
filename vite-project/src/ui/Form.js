@@ -33,6 +33,7 @@ width: 334px;
 height: 80px;
 color: white;
 padding: 10px;
+margin: 10px;
 background-color: white;
 opacity: 0.14;
 border: 1px solid white;
