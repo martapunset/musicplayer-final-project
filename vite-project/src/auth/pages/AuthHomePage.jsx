@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { HomeBackgroundImg } from '../../components/HomeBackgroundImg'
+
 import {   GlobalStyle } from '../../ui'
 import { Header, Sidebar, Container, Widget, IconBack, Title, Textsmall, Spam, Column, Input, Button, Footer, Main } from '../../ui'
-import { homeBackground } from 'homeBackground.png'
+
 
 export const AuthHomePage = () => {
     return (
@@ -11,11 +11,11 @@ export const AuthHomePage = () => {
             <GlobalStyle />
          
 
-
+{/* 
             <Container className="contenedor" style={{ 
       backgroundImage: `url("homeBackground.jpeg") `
-    }}>
-
+    }}> */}
+   <Container>
             <Header className="header">
 
                 
