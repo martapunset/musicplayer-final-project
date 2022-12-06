@@ -3,7 +3,7 @@ import facebook from '../../assets/img/face.png'
 import { Header, Sidebar, Container, Widget, IconBack, Title, Textsmall, Spam, Column, Input, Button, Footer, Main } from '../../ui'
 
 
-export const Login = () => {
+export const LoginPage = () => {
 
     return (
         <Container className="contenedor">
