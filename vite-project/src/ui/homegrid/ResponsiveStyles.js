@@ -30,8 +30,6 @@ grid-template-areas: "header header header"
 .contenedor{
 grid-template-areas:    "header header header"
                         "aside widget-1 widget-1"
-                        
-
   }    
 }
 
