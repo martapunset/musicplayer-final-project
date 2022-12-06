@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import fondo from '../../assets/img/ejemplo1.jpg'
 import cara from '../../assets/img/ejemplo2.jpg'
 import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
-import { ResponsiveStyles } from "../../ui/general/responsiveStyles"
+import { ResponsiveStyles } from "../../ui/homegrid/responsiveStyles"
 
 
 export const AuthHomePage = () => {
