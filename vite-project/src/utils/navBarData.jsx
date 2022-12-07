@@ -5,7 +5,7 @@ import { FaUserAlt } from "react-icons/fa";
 export const navBarData = [
   {
     title: "Home",
-    path: "/",
+    path: "/home",
     icon: <AiFillHome />,
   },
   {
