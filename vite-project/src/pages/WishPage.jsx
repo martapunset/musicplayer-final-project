@@ -1,6 +1,6 @@
 import { HomeNavBar } from "../components/HomeNavBar";
 
-import { GlobalStyle } from "../styles/globalStyles";
+
 import {
   Header,
   Footer,
@@ -8,11 +8,11 @@ import {
   Sidebar,
   Main,
   Widget,
-} from "../styles/model";
+} from "../ui/model";
 export const WishPage = () => {
   return (
     <>
-      <GlobalStyle />
+   
       <Container className="contenedor">
         <Header className="header">
           <h1>Wish Page</h1>

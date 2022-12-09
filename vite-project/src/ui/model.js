@@ -3,16 +3,17 @@ import styled from "styled-components";
 export const Container = styled.div`
 width: 100%;
 ${'' /* max-width: 1000px; */}
-margin:20px auto;
+//margin:20px auto;
 display: grid;
 grid-gap: 20px;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(4, auto);
+height: 100vh;
 `
 
 export const Header = styled.header`
 ${'' /* background: blue; */}
-color: #fff;
+//color: #fff;
 grid-area: header;
 
 & > h1 {

@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 import { navBarData } from "../utils/navBarData";
 
 import styled from "styled-components";
-import { GlobalStyle } from "../styles/globalStyles";
+//import { GlobalStyle } from "../styles/globalStyles";
 
 export const HomeNavBar = () => {
   return (
     <>
-      <GlobalStyle />
+    
       <WrapperNav>
         {navBarData.map((item, index) => {
           return (
