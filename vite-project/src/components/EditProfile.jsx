@@ -3,9 +3,9 @@ import styled from "styled-components";
 import spotify from "../assets/img/SpotifyVector.png";
 import woman from "../assets/img/woman.png";
 
-import { GlobalStyle } from "../styles/globalStyles";
+//import { GlobalStyle } from "../styles/globalStyles";
 
-import { Container } from "../styles/model";
+import { Container } from "../ui/model"
 import { Form, Input } from "../ui/Form";
 
 export const EditProfile = () => {
@@ -14,7 +14,7 @@ export const EditProfile = () => {
 
   return (
     <>
-      <GlobalStyle />
+      
       <Container>
         <imgWrapper>
           <img src={spotify} alt="logo spotify" />

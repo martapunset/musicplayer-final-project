@@ -1,38 +1,26 @@
+import React from "react";
 import { HomeNavBar } from "../components/HomeNavBar";
-
-import { GlobalStyle } from "../styles/globalStyles";
-import {
-  Header,
-  Footer,
-  Container,
-  Sidebar,
-  Main,
-  Widget,
-} from "../styles/model";
+import Logo from "../components/Logo";
+import RecentlyPlayed from "../components/RecentlyPlayed";
+import { GridRegisterLogin } from "../ui/Gridstyle";
+import { ProfileImage } from "../ui/ProfileImage.style";
+import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 
 export const HomePage = () => {
   return (
     <>
-      <GlobalStyle />
-      <Container className="contenedor">
-        <Header className="header">
-          <h1>Home Page</h1>
-        </Header>
+      <div className="home">
+        <GridRegisterLogin>
+          <Logo />
+          <WelcomeCard>
+            <WelcomeTitle>¡Bienvenido User!</WelcomeTitle>
+            <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+          </WelcomeCard>
+          <RecentlyPlayed></RecentlyPlayed>
+        </GridRegisterLogin>
+      </div>
 
-        <Main className="contenido">
-          <h2>test</h2>
-          <p>lorem</p>
-        </Main>
-
-        <Sidebar className="sedebar">Sidebar</Sidebar>
-
-        <Widget className="widget-1">widget-1</Widget>
-        <Widget className="widget-2">widget-2</Widget>
-
-        <Footer className="footer">
-          <HomeNavBar />
-        </Footer>
-      </Container>
+      <HomeNavBar />
     </>
   );
 };

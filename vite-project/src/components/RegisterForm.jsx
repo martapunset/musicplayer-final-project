@@ -50,7 +50,7 @@ export const RegisterForm = () => {
           placeholder="Email"
         />
         {errors.exampleRequired && <span>This field is required</span>}
-        
+
         <InputSmall
           {...register("username", { required: true })}
           placeholder="Username"
