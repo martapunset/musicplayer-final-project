@@ -7,7 +7,6 @@ import styled from "styled-components";
 export const HomeNavBar = () => {
   return (
     <>
-    
       <WrapperNav>
         {navBarData.map((item, index) => {
           return (
