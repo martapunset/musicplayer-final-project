@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-
+import homeBackground from "../../assets/img/homeBackground.jpeg"
 export const ResponsiveStyles = createGlobalStyle`
+
 
 body {
   margin: 0;
@@ -19,18 +20,31 @@ code {
 /*Grid Area First Mobile*/
 /*min 640px*/
 .contenedor {
-grid-template-areas: "header header header"
+  background-image: url(${homeBackground});
+  background-repeat: no-repeat; 
+  background-size: cover;
+ 
+  grid-template-areas: "header header header"
+                    "contenido contenido contenido"
+                  
                     "widget-1 widget-1 widget-1"
-                    "aside aside aside"
+                    "widget-2 widget-2 widget-2"
+                    "footer footer footer";
+ 
                     
 }
 
 /*min 768px*/
 @media screen and (min-width: 768px){
 .contenedor{
-grid-template-areas:    "header header header"
-                        "aside widget-1 widget-1"
-                        
+  background: none;
+  grid-template-areas: "header header header"
+                    "contenido contenido contenido"
+                  
+                    "widget-1 widget-1 widget-1"
+                    "widget-2 widget-2 widget-2"
+                    "footer footer footer";
+ 
 
   }    
 }
@@ -38,8 +52,14 @@ grid-template-areas:    "header header header"
 /*min 1024px*/
 @media screen and (min-width: 1024px){
 .contenedor{
-grid-template-areas:    "header header header"
-                        "aside widget-1 widget-1"
+  background: none;
+  grid-template-areas: "header header header"
+                    "contenido contenido contenido"
+                  
+                    "widget-1 widget-1 widget-1"
+                    "widget-2 widget-2 widget-2"
+                    "footer footer footer";
+ 
 
   }
 }
@@ -47,9 +67,14 @@ grid-template-areas:    "header header header"
 /*min 1280px*/
 @media screen and (min-width: 1280px){
   .contenedor{
-  grid-template-areas:  "header header header"
-                        "aside widget-1 widget-1"
-                    
+    background: none;
+  grid-template-areas: "header header header"
+                    "contenido contenido contenido"
+                  
+                    "widget-1 widget-1 widget-1"
+                    "widget-2 widget-2 widget-2"
+                    "footer footer footer";
+ 
 
   }
 }

@@ -56,5 +56,22 @@ border: 1px solid grey;
 border-radius: 30px;`
 
 
+export const ButtonShort = styled.button`
+/* Rectangle 25 */
+
+
+
+width: 147px;
+height: 73px;
+
+background: #64C27B;
+/* xzz */
+
+box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
+border-radius: 30px;
+`
+
+
+
 
 

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage, RegisterPage, AuthHomePage } from "../auth/pages/index.js";
-import { ProfilePage, SearchPage, WishPage } from "../pages";
+import { ProfilePage, SearchPage, WishPage, HomePage } from "../pages";
 import { EditProfile } from "../components";
 
 const Router = () => {

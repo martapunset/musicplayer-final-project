@@ -1,6 +1,6 @@
 import { HomeNavBar } from "../components/HomeNavBar";
 
-import { GlobalStyle } from "../styles/globalStyles";
+
 import {
   Header,
   Footer,
@@ -8,7 +8,7 @@ import {
   Sidebar,
   Main,
   Widget,
-} from "../styles/model";
+} from "../ui/model";
 
 export const SearchPage = () => {
   return (
