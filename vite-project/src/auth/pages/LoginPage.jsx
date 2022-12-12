@@ -124,7 +124,7 @@ export const LoginPage = () => {
                 <Input type="text" name="userPass" placeholder="Tu password" />
 
                 {/* {errors.password && <p>{errors.password?.message}</p>} */}
-                <Link to="/recoverypass"> Recovery password</Link>
+                <Link to="/recovery"> Recovery password</Link>
                 <Button type="submit">Sign In</Button>
               </Column>
             </form>
