@@ -18,9 +18,9 @@ export const RegisterForm = () => {
                 },
                 //1.recoger info del formulario
                 body: JSON.stringify({
-                    name: e.target.userName.value,
+                    name: e.target.name.value,
                     firstName: e.target.first_name.value,
-                    lastName: e.target.last_name.value,
+                    //lastName: e.target.username.value,
                     email: e.target.email.value,
                     address: e.target.address.value,
                     password: e.target.password.value,
@@ -36,12 +36,12 @@ export const RegisterForm = () => {
 
 
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  // } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   //const onSubmit = (data) => {
     //console.log(data.email);
     //validate(data.email);
@@ -64,49 +64,49 @@ export const RegisterForm = () => {
     <>
       <Form onSubmit={handleOnSubmit}>
         {/* register your input into the hook by invoking the "register" function */}
-        {/* <InputSmall
+        <InputSmall
           {...register("name", { required: true })}
           placeholder="Name"
-        /> */}
-        <InputSmall type="text" name="userName" placeholder="UserName" />
+        />
+        {/* <InputSmall type="text" name="userName" placeholder="UserName" /> */}
 
         {/* include validation with required or other standard HTML validation rules */}
-        {/* <InputSmall
+        <InputSmall
           {...register("first_name", { required: true })}
           placeholder="First name"
-        /> */}
-        <InputSmall type="text" name="first_name" placeholder="First Name" />
-        <InputSmall type="text" name="last_name" placeholder="Last Name" />
+        />
+        {/* <InputSmall type="text" name="first_name" placeholder="First Name" /> */}
+        {/* <InputSmall type="text" name="last_name" placeholder="Last Name" /> */}
 
         {/* {errors.exampleRequired && <span>This field is required</span>} */}
 
-        {/* <InputSmall
+        <InputSmall
           {...register("email", { required: true })}
           placeholder="Email"
         />
-        {errors.exampleRequired && <span>This field is required</span>} */}
-        <InputSmall type="text" name="email" placeholder="Email" />
+        {errors.exampleRequired && <span>This field is required</span>}
+        {/* <InputSmall type="text" name="email" placeholder="Email" /> */}
 
-        {/* <InputSmall
-          {...register("username", { required: true })}
-          placeholder="Username"
+        <InputSmall
+          {...register("address", { required: true })}
+          placeholder="Address"
         />
-        {errors.exampleRequired && <span>This field is required</span>} */}
-        <InputSmall type="text" name="address" placeholder="Address" />
+        {errors.exampleRequired && <span>This field is required</span>}
+        {/* <InputSmall type="text" name="address" placeholder="Address" /> */}
 
-        {/* <InputSmall
+        <InputSmall
           {...register("password", { required: true })}
           placeholder="Password"
         />
-        {errors.exampleRequired && <span>This field is required</span>} */}
-        <InputSmall type="text" name="password" placeholder="Password" />
+        {errors.exampleRequired && <span>This field is required</span>}
+        {/* <InputSmall type="text" name="password" placeholder="Password" /> */}
 
-        {/* <InputSmall
+        <InputSmall
           {...register("confirmPassword", { required: true })}
           placeholder="Confirm Password"
         />
-        {errors.exampleRequired && <span>This field is required</span>} */}
-        <InputSmall type="text" name="confirmPassword" placeholder="Confirm your password" />
+        {errors.exampleRequired && <span>This field is required</span>}
+        {/* <InputSmall type="text" name="confirmPassword" placeholder="Confirm your password" /> */}
 
         <Button type="submit"> Save</Button>
       </Form>
