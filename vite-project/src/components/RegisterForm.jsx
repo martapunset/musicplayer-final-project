@@ -20,7 +20,7 @@ export const RegisterForm = () => {
 
   const userDB = "hola@gmail.com";
 
-  function validate(email, emailDB) {
+  function validate(email, emailDb) {
     //request to db with a get user
     if (email === emailDb) {
       console.log("This emaili s already registered, recover your password");

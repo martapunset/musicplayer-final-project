@@ -81,6 +81,8 @@ export const LoginPage = () => {
     if (Auth) {
       setUser(Auth);
       alert("User registered successfully");
+
+      
     } else {
       alert("Unregistered user, or incorrect data");
       //navigate("/");
@@ -108,7 +110,7 @@ export const LoginPage = () => {
             <p>
               If you need any support <Link to="/support">Click here</Link>
             </p>
-            <form onSubmit={(e) => handleOnSubmit(e)}>
+            <form onSubmit={handleOnSubmit}>
               <Column>
                 {/* <Input
                   type="email"
