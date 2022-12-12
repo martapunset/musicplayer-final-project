@@ -68,45 +68,37 @@ export const RegisterForm = () => {
           {...register("name", { required: true })}
           placeholder="Name"
         />
-        {/* <InputSmall type="text" name="userName" placeholder="UserName" /> */}
 
         {/* include validation with required or other standard HTML validation rules */}
         <InputSmall
           {...register("first_name", { required: true })}
           placeholder="First name"
         />
-        {/* <InputSmall type="text" name="first_name" placeholder="First Name" /> */}
-        {/* <InputSmall type="text" name="last_name" placeholder="Last Name" /> */}
-
-        {/* {errors.exampleRequired && <span>This field is required</span>} */}
+        {errors.exampleRequired && <span>This field is required</span>}
 
         <InputSmall
           {...register("email", { required: true })}
           placeholder="Email"
         />
         {errors.exampleRequired && <span>This field is required</span>}
-        {/* <InputSmall type="text" name="email" placeholder="Email" /> */}
 
         <InputSmall
           {...register("address", { required: true })}
           placeholder="Address"
         />
         {errors.exampleRequired && <span>This field is required</span>}
-        {/* <InputSmall type="text" name="address" placeholder="Address" /> */}
 
         <InputSmall
           {...register("password", { required: true })}
           placeholder="Password"
         />
         {errors.exampleRequired && <span>This field is required</span>}
-        {/* <InputSmall type="text" name="password" placeholder="Password" /> */}
 
         <InputSmall
           {...register("confirmPassword", { required: true })}
           placeholder="Confirm Password"
         />
         {errors.exampleRequired && <span>This field is required</span>}
-        {/* <InputSmall type="text" name="confirmPassword" placeholder="Confirm your password" /> */}
 
         <Button type="submit"> Save</Button>
       </Form>
