@@ -287,29 +287,11 @@
       "name": "eli",
       "firstName": "elizabeth",
       "lastName": "ramos",
-      "email": "balblablabl@esto.com",
+      "email": "blabla@esto.com",
       "address": "micasa",
       "password": "123",
       "confirmPassword": "123",
       "id": 2
-    },
-    {
-      "name": "este es del form",
-      "firstName": "sasdasa",
-      "email": "sfasf",
-      "address": "afa",
-      "password": "fa",
-      "confirmPassword": "faf",
-      "id": 3
-    },
-    {
-      "name": "sty",
-      "firstName": "",
-      "email": "",
-      "address": "",
-      "password": "",
-      "confirmPassword": "",
-      "id": 4
     }
   ],
   "albums": [
