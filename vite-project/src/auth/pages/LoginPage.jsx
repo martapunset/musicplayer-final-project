@@ -23,13 +23,20 @@ import {
 } from "../../ui";
 
 export const LoginPage = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors, isSubmitted },
-  // } = useForm();
 
-  /* ******* */
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm();
+
+  //const onSubmit = data => console.log(data);
+
+//console.log('Error', errors);
+//console.log('Submitted', isSubmitted);
+
+
+//const navigate = useNavigate();
 
   const { user, setUser, loginState, setLoginState } = useContext(AuthContext);
 
@@ -93,6 +100,7 @@ export const LoginPage = () => {
     <>
       <ResponsiveStyles />
       <Container className="contenedor">
+
         <Header className="header">
           <Link to="/">
             <IconBack>
@@ -105,31 +113,20 @@ export const LoginPage = () => {
         </Header>
 
         <Widget className="widget-1">
-          <Column>
-            <h1>Sign In</h1>
-            <p>
-              If you need any support <Link to="/support">Click here</Link>
-            </p>
-            <form onSubmit={handleOnSubmit}>
-              <Column>
-                {/* <Input
-                  type="email"
-                  placeholder="Enter email"
-                  {...register("email", { required: true })}
-                />
-                <Input type="password" placeholder="Enter password" /> */}
-
-                <Input type="text" name="userName" placeholder="Tu nombre" />
-
-                <Input type="text" name="userPass" placeholder="Tu password" />
-
-                {/* {errors.password && <p>{errors.password?.message}</p>} */}
-                <Link to="/recovery"> Recovery password</Link>
-                <Button type="submit">Sign In</Button>
-              </Column>
-            </form>
-          </Column>
-        </Widget>
+                    <Column>
+                        <h1>Sign In</h1>
+                        <p>If you need any support <Link to="/support">Click here</Link></p>
+                        <form onSubmit={handleOnSubmit}>
+                            <Column>
+                                <Input  type="email" placeholder="Enter email" {...register("userName", {required: true})} />
+                                <Input type="password" placeholder="Enter password" {...register("userPass")} />
+                                {errors.password && <p>{errors.password?.message}</p>}
+                                <Link to="/recoverypass"> Recovery password</Link>
+                                <Button type="submit">Sign In</Button>
+                            </Column>
+                        </form>
+                    </Column>
+                </Widget>
 
         <Footer className="abajo">
           <p>or sign in with</p>
@@ -151,3 +148,43 @@ export const LoginPage = () => {
     </>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // <Sidebar className="aside">
+                //     <Column>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //         <Textsmall>blanlanlalbablbas</Textsmall>
+                //     </Column>
+                // </Sidebar>
+
+
