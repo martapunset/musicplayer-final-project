@@ -70,4 +70,4 @@ grid-template-areas:    "header header header"
 
 /*min 1536px*/
 
-`
+`;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const RecentlyPlayedText = styled.div`
   /* Recently played */
-  position: absolute;
   width: 170px;
   height: 30px;
   left: 29px;
@@ -17,20 +16,20 @@ export const RecentlyPlayedText = styled.div`
 `;
 
 export const RecentlyPlayedGrid = styled.section`
-  position: absolute;
-  width: 370px;
-  height: 142px;
-  left: 29px;
-  top: 321px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+  width: 50%;
 `;
 
 export const RecentlyPlayedCard = styled.div`
   /* Screen Shot 2021-12-08 at 13.39 2 */
-  position: absolute;
-  width: 105px;
-  height: 105px;
-  left: 7px;
-  top: 6px;
-  background: url("https://i.scdn.co/image/ab67616d0000b273d62e4c88ec0df746317863af");
+  // position: absolute;
+  // width: 105px;
+  // height: 105px;
+  // left: 7px;
+  // top: 6px;
+
   background-size: cover;
 `;
