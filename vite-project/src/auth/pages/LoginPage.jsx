@@ -121,7 +121,7 @@ export const LoginPage = () => {
                                 <Input  type="email" placeholder="Enter email" {...register("userName", {required: true})} />
                                 <Input type="password" placeholder="Enter password" {...register("userPass")} />
                                 {errors.password && <p>{errors.password?.message}</p>}
-                                <Link to="/recoverypass"> Recovery password</Link>
+                                <Link to="/recovery"> Recovery password</Link>
                                 <Button type="submit">Sign In</Button>
                             </Column>
                         </form>
