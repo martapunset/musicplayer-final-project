@@ -4,7 +4,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
 
-import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer } from "../ui";
+import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon } from "../ui";
 import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
 // import {
 //   Header,
@@ -74,21 +74,35 @@ export const RegisterForm = () => {
             </Form>
           </Column>
           </Widget>
-          <Footer className="abajo">
+          <Footer className="footer">
+            <Column>
+            <div>
             <p>or sign in with</p>
-            <img src={facebook} alt="icon" width="30" />
-            <img src={facebook} alt="icon" width="30" />
-            <img src={facebook} alt="icon" width="30" />
+            <center>
+              <FooterIcon>
 
-            <footer>
+             
+            <img src={facebook} alt="icon" width="30" height="40"/>
+            <img src={facebook} alt="icon" width="30" height="40"/>
+            <img src={facebook} alt="icon" width="30" height="40"/>
+            </FooterIcon>
+            </center>
+            
+            </div>
+          
+          
+
+            <div>
               <h6>
                 {" "}
                 Do you have an account ?{" "}
                 <Link to="/login">
-                  <p>Register now</p>
+                  <p>Sign in</p>
                 </Link>
               </h6>
-            </footer>
+            </div>
+            </Column>
+          
           </Footer>
        
       </Container>

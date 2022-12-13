@@ -20,7 +20,8 @@ import {
   Button,
   Footer,
   Main,
-  InputSmall
+  InputSmall,
+  FooterIcon
 } from "../../ui";
 
 export const LoginPage = () => {
@@ -129,63 +130,39 @@ export const LoginPage = () => {
                     </Column>
                 </Widget>
 
-        <Footer className="abajo">
-          <p>or sign in with</p>
-          <img src={facebook} alt="icon" width="30" />
-          <img src={facebook} alt="icon" width="30" />
-          <img src={facebook} alt="icon" width="30" />
+                <Footer className="footer">
+            <Column>
+            <div>
+            <p>or sign in with</p>
+            <center>
+              <FooterIcon>
 
-          <footer>
-            <h6>
-              {" "}
-              Not a member ?{" "}
-              <Link to="/register">
-                <p>Register now</p>
-              </Link>
-            </h6>
-          </footer>
-        </Footer>
+             
+            <img src={facebook} alt="icon" width="30" height="40"/>
+            <img src={facebook} alt="icon" width="30" height="40"/>
+            <img src={facebook} alt="icon" width="30" height="40"/>
+            </FooterIcon>
+            </center>
+            
+            </div>
+          
+          
+
+            <div>
+              <h6>
+                {" "}
+                Not a member ?{" "}
+                <Link to="/register">
+                  <p>Register now</p>
+                </Link>
+              </h6>
+            </div>
+            </Column>
+          
+          </Footer>
+       
       </Container>
     </>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                // <Sidebar className="aside">
-                //     <Column>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //         <Textsmall>blanlanlalbablbas</Textsmall>
-                //     </Column>
-                // </Sidebar>
-
 

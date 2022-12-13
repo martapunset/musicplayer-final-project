@@ -53,6 +53,9 @@ padding: 20px;
 ${'' /* background: maroon; */}
 color: #fff;
 grid-area: footer;
+
+
+
 `
 
 export const Column = styled.div`
@@ -68,4 +71,9 @@ height: 24px;
 ${'' /* left: 51px;
 top: 100px; */}
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+`
+
+export const FooterIcon = styled.div`
+display: flex;
+justify-content: space-between
 `
