@@ -26,36 +26,22 @@ import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
 
 export const RegisterForm = () => {
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, watch, formState: {errors} } = useForm();
 
-  const postUser = async (data) => {
-    try {
-      const response = await fetch("http://localhost:4000/user",
-
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-
-        })
-      const created = await response.json();
-      console.log('succesful addition: ', created)
-
-    }
-
-
-    catch (error) {
-      console.log(error)
-    }
-  }
   const onSubmit = (data) => {
-
-    console.log(data)
-    postUser({ ...data, id: Date.now() })
-
-  }
+    //falta destructuring data
+        if (data.password !== data.confirmPassword) {return alert('password doesn´t match')}
+        const validateUser = async() => {
+          const user = await(getUsers(data.email))
+          user ? alert('this user already exists') : postUsers(data);
+          
+        };
+        validateUser();
+      }
+    
+      console.log(watch("name")); // watch input value by passing the name of it
+      //  "handleSubmit" will validate your inputs before invoking "onSubmit"
+    
   return (
     <>
 
@@ -77,12 +63,12 @@ export const RegisterForm = () => {
             <p>If you need any support <Link to="/support">Click here</Link></p>
             <Form action="" onSubmit={handleSubmit(onSubmit)}>
               <Column>
-                <InputSmall type="text" name="name" id="" placeholder='Name' {...register("name")} />
-                <InputSmall type="text" name="last_name" id="" placeholder='Last Name' {...register("last_name")} />
-                <InputSmall type="email" name="email" id="" placeholder='Email' {...register("email")} />
-                <InputSmall type="text" name="address" id="" placeholder='Adress' {...register("address")} />
-                <InputSmall type="password" name="password" id="" placeholder='Password' {...register("password")} />
-                <InputSmall type="password" name="confirm_password" id="" placeholder='Confirm Password' {...register("confirmPassword")} />
+                <InputSmall type="text" placeholder='Name' {...register("name")} />
+                <InputSmall type="text" placeholder='Last Name' {...register("last_name")} />
+                <InputSmall type="email" placeholder='Email' {...register("email")} />
+                <InputSmall type="text" placeholder='Adress' {...register("address")} />
+                <InputSmall type="password" placeholder='Password' {...register("password")} />
+                <InputSmall type="password" placeholder='Confirm Password' {...register("confirmPassword")} />
                 <Button type="submit">Create account</Button>
               </Column>
             </Form>

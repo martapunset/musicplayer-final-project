@@ -301,6 +301,24 @@
       "password": "123",
       "confirmPassword": "1234",
       "id": 1670930917389
+    },
+    {
+      "name": "Lolo",
+      "last_name": "Lolito",
+      "email": "l@mail.com",
+      "address": "Calle",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 1670930917390
+    },
+    {
+      "name": "Lolo",
+      "last_name": "Lolito",
+      "email": "lo@mail.com",
+      "address": "Calle",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 1670930917391
     }
   ],
   "albums": [
