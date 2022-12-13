@@ -4,7 +4,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
 
-import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon, Spam} from "../ui";
+import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon, Spam, H1, P} from "../ui";
 import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
 // import {
 //   Header,
@@ -59,8 +59,8 @@ export const RegisterForm = () => {
         </Header>
         <Widget className="widget-1">
           <Column>
-            <h1>Register</h1>
-            <p>If you need any support <Link to="/support">Click here</Link></p>
+            <H1>Register</H1>
+            <P>If you need any support <Link to="/support">Click here</Link></P>
             <Form action="" onSubmit={handleSubmit(onSubmit)}>
               <Column>
                 <InputSmall type="text" placeholder='Name' {...register("name")} />
@@ -77,7 +77,7 @@ export const RegisterForm = () => {
         <Footer className="footer">
           <Column>
             <div>
-              <p>or sign in with</p>
+              <P>or sign in with</P>
               <center>
                 <FooterIcon>
 

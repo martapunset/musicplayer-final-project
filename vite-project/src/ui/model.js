@@ -77,3 +77,9 @@ export const FooterIcon = styled.div`
 display: flex;
 justify-content: space-between
 `
+export const H1 = styled.h1`
+color: white
+`
+export const P = styled.p`
+color: white
+`

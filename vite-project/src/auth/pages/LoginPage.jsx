@@ -21,7 +21,9 @@ import {
   Footer,
   Main,
   InputSmall,
-  FooterIcon
+  FooterIcon,
+  H1, 
+  P
 } from "../../ui";
 
 export const LoginPage = () => {
@@ -116,8 +118,8 @@ export const LoginPage = () => {
 
         <Widget className="widget-1">
           <Column>
-            <h1>Sign In</h1>
-            <p>If you need any support <Link to="/support">Click here</Link></p>
+            <H1>Sign In</H1>
+            <P>If you need any support <Link to="/support">Click here</Link></P>
             <form onSubmit={handleOnSubmit}>
               <Column>
                 <InputSmall type="email" placeholder="Enter email" {...register("userName", { required: true })} />
@@ -133,7 +135,7 @@ export const LoginPage = () => {
         <Footer className="footer">
           <Column>
             <div>
-              <p>or sign in with</p>
+              <P>or sign in with</P>
               <center>
                 <FooterIcon>
 
