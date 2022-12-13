@@ -30,7 +30,7 @@ export const RegisterForm = () => {
 
   const postUser = async (data) => {
     try {
-      const response = await fetch("http://localhost:4000/users",
+      const response = await fetch("http://localhost:4000/user",
 
         {
           method: 'POST',
@@ -83,7 +83,7 @@ export const RegisterForm = () => {
                 <InputSmall type="text" name="address" id="" placeholder='Adress' {...register("address")} />
                 <InputSmall type="password" name="password" id="" placeholder='Password' {...register("password")} />
                 <InputSmall type="password" name="confirm_password" id="" placeholder='Confirm Password' {...register("confirmPassword")} />
-                <Button type="submit"> Save</Button>
+                <Button type="submit">Create account</Button>
               </Column>
             </Form>
           </Column>
