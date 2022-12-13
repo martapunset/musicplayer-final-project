@@ -20,6 +20,7 @@ import {
   Button,
   Footer,
   Main,
+  InputSmall
 } from "../../ui";
 
 export const LoginPage = () => {
@@ -118,8 +119,8 @@ export const LoginPage = () => {
                         <p>If you need any support <Link to="/support">Click here</Link></p>
                         <form onSubmit={handleOnSubmit}>
                             <Column>
-                                <Input  type="email" placeholder="Enter email" {...register("userName", {required: true})} />
-                                <Input type="password" placeholder="Enter password" {...register("userPass")} />
+                                <InputSmall  type="email" placeholder="Enter email" {...register("userName", {required: true})} />
+                                <InputSmall type="password" placeholder="Enter password" {...register("userPass")} />
                                 {errors.password && <p>{errors.password?.message}</p>}
                                 <Link to="/recovery"> Recovery password</Link>
                                 <Button type="submit">Sign In</Button>
