@@ -34,11 +34,11 @@ export const LoginPage = () => {
 
   //const onSubmit = data => console.log(data);
 
-//console.log('Error', errors);
-//console.log('Submitted', isSubmitted);
+  //console.log('Error', errors);
+  //console.log('Submitted', isSubmitted);
 
 
-//const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const { user, setUser, loginState, setLoginState } = useContext(AuthContext);
 
@@ -91,7 +91,7 @@ export const LoginPage = () => {
       setUser(Auth);
       alert("User registered successfully");
 
-      
+
     } else {
       alert("Unregistered user, or incorrect data");
       //navigate("/");
@@ -115,52 +115,54 @@ export const LoginPage = () => {
         </Header>
 
         <Widget className="widget-1">
-                    <Column>
-                        <h1>Sign In</h1>
-                        <p>If you need any support <Link to="/support">Click here</Link></p>
-                        <form onSubmit={handleOnSubmit}>
-                            <Column>
-                                <InputSmall  type="email" placeholder="Enter email" {...register("userName", {required: true})} />
-                                <InputSmall type="password" placeholder="Enter password" {...register("userPass")} />
-                                {errors.password && <p>{errors.password?.message}</p>}
-                                <Link to="/recovery"> Recovery password</Link>
-                                <Button type="submit">Sign In</Button>
-                            </Column>
-                        </form>
-                    </Column>
-                </Widget>
+          <Column>
+            <h1>Sign In</h1>
+            <p>If you need any support <Link to="/support">Click here</Link></p>
+            <form onSubmit={handleOnSubmit}>
+              <Column>
+                <InputSmall type="email" placeholder="Enter email" {...register("userName", { required: true })} />
+                <InputSmall type="password" placeholder="Enter password" {...register("userPass")} />
+                {errors.password && <p>{errors.password?.message}</p>}
+                <Link to="/recovery"> Recovery password</Link>
+                <Button type="submit">Sign In</Button>
+              </Column>
+            </form>
+          </Column>
+        </Widget>
 
-                <Footer className="footer">
-            <Column>
+        <Footer className="footer">
+          <Column>
             <div>
-            <p>or sign in with</p>
-            <center>
-              <FooterIcon>
+              <p>or sign in with</p>
+              <center>
+                <FooterIcon>
 
-             
-            <img src={facebook} alt="icon" width="30" height="40"/>
-            <img src={facebook} alt="icon" width="30" height="40"/>
-            <img src={facebook} alt="icon" width="30" height="40"/>
-            </FooterIcon>
-            </center>
-            
+
+                  <img src={facebook} alt="icon" width="30" height="40" />
+                  <img src={facebook} alt="icon" width="30" height="40" />
+                  <img src={facebook} alt="icon" width="30" height="40" />
+                </FooterIcon>
+              </center>
+
             </div>
-          
-          
+
+
 
             <div>
               <h6>
-                {" "}
-                Not a member ?{" "}
-                <Link to="/register">
-                  <p>Register now</p>
-                </Link>
+                <Textsmall>Not a member?
+                  <Link to="/register" >
+
+                  </Link>
+                  <Spam >&nbsp; Sign in</Spam>
+                </Textsmall>
               </h6>
+
             </div>
-            </Column>
-          
-          </Footer>
-       
+          </Column>
+
+        </Footer>
+
       </Container>
     </>
   );

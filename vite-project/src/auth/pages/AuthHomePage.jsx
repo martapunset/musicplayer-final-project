@@ -28,39 +28,40 @@ export const AuthHomePage = () => {
   return (
     <>
       <ResponsiveStyles />
-      
+
 
 
       <Container className="contenedor">
 
-            <Header className="header">
+        <Header className="header">
 
-                <IconBack>back</IconBack> {/* LINK en back */}
-            </Header>
+          <IconBack>back</IconBack> {/* LINK en back */}
+        </Header>
 
-            <Main className="contenido">
-                
-            </Main>
+        <Main className="contenido">
 
-           
-            <Widget className="widget-1">
-                <Column>
-                <Link to="/login"><ButtonShort>Sign in</ButtonShort></Link>
+        </Main>
+
+
+        <Widget className="widget-1">
+          <Column>
+            <Link to="/login"><ButtonShort>Sign in</ButtonShort></Link>
             <Link to="/register"><ButtonShort>Register</ButtonShort></Link>
-                </Column>
-            </Widget>
-            <Widget className="widget-2">
-                
-            </Widget>
-            <Footer className="footer">
-            <Column>
-                    
-                    
-                </Column><Textsmall> Not a member ? <Spam >Register now</Spam></Textsmall></Footer> {/* LINK */}
+          </Column>
+        </Widget>
+        <Widget className="widget-2">
+
+        </Widget>
+        <Footer className="footer">
+          <Column>
 
 
-            
-        </Container>
+          </Column><Textsmall> Not a member ? <Spam >&nbsp; Register now</Spam></Textsmall>
+        </Footer>{/* LINK */}
+
+
+
+      </Container>
     </>
   )
 }

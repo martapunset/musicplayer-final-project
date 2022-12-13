@@ -4,7 +4,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
 
-import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon } from "../ui";
+import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon, Spam} from "../ui";
 import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
 // import {
 //   Header,
@@ -26,22 +26,22 @@ import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
 
 export const RegisterForm = () => {
 
-  const { register, handleSubmit, watch, formState: {errors} } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
     //falta destructuring data
-        if (data.password !== data.confirmPassword) {return alert('password doesn´t match')}
-        const validateUser = async() => {
-          const user = await(getUsers(data.email))
-          user ? alert('this user already exists') : postUsers(data);
-          
-        };
-        validateUser();
-      }
-    
-      console.log(watch("name")); // watch input value by passing the name of it
-      //  "handleSubmit" will validate your inputs before invoking "onSubmit"
-    
+    if (data.password !== data.confirmPassword) { return alert('password doesn´t match') }
+    const validateUser = async () => {
+      const user = await (getUsers(data.email))
+      user ? alert('this user already exists') : postUsers(data);
+
+    };
+    validateUser();
+  }
+
+  console.log(watch("name")); // watch input value by passing the name of it
+  //  "handleSubmit" will validate your inputs before invoking "onSubmit"
+
   return (
     <>
 
@@ -73,38 +73,38 @@ export const RegisterForm = () => {
               </Column>
             </Form>
           </Column>
-          </Widget>
-          <Footer className="footer">
-            <Column>
+        </Widget>
+        <Footer className="footer">
+          <Column>
             <div>
-            <p>or sign in with</p>
-            <center>
-              <FooterIcon>
+              <p>or sign in with</p>
+              <center>
+                <FooterIcon>
 
-             
-            <img src={facebook} alt="icon" width="30" height="40"/>
-            <img src={facebook} alt="icon" width="30" height="40"/>
-            <img src={facebook} alt="icon" width="30" height="40"/>
-            </FooterIcon>
-            </center>
-            
+
+                  <img src={facebook} alt="icon" width="30" height="40" />
+                  <img src={facebook} alt="icon" width="30" height="40" />
+                  <img src={facebook} alt="icon" width="30" height="40" />
+                </FooterIcon>
+              </center>
+
             </div>
-          
-          
+
+
 
             <div>
               <h6>
-                {" "}
-                Do you have an account ?{" "}
-                <Link to="/login">
-                  <p>Sign in</p>
-                </Link>
+                <Textsmall>Do you have an account?
+                  <Link to="/login">
+
+                  </Link><Spam> &nbsp; Sign in</Spam>
+                </Textsmall>
               </h6>
             </div>
-            </Column>
-          
-          </Footer>
-       
+          </Column>
+
+        </Footer>
+
       </Container>
     </>
   )
