@@ -1,11 +1,12 @@
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../auth/context/AuthContext";
+import { AuthContext } from "../authContext/AuthContext";
 import { useForm } from "react-hook-form";
 import { ResponsiveStyles } from "../../ui/homegrid/ResponsiveStyles";
 import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../../assets/img/face.png";
 import icono from "../../assets/img/icono.png";
+import { Navigate } from "react-router-dom";
 import {
   Header,
   Sidebar,
@@ -30,37 +31,16 @@ export const LoginPage = () => {
     formState: { errors, isSubmitted },
   } = useForm();
 
-  //const onSubmit = data => console.log(data);
 
-//console.log('Error', errors);
-//console.log('Submitted', isSubmitted);
-
-
-//const navigate = useNavigate();
-
-  const { user, setUser, loginState, setLoginState } = useContext(AuthContext);
-
+  const { login, authState } = useContext(AuthContext);
+  const { isLogged } = authState;
   //---------------------------------------------------------------------//
 
-  useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem("users"));
-    fetchDatauser();
-    setUser(auth);
-  }, []);
 
-  useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(user));
-  }, [user]);
 
-  const fetchDatauser = async () => {
-    const petiApi = await fetch("http://localhost:4000/user");
-    const data = await petiApi.json();
-    setLoginState(data);
-  };
 
-  //---------------------------------------------------------------------//
-
-  //3. añadir el usuario al sessionstorage
+  //3. añadir el usuario al sessionstorage\
+  /*
   useEffect(() => {
     let interin = JSON.parse(sessionStorage.getItem("users"));
     setUser(interin);
@@ -69,35 +49,24 @@ export const LoginPage = () => {
     sessionStorage.setItem("users", JSON.stringify(user));
   }, [user]);
 
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
+  */
+
+  const onSubmit = (data) => {
+    
 
     //1.recoger info del formulario
-    let userInput = {
-      userName: e.target.userName.value,
-      pass: e.target.userPass.value,
-    };
+    let userInput = data
+    login(data)
     console.log(userInput);
 
     //2.comprobar que los datos sean correctos
-    const Auth = loginState.find(
-      (user) =>
-        userInput.userName === user.email && userInput.pass === user.password
-    );
-
-    if (Auth) {
-      setUser(Auth);
-      alert("User registered successfully");
-
-      
-    } else {
-      alert("Unregistered user, or incorrect data");
-      //navigate("/");
-    }
-  };
-
+    
+  }
   return (
     <>
+       {isLogged && (
+          <Navigate to="/home" replace={true} />
+        )}
       <ResponsiveStyles />
       <Container className="contenedor">
 
@@ -116,10 +85,10 @@ export const LoginPage = () => {
                     <Column>
                         <h1>Sign In</h1>
                         <p>If you need any support <Link to="/support">Click here</Link></p>
-                        <form onSubmit={handleOnSubmit}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <Column>
-                                <Input  type="email" placeholder="Enter email" {...register("userName", {required: true})} />
-                                <Input type="password" placeholder="Enter password" {...register("userPass")} />
+                                <Input  type="email" placeholder="Enter email" {...register("email", {required: true})} />
+                                <Input type="password" placeholder="Enter password" {...register("password")} />
                                 {errors.password && <p>{errors.password?.message}</p>}
                                 <Link to="/recovery"> Recovery password</Link>
                                 <Button type="submit">Sign In</Button>

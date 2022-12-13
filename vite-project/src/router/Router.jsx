@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage, RegisterPage, AuthHomePage } from "../auth/pages/index.js";
 import { ProfilePage, SearchPage, WishPage, HomePage } from "../pages";
 import { EditProfile } from "../components";
-import { AuthProvider } from "../auth/context/AuthProvider";
+import { AuthProvider } from "../auth/authContext/AuthProvider";
 import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
 
 const Router = () => {
