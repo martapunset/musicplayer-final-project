@@ -6,6 +6,7 @@
     overflow-x: hidden;   
 }
 
+
 .slider {
     display: flex;
     cursor: grab;
@@ -13,6 +14,7 @@
 
 .item {
     color: white;
+    font-size: small;
     height: 105px;
     width: 105px;
     padding: 4px;
@@ -28,4 +30,35 @@
     margin-top: 0;
 }
 
-
+@media only screen and (min-width: 1200px) {
+    .slider-container {
+            margin-left: 300px;
+            padding-bottom: 15px;
+            width: 90vw;
+            height: 160px;
+            overflow-x: hidden;
+        }
+    
+        .slider {
+            display: flex;
+            cursor: grab;
+        }
+    
+        .item {
+            color: white;
+            font-size: small;
+            height: 105px;
+            width: 105px;
+            padding: 4px;
+        }
+    
+        .item img {
+            height: auto;
+            width: 105px;
+            pointer-events: none;
+        }
+    
+        .item p {
+            margin-top: 0;
+        }
+}

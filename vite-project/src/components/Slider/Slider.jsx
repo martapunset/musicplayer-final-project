@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAlbums } from "../../api/getAlbums";
 import "./Slider.css";
 import { motion } from "framer-motion";
-import { RecentlyPlayedText } from "../../ui/RecentlyPlayed.styles";
+import { SliderTitle } from "../../ui/SliderTitle.styles";
 
 const Slider = ({ title }) => {
   const [apiData, setData] = useState([]);
@@ -18,7 +18,7 @@ const Slider = ({ title }) => {
 
   return (
     <>
-      <RecentlyPlayedText>{title}</RecentlyPlayedText>
+      <SliderTitle>{title}</SliderTitle>
 
       <motion.div className="slider-container">
         <motion.div
