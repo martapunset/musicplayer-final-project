@@ -5,9 +5,7 @@ import { LogoStyle } from "../ui/Logo.style";
 const Logo = () => {
   return (
     <LogoStyle>
-      <div>
-        <img src={logo} alt="Logo" />
-      </div>
+      <img src={logo} alt="Logo" />
     </LogoStyle>
   );
 };

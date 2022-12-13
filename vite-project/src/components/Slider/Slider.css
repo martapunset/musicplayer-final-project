@@ -1,0 +1,31 @@
+.slider-container {
+    margin-left: 15px;  
+    padding-bottom: 15px; 
+    width: 90vw;   
+    height: 160px;
+    overflow-x: hidden;   
+}
+
+.slider {
+    display: flex;
+    cursor: grab;
+}
+
+.item {
+    color: white;
+    height: 105px;
+    width: 105px;
+    padding: 4px;
+}
+
+.item img {
+    height: auto;
+    width: 105px;
+    pointer-events: none;
+}
+
+.item p {
+    margin-top: 0;
+}
+
+
