@@ -4,7 +4,23 @@ import { BsSearch } from "react-icons/bs";
 import { MdClear } from "react-icons/md";
 import { Header, Footer, Container, Sidebar, Main, Widget } from "../ui/model";
 import "./css/tem.css";
+import { useState, useEffect } from "react";
+
 export const SearchPage = () => {
+  const [tracks, setTracks] = useState();
+  useEffect(() => {
+    getAlbums();
+  }, []);
+
+  const getAlbums = async () => {
+    const url = "http://localhost:4000/tracks";
+
+    const resp = await fetch(url);
+    const apiData = await resp.json();
+    setTracks(apiData);
+    console.log(apiData);
+  };
+
   return (
     <>
       <ResponsiveStyles />
@@ -22,7 +38,13 @@ export const SearchPage = () => {
           </div>
         </div>
         <div className="resultSearch">
-          <div className="songs_container">{}</div>
+          <div className="songs_container">
+            {tracks.map((song) => {
+              <div key={song.id}>
+                <p>{song.name}</p>
+              </div>;
+            })}
+          </div>
         </div>
 
         <Footer className="footer">
