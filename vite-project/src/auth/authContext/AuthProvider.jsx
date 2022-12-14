@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     // user:'',
   };
   const init = () => {
-    const user = JSON.parse(sessionStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("user"));
     //1.56 minutes video jose
     return {
       isLogged: !!user,
@@ -24,27 +24,27 @@ export const AuthProvider = ({ children }) => {
 
   const [authState, dispatch] = useReducer(AuthReducer, {}, init); //init
 
+
+  /*-------------------login------------*/
   const login = (user) => {
     const validateUser = async () => {
       const datajson = await getUsers(user.email);
 
       if (datajson) {
-        if (
-          user.email == datajson.email &&
-          user.password == datajson.password
-        ) {
-          sessionStorage.setItem("user", JSON.stringify(user));
+          if (user.email == datajson.email && user.password == datajson.password) {
+            
+            localStorage.setItem("user", JSON.stringify(user));
 
-          dispatch({
-            type: types.login,
-            payload: user,
-          });
-          alert("User logged successfully");
-        } else {
-          alert("Unregistered user, or incorrect data");
+            dispatch({
+              type: types.login,
+              payload: user,
+            });
+            alert("User logged successfully");
+          } else {
+            alert("Unregistered user, or incorrect data");
 
-          console.log("user or pasword incorrect");
-        }
+            console.log("user or pasword incorrect");
+          }
       } else {
         alert("Unregistered user, or incorrect data");
         //navigate("/");
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    sessionStorage.removeItem("user");
+    localStorage.removeItem("user");
     dispatch({
       type: types.logout,
     });

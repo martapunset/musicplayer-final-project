@@ -10,13 +10,15 @@ import { AuthContext } from "../auth/authContext/AuthContext";
 
  
 export const HomePage = () => {
+  const { login, authState } = useContext(AuthContext);
+  const { isLogged , user} = authState;
   return (
     <>
       <div className="home">
         <GridRegisterLogin>
           <Logo />
           <WelcomeCard>
-            <WelcomeTitle>¡Bienvenido User!</WelcomeTitle>
+            <WelcomeTitle>{user.email}</WelcomeTitle>
             <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
           </WelcomeCard>
           <RecentlyPlayed></RecentlyPlayed>

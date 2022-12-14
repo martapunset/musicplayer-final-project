@@ -282,26 +282,9 @@
       "password": "xyz123",
       "profilePicture": "https://robohash.org/suntvoluptasnisi.png?size=50x50&set=set1",
       "isLoggedin": false
-    },
-    {
-      "name": "eli",
-      "firstName": "elizabeth",
-      "lastName": "ramos",
-      "email": "blabla@esto.com",
-      "address": "micasa",
-      "password": "123",
-      "confirmPassword": "123",
-      "id": 2
-    },
-    {
-      "name": "Pepe",
-      "last_name": "Perez",
-      "email": "pepe@mail.com",
-      "address": "Calle",
-      "password": "123",
-      "confirmPassword": "1234",
-      "id": 1670930917389
     }
+  
+  
   ],
   "albums": [
     [

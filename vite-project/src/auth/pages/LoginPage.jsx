@@ -41,29 +41,11 @@ export const LoginPage = () => {
   //---------------------------------------------------------------------//
 
 
-
-
-  //3. añadir el usuario al sessionstorage\
-  /*
-  useEffect(() => {
-    let interin = JSON.parse(sessionStorage.getItem("users"));
-    setUser(interin);
-  }, []);
-  useEffect(() => {
-    sessionStorage.setItem("users", JSON.stringify(user));
-  }, [user]);
-
-  */
-
   const onSubmit = (data) => {
     
 
-    //1.recoger info del formulario
-    let userInput = data
     login(data)
-    console.log(userInput);
-
-    //2.comprobar que los datos sean correctos
+    console.log(data);
     
   }
   return (
