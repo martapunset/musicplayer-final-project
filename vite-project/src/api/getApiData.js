@@ -1,7 +1,5 @@
-export const getTracks = async () => {
+export const getApiData = async (url) => {
   try {
-    const url = "http://localhost:4000/tracks";
-
     const resp = await fetch(url);
     const apiData = await resp.json();
     return apiData;
