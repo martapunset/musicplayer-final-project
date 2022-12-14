@@ -1,7 +1,4 @@
-
 import { types } from "./types";
-
-
 
 /*      SE DECLARARA EN EL PROVIDER
 const init= {
@@ -13,36 +10,33 @@ export const AuthReducer = (state = {}, action) => {
 
   switch (action.type) {
 
-
     case types.field:
-          return {
-              ...state,
-              user:action.payload
-          };
+      return {
+        ...state,
+        user: action.payload
+      };
+
     case types.login:
       return {
         ...state,
         isLogged: true,
         user: action.payload
-        
       };
 
     case types.logout:
-          return {
-              ...state,
-              isLogged: false
+      return {
+        ...state,
+        isLogged: false
       };
-      case types.register:
-        return {
-          ...state,
-          isLogged: false,
-          user: action.payload
-          
-        };
-  
+
+    case types.register:
+      return {
+        ...state,
+        isLogged: false,
+        user: action.payload
+      };
+
     default:
       return state;
   }
-
-
 };
