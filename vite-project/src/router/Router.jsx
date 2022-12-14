@@ -29,9 +29,8 @@ const Router = () => {
 
             <Route path="/search" element={<SearchPage />} />
             <Route path="/liked" element={<LikedPlayList />} />
-            <Route path="/playlist" element={<PlaylistPage />} />
-            <Route path="/playlistsss" element={<Playlists />} />
-            <Route path="/playlistsss/:id" element={<Playlists />} />
+            <Route path="/playlist/:id" element={<PlaylistPage />} />
+            {/* <Route path="/playlistsss" element={<Playlists />} /> */}
           </Routes>
         </AuthProvider>
       </BrowserRouter>

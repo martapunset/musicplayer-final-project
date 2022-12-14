@@ -6,7 +6,7 @@ const Playlists = ({ playlists }) => {
   return (
     <Fragment>
       {playlists.map((playlist) => (
-        <Link key={playlist.id} to={`/playlistsss/${id}`}>
+        <Link key={playlist.id}>
           <div className={styles.playlist}>
             {playlist.thumbnail === "" ? (
               <img
