@@ -17,13 +17,13 @@ export const AuthReducer = (state = {}, action) => {
     case types.field:
           return {
               ...state,
-              user:action.payload
+              userProfile:action.payload
           };
     case types.login:
       return {
         ...state,
         isLogged: true,
-        user: action.payload
+        userProfile: action.payload
         
       };
 
@@ -36,7 +36,7 @@ export const AuthReducer = (state = {}, action) => {
         return {
           ...state,
           isLogged: false,
-          user: action.payload
+          userProfile: action.payload
           
         };
   

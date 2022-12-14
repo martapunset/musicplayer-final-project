@@ -14,11 +14,11 @@ export const AuthProvider = ({ children }) => {
     // user:'',
   };
   const init = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const userProfile = JSON.parse(localStorage.getItem("userProfile"));
     //1.56 minutes video jose
     return {
-      isLogged: !!user,
-      user,
+      isLogged: !!userProfile,
+      userProfile,
     };
   };
 
@@ -32,12 +32,13 @@ export const AuthProvider = ({ children }) => {
 
       if (datajson) {
           if (user.email == datajson.email && user.password == datajson.password) {
-            
-            localStorage.setItem("user", JSON.stringify(user));
+            const { first_name, last_name, email, profilePicture } = datajson;
+            const userProfile ={ first_name, last_name, email, profilePicture }
+            localStorage.setItem("userProfile", JSON.stringify({ userProfile}));
 
             dispatch({
               type: types.login,
-              payload: user,
+              payload: userProfile,
             });
             alert("User logged successfully");
           } else {
@@ -55,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("userProfile");
     dispatch({
       type: types.logout,
     });
