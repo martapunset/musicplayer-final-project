@@ -7,7 +7,7 @@ import cara from '../../assets/img/ejemplo2.jpg'
 //import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
 import { ResponsiveStyles } from "../../ui/homegrid/responsiveStyles"
 
-import { ButtonShort, LinkStyled } from "../../ui";
+import { ButtonShort, LinkStyled, P } from "../../ui";
 import {
   Header,
   Sidebar,
