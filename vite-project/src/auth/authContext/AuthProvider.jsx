@@ -1,9 +1,9 @@
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import { AuthContext } from "./AuthContext";
 import { getUsers } from "../../api/postUsers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
-import { Navigate } from "react-router-dom";
+//import { Navigate } from "react-router-dom";
 export const AuthProvider = ({ children }) => {
   // const [user, setUser] = useState([]);
   // const [loginState, setLoginState] = useState([]);
@@ -29,7 +29,6 @@ export const AuthProvider = ({ children }) => {
   const login = (user) => {
     const validateUser = async () => {
       const datajson = await getUsers(user.email);
-
       if (datajson) {
           if (user.email == datajson.email && user.password == datajson.password) {
             const { first_name, last_name, email, profilePicture } = datajson;
