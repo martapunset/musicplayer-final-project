@@ -7,12 +7,11 @@ export const InputProfile = styled.input`
 
 
 box-sizing: border-box;
-position: absolute;
+
 width: 334px;
 height: 80px;
 
-left: 53px;
-top: 356px;
+
 padding: 10px;
 //background: #D9D9D9;
 background-color: white;
@@ -27,12 +26,11 @@ export const Input2Profile = styled.input`
 
 
 box-sizing: border-box;
-position: absolute;
+
 width: 334px;
 height: 80px;
 
-left: 53px;
-top: 452px;
+
 padding: 10px;
 //background: #D9D9D9;
 background-color: white;
@@ -42,13 +40,13 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 30px;`
 
 
-export const Footer = styled.footer`
-position: absolute;
+export const Footer2 = styled.footer`
+
 width: 428px;
 height: 73px;
-left: 0px;
+
 background-color: #2F2C79;
-top: 853px;`
+`
 
 
 export const IconFooter = styled.div`
@@ -58,39 +56,38 @@ align-items: flex-start;
 padding: 0px;
 gap: 63px;
 
-position: absolute;
+
 width: 330.33px;
 height: 28px;
-left: 48.29px;
-top: 876px;
+
 `
 
 
 export const LogoProfile = styled.div`
-position: absolute;
-left: 37.38%;
-right: 37.38%;
-top: 3.02%;
-bottom: 93.41%;
+
+
+
 `
 
 export const UserProfile = styled.div`
-position: absolute;
+
 width: 140.05px;
 height: 178px;
-left: 139px;
-top: 119px;
+display: flex;
+flex-direction: column;
+align-items: center;
 
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 color: white;
 `
 
 export const UserImg = styled.img`
-position: absolute;
+
 width: 111.11px;
 height: 111.14px;
-left: 19px;
-top: 4.52px;
+
 
 
 border-radius: 54px;
@@ -103,12 +100,10 @@ export const BtnEdit =  styled.button`
 
 box-sizing: border-box;
 
-position: absolute;
+
 width: 94.87px;
 height: 28.01px;
-left: 28px;
-top: 143px;
-
+margin-top:10px;
 background: #64C27B;
 border: 1px solid #000000;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

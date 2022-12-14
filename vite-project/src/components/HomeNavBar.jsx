@@ -5,6 +5,7 @@ import styled from "styled-components";
 //import { GlobalStyle } from "../styles/globalStyles";
 
 export const HomeNavBar = () => {
+  
   return (
     <>
       <WrapperNav>

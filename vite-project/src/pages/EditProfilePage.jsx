@@ -3,6 +3,10 @@ import { ResponsiveStyles } from "../ui/homegrid/responsiveStyles";
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
+import styled from "styled-components";
+import spotify from "../assets/img/SpotifyVector.png";
+import woman from "../assets/img/woman.png";
+
 import {
   InputProfile,
   Input2Profile,
@@ -13,7 +17,7 @@ import {
   UserImg,
   BtnEdit,
   Texto,
-} from "../ui";
+} from "../ui/probando";
 //import {Button} from '../ui/Buttons.style'
 import { GlobalStyle } from "../ui/globalStyles";
 import { Img, Img2 } from "../ui/Img";
@@ -23,10 +27,10 @@ import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
 import { Button, LinkStyled } from "../ui";
 import { Header, Column, Container, Sidebar, Main, Widget } from "../ui/model";
+import { EditProfile } from "../components";
 
-export const ProfilePage = () => {
-  const { logout, authState } = useContext(AuthContext);
-  const { isLogged, userProfile } = authState;
+export const EditProfilePage = () => {
+
   return (
     <>
       <ResponsiveStyles />
@@ -39,32 +43,34 @@ export const ProfilePage = () => {
           </Link>
           <center>
           <LogoProfile>
-              <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" />
             </LogoProfile>
           </center>
+  
         </Header>
-
         <Widget className="widget-1">
           <Column>
-            <UserProfile>
+          <UserProfile>
               <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-              <BtnEdit>
-               <Link to= "/editProfile"> <Texto>Edit Profile</Texto></Link>
-              </BtnEdit>
+              
             </UserProfile>
 
-            
 
-            <InputProfile placeholder="user@mail.com" />
-            <Input2Profile placeholder="Username" />
+            <EditProfile />
 
-            <Button onClick={logout}>Logout</Button>
+
           </Column>
         </Widget>
 
-       
       </Container>
-      <HomeNavBar />
     </>
   );
 };
+
+const imgWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 45px;
+  }
+`;
