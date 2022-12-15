@@ -1,18 +1,9 @@
 import { HomeNavBar } from "../components/HomeNavBar";
 
-
-import {
-  Header,
-  Footer,
-  Container,
-  Sidebar,
-  Main,
-  Widget,
-} from "../ui/model";
+import { Header, Footer, Container, Sidebar, Main, Widget } from "../ui/model";
 export const WishPage = () => {
   return (
     <>
-   
       <Container className="contenedor">
         <Header className="header">
           <h1>Wish Page</h1>
