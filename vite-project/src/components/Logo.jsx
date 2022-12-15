@@ -6,7 +6,7 @@ import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
 
 const Logo = () => {
-  const { logout } = useContext(AuthContext)
+  const { logout } = useContext(AuthContext);
   return (
     <LogoStyle>
       <div>

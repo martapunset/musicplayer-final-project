@@ -1,11 +1,22 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import {
   RecentlyPlayedCard,
   RecentlyPlayedGrid,
   RecentlyPlayedText,
 } from "../ui/RecentlyPlayed.styles";
 
+import { getAlbums } from "../api/getAlbums";
+
 const RecentlyPlayed = () => {
+  const [apiData, setData] = useState([]);
+
+  useEffect(() => {
+    const data = async () => {
+      const jsonData = await getAlbums();
+      setData(jsonData);
+    };
+    data();
+  }, []);
   return (
     <>
       <RecentlyPlayedText>
@@ -13,7 +24,13 @@ const RecentlyPlayed = () => {
       </RecentlyPlayedText>
 
       <RecentlyPlayedGrid>
-        <RecentlyPlayedCard />
+        {apiData.map((album) => {
+          return (
+            <RecentlyPlayedCard key={album.id}>
+              <img src={album.imageUrl} />
+            </RecentlyPlayedCard>
+          );
+        })}
       </RecentlyPlayedGrid>
     </>
   );
