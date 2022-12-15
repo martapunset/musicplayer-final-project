@@ -10,6 +10,7 @@ import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
+import "./HomePage.css";
 
 export const HomePage = () => {
   const { login, authState } = useContext(AuthContext);

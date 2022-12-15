@@ -58,7 +58,7 @@
         }
     
         .item img {
-            height: auto;
+            
             width: 105px;
             pointer-events: none;
         }
