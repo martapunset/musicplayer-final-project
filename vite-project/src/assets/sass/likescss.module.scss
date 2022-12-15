@@ -27,9 +27,11 @@
       h1 {
         font-size: 8rem;
         margin: 0;
+        color: white;
       }
 
       p {
+        color: white;
         font-size: 1.4rem;
         margin: 0;
         text-transform: uppercase;
@@ -37,6 +39,7 @@
 
       span {
         font-size: 1.4rem;
+        color: white;
       }
     }
   }
@@ -53,11 +56,12 @@
       display: flex;
       justify-content: space-between;
       padding: 0.5rem 0;
-      color: var(--light-white);
+      //color: var(--light-white);
       font-size: 1.4rem;
       text-transform: uppercase;
       border-bottom: 1px solid var(--light-white);
       margin-bottom: 1rem;
+      color: white;
 
       .left {
         display: flex;

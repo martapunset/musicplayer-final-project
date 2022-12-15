@@ -50,18 +50,20 @@ export const SearchPage = () => {
 
   const handleReset = () => {
     setValue("");
-    window.location.reload();
+    asyncFetchData();
+    
   };
 
   return (
     <>
       <div className={searchpage.container}>
         <div className={searchpage.search_input_container}>
-          <IconButton>
-            <SearchIcon />
-          </IconButton>
+         
 
           <form onSubmit={handleSubmit}>
+          <IconButton>
+              <button style={{ border:"none"} }type="submit"> <SearchIcon /></button>
+          </IconButton>
             <input
               type="text"
               onChange={(e) => setValue(e.target.value)}

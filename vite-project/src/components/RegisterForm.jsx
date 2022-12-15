@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
-
+import { Navigate } from "react-router-dom";
 import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon, Spam, H1, P} from "../ui";
 import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
+import { useState } from "react";
 // import {
 //   Header,
 //   Sidebar,
@@ -25,7 +26,7 @@ import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
 // } from "../../ui";
 
 export const RegisterForm = () => {
-
+  const[isRegistered, setisRegistered]=useState(false)
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
@@ -34,6 +35,8 @@ export const RegisterForm = () => {
     const validateUser = async () => {
       const user = await (getUsers(data.email))
       user ? alert('this user already exists') : postUsers(data);
+      setisRegistered (true);
+      
 
     };
     validateUser();
@@ -44,7 +47,7 @@ export const RegisterForm = () => {
 
   return (
     <>
-
+   {isRegistered &&  <Navigate to="/login" replace={true} />}
       <ResponsiveStyles />
       <Container className="contenedor">
         <Header className="header">
@@ -77,19 +80,7 @@ export const RegisterForm = () => {
         </Widget>
         <Footer className="footer">
           <Column>
-            <div>
-              <P>or sign in with</P>
-              <center>
-                <FooterIcon>
-
-
-                  <img src={facebook} alt="icon" width="30" height="40" />
-                  <img src={facebook} alt="icon" width="30" height="40" />
-                  <img src={facebook} alt="icon" width="30" height="40" />
-                </FooterIcon>
-              </center>
-
-            </div>
+            
 
 
 

@@ -15,7 +15,7 @@ export const navBarData = [
   },
   {
     title: "Liked",
-    path: "/playlist",
+    path: "/",
     icon: <BiLibrary />,
   },
   {

@@ -24,38 +24,29 @@ import {
   InputSmall,
   FooterIcon,
   H1,
-  P
+  P,
 } from "../../ui";
 
 export const LoginPage = () => {
-
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted },
   } = useForm();
 
-
   const { login, authState } = useContext(AuthContext);
   const { isLogged } = authState;
   //---------------------------------------------------------------------//
 
-
   const onSubmit = (data) => {
-
-
-    login(data)
+    login(data);
     console.log(data);
-
-  }
+  };
   return (
     <>
-      {isLogged && (
-        <Navigate to="/home" replace={true} />
-      )}
+      {isLogged && <Navigate to="/home" replace={true} />}
       <ResponsiveStyles />
       <Container className="contenedor">
-
         <Header className="header">
           <Link to="/">
             <IconBack>
@@ -70,11 +61,21 @@ export const LoginPage = () => {
         <Widget className="widget-1">
           <Column>
             <Title>Sign In</Title>
-            <p>If you need any support <Link to="/support">Click here</Link></p>
+            <p>
+              If you need any support <Link to="/support">Click here</Link>
+            </p>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Column>
-                <Input type="email" placeholder="Enter email" {...register("email", { required: true })} />
-                <Input type="password" placeholder="Enter password" {...register("password")} />
+                <Input
+                  type="email"
+                  placeholder="Enter email"
+                  {...register("email", { required: true })}
+                />
+                <Input
+                  type="password"
+                  placeholder="Enter password"
+                  {...register("password")}
+                />
                 {errors.password && <p>{errors.password?.message}</p>}
                 <Link to="/recovery"> Recovery password</Link>
                 <Button type="submit">Sign In</Button>
@@ -89,35 +90,25 @@ export const LoginPage = () => {
               <P>or sign in with</P>
               <center>
                 <FooterIcon>
-
-
                   <img src={facebook} alt="icon" width="30" height="40" />
                   <img src={facebook} alt="icon" width="30" height="40" />
                   <img src={facebook} alt="icon" width="30" height="40" />
                 </FooterIcon>
               </center>
-
             </div>
-
-
 
             <div>
               <h6>
-                <Textsmall>Not a member?
-                  <Link to="/register" >
-
-                  </Link>
-                  <Spam >&nbsp; Sign in</Spam>
+                <Textsmall>
+                  Not a member?
+                  <Link to="/register"></Link>
+                  <Spam>&nbsp; Sign in</Spam>
                 </Textsmall>
               </h6>
-
             </div>
           </Column>
-
         </Footer>
-
       </Container>
     </>
   );
 };
-

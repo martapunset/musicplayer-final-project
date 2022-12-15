@@ -48,12 +48,13 @@ justify-content: center;
 `
 
 export const Footer = styled.footer`
-height: 150px;
+height: 100px;
 padding: 20px;
+
 ${'' /* background: maroon; */}
 color: #fff;
 grid-area: footer;
-
+margin-top: 100px;
 
 
 `

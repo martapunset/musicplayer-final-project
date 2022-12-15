@@ -6,7 +6,6 @@ import { AuthContext } from "../auth/authContext/AuthContext";
 import {
   InputProfile,
   Input2Profile,
- 
   IconFooter,
   LogoProfile,
   UserProfile,
@@ -39,7 +38,7 @@ export const ProfilePage = () => {
             </IconBack>
           </Link>
           <center>
-          <LogoProfile>
+            <LogoProfile>
               <img src={logo} alt="Logo" />
             </LogoProfile>
           </center>
@@ -50,11 +49,12 @@ export const ProfilePage = () => {
             <UserProfile>
               <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
               <BtnEdit>
-               <Link to= "/editProfile"> <Texto>Edit Profile</Texto></Link>
+                <Link to="/editProfile">
+                  {" "}
+                  <Texto>Edit Profile</Texto>
+                </Link>
               </BtnEdit>
             </UserProfile>
-
-            
 
             <InputProfile placeholder={user.email} />
             <InputProfile placeholder={user.name} />
@@ -62,8 +62,6 @@ export const ProfilePage = () => {
             <Button onClick={logout}>Logout</Button>
           </Column>
         </Widget>
-
-       
       </Container>
       <HomeNavBar />
     </>

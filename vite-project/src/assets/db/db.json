@@ -276,7 +276,7 @@
   "user": [
     {
       "id": 1,
-      "username":"assembly10",
+      "username": "assembly10",
       "first_name": "Assembler",
       "last_name": "Institute",
       "email": "music@assemblerschool.com",
@@ -303,6 +303,46 @@
       "password": "1234",
       "confirmPassword": "1234",
       "id": 3
+    },
+    {
+      "username": "musi22c@assemblerscho4ol.com",
+      "name": "Marta",
+      "last_name": "Casals",
+      "email": "martapunset333310@gmail.com",
+      "address": "margarit 41 bajos 1",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 4
+    },
+    {
+      "username": "mu222sic@assemblerschool.com",
+      "name": "2222",
+      "last_name": "3333",
+      "email": "martapunse333t10@gmail.com",
+      "address": "margarit 41 bajos 1",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 5
+    },
+    {
+      "username": "music@assemblerschool.com",
+      "name": "ffff",
+      "last_name": "ffff",
+      "email": "martapunfffset10@gmail.com",
+      "address": "margarit 41 bajos 1",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 6
+    },
+    {
+      "username": "music@assemblerschool.com55",
+      "name": "Martaee",
+      "last_name": "Casalseeee",
+      "email": "martapunset10@gmaieel.com",
+      "address": "margarit 41 bajos 1",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 7
     }
   ],
   "albums": [

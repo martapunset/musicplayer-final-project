@@ -10,7 +10,6 @@ import woman from "../assets/img/woman.png";
 import {
   InputProfile,
   Input2Profile,
- 
   IconFooter,
   LogoProfile,
   UserProfile,
@@ -30,7 +29,6 @@ import { Header, Column, Container, Sidebar, Main, Widget } from "../ui/model";
 import { EditProfile } from "../components";
 
 export const EditProfilePage = () => {
-
   return (
     <>
       <ResponsiveStyles />
@@ -42,26 +40,20 @@ export const EditProfilePage = () => {
             </IconBack>
           </Link>
           <center>
-          <LogoProfile>
-          <img src={logo} alt="Logo" />
+            <LogoProfile>
+              <img src={logo} alt="Logo" />
             </LogoProfile>
           </center>
-  
         </Header>
         <Widget className="widget-1">
           <Column>
-          <UserProfile>
+            <UserProfile>
               <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-              
             </UserProfile>
 
-
             <EditProfile />
-
-
           </Column>
         </Widget>
-
       </Container>
     </>
   );

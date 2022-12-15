@@ -6,9 +6,7 @@
   align-items: center;
   justify-content: space-between;
 
-  &:hover {
-    background-color: var(--light-black);
-  }
+ 
 
   .left {
     display: flex;
@@ -16,16 +14,19 @@
 
     .play_btn {
       margin: 0 0.5rem;
+      color: grey;
       svg {
+        color: grey;
         width: 2rem;
         height: 2rem;
-        color: var(--white);
+      
       }
     }
     img {
       width: 4rem;
       height: 4rem;
       object-fit: cover;
+      color: grey;
     }
     p {
       font-size: 1.4rem;
@@ -36,6 +37,7 @@
       display: -webkit-box;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: white;
     }
   }
   .center {
@@ -50,6 +52,7 @@
       display: -webkit-box;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: grey;
     }
   }
   .right {
@@ -62,6 +65,7 @@
     p {
       margin: 0 0.5rem 0 1rem;
       font-size: 1.2rem;
+      color: rgb(247, 244, 244);
     }
 
     .menu_btn {

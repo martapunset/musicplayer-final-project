@@ -31,7 +31,7 @@ const Router = () => {
             {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
 
             <Route path="/search" element={<SearchPage />} />
-            <Route path="/whish" element={<WishPage />} />
+            <Route path="/wish" element={<WishPage />} />
             <Route path="/liked" element={<LikedPlayList />} />
           </Routes>
         </AuthProvider>

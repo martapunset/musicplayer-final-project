@@ -26,11 +26,17 @@ export const HomeNavBar = () => {
 };
 
 const WrapperNav = styled.div`
+
   list-style: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  position: sticky;
+  z-index:3;
+  
+  bottom: 0;
+  background-color: #171A4A;
   .container {
     padding: 0;
     margin-top: 3px;
