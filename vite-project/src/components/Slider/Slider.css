@@ -21,13 +21,18 @@
 }
 
 .item img {
-    height: auto;
+    height: -webkit-fill-available;
     width: 105px;
     pointer-events: none;
 }
 
 .item p {
     margin-top: 0;
+    text-align: center;
+}
+
+.artistsProfile {
+    border-radius: 50%;
 }
 
 @media only screen and (min-width: 1200px) {

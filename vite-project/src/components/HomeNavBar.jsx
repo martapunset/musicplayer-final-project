@@ -10,9 +10,9 @@ export const HomeNavBar = () => {
       <WrapperNav>
         {navBarData.map((item, index) => {
           return (
-            <div key={index} className="navbar">
+            <div key={index} className="container">
               <li>
-                <NavLink to={item.path}>
+                <NavLink className="menu_link" to={item.path}>
                   <span>{item.icon}</span>
                 </NavLink>
               </li>
@@ -30,17 +30,42 @@ const WrapperNav = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  .navbar {
+  .container {
     padding: 0;
     margin-top: 3px;
     font-size: 45px;
     cursor: pointer;
   }
-  .navbar li a {
+  .container li a {
     color: #9bfab0;
   }
   .active {
     border-top: 7px solid #9bfab0;
     border-radius: 5px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    list-style: none;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+
+    .navbar {
+      padding: 0;
+      margin-top: 3px;
+      font-size: 45px;
+      cursor: pointer;
+    }
+    .navbar li a {
+      color: #9bfab0;
+    }
+    .active {
+      border-top: 7px solid #9bfab0;
+      border-radius: 5px;
+    }
   }
 `;
