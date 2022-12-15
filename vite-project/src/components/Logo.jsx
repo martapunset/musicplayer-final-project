@@ -10,7 +10,7 @@ const Logo = () => {
   return (
     <LogoStyle>
       <div>
-        <img src={logo} alt="Logo" /> <button onClick={logout}>Logout</button>
+        <img src={logo} alt="Logo" /> 
       </div>
     </LogoStyle>
   );

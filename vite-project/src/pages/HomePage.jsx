@@ -10,6 +10,7 @@ import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
   const { login, authState } = useContext(AuthContext);
@@ -56,8 +57,8 @@ export const HomePage = () => {
         <Logo />
         <WelcomeCard>
           <WelcomeTitle>{user?.username}</WelcomeTitle>
-          <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-        </WelcomeCard>
+          <Link to ="/profile">  <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+          </Link></WelcomeCard>
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
