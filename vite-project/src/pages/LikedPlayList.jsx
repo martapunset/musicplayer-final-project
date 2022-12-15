@@ -5,9 +5,6 @@ import { HomeNavBar } from "../components/HomeNavBar";
 import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-// const songs = [
-//   { _id: 1, img: peaches, name: "Peaches", artist: "Justin Bieber" },
-// ];
 
 export const LikedPlayList = () => {
   const [likedSong, setLikedSong] = useState([]);

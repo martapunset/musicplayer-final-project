@@ -1,16 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginPage, RegisterPage, AuthHomePage } from "../auth/pages/index.js";
-import {
-  ProfilePage,
-  SearchPage,
-  LikedPlayList,
-  HomePage,
-  PlaylistPage,
-} from "../pages";
+import { ProfilePage, SearchPage, LikedPlayList, HomePage } from "../pages";
 import { EditProfile } from "../components";
 import { AuthProvider } from "../auth/context/AuthProvider";
 import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
-import Playlists from "../components/Playlists";
 
 const Router = () => {
   return (
@@ -29,8 +22,6 @@ const Router = () => {
 
             <Route path="/search" element={<SearchPage />} />
             <Route path="/liked" element={<LikedPlayList />} />
-            <Route path="/playlist/:id" element={<PlaylistPage />} />
-            {/* <Route path="/playlistsss" element={<Playlists />} /> */}
           </Routes>
         </AuthProvider>
       </BrowserRouter>
