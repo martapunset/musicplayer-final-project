@@ -1,14 +1,7 @@
 import { HomeNavBar } from "../components/HomeNavBar";
+import { GlobalStyle } from "../ui";
 
-
-import {
-  Header,
-  Footer,
-  Container,
-  Sidebar,
-  Main,
-  Widget,
-} from "../ui/model";
+import { Header, Footer, Container, Sidebar, Main, Widget } from "../ui/model";
 
 export const SearchPage = () => {
   return (
