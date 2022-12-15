@@ -23,7 +23,7 @@ import {
   Main,
   InputSmall,
   FooterIcon,
-  H1, 
+  H1,
   P
 } from "../../ui";
 
@@ -42,17 +42,17 @@ export const LoginPage = () => {
 
 
   const onSubmit = (data) => {
-    
+
 
     login(data)
     console.log(data);
-    
+
   }
   return (
     <>
-       {isLogged && (
-          <Navigate to="/home" replace={true} />
-        )}
+      {isLogged && (
+        <Navigate to="/home" replace={true} />
+      )}
       <ResponsiveStyles />
       <Container className="contenedor">
 
@@ -68,20 +68,20 @@ export const LoginPage = () => {
         </Header>
 
         <Widget className="widget-1">
-                    <Column>
-                        <h1>Sign In</h1>
-                        <p>If you need any support <Link to="/support">Click here</Link></p>
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <Column>
-                                <Input  type="email" placeholder="Enter email" {...register("email", {required: true})} />
-                                <Input type="password" placeholder="Enter password" {...register("password")} />
-                                {errors.password && <p>{errors.password?.message}</p>}
-                                <Link to="/recovery"> Recovery password</Link>
-                                <Button type="submit">Sign In</Button>
-                            </Column>
-                        </form>
-                    </Column>
-                </Widget>
+          <Column>
+            <h1>Sign In</h1>
+            <p>If you need any support <Link to="/support">Click here</Link></p>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Column>
+                <Input type="email" placeholder="Enter email" {...register("email", { required: true })} />
+                <Input type="password" placeholder="Enter password" {...register("password")} />
+                {errors.password && <p>{errors.password?.message}</p>}
+                <Link to="/recovery"> Recovery password</Link>
+                <Button type="submit">Sign In</Button>
+              </Column>
+            </form>
+          </Column>
+        </Widget>
 
         <Footer className="footer">
           <Column>
