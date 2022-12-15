@@ -69,7 +69,7 @@ export const LoginPage = () => {
 
         <Widget className="widget-1">
           <Column>
-            <h1>Sign In</h1>
+            <Title>Sign In</Title>
             <p>If you need any support <Link to="/support">Click here</Link></p>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Column>

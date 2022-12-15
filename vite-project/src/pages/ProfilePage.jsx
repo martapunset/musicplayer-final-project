@@ -26,7 +26,8 @@ import { Header, Column, Container, Sidebar, Main, Widget } from "../ui/model";
 
 export const ProfilePage = () => {
   const { logout, authState } = useContext(AuthContext);
-  const { isLogged, userProfile } = authState;
+  const { isLogged, user } = authState;
+
   return (
     <>
       <ResponsiveStyles />
@@ -55,8 +56,8 @@ export const ProfilePage = () => {
 
             
 
-            <InputProfile placeholder="user@mail.com" />
-            <Input2Profile placeholder="Username" />
+            <InputProfile placeholder={user.email} />
+            <InputProfile placeholder={user.name} />
 
             <Button onClick={logout}>Logout</Button>
           </Column>

@@ -5,7 +5,7 @@ import user from "../assets/img/SpotifyVector.png";
 export const InputProfile = styled.input`
 /* Rectangle 25 */
 
-
+margin: 10px;
 box-sizing: border-box;
 
 width: 334px;
@@ -15,7 +15,7 @@ height: 80px;
 padding: 10px;
 //background: #D9D9D9;
 background-color: white;
-opacity: 0.14;
+//opacity: 0.14;
 border: 1px solid white;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 30px;`
@@ -34,7 +34,8 @@ height: 80px;
 padding: 10px;
 //background: #D9D9D9;
 background-color: white;
-opacity: 0.14;
+//opacity: 0.14;
+color: white;
 border: 1px solid white;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 30px;`
@@ -117,4 +118,4 @@ font-weight: 700;
 font-size: 10.8426px;
 line-height: 15px;
 
-color: white`
+color: white;`

@@ -31,8 +31,8 @@ export const AuthProvider = ({ children }) => {
       const datajson = await getUsers(user.email);
       if (datajson) {
           if (user.email == datajson.email && user.password == datajson.password) {
-            const { first_name, last_name, email, profilePicture } = datajson;
-            const user ={ first_name, last_name, email, profilePicture}
+            const { username,first_name, last_name, email, profilePicture } = datajson;
+            const user ={ username, first_name, last_name, email, profilePicture}
             localStorage.setItem("user", JSON.stringify(user));
 
             dispatch({

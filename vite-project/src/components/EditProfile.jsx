@@ -12,7 +12,7 @@ export const EditProfile = () => {
   const { editId } = useParams();
   //   console.log(editId);
   const { logout, authState } = useContext(AuthContext);
-  const { isLogged, userProfile } = authState;
+  const { isLogged, user } = authState;
   const {
     register,
     handleSubmit,
@@ -24,12 +24,13 @@ export const EditProfile = () => {
        
 
             <Form action="" onSubmit={handleSubmit()}>
-              <Column>
-                <InputSmall type="text" placeholder={userProfile?.first_name} {...register("name")} disabled />
-                <InputSmall type="text" placeholder={userProfile?.last_name} {...register("last_name")} disabled/>
-                <InputSmall type="email" placeholder='Email' {...register("email")} disabled/>
-                <InputSmall type="text" placeholder='Adress' {...register("address")} disabled/>
-
+        <Column>
+          <InputSmall type="text" placeholder={user?.username} {...register("username")}  />
+                <InputSmall type="text" placeholder={user?.first_name} {...register("name")}  />
+                <InputSmall type="text" placeholder={user?.last_name} {...register("last_name")} />
+                <InputSmall type="email" placeholder={user?.email} {...register("email")} />
+                <InputSmall type="text" placeholder="New Password"{...register("address")} />
+                
                 <Button type="submit">Save</Button>
               </Column>
             </Form>

@@ -63,10 +63,11 @@ export const RegisterForm = () => {
             <P>If you need any support <Link to="/support">Click here</Link></P>
             <Form action="" onSubmit={handleSubmit(onSubmit)}>
               <Column>
+              <InputSmall type="text" placeholder='Username' {...register("username")} />
                 <InputSmall type="text" placeholder='Name' {...register("name")} />
                 <InputSmall type="text" placeholder='Last Name' {...register("last_name")} />
                 <InputSmall type="email" placeholder='Email' {...register("email")} />
-                <InputSmall type="text" placeholder='Adress' {...register("address")} />
+                <InputSmall type="text" placeholder='Address' {...register("address")} />
                 <InputSmall type="password" placeholder='Password' {...register("password")} />
                 <InputSmall type="password" placeholder='Confirm Password' {...register("confirmPassword")} />
                 <Button type="submit">Create account</Button>

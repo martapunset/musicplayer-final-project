@@ -276,15 +276,35 @@
   "user": [
     {
       "id": 1,
+      "username":"assembly10",
       "first_name": "Assembler",
       "last_name": "Institute",
       "email": "music@assemblerschool.com",
       "password": "xyz123",
       "profilePicture": "https://robohash.org/suntvoluptasnisi.png?size=50x50&set=set1",
       "isLoggedin": false
+    },
+    {
+      "username": "prueba1",
+      "name": "Marta",
+      "last_name": "Casals",
+      "email": "martapunset10@gmail.com",
+      "address": "margarit 41 ",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {
+      "username": "prueba2",
+      "name": "Marta",
+      "last_name": "Casals",
+      "email": "martapunset2@gmail.com",
+      "address": "margarit 41 ",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 3
     }
   ],
-
   "albums": [
     {
       "id": 1,
@@ -407,13 +427,15 @@
       "artist": "Arre"
     }
   ],
-
   "artists": [
     [
       {
         "id": 1,
         "name": "Kim Cesarion",
-        "genres": ["swedish pop", "swedish soul"],
+        "genres": [
+          "swedish pop",
+          "swedish soul"
+        ],
         "popularity": 38,
         "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb842fae710a21f648e26dd910"
       },
@@ -483,7 +505,9 @@
       {
         "id": 7,
         "name": "Rasmus Hultgren",
-        "genres": ["swedish pop rap"],
+        "genres": [
+          "swedish pop rap"
+        ],
         "popularity": 31,
         "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb470a02669d59859a21676ed0"
       },
@@ -504,21 +528,28 @@
       {
         "id": 9,
         "name": "Hemliga Klubben",
-        "genres": ["swedish pop"],
+        "genres": [
+          "swedish pop"
+        ],
         "popularity": 34,
         "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb014c22b80be73cee9c7835b1"
       },
       {
         "id": 10,
         "name": "Steph K",
-        "genres": ["swedish trap pop"],
+        "genres": [
+          "swedish trap pop"
+        ],
         "popularity": 37,
         "photoUrl": "https://i.scdn.co/image/ab6761610000e5ebf913a1de42e743a6f462dfe1"
       },
       {
         "id": 11,
         "name": "Romeo",
-        "genres": ["swedish hip hop", "swedish trap pop"],
+        "genres": [
+          "swedish hip hop",
+          "swedish trap pop"
+        ],
         "popularity": 44,
         "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb6dca4eb1f2347310b27c3000"
       },
@@ -567,7 +598,9 @@
       {
         "id": 16,
         "name": "Karim Alger",
-        "genres": ["swedish trap pop"],
+        "genres": [
+          "swedish trap pop"
+        ],
         "popularity": 24,
         "photoUrl": "https://i.scdn.co/image/ab6761610000e5eb5c33b372d2ef6275ed536450"
       },

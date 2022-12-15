@@ -55,7 +55,7 @@ export const HomePage = () => {
       <div className="home">
         <Logo />
         <WelcomeCard>
-          <WelcomeTitle>{user?.first_name}</WelcomeTitle>
+          <WelcomeTitle>{user?.username}</WelcomeTitle>
           <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
         </WelcomeCard>
 
