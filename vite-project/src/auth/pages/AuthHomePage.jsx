@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import homeBackground from "../../assets/img/homeBackground.jpeg"
-
+import { useContext } from "react";
 import fondo from '../../assets/img/ejemplo1.jpg'
 import cara from '../../assets/img/ejemplo2.jpg'
+import { AuthProvider } from "../authContext/AuthProvider";
 //import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
 import { ResponsiveStyles } from "../../ui/homegrid/responsiveStyles"
-
+import { AuthContext } from "../authContext/AuthContext";
 import { ButtonShort, LinkStyled, P } from "../../ui";
+import { Navigate } from "react-router-dom";
 import {
   Header,
   Sidebar,
@@ -25,8 +27,14 @@ import {
 } from "../../ui";
 
 export const AuthHomePage = () => {
+  const { authState } = useContext(AuthContext);
+  const { isLogged } = authState;
   return (
     <>
+
+     {isLogged && (
+        <Navigate to="/home" replace={true} />
+      )}
       <ResponsiveStyles />
       
 
