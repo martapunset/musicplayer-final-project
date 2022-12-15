@@ -11,16 +11,16 @@ import { AuthContext } from "../auth/authContext/AuthContext";
  
 export const HomePage = () => {
   const { login, authState } = useContext(AuthContext);
-  const { isLogged, userProfile } = authState;
+  const { isLogged, user} = authState;
  // const { first_name } = userProfile;
-  console.log(userProfile)
+  console.log(user)
   return (
     <>
       <div className="home">
         <GridRegisterLogin>
           <Logo />
           <WelcomeCard>  
-            <WelcomeTitle>{userProfile?.first_name}</WelcomeTitle>
+            <WelcomeTitle>{user?.first_name}</WelcomeTitle>
             <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
           </WelcomeCard>
           <RecentlyPlayed></RecentlyPlayed>

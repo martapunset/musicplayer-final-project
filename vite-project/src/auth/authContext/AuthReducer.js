@@ -13,26 +13,27 @@ export const AuthReducer = (state = {}, action) => {
     case types.field:
           return {
               ...state,
-              userProfile:action.payload
+              user:action.payload
           };
     case types.login:
       return {
         ...state,
         isLogged: true,
-        userProfile: action.payload
+        user: action.payload
         
       };
 
     case types.logout:
       return {
         ...state,
-        isLogged: false
+        isLogged: false,
+        user: {}
       };
       case types.register:
         return {
           ...state,
           isLogged: false,
-          userProfile: action.payload
+          user: action.payload
           
         };
   

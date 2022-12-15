@@ -14,11 +14,11 @@ export const AuthProvider = ({ children }) => {
     // user:'',
   };
   const init = () => {
-    const userProfile = JSON.parse(localStorage.getItem("userProfile"));
+    const user= JSON.parse(localStorage.getItem("user"));
     //1.56 minutes video jose
     return {
-      isLogged: !!userProfile,
-      userProfile,
+      isLogged: !!user,
+      user,
     };
   };
 
@@ -32,12 +32,12 @@ export const AuthProvider = ({ children }) => {
       if (datajson) {
           if (user.email == datajson.email && user.password == datajson.password) {
             const { first_name, last_name, email, profilePicture } = datajson;
-            const userProfile ={ first_name, last_name, email, profilePicture }
-            localStorage.setItem("userProfile", JSON.stringify({ userProfile}));
+            const user ={ first_name, last_name, email, profilePicture}
+            localStorage.setItem("user", JSON.stringify(user));
 
             dispatch({
               type: types.login,
-              payload: userProfile,
+              payload: user,
             });
             alert("User logged successfully");
           } else {
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem("userProfile");
+    localStorage.removeItem("user");
     dispatch({
       type: types.logout,
     });
@@ -65,8 +65,8 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         authState,
-        login,
-        logout,
+        login:login,
+        logout:logout,
       }}
     >
       {children}
