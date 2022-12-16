@@ -13,6 +13,7 @@ import { AuthProvider } from "../auth/authContext/AuthProvider";
 
 import { EditProfile } from "../components";
 import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
+import { Layout } from "../pages/Layout.jsx";
 
 const Router = () => {
   return (
@@ -20,19 +21,21 @@ const Router = () => {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            <Route path="/" element={<AuthHomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/recovery" element={<AuthRecoveryPage />} />
+            <Route path="/" element={<Layout/>}>
+              <Route index element={<AuthHomePage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/recovery" element={<AuthRecoveryPage />} />
 
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/editProfile" element={<EditProfilePage />} />
-            {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/editProfile" element={<EditProfilePage />} />
+              {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
 
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/wish" element={<WishPage />} />
-            <Route path="/liked" element={<LikedPlayList />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/wish" element={<WishPage />} />
+              <Route path="/liked" element={<LikedPlayList />} />
+            </Route>
           </Routes>
         </AuthProvider>
       </BrowserRouter>

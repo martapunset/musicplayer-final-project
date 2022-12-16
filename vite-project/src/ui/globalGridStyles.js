@@ -20,13 +20,12 @@ code {
 /*Grid Area First Mobile*/
 
 /*min 640px*/
-.contenedor {
+.container {
   
 grid-template-areas: "header header header"
-                    "contenido contenido contenido"
+                    "main main main"
                     
-                    "widget-1 widget-1 widget-1"
-                    "widget-2 widget-2 widget-2"
+                     "sidebar sidebar sidebar"
                     "footer footer footer"
 ;
 }
@@ -34,11 +33,10 @@ grid-template-areas: "header header header"
 
 /*min 768px*/
 @media screen and (min-width: 768px){
-.contenedor{
+.container{
 grid-template-areas:    "header header header"
-                        "contenido contenido contenido"
-                        "widget-1 widget-1 widget-1"
-                       "widget-2 widget-2 widget-2"
+                        "main main main"
+                        
                         "footer footer footer"
 ;
 }    
@@ -46,9 +44,9 @@ grid-template-areas:    "header header header"
 
 /*min 1024px*/
 @media screen and (min-width: 1024px){
-.contenedor{
+.container{
 grid-template-areas:    "header header header"
-                        "contenido contenido contenido"
+                        "main main main"
                         "widget-1 widget-1 widget-1"
                         "widget-2 widget-2 widget-2"
                         "footer footer footer"
@@ -58,9 +56,9 @@ grid-template-areas:    "header header header"
 
 /*min 1280px*/
 @media screen and (min-width: 1280px){
-  .contenedor{
+  .container{
   grid-template-areas:    "header header header"
-                          "contenido contenido sidebar"
+                          "main main sidebar"
                           "sidebar sidebar  widget-1 "
                           "sidebar sidebar widget-2"
                           "footer footer footer"

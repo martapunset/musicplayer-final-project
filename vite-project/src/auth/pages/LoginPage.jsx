@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../authContext/AuthContext";
 import { useForm } from "react-hook-form";
-import { ResponsiveStyles } from "../../ui/homegrid/ResponsiveStyles";
+import { ResponsiveStyles } from "../../ui/authHomegrid/authGridStyles";
 import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../../assets/img/face.png";
 import icono from "../../assets/img/icono.png";

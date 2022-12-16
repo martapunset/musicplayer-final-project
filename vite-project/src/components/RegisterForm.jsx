@@ -5,7 +5,7 @@ import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
 import { Navigate } from "react-router-dom";
 import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon, Spam, H1, P} from "../ui";
-import { ResponsiveStyles } from "../ui/homegrid/ResponsiveStyles";
+import { ResponsiveStyles } from "../ui/authHomegrid/authGridStyles";
 import { useState } from "react";
 // import {
 //   Header,
