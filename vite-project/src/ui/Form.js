@@ -41,11 +41,12 @@ export const InputSmall = styled.input`
 
   margin: 5px;
   padding: 10px;
-  color: white;
+  // color: white;
   box-sizing: border-box;
   width: 333px;
   height: 47px;
-  background: #171a4a;
+  // background: #171a4a;
+  background-color: white;
   border: 1px solid grey;
   border-radius: 30px;
 `;

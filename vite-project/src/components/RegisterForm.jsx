@@ -48,22 +48,7 @@ export const RegisterForm = () => {
   return (
     <>
    {isRegistered &&  <Navigate to="/login" replace={true} />}
-      <AuthGridStyles />
-      <Container className="contenedor">
-        <Header className="header">
-          <Link to="/">
-            <IconBack>
-              <MdArrowBackIos />
-            </IconBack>
-          </Link>
-          <center>
-            <img src={facebook} alt="icon" width="30" />
-          </center>
-        </Header>
-        <Widget className="widget-1">
-          <Column>
-            <H1>Register</H1>
-            <P>If you need any support <Link to="/support">Click here</Link></P>
+   
             <Form action="" onSubmit={handleSubmit(onSubmit)}>
               <Column>
               <InputSmall type="text" placeholder='Username' {...register("username")} />
@@ -76,28 +61,7 @@ export const RegisterForm = () => {
                 <Button type="submit">Create account</Button>
               </Column>
             </Form>
-          </Column>
-        </Widget>
-        <Footer className="footer">
-          <Column>
-            
-
-
-
-            <div>
-              <h6>
-                <Textsmall>Do you have an account?
-                  <Link to="/login">
-
-                  </Link><Spam> &nbsp; Sign in</Spam>
-                </Textsmall>
-              </h6>
-            </div>
-          </Column>
-
-        </Footer>
-
-      </Container>
+          
     </>
   )
 };

@@ -10,7 +10,7 @@ import { Navigate } from "react-router-dom";
 import {
   Header,
   Sidebar,
-  Container,
+  ContainerLogin,
   Widget,
   IconBack,
   Title,
@@ -46,7 +46,7 @@ export const LoginPage = () => {
     <>
       {isLogged && <Navigate to="/home" replace={true} />}
       <AuthGridStyles />
-      <Container className="contenedor">
+      <ContainerLogin className="containerLogin">
         <Header className="header">
           <Link to="/">
             <IconBack>
@@ -108,7 +108,7 @@ export const LoginPage = () => {
             </div>
           </Column>
         </Footer>
-      </Container>
+      </ContainerLogin>
     </>
   );
 };
