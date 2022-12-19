@@ -21,12 +21,11 @@ const Router = () => {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            <Route path="/" element={<Layout/>}>
-              <Route index element={<AuthHomePage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/recovery" element={<AuthRecoveryPage />} />
-
+            <Route path="/" element={<AuthHomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/recovery" element={<AuthRecoveryPage />} />
+            <Route element={<Layout />}>
               <Route path="/home" element={<HomePage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/editProfile" element={<EditProfilePage />} />

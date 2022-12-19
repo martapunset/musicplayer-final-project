@@ -12,7 +12,7 @@ import {
   Column,
   IconBack,
 } from "../../ui";
-import { ResponsiveStyles } from "../../ui/homegrid/responsiveStyles";
+import { AuthGridStyles } from "../../ui/homegrid/AuthGridStyles";
 import { MdArrowBackIos } from "react-icons/md";
 import { useState } from "react";
 import Swal from "sweetalert2";
@@ -51,7 +51,7 @@ export const ForgotPassword = () => {
 
   return (
     <>
-      <ResponsiveStyles />
+      <AuthGridStyles />
       <Container className="contenedor">
         <Header className="header">
           <Link to="/">

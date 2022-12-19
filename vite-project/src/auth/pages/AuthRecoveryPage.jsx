@@ -1,14 +1,14 @@
 import facebook from '../../assets/img/face.png'
 import { Link } from 'react-router-dom'
 import { Input, Textsmall, Title, Container, Sidebar, Header, Button, Widget, Column, IconBack } from '../../ui'
-import { ResponsiveStyles } from '../../ui/authHomegrid/authGridStyles'
+import { AuthGridStyles } from '../../ui/authGridStyles'
 import { MdArrowBackIos } from "react-icons/md";
 
 export const AuthRecoveryPage = () => {
 
   return (
     <>
-      <ResponsiveStyles />
+      <AuthGridStyles />
       <Container className='contenedor'>
 
         <Header className="header">

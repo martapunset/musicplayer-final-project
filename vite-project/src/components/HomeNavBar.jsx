@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { navBarData } from "../utils/navBarData";
 
 import styled from "styled-components";
-//import { GlobalStyle } from "../styles/globalStyles";
+//import { GlobalGridStyles } from "../styles/GlobalGridStyless";
 
 export const HomeNavBar = () => {
   
@@ -32,12 +32,15 @@ const WrapperNav = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  position: sticky;
+  position: fixed;
+  bottom: 0;
+
   z-index:3;
   
-  bottom: 0;
+  bottom: 0 vh;
   background-color: #171A4A;
   .container {
+   
     padding: 0;
     margin-top: 3px;
     font-size: 45px;
@@ -51,15 +54,15 @@ const WrapperNav = styled.div`
     border-radius: 5px;
   }
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1024px) {
     list-style: none;
-    position: fixed;
-    top: 10px;
-    left: 0;
+    //position: fixed;
+    //top: 10px;
+   // left: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 300px;
 
     .navbar {
       padding: 0;

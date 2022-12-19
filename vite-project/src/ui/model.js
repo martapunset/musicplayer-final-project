@@ -6,6 +6,16 @@ ${'' /* max-width: 1000px; */}
 //margin:20px auto;
 display: grid;
 grid-gap: 20px;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, auto);
+height: 100vh;
+`
+export const ContainerLogin = styled.div`
+width: 100%;
+${'' /* max-width: 1000px; */}
+//margin:20px auto;
+display: grid;
+grid-gap: 20px;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(4, auto);
 height: 100vh;
@@ -16,6 +26,7 @@ ${'' /* background: blue; */}
 //color: #fff;
 grid-area: header;
 
+
 & > h1 {
     margin-left: 2%;
 }
@@ -23,18 +34,19 @@ grid-area: header;
 
 export const Main = styled.main`
 
-height: 200px;
-grid-area: contenido;
+//height: 200px;
+grid-area: main;
 `
 
 export const Sidebar = styled.aside`
 ${'' /* background: orange; */}
 min-height: 100px;
-grid-area: aside;
+grid-area: sidebar;
 /*flexbox para acomodar elementos*/
 display: flex;
 align-items: center;
 justify-content: center;
+
 `
 
 export const Widget = styled.div`
@@ -48,7 +60,7 @@ justify-content: center;
 `
 
 export const Footer = styled.footer`
-height: 100px;
+//height: 100px;
 padding: 20px;
 
 ${'' /* background: maroon; */}

@@ -124,9 +124,7 @@ export const HomePage = () => {
             })}
           </motion.div>
         </motion.div>
-        <AudioPlayerCool />
-
-        <HomeNavBar />
+        
       </div>
     </>
   );

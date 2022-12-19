@@ -51,7 +51,7 @@ export const LikedPlayList = () => {
           ))}
         </div>
       </div>
-      <HomeNavBar />
+    
     </>
   );
 };

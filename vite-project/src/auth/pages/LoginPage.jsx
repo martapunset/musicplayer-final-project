@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../authContext/AuthContext";
 import { useForm } from "react-hook-form";
-import { ResponsiveStyles } from "../../ui/authHomegrid/authGridStyles";
+import { AuthGridStyles } from "../../ui/authGridStyles";
 import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../../assets/img/face.png";
 import icono from "../../assets/img/icono.png";
@@ -45,7 +45,7 @@ export const LoginPage = () => {
   return (
     <>
       {isLogged && <Navigate to="/home" replace={true} />}
-      <ResponsiveStyles />
+      <AuthGridStyles />
       <Container className="contenedor">
         <Header className="header">
           <Link to="/">

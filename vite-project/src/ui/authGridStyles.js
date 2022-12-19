@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
-import homeBackground from "../../assets/img/homeBackground.jpeg"
-export const ResponsiveStyles = createGlobalStyle`
+import homeBackground from "../assets/img/homeBackground.jpeg";
+
+
+
+export const AuthGridStyles = createGlobalStyle`
 
 
 body {
@@ -10,6 +13,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #171A4A;
+;
+;
 }
 
 code {
@@ -19,13 +25,13 @@ code {
 
 /*Grid Area First Mobile*/
 /*min 640px*/
-.contenedor {
+.containerLogin {
   background-image: url(${homeBackground});
   background-repeat: no-repeat; 
   background-size: cover;
  
   grid-template-areas: "header header header"
-                    "contenido contenido contenido"
+                    "main main main"
                   
                     "widget-1 widget-1 widget-1"
                     "widget-2 widget-2 widget-2"
@@ -38,6 +44,7 @@ code {
 @media screen and (min-width: 768px){
 .contenedor{
   background: none;
+ // background-color: blue;
   grid-template-areas: "header header header"
                     "contenido contenido contenido"
                   

@@ -3,7 +3,7 @@ import { getApiData } from "../api/getApiData";
 import Song from "../components/Song";
 import Playlists from "../components/Playlists";
 import { HomeNavBar } from "../components/HomeNavBar";
-import { GlobalStyle } from "../ui";
+import { GlobalGridStyles } from "../ui";
 
 import searchpage from "../assets/sass/searchpage.module.scss";
 import { IconButton } from "@mui/material";
@@ -91,7 +91,7 @@ export const SearchPage = () => {
         </div>
       </div>
 
-      <HomeNavBar />
+     
     </>
   );
 };

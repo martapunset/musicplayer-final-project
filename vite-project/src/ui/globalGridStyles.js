@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalGridStyles = createGlobalStyle`
 
 body {
   margin: 0;
@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #171A4A;
+ 
 }
 
 code {
@@ -22,11 +23,12 @@ code {
 /*min 640px*/
 .container {
   
-grid-template-areas: "header header header"
-                    "main main main"
+grid-template-areas: "header header header header"
+                    "main main main main"
                     
-                     "sidebar sidebar sidebar"
-                    "footer footer footer"
+                 
+                    "footer footer footer footer"
+                    "sidebar sidebar sidebar sidebar"
 ;
 }
 
@@ -34,10 +36,12 @@ grid-template-areas: "header header header"
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
-grid-template-areas:    "header header header"
-                        "main main main"
+grid-template-areas:    "header header header header"
+                        "main main main main"
                         
-                        "footer footer footer"
+                   
+                        "footer footer footer footer"
+                        "sidebar sidebar sidebar sidebar"
 ;
 }    
 }
@@ -45,11 +49,11 @@ grid-template-areas:    "header header header"
 /*min 1024px*/
 @media screen and (min-width: 1024px){
 .container{
-grid-template-areas:    "header header header"
-                        "main main main"
-                        "widget-1 widget-1 widget-1"
-                        "widget-2 widget-2 widget-2"
-                        "footer footer footer"
+grid-template-areas:    "sidebar header header header"
+                        "sidebar main main main"
+                      
+                     "sidebar main main main"
+                        "sidebar footer footer footer"
 }
 
 }
@@ -57,12 +61,11 @@ grid-template-areas:    "header header header"
 /*min 1280px*/
 @media screen and (min-width: 1280px){
   .container{
-  grid-template-areas:    "header header header"
-                          "main main sidebar"
-                          "sidebar sidebar  widget-1 "
-                          "sidebar sidebar widget-2"
-                          "footer footer footer"
-                          ;
+    grid-template-areas:    "sidebar header header header"
+                        "sidebar main main main"
+                      
+                     "sidebar main main main"
+                        "sidebar footer footer footer"
   }
 }
 

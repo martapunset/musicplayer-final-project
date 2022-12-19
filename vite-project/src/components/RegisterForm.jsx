@@ -5,7 +5,7 @@ import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
 import { Navigate } from "react-router-dom";
 import { Form, InputSmall, Button, Container, Header, Widget, Textsmall, IconBack, Column, Footer, FooterIcon, Spam, H1, P} from "../ui";
-import { ResponsiveStyles } from "../ui/authHomegrid/authGridStyles";
+import { AuthGridStyles } from "../ui/authGridStyles";
 import { useState } from "react";
 // import {
 //   Header,
@@ -48,7 +48,7 @@ export const RegisterForm = () => {
   return (
     <>
    {isRegistered &&  <Navigate to="/login" replace={true} />}
-      <ResponsiveStyles />
+      <AuthGridStyles />
       <Container className="contenedor">
         <Header className="header">
           <Link to="/">

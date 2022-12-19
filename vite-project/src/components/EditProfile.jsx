@@ -2,7 +2,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { Column, InputSmall } from "../ui";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
-//import { GlobalStyle } from "../styles/globalStyles";
+//import { GlobalGridStyles } from "../styles/GlobalGridStyless";
 import { AuthContext } from "../auth/authContext/AuthContext";
 
 import { Form, Input, Button, UserProfile, UserImg , BtnEdit, Texto } from "../ui";

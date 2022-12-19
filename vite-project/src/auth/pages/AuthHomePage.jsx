@@ -6,9 +6,9 @@ import fondo from "../../assets/img/ejemplo1.jpg";
 import cara from "../../assets/img/ejemplo2.jpg";
 import { AuthProvider } from "../authContext/AuthProvider";
 //import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
-import { ResponsiveStyles } from "../../ui/homegrid/responsiveStyles";
+import { AuthGridStyles } from "../../ui/authGridStyles";
 import { AuthContext } from "../authContext/AuthContext";
-import { ButtonShort, LinkStyled, P } from "../../ui";
+import { ButtonShort, ContainerLogin, LinkStyled, P } from "../../ui";
 import { Navigate } from "react-router-dom";
 import {
   Header,
@@ -32,13 +32,13 @@ export const AuthHomePage = () => {
   return (
     <>
       {isLogged && <Navigate to="/home" replace={true} />}
-      <ResponsiveStyles />
+      <AuthGridStyles />
 
-      <Container className="contenedor">
+      <ContainerLogin className="containerLogin">
         <Header className="header">
           <IconBack>back</IconBack> {/* LINK en back */}
         </Header>
-        <Main className="contenido"></Main>
+        <Main className="main"></Main>
         <Widget className="widget-1">
           <Column>
             <Link to="/login">
@@ -58,7 +58,7 @@ export const AuthHomePage = () => {
           </Textsmall>
         </Footer>{" "}
         {/* LINK */}
-      </Container>
+      </ContainerLogin>
     </>
   );
 };

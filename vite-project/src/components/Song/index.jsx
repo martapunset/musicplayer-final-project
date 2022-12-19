@@ -34,6 +34,7 @@ const Song = ({ song, playlist }) => {
         )}
       </div>
     </div>
+    
   );
 };
 

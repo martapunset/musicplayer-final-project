@@ -22,7 +22,7 @@ export const WishPage = () => {
         <Footer className="footer">
           <HomeNavBar />
         </Footer>
-      </Container>
+      </Container>1 
     </>
   );
 };

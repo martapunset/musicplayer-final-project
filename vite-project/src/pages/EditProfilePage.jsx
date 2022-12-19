@@ -1,5 +1,5 @@
 import { HomeNavBar } from "../components/HomeNavBar";
-import { ResponsiveStyles } from "../ui/authHomegrid/authGridStyles";
+import { AuthGridStyles } from "../ui/authGridStyles";
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
@@ -18,7 +18,7 @@ import {
   Texto,
 } from "../ui/probando";
 //import {Button} from '../ui/Buttons.style'
-import { GlobalStyle } from "../ui/globalGridStyles";
+import { GlobalGridStyles } from "../ui/globalGridStyles";
 import { Img, Img2 } from "../ui/Img";
 import logo from "../assets/img/SpotifyVector.png";
 import { IconBack } from "../ui/model";
@@ -31,7 +31,7 @@ import { EditProfile } from "../components";
 export const EditProfilePage = () => {
   return (
     <>
-      <ResponsiveStyles />
+      <AuthGridStyles />
       <Container className="contenedor">
         <Header className="header">
           <Link to="/">
