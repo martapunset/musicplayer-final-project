@@ -36,6 +36,7 @@ export const Main = styled.main`
 
 //height: 200px;
 grid-area: main;
+overflow-y: scroll;
 `
 
 export const Sidebar = styled.aside`
@@ -66,7 +67,7 @@ padding: 20px;
 ${'' /* background: maroon; */}
 color: #fff;
 grid-area: footer;
-margin-top: 100px;
+margin-top: 80px;
 
 
 `

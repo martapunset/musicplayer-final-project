@@ -1,7 +1,7 @@
 .slider-container {
     margin-left: 15px;  
     padding-bottom: 15px; 
-    width: 90vw;   
+    width: 100%;   
     height: 160px;
     overflow-x: hidden;   
 }
@@ -38,7 +38,7 @@
 @media only screen and (min-width: 1200px) {
     .slider-container {
             padding-bottom: 15px;
-            width: 90vw;
+            width: 100%;
             height: 160px;
             overflow-x: hidden;
         }

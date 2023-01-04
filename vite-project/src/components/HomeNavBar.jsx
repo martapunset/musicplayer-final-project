@@ -33,7 +33,7 @@ const WrapperNav = styled.div`
   align-items: center;
   width: 100%;
   position: fixed;
-  bottom: 0;
+  //bottom: 0;
 
   z-index:3;
   

@@ -53,7 +53,7 @@ grid-template-areas:    "sidebar header header header"
                         "sidebar main main main"
                       
                      "sidebar main main main"
-                        "sidebar footer footer footer"
+                        "footer footer footer footer"
 }
 
 }
@@ -65,7 +65,7 @@ grid-template-areas:    "sidebar header header header"
                         "sidebar main main main"
                       
                      "sidebar main main main"
-                        "sidebar footer footer footer"
+                        "footer footer footer footer"
   }
 }
 
