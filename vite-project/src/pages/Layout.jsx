@@ -30,8 +30,9 @@ export const Layout = () => {
         </Footer>
         <Sidebar>
           {" "}
-          <SideBarDesktop className="sidebar" />
-          {/*<HomeNavBar className="sidebar" /> */}
+          <HomeNavBar className="sidebar" />
+         
+          {/*  <SideBarDesktop className="sidebar" />*/}
         </Sidebar>
       </Container>
     </>
