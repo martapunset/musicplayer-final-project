@@ -4,6 +4,7 @@ import H5AudioPlayer from "react-h5-audio-player";
 import { Outlet, Link } from "react-router-dom";
 import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
 import { HomeNavBar } from "../components/HomeNavBar";
+import SideBarDesktop from "../components/SidebarDesktop/SideBarDesktop";
 import {
   Sidebar,
   Container,
@@ -29,7 +30,8 @@ export const Layout = () => {
         </Footer>
         <Sidebar>
           {" "}
-          <HomeNavBar className="sidebar" />
+          <SideBarDesktop className="sidebar" />
+          {/*<HomeNavBar className="sidebar" /> */}
         </Sidebar>
       </Container>
     </>
