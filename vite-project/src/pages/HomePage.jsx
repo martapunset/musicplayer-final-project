@@ -12,7 +12,6 @@ import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
 
-
 import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
 
 export const HomePage = () => {
@@ -60,8 +59,11 @@ export const HomePage = () => {
         <Logo />
         <WelcomeCard>
           <WelcomeTitle>{user?.username}</WelcomeTitle>
-          <Link to ="/profile">  <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-          </Link></WelcomeCard>
+          <Link to="/profile">
+            {" "}
+            <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+          </Link>
+        </WelcomeCard>
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
@@ -124,7 +126,6 @@ export const HomePage = () => {
             })}
           </motion.div>
         </motion.div>
-        
       </div>
     </>
   );
