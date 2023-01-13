@@ -27,7 +27,9 @@ export const Layout = () => {
           <Outlet className="main" />
         </Main>
         <Footer className="footer">
-          {/* <AudioPlayerCool /> */}
+          {/*        
+          <AudioPlayerCool />*/}
+   
           <AudioPlayer />
         </Footer>
         <Sidebar>
