@@ -22,6 +22,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
 import { Button, LinkStyled } from "../ui";
 import { Header, Column, Container, Sidebar, Main, Widget } from "../ui/model";
+import { LogoutButton } from "../components/Login/LogoutButton";
 
 export const ProfilePage = () => {
   const { logout, authState } = useContext(AuthContext);
@@ -56,10 +57,10 @@ export const ProfilePage = () => {
               </BtnEdit>
             </UserProfile>
 
-            <InputProfile placeholder={user.email} />
-            <InputProfile placeholder={user.name} />
+            <InputProfile  />
+            <InputProfile  />
 
-            <Button onClick={logout}>Logout</Button>
+            <LogoutButton />
           </Column>
         </Widget>
       </Container>
