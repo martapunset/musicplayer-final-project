@@ -2,7 +2,8 @@
 
 import H5AudioPlayer from "react-h5-audio-player";
 import { Outlet, Link } from "react-router-dom";
-import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
+import AudioPlayer from "../components/Audio/AudioPlayer";
+// import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
 import { HomeNavBar } from "../components/HomeNavBar";
 import SideBarDesktop from "../components/SidebarDesktop/SideBarDesktop";
 import {
@@ -26,7 +27,8 @@ export const Layout = () => {
           <Outlet className="main" />
         </Main>
         <Footer className="footer">
-          <AudioPlayerCool />
+          {/* <AudioPlayerCool /> */}
+          <AudioPlayer />
         </Footer>
         <Sidebar>
           {" "}
