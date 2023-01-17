@@ -18,13 +18,14 @@ import { Layout } from "../pages/Layout.jsx";
 
 const Router = () => {
   const { isAuthenticated } = useAuth0();
+  console.log("islogged?: ",isAuthenticated);
   return (
     <>
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-          
-              <Route element={<Layout />}>
+           {  isAuthenticated ? 
+              (<Route element={<Layout />}>
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/editProfile" element={<EditProfilePage />} />
@@ -34,8 +35,12 @@ const Router = () => {
                 <Route path="/wish" element={<WishPage />} />
                 <Route path="/liked" element={<LikedPlayList />} />
               </Route>
-           
+              ) :
+                  
               <Route path="/" element={<AuthHomePage />} />
+
+}
+       
             
           </Routes>
         </AuthProvider>
