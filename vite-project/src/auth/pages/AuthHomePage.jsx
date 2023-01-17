@@ -25,6 +25,8 @@ import {
   Footer,
   Main,
 } from "../../ui";
+import { LoginButton } from "../../components/Login/LoginButton";
+import { LogoutButton } from "../../components/Login/LogoutButton";
 
 export const AuthHomePage = () => {
   const { authState } = useContext(AuthContext);
@@ -41,12 +43,11 @@ export const AuthHomePage = () => {
         <Main className="main"></Main>
         <Widget className="widget-1">
           <Column>
-            <Link to="/login">
-              <ButtonShort>Sign in</ButtonShort>
-            </Link>
-            <Link to="/register">
-              <ButtonShort>Register</ButtonShort>
-            </Link>
+           
+            
+              <LoginButton></LoginButton>
+           
+           <LogoutButton></LogoutButton>
           </Column>
         </Widget>
         <Widget className="widget-2"></Widget>

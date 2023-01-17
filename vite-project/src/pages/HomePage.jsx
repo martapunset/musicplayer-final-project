@@ -12,7 +12,6 @@ import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
 
-import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
 
 export const HomePage = () => {
   const { login, authState } = useContext(AuthContext);
