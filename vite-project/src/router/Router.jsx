@@ -15,6 +15,7 @@ import { AuthProvider } from "../auth/authContext/AuthProvider";
 import { EditProfile } from "../components";
 import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
 import { Layout } from "../pages/Layout.jsx";
+import PrivateRoutes from "./PrivateRoutes.jsx";
 
 const Router = () => {
   const { isAuthenticated } = useAuth0();
@@ -24,24 +25,27 @@ const Router = () => {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-           {  isAuthenticated ? 
-              (<Route element={<Layout />}>
+
+          <Route index path="/auth" element={<AuthHomePage />} />
+        
+   
+              <Route path="/" element={<Layout />}>
+
                 <Route path="/home" element={<HomePage />} />
-                <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/editProfile" element={<EditProfilePage />} />
+                <Route path="/profile" element={<PrivateRoutes><ProfilePage /></PrivateRoutes>} />
+                <Route path="/editProfile" element={<PrivateRoutes><EditProfilePage /></PrivateRoutes>} />
                 {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
 
-                <Route path="/search" element={<SearchPage />} />
-                <Route path="/wish" element={<WishPage />} />
-                <Route path="/liked" element={<LikedPlayList />} />
-              </Route>
-              ) :
-                  
-              <Route path="/" element={<AuthHomePage />} />
-
-}
+                <Route path="/search" element={<PrivateRoutes><SearchPage /></PrivateRoutes>} />
+                <Route path="/wish" element={<PrivateRoutes><WishPage /></PrivateRoutes>} />
+                <Route path="/liked" element={<PrivateRoutes><LikedPlayList /></PrivateRoutes>} />
+            </Route>
        
+             
+                  
             
+
+
           </Routes>
         </AuthProvider>
       </BrowserRouter>

@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
     domain="bernersmusicapp.eu.auth0.com"
     clientId="qFfW5qSqtLX9AnlXSIM7RfJyCvKsemal"
-    redirectUri={'http://localhost:5173/home'}
+    redirectUri={window.location.origin + '/home'}
     audience="https://express.sample"
   
   >

@@ -5,7 +5,7 @@ import React from 'react'
 export const LogoutButton = () => {
     const { logout, user } = useAuth0();
   return (
-    <button onClick={() =>logout({returnTo: window.location.origin})}>Logout</button >
+    <button onClick={() =>logout({returnTo: window.location.origin +"/auth"})}>Logout</button >
   )
 }
 

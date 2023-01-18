@@ -17,8 +17,8 @@ export const HomePage = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
   // const { first_name } = userProfile;
-  console.log(user);
-
+  //console.log(user);
+/*
   const [albumData, setAlbumData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
@@ -47,7 +47,7 @@ export const HomePage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
+*/
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
@@ -55,6 +55,7 @@ export const HomePage = () => {
   return (
     <>
       <div className="home">
+        {/** 
         <Logo />
         <WelcomeCard>
           <WelcomeTitle>{user?.username}</WelcomeTitle>
@@ -125,6 +126,8 @@ export const HomePage = () => {
             })}
           </motion.div>
         </motion.div>
+
+        */}
       </div>
     </>
   );

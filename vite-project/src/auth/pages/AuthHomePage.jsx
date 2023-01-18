@@ -33,7 +33,7 @@ export const AuthHomePage = () => {
   const { isLogged } = authState;
   return (
     <>
-      {isLogged && <Navigate to="/home" replace={true} />}
+      {/*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
 
       <ContainerLogin className="containerLogin">
