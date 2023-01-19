@@ -13,21 +13,28 @@ import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { bottomNavigationActionClasses } from "@mui/material";
+//import { bottomNavigationActionClasses } from "@mui/material";
 export const HomePage = () => {
 
 
-  const navigate=useNavigate()
-  const { isAuthenticated , user} = useAuth0();
- 
+  //const navigate=useNavigate()
+  const { isAuthenticated, user } = useAuth0();
+  
   const { login, authState } = useContext(AuthContext);
+  const { isLogged } = authState;
   const userFromAuth0 = user; //rename
-  if (isAuthenticated) { login(userFromAuth0) }
+  //const {given_name}=userFromAuth0
+  useEffect(() => {
+    login(userFromAuth0);
+   
+  }, [userFromAuth0]);
+
+ 
    //copiariamos el objeto de auth0
   //const { isLogged, user } = authState;
-  //isAuthenticated ? console.log("itsloggedOK") : navigate("/auth")
+
  
-    console.log("isauthenticatedPRIVATEROUTES", isAuthenticated)
+    console.log("isauthenticatedHomePAge", isAuthenticated)
 
   
     
@@ -70,10 +77,11 @@ export const HomePage = () => {
   return (
     <>
       <div className="home">
+      
         
         <Logo />
         <WelcomeCard>
-          <WelcomeTitle>{user?.username}</WelcomeTitle>
+          <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
             {" "}
             <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />

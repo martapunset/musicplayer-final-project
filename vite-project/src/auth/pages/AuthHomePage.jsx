@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import homeBackground from "../../assets/img/homeBackground.jpeg";
 import { useContext } from "react";
 import fondo from "../../assets/img/ejemplo1.jpg";
@@ -10,6 +10,7 @@ import { AuthGridStyles } from "../../ui/authGridStyles";
 import { AuthContext } from "../authContext/AuthContext";
 import { ButtonShort, ContainerLogin, LinkStyled, P } from "../../ui";
 import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
 import {
   Header,
   Sidebar,
@@ -27,13 +28,30 @@ import {
 } from "../../ui";
 import { LoginButton } from "../../components/Login/LoginButton";
 import { LogoutButton } from "../../components/Login/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const AuthHomePage = () => {
+  const navigate=useNavigate()
   const { authState } = useContext(AuthContext);
+  const { user } = authState;
   const { isLogged } = authState;
+  const { isAuthenticated } = useAuth0()
+
+
+/*
+  useEffect(() => {
+    
+    isAuthenticated ? navigate("/") : console.log("itsNOTlogged")
+      , []
+  });
+*/
   return (
+
+    
     <>
-      {/*isLogged && <Navigate to="/home" replace={true} />*/}
+  
+      
+     { /*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
 
       <ContainerLogin className="containerLogin">

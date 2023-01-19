@@ -3,9 +3,9 @@ import { ButtonShort } from '../../ui';
 import React from 'react'
 
 export const LoginButton = () => {
-    const { loginWithRedirect } = useAuth0();
+    const { loginWithPopup } = useAuth0();
   return (
-    <ButtonShort onClick={() =>loginWithRedirect()}>Login</ButtonShort >
+    <ButtonShort onClick={loginWithPopup}>Login</ButtonShort >
   )
 }
 

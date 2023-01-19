@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route, Navigate } from "react-router-dom";
 import { LoginPage, RegisterPage, AuthHomePage } from "../auth/pages/index.js";
 import {
   ProfilePage,
@@ -8,53 +8,46 @@ import {
   HomePage,
   LikedPlayList,
 } from "../pages";
-
+import { useContext } from "react";
 import { EditProfilePage } from "../pages/EditProfilePage.jsx";
 import { AuthProvider } from "../auth/authContext/AuthProvider";
+import { AuthContext } from "../auth/authContext/AuthContext.jsx";
 
 import { EditProfile } from "../components";
 import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
 import { Layout } from "../pages/Layout.jsx";
 import { PrivateRoutes } from "./PrivateRoutes.jsx";
 import RedirectPage from "../pages/RedirectPage.jsx";
-import { Auth0ProviderWithHistory } from "../auth/Auth0Provider-history.jsx";
+
 
 const Router = () => {
   const { isAuthenticated } = useAuth0();
   console.log("islogged?Router: ", isAuthenticated);
+  
+ //const { authState } = useContext(AuthContext);
+  //const { isLogged } = authState;
+
   return (
     <>
-      <BrowserRouter>
-       
+    
         <AuthProvider>
           <Routes>
-            <Route index path="/auth" element={<AuthHomePage />} />
+            <Route index path="/auth" element={isAuthenticated? <Navigate to= "/"/> : <AuthHomePage />} />
 
             <Route element={<Layout />}>
-              
-
+              <Route path="/" element={isAuthenticated ? <HomePage /> : <Navigate to= "/auth"/>} />
               <Route
-                path="/"
-                element={
-             
-                    <PrivateRoutes><HomePage /></PrivateRoutes>
-                
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-         
-                    <PrivateRoutes><ProfilePage /></PrivateRoutes>
-                
+              path="/profile"
+                          element={ isAuthenticated ?  <ProfilePage />  : <Navigate to= "/auth"/>
+               
                 }
               />
               <Route
                 path="/editProfile"
                 element={
-              
-                    <PrivateRoutes><EditProfilePage /></PrivateRoutes>
-             
+                
+                    <EditProfilePage />
+           
                 }
               />
               {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
@@ -62,32 +55,17 @@ const Router = () => {
               <Route
                 path="/search"
                 element={
-               
-                    <PrivateRoutes><SearchPage /></PrivateRoutes>
                  
+                    <SearchPage />
+             
                 }
               />
-              <Route
-                path="/wish"
-                element={
-                  
-                    <WishPage />
-                  
-                }
-              />
-              <Route
-                path="/liked"
-                element={
-                
-                    <LikedPlayList />
-                  
-                }
-              />
+              <Route path="/wish" element={<WishPage />} />
+              <Route path="/liked" element={<LikedPlayList />} />
             </Route>
           </Routes>
-          </AuthProvider>
-        
-      </BrowserRouter>
+        </AuthProvider>
+      
     </>
   );
 };
