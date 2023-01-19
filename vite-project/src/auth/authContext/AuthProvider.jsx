@@ -27,6 +27,7 @@ export const AuthProvider = ({ children }) => {
 
   /*-------------------login------------*/
   const login = (user) => {
+    console.log("calling login function", user)
     const validateUser = async () => {
       const datajson = await getUsers(user.email);
       if (datajson) {
@@ -51,7 +52,7 @@ export const AuthProvider = ({ children }) => {
         console.log("user or pasword incorrect");
       }
     };
-    validateUser();
+    //validateUser();
   };
 
   const logout = () => {

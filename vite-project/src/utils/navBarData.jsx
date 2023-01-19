@@ -5,7 +5,7 @@ import { BiLibrary } from "react-icons/Bi";
 export const navBarData = [
   {
     title: "Home",
-    path: "/home",
+    path: "/",
     icon: <AiFillHome />,
   },
   {

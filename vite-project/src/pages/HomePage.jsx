@@ -11,22 +11,37 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { bottomNavigationActionClasses } from "@mui/material";
 export const HomePage = () => {
+
+
+  const navigate=useNavigate()
+  const { isAuthenticated , user} = useAuth0();
+ 
   const { login, authState } = useContext(AuthContext);
-  const { isLogged, user } = authState;
+  const userFromAuth0 = user; //rename
+  if (isAuthenticated) { login(userFromAuth0) }
+   //copiariamos el objeto de auth0
+  //const { isLogged, user } = authState;
+  //isAuthenticated ? console.log("itsloggedOK") : navigate("/auth")
+ 
+    console.log("isauthenticatedPRIVATEROUTES", isAuthenticated)
+
+  
+    
   // const { first_name } = userProfile;
   //console.log(user);
-/*
+
   const [albumData, setAlbumData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
   const fetchData = () => {
-    const albumApi = "http://localhost:4000/albums";
-    const playlistApi = "http://localhost:4000/playlists";
-    const artistApi = "http://localhost:4000/artists";
+    const albumApi = "http://localhost:4001/albums";
+    const playlistApi = "http://localhost:4001/playlists";
+    const artistApi = "http://localhost:4001/artists";
 
     const getAlbumss = axios.get(albumApi);
     const getPlaylists = axios.get(playlistApi);
@@ -47,7 +62,7 @@ export const HomePage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-*/
+
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
@@ -55,7 +70,7 @@ export const HomePage = () => {
   return (
     <>
       <div className="home">
-        {/** 
+        
         <Logo />
         <WelcomeCard>
           <WelcomeTitle>{user?.username}</WelcomeTitle>
@@ -127,7 +142,7 @@ export const HomePage = () => {
           </motion.div>
         </motion.div>
 
-        */}
+        
       </div>
     </>
   );

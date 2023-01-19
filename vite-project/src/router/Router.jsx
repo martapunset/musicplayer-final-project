@@ -15,39 +15,78 @@ import { AuthProvider } from "../auth/authContext/AuthProvider";
 import { EditProfile } from "../components";
 import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
 import { Layout } from "../pages/Layout.jsx";
-import PrivateRoutes from "./PrivateRoutes.jsx";
+import { PrivateRoutes } from "./PrivateRoutes.jsx";
+import RedirectPage from "../pages/RedirectPage.jsx";
+import { Auth0ProviderWithHistory } from "../auth/Auth0Provider-history.jsx";
 
 const Router = () => {
   const { isAuthenticated } = useAuth0();
-  console.log("islogged?: ",isAuthenticated);
+  console.log("islogged?Router: ", isAuthenticated);
   return (
     <>
       <BrowserRouter>
+       
         <AuthProvider>
           <Routes>
+            <Route index path="/auth" element={<AuthHomePage />} />
 
-          <Route index path="/auth" element={<AuthHomePage />} />
-        
-   
-              <Route path="/" element={<PrivateRoutes><Layout /></PrivateRoutes>}>
+            <Route element={<Layout />}>
+              
 
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/profile" element={<PrivateRoutes><ProfilePage /></PrivateRoutes>} />
-                <Route path="/editProfile" element={<PrivateRoutes><EditProfilePage /></PrivateRoutes>} />
-                {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
-
-                <Route path="/search" element={<PrivateRoutes><SearchPage /></PrivateRoutes>} />
-                <Route path="/wish" element={<PrivateRoutes><WishPage /></PrivateRoutes>} />
-                <Route path="/liked" element={<PrivateRoutes><LikedPlayList /></PrivateRoutes>} />
-            </Route>
-       
+              <Route
+                path="/"
+                element={
              
+                    <PrivateRoutes><HomePage /></PrivateRoutes>
+                
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+         
+                    <PrivateRoutes><ProfilePage /></PrivateRoutes>
+                
+                }
+              />
+              <Route
+                path="/editProfile"
+                element={
+              
+                    <PrivateRoutes><EditProfilePage /></PrivateRoutes>
+             
+                }
+              />
+              {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
+
+              <Route
+                path="/search"
+                element={
+               
+                    <PrivateRoutes><SearchPage /></PrivateRoutes>
+                 
+                }
+              />
+              <Route
+                path="/wish"
+                element={
                   
-            
-
-
+                    <WishPage />
+                  
+                }
+              />
+              <Route
+                path="/liked"
+                element={
+                
+                    <LikedPlayList />
+                  
+                }
+              />
+            </Route>
           </Routes>
-        </AuthProvider>
+          </AuthProvider>
+        
       </BrowserRouter>
     </>
   );
