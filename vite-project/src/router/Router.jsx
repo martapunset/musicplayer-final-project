@@ -29,7 +29,7 @@ const Router = () => {
           <Route index path="/auth" element={<AuthHomePage />} />
         
    
-              <Route path="/" element={<Layout />}>
+              <Route path="/" element={<PrivateRoutes><Layout /></PrivateRoutes>}>
 
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/profile" element={<PrivateRoutes><ProfilePage /></PrivateRoutes>} />
