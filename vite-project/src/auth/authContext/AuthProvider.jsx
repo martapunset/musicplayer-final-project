@@ -3,6 +3,8 @@ import { AuthContext } from "./AuthContext";
 import { getUsers } from "../../api/postUsers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
+import { useAuth0 } from "@auth0/auth0-react";
+
 //import { Navigate } from "react-router-dom";
 export const AuthProvider = ({ children }) => {
   // const [user, setUser] = useState([]);
@@ -27,37 +29,34 @@ export const AuthProvider = ({ children }) => {
 
   /*-------------------login------------*/
   const login = (user) => {
-    const validateUser = async () => {
-      const datajson = await getUsers(user.email);
-      if (datajson) {
-          if (user.email == datajson.email && user.password == datajson.password) {
-            const { username,first_name, last_name, email, profilePicture } = datajson;
-            const user ={ username, first_name, last_name, email, profilePicture}
-            localStorage.setItem("user", JSON.stringify(user));
 
-            dispatch({
-              type: types.login,
-              payload: user,
-            });
-            alert("User logged successfully");
-          } else {
-            alert("Unregistered user, or incorrect data");
+   // const validateUser = async () => {
+     // const datajson = await getUsers(user.email);
+      console.log(user);
+    if (user) {
+      console.log("calling login function", user)
+      //  const { username,first_name, last_name, email, profilePicture } = user;
+      //  const user ={ username, first_name, last_name, email, profilePicture}
+      localStorage.setItem("user", JSON.stringify(user));
 
-            console.log("user or pasword incorrect");
-          }
-      } else {
-        alert("Unregistered user, or incorrect data");
-        //navigate("/");
-        console.log("user or pasword incorrect");
+      dispatch({
+        type: types.login,
+        payload: user,
+      });
+          
+    }  
+      
       }
-    };
-    validateUser();
-  };
+    
 
-  const logout = () => {
+  
+
+  const logoutReducer = () => {
+   // const { logout, user } = useAuth0();
     localStorage.removeItem("user");
+   ///logout auth0
     dispatch({
-      type: types.logout,
+      type: types.logout,  //logout reducer
     });
   };
 
@@ -66,7 +65,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         authState,
         login:login,
-        logout:logout,
+        logoutReducer:logoutReducer,
       }}
     >
       {children}

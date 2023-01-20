@@ -11,22 +11,44 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+//import { bottomNavigationActionClasses } from "@mui/material";
 export const HomePage = () => {
+
+
+  //const navigate=useNavigate()
+  const { isAuthenticated, user } = useAuth0();
+  
   const { login, authState } = useContext(AuthContext);
-  const { isLogged, user } = authState;
+  const { isLogged } = authState;
+  const userFromAuth0 = user; //rename
+  //const {given_name}=userFromAuth0
+  useEffect(() => {
+    login(userFromAuth0);
+   
+  }, [userFromAuth0]);
+
+ 
+   //copiariamos el objeto de auth0
+  //const { isLogged, user } = authState;
+
+ 
+    console.log("isauthenticatedHomePAge", isAuthenticated)
+
+  
+    
   // const { first_name } = userProfile;
-  console.log(user);
+  //console.log(user);
 
   const [albumData, setAlbumData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
   const fetchData = () => {
-    const albumApi = "http://localhost:4000/albums";
-    const playlistApi = "http://localhost:4000/playlists";
-    const artistApi = "http://localhost:4000/artists";
+    const albumApi = "http://localhost:4001/albums";
+    const playlistApi = "http://localhost:4001/playlists";
+    const artistApi = "http://localhost:4001/artists";
 
     const getAlbumss = axios.get(albumApi);
     const getPlaylists = axios.get(playlistApi);
@@ -55,9 +77,11 @@ export const HomePage = () => {
   return (
     <>
       <div className="home">
+      
+        
         <Logo />
         <WelcomeCard>
-          <WelcomeTitle>{user?.username}</WelcomeTitle>
+          <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
             {" "}
             <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
@@ -125,6 +149,8 @@ export const HomePage = () => {
             })}
           </motion.div>
         </motion.div>
+
+        
       </div>
     </>
   );
