@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 //import { bottomNavigationActionClasses } from "@mui/material";
+import { CallApi } from "../api/CallApi";
 export const HomePage = () => {
 
 
@@ -80,6 +81,7 @@ export const HomePage = () => {
       
         
         <Logo />
+        <CallApi />
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">

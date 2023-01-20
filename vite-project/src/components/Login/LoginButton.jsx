@@ -5,7 +5,7 @@ import React from 'react'
 export const LoginButton = () => {
     const { loginWithPopup } = useAuth0();
   return (
-    <ButtonShort onClick={loginWithPopup}>Login</ButtonShort >
+    <ButtonShort onClick={()=>loginWithPopup()}>Login</ButtonShort >
   )
 }
 
