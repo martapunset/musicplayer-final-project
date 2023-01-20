@@ -108,7 +108,7 @@ export const HomePage = () => {
           >
             
             {albumData?.map((album) => {
-              
+            
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -131,7 +131,7 @@ export const HomePage = () => {
             {playlistData?.map((album) => {
               return (
                 <motion.div className="item" key={album.id}>
-                  <img src={album.thumbnail} alt={album.name} />
+                  <img src={imageUrl} alt={album.name} />
                   <p>{album.name}</p>
                 </motion.div>
               );
