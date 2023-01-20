@@ -1,7 +1,15 @@
+import axios from "axios"
+
 export const getAlbums = async () => {
 
-    const url = "http://localhost:4000/album";
 
+    const {data} = await axios.get("http://localhost:4000/album")
+
+  console.log(data)
+
+
+    //const url = "http://localhost:4000/album";
+/*
     const resp = await fetch(url, { mode: 'no-cors', headers: {
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -12,5 +20,5 @@ export const getAlbums = async () => {
     console.log(apiData)
     return apiData;
 
-  
+  */
 };

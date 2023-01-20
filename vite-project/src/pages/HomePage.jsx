@@ -44,21 +44,21 @@ export const HomePage = () => {
   //console.log(user);
 
   const [albumData, setAlbumData] = useState([]);
-  const [playlistData, setPlaylistData] = useState([]);
-  const [artistData, setArtistData] = useState([]);
+ // const [playlistData, setPlaylistData] = useState([]);
+  //const [artistData, setArtistData] = useState([]);
 
   // const fetchData = () => {
-  //   const albumApi = "http://localhost:4000/albums";
+   // const albumApi = "http://localhost:4000/album";
     // const playlistApi = "http://localhost:4000/playlists";
     // const artistApi = "http://localhost:4000/artists";
 
-    // const getAlbumss = axios.get(albumApi);
+   // const getAlbums = axios.get(albumApi);
     // const getPlaylists = axios.get(playlistApi);
     // const getArtists = axios.get(artistApi);
 
-  //   axios.all([getAlbumss]).then(
+  // axios.all(getAlbums).then(
   //     axios.spread((...allData) => {
-  //       const allDataAlbums = allData[0].data;
+     //  const allDataAlbums = allData[0].data;
   //       // const allDataPlaylists = allData[1].data;
   //       // const allDataArtists = allData[2].data;
 
