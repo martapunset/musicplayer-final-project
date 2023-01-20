@@ -1,11 +1,16 @@
 export const getAlbums = async () => {
-  try {
-    const url = "http://localhost:4000/albums";
 
-    const resp = await fetch(url);
+    const url = "http://localhost:4000/album";
+
+    const resp = await fetch(url, { mode: 'no-cors', headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    }});
+
+    console.log(resp)
     const apiData = await resp.json();
+    console.log(apiData)
     return apiData;
-  } catch (error) {
-    console.log("Algo fallo en la api");
-  }
+
+  
 };

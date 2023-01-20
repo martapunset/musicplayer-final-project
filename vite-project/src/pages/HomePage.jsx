@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 //import { bottomNavigationActionClasses } from "@mui/material";
-import { CallApi } from "../api/CallApi";
+// import { CallApi } from "../api/CallApi";
+import { getAlbums } from "../api/getAlbums";
 export const HomePage = () => {
 
 
@@ -46,30 +47,36 @@ export const HomePage = () => {
   const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
-  const fetchData = () => {
-    const albumApi = "http://localhost:4001/albums";
-    const playlistApi = "http://localhost:4001/playlists";
-    const artistApi = "http://localhost:4001/artists";
+  // const fetchData = () => {
+  //   const albumApi = "http://localhost:4000/albums";
+    // const playlistApi = "http://localhost:4000/playlists";
+    // const artistApi = "http://localhost:4000/artists";
 
-    const getAlbumss = axios.get(albumApi);
-    const getPlaylists = axios.get(playlistApi);
-    const getArtists = axios.get(artistApi);
+    // const getAlbumss = axios.get(albumApi);
+    // const getPlaylists = axios.get(playlistApi);
+    // const getArtists = axios.get(artistApi);
 
-    axios.all([getAlbumss, getPlaylists, getArtists]).then(
-      axios.spread((...allData) => {
-        const allDataAlbums = allData[0].data;
-        const allDataPlaylists = allData[1].data;
-        const allDataArtists = allData[2].data;
+  //   axios.all([getAlbumss]).then(
+  //     axios.spread((...allData) => {
+  //       const allDataAlbums = allData[0].data;
+  //       // const allDataPlaylists = allData[1].data;
+  //       // const allDataArtists = allData[2].data;
 
-        setAlbumData(allDataAlbums);
-        setPlaylistData(allDataPlaylists);
-        setArtistData(allDataArtists[0]);
-      })
-    );
-  };
+  //       setAlbumData(allDataAlbums);
+  //       // setPlaylistData(allDataPlaylists);
+  //       // setArtistData(allDataArtists[0]);
+  //       console.log(allDataAlbums)
+  //     })
+  //   );
+  // };
+
   useEffect(() => {
-    fetchData();
-  }, []);
+      const data = async () => {
+        const jsonData = await getAlbums();
+        setAlbumData(jsonData);
+      };
+      data();
+    }, []);
 
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
@@ -77,11 +84,13 @@ export const HomePage = () => {
   // console.log(followed);
   return (
     <>
+    {/*
+
       <div className="home">
       
         
         <Logo />
-        <CallApi />
+        {/* <CallApi /> 
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
@@ -154,6 +163,7 @@ export const HomePage = () => {
 
         
       </div>
+      */}
     </>
   );
 };
