@@ -4,8 +4,10 @@ export const getAlbums = async () => {
 
 
     const {data} = await axios.get("http://localhost:4000/album")
+    const {album} = data
+  console.log(`A ver si trae ${data} y ${album}`)
+  console.log(album)
 
-  console.log(data)
 
 
     //const url = "http://localhost:4000/album";

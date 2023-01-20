@@ -44,8 +44,8 @@ export const HomePage = () => {
   //console.log(user);
 
   const [albumData, setAlbumData] = useState([]);
- // const [playlistData, setPlaylistData] = useState([]);
-  //const [artistData, setArtistData] = useState([]);
+ const [playlistData, setPlaylistData] = useState([]);
+  const [artistData, setArtistData] = useState([]);
 
   // const fetchData = () => {
    // const albumApi = "http://localhost:4000/album";
@@ -84,13 +84,13 @@ export const HomePage = () => {
   // console.log(followed);
   return (
     <>
-    {/*
+    
 
       <div className="home">
       
         
         <Logo />
-        {/* <CallApi /> 
+ 
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
@@ -106,7 +106,9 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {albumData.map((album) => {
+            
+            {albumData?.map((album) => {
+              
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -126,7 +128,7 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -780 }}
           >
-            {playlistData.map((album) => {
+            {playlistData?.map((album) => {
               return (
                 <motion.div className="item" key={album.id}>
                   <img src={album.thumbnail} alt={album.name} />
@@ -144,7 +146,7 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {artistData.map((album) => {
+            {artistData?.map((album) => {
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -163,7 +165,7 @@ export const HomePage = () => {
 
         
       </div>
-      */}
+      
     </>
   );
 };
