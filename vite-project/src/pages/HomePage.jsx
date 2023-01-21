@@ -77,13 +77,13 @@ export const HomePage = () => {
       // };
       // data();
       getAllAlbums()
+      getAllArtists()
     }, []);
 
 //petición al back
     const getAllAlbums = async ()=>{
       try {
         const response = await axios.get("http://localhost:4000/album");
-        console.log(response.data.data[0].imageUrl)
         setAlbumData(response.data.data)
       } catch (error) {
         console.log(error)
@@ -93,6 +93,15 @@ export const HomePage = () => {
   //   return f.isFollowed;
   // });
   // console.log(followed);
+
+  const getAllArtists = async()=>{
+    try {
+      const response = await axios.get("http://localhost:4000/artists")
+      setArtistData(response.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <>
     
@@ -157,16 +166,16 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {artistData?.map((album) => {
+            {artistData?.map((artists) => {
               return (
                 <>
-                  <motion.div className="item" key={album.id}>
+                  <motion.div className="item" key={artists.id}>
                     <img
                       className="artistsProfile"
-                      src={album.photoUrl}
-                      alt={album.name}
+                      src={artists.photoUrl}
+                      alt={artists.name}
                     />
-                    <p>{album.name}</p>
+                    <p>{artists.name}</p>
                   </motion.div>
                 </>
               );
