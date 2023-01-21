@@ -71,13 +71,24 @@ export const HomePage = () => {
   // };
 
   useEffect(() => {
-      const data = async () => {
-        const jsonData = await getAlbums();
-        setAlbumData(jsonData);
-      };
-      data();
+      // const data = async () => {
+      //   const jsonData = await getAlbums();
+      //   setAlbumData(jsonData);
+      // };
+      // data();
+      getAllAlbums()
     }, []);
 
+//petición al back
+    const getAllAlbums = async ()=>{
+      try {
+        const response = await axios.get("http://localhost:4000/album");
+        console.log(response.data.data[0].imageUrl)
+        setAlbumData(response.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
