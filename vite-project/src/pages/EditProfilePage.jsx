@@ -21,6 +21,7 @@ import {
 import { GlobalGridStyles } from "../ui/globalGridStyles";
 import { Img, Img2 } from "../ui/Img";
 import logo from "../assets/img/SpotifyVector.png";
+import logoHarmony from "../assets/img/logoHarmony.png"
 import { IconBack } from "../ui/model";
 import { MdArrowBackIos } from "react-icons/md";
 import facebook from "../assets/img/face.png";
@@ -41,7 +42,7 @@ export const EditProfilePage = () => {
           </Link>
           <center>
             <LogoProfile>
-              <img src={logo} alt="Logo" />
+              <img src={logoHarmony} alt="Logo" />
             </LogoProfile>
           </center>
         </Header>
