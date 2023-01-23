@@ -26,8 +26,14 @@ import { Header, Column, Container, Sidebar, Main, Widget } from "../ui/model";
 import { LogoutButton } from "../components/Login/LogoutButton";
 
 export const ProfilePage = () => {
-  const { logout, authState } = useContext(AuthContext);
-  const { isLogged, user } = authState;
+  // const { logout, authState } = useContext(AuthContext);
+  // const { isLogged, user } = authState;
+  const { login, authState } = useContext(AuthContext); //userDAta for profile
+  const { isLogged, userData } = authState; //userDAta for profile
+  console.log("userDAta for Toni", userData) //userDAta for profile
+ console.log(userData.given_name)
+
+
 
   return (
     <>
@@ -49,19 +55,21 @@ export const ProfilePage = () => {
         <Widget className="widget-1">
           <Column>
             <UserProfile>
-              <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+              <UserImg src={userData.picture ? userData.picture : "https://githubcom/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" }/>
               <BtnEdit>
                 <Link to="/editProfile">
                   {" "}
                   <Texto>Edit Profile</Texto>
                 </Link>
               </BtnEdit>
+
+            <InputProfile placeholder={userData.given_name + " " + userData.family_name}/>
+            <InputProfile  placeholder={userData.email}/>
+            <LogoutButton />
             </UserProfile>
 
-            <InputProfile  />
-            <InputProfile  />
 
-            <LogoutButton />
+          
           </Column>
         </Widget>
       </Container>
