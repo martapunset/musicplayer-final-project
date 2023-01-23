@@ -24,27 +24,20 @@ export const HomePage = () => {
 
   //const navigate=useNavigate()
   const { isAuthenticated, user } = useAuth0();
-  
-  const { login, authState } = useContext(AuthContext);
-  const { isLogged } = authState;
+
+  const { login, authState } = useContext(AuthContext); //userDAta for profile
+  const { isLogged, userData } = authState; //userDAta for profile
+  console.log("userDAta for Toni", userData) //userDAta for profile
+
+
   const userFromAuth0 = user; //rename
-  //const {given_name}=userFromAuth0
+
   useEffect(() => {
     login(userFromAuth0);
    
   }, [userFromAuth0]);
 
- 
-   //copiariamos el objeto de auth0
-  //const { isLogged, user } = authState;
-
- 
-   // console.log("isauthenticatedHomePAge", isAuthenticated)
-
-  
-    
-  // const { first_name } = userProfile;
-  //console.log(user);
+ ;
 
   const [albumData, setAlbumData] = useState([]);
  const [playlistData, setPlaylistData] = useState([]);
@@ -59,19 +52,6 @@ export const HomePage = () => {
     // const getPlaylists = axios.get(playlistApi);
     // const getArtists = axios.get(artistApi);
 
-  // axios.all(getAlbums).then(
-  //     axios.spread((...allData) => {
-     //  const allDataAlbums = allData[0].data;
-  //       // const allDataPlaylists = allData[1].data;
-  //       // const allDataArtists = allData[2].data;
-
-  //       setAlbumData(allDataAlbums);
-  //       // setPlaylistData(allDataPlaylists);
-  //       // setArtistData(allDataArtists[0]);
-  //       console.log(allDataAlbums)
-  //     })
-  //   );
-  // };
   const getdata = async() => {
        
     const { data } = await axios.get("http://localhost:4000/albums")
@@ -79,11 +59,7 @@ export const HomePage = () => {
   }
     
   useEffect(() => {
-      // const data = async () => {
-      //   const jsonData = await getAlbums();
-      //   setAlbumData(jsonData);
-      // };
-      // data();
+    
       getAllAlbums()
       getAllArtists()
     getdata()

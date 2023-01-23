@@ -1,62 +1,47 @@
 import { useReducer } from "react";
 import { AuthContext } from "./AuthContext";
-import { getUsers } from "../../api/postUsers";
+import { getUsers } from "../../api/postusers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
 import { useAuth0 } from "@auth0/auth0-react";
 
 //import { Navigate } from "react-router-dom";
 export const AuthProvider = ({ children }) => {
-  // const [user, setUser] = useState([]);
-  // const [loginState, setLoginState] = useState([]);
-  // const [register, setRegister] = useState([]);
-
   const initArgs = {
     isLogged: false,
-    // user:'',
   };
   const init = () => {
-    const user= JSON.parse(localStorage.getItem("user"));
-    //1.56 minutes video jose
+    const userData = JSON.parse(localStorage.getItem("user"));
+
     return {
-      isLogged: !!user,
-      user,
+      isLogged: !!userData,
+      userData,
     };
   };
 
   const [authState, dispatch] = useReducer(AuthReducer, {}, init); //init
 
-
   /*-------------------login------------*/
-  const login = (user) => {
-
-   // const validateUser = async () => {
-     // const datajson = await getUsers(user.email);
-      console.log(user);
-    if (user) {
-      console.log("calling login function", user)
-      //  const { username,first_name, last_name, email, profilePicture } = user;
-      //  const user ={ username, first_name, last_name, email, profilePicture}
-      localStorage.setItem("user", JSON.stringify(user));
+  const login = (userData) => {
+    console.log(userData);
+    if (userData) {
+      console.log("calling login function", userData);
+      //  const { userDataname,first_name, last_name, email, profilePicture } = userData;
+      //  const userData ={ userDataname, first_name, last_name, email, profilePicture}
+      localStorage.setItem("user", JSON.stringify(userData));
 
       dispatch({
         type: types.login,
-        payload: user,
+        payload: userData,
       });
-          
-    }  
-      
-      }
-    
-
-  
+    }
+  };
 
   const logoutReducer = () => {
-   // const { logout, user } = useAuth0();
     localStorage.removeItem("user");
-   ///logout auth0
+    ///logout auth0
     dispatch({
-      type: types.logout,  //logout reducer
+      type: types.logout, //logout reducer
     });
   };
 
@@ -64,8 +49,8 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         authState,
-        login:login,
-        logoutReducer:logoutReducer,
+        login: login,
+        logoutReducer: logoutReducer,
       }}
     >
       {children}
