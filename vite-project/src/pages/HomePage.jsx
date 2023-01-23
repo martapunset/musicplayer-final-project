@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 //import { bottomNavigationActionClasses } from "@mui/material";
-import { CallApi } from "../api/CallApi";
+// import { CallApi } from "../api/CallApi";
+import { getAlbums } from "../api/getAlbums";
 export const HomePage = () => {
 
 
@@ -43,45 +44,64 @@ export const HomePage = () => {
   //console.log(user);
 
   const [albumData, setAlbumData] = useState([]);
-  const [playlistData, setPlaylistData] = useState([]);
+ const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
-  const fetchData = () => {
-    const albumApi = "http://localhost:4001/albums";
-    const playlistApi = "http://localhost:4001/playlists";
-    const artistApi = "http://localhost:4001/artists";
+  // const fetchData = () => {
+   // const albumApi = "http://localhost:4000/album";
+    // const playlistApi = "http://localhost:4000/playlists";
+    // const artistApi = "http://localhost:4000/artists";
 
-    const getAlbumss = axios.get(albumApi);
-    const getPlaylists = axios.get(playlistApi);
-    const getArtists = axios.get(artistApi);
+   // const getAlbums = axios.get(albumApi);
+    // const getPlaylists = axios.get(playlistApi);
+    // const getArtists = axios.get(artistApi);
 
-    axios.all([getAlbumss, getPlaylists, getArtists]).then(
-      axios.spread((...allData) => {
-        const allDataAlbums = allData[0].data;
-        const allDataPlaylists = allData[1].data;
-        const allDataArtists = allData[2].data;
+  // axios.all(getAlbums).then(
+  //     axios.spread((...allData) => {
+     //  const allDataAlbums = allData[0].data;
+  //       // const allDataPlaylists = allData[1].data;
+  //       // const allDataArtists = allData[2].data;
 
-        setAlbumData(allDataAlbums);
-        setPlaylistData(allDataPlaylists);
-        setArtistData(allDataArtists[0]);
-      })
-    );
-  };
+  //       setAlbumData(allDataAlbums);
+  //       // setPlaylistData(allDataPlaylists);
+  //       // setArtistData(allDataArtists[0]);
+  //       console.log(allDataAlbums)
+  //     })
+  //   );
+  // };
+
   useEffect(() => {
-    fetchData();
-  }, []);
+      // const data = async () => {
+      //   const jsonData = await getAlbums();
+      //   setAlbumData(jsonData);
+      // };
+      // data();
+      getAllAlbums()
+    }, []);
 
+//petición al back
+    const getAllAlbums = async ()=>{
+      try {
+        const response = await axios.get("http://localhost:4000/album");
+        console.log(response.data.data[0].imageUrl)
+        setAlbumData(response.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
   // console.log(followed);
   return (
     <>
+    
+
       <div className="home">
       
         
         <Logo />
-        <CallApi />
+ 
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
@@ -97,7 +117,9 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {albumData.map((album) => {
+            
+            {albumData?.map((album) => {
+            
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -117,10 +139,10 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -780 }}
           >
-            {playlistData.map((album) => {
+            {playlistData?.map((album) => {
               return (
                 <motion.div className="item" key={album.id}>
-                  <img src={album.thumbnail} alt={album.name} />
+                  <img src={imageUrl} alt={album.name} />
                   <p>{album.name}</p>
                 </motion.div>
               );
@@ -135,7 +157,7 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {artistData.map((album) => {
+            {artistData?.map((album) => {
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -154,6 +176,7 @@ export const HomePage = () => {
 
         
       </div>
+      
     </>
   );
 };

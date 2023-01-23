@@ -54,11 +54,11 @@ const Router = () => {
 
               <Route
                 path="/search"
-                element={
+                element={<SearchPage />  }
                  
-                    <SearchPage />
+                    
              
-                }
+              
               />
               <Route path="/wish" element={<WishPage />} />
               <Route path="/liked" element={<LikedPlayList />} />
