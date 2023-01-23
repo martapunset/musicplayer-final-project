@@ -16,7 +16,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 //import { bottomNavigationActionClasses } from "@mui/material";
 // import { CallApi } from "../api/CallApi";
 import { getAlbums } from "../api/getAlbums";
-import { getUsers } from "../api/postUsers";
+import { checkUserByEmail, getUsers } from "../api/postUsers";
 
 
 export const HomePage = () => {
@@ -27,15 +27,17 @@ export const HomePage = () => {
 
   const { login, authState } = useContext(AuthContext); //userDAta for profile
   const { isLogged, userData } = authState; //userDAta for profile
-  console.log("userDAta for Toni", userData) //userDAta for profile
+ // console.log("userDAta for Toni", userData) //userDAta for profile
 
 
-  const userFromAuth0 = user; //rename
+ // const userFromAuth0 = user; //rename
 
   useEffect(() => {
-    login(userFromAuth0);
+    //login(user);
+    checkUserByEmail(user);
+  
    
-  }, [userFromAuth0]);
+  }, [user]);
 
  ;
 
@@ -66,8 +68,8 @@ export const HomePage = () => {
  
   
     }, []);
-  console.log(albumData)
-  console.log(getUsers())
+  //console.log(albumData)
+  //console.log(getUsers())
 
 
 //petición al back
@@ -102,7 +104,7 @@ export const HomePage = () => {
         <Logo />
  
         <WelcomeCard>
-          <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
+          <WelcomeTitle>{user?.given_name}</WelcomeTitle>
           <Link to="/profile">
             {" "}
             <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
