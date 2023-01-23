@@ -7,7 +7,8 @@
       "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644625060/tracks-thumbnails-dev/car_yx6ld1.jpg",
       "description": "Get your mic on with this beats. You are going to sing all the way down",
       "publicAccessible": true,
-      "primaryColor": "#fbdc00"
+      "primaryColor": "#fbdc00",
+      "tracks":[]
     },
     {
       "id": 2,

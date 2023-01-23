@@ -12,7 +12,7 @@
 //         const apiGenre = async ()=>{
 
 //           try {
-//             const token = await getAccessTokenSilently();
+//            
            
 //             const response = await fetch(
 //               `${serverUrl}/genre`,

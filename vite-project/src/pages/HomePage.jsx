@@ -16,6 +16,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 //import { bottomNavigationActionClasses } from "@mui/material";
 // import { CallApi } from "../api/CallApi";
 import { getAlbums } from "../api/getAlbums";
+import { getUsers } from "../api/postUsers";
+
+
 export const HomePage = () => {
 
 
@@ -36,7 +39,7 @@ export const HomePage = () => {
   //const { isLogged, user } = authState;
 
  
-    console.log("isauthenticatedHomePAge", isAuthenticated)
+   // console.log("isauthenticatedHomePAge", isAuthenticated)
 
   
     
@@ -69,19 +72,21 @@ export const HomePage = () => {
   //     })
   //   );
   // };
-
+  const getdata = async() => {
+       
+    const { data } = await axios.get("http://localhost:4000/albums")
+    setAlbumData(data);
+  }
+    
   useEffect(() => {
-      const data = async () => {
-        const jsonData = await getAlbums();
-        setAlbumData(jsonData);
-      };
-      data();
+    getdata()
+ 
+  
     }, []);
+  console.log(albumData)
+  console.log(getUsers())
 
-  // const followed = playlistData.map((f) => {
-  //   return f.isFollowed;
-  // });
-  // console.log(followed);
+
   return (
     <>
     

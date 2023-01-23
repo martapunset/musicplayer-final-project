@@ -1,4 +1,4 @@
-
+import { useAuth0 } from '@auth0/auth0-react'
 export const postUsers = async (userData) => {
 
     try {
@@ -18,20 +18,30 @@ export const postUsers = async (userData) => {
     }
 }
 
-export const getUsers = async (email = '') => {
+
+
+export const getUsers = async () => {
+    const {getAccessTokenSilently} = useAuth0()
 
     const url = 'http://localhost:4000/user';
 
     try {
-        const response = await fetch(url);
+        const token = await getAccessTokenSilently();
+        const response = await fetch(url,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+    
         const users = await response.json();
-        const user = users.find(user => user.email === email)
+     
 
-        console.log(user, "userfind")
-        return user;
+       console.log(users, "user List")
+        return users;
 
     } catch (error) {
-        console.log("api error");
+        console.log("api error fetching users");
     }
 
 }
