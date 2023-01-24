@@ -15,7 +15,6 @@ import {
 } from "../ui";
 //import {Button} from '../ui/Buttons.style'
 import { GlobalGridStyles } from "../ui/globalGridStyles";
-import { Img, Img2 } from "../ui/Img";
 import logo from "../assets/img/SpotifyVector.png";
 import logoHarmony from "../assets/img/logoHarmony.png"
 import { IconBack } from "../ui/model";
