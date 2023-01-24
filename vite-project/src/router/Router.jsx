@@ -36,9 +36,7 @@ const Router = () => {
             />
             <Route
               path="/editProfile"
-              element={
-
-                <EditProfilePage />
+              element={<EditProfilePage />
 
               }
             />

@@ -26,15 +26,15 @@ export const HomePage = () => {
   const { isAuthenticated, user } = useAuth0();
 
   const { login, authState } = useContext(AuthContext); //userDAta for profile
-  const { isLogged, userData } = authState; //userDAta for profile
+//  const { isLogged, userData } = authState; //userDAta for profile
  // console.log("userDAta for Toni", userData) //userDAta for profile
 
 
  // const userFromAuth0 = user; //rename
 
   useEffect(() => {
-    //login(user);
-    checkUserByEmail(user);
+    login(user);
+ //   checkUserByEmail(user);
   
    
   }, [user]);

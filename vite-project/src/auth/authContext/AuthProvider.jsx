@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { AuthContext } from "./AuthContext";
-import { getUsers, postUsers } from "../../api/postusers";
+import { checkUserByEmail, getUsers, postUsers } from "../../api/postusers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -36,22 +36,19 @@ export const AuthProvider = ({ children }) => {
       //following: [],
 
            }
-           console.log(userData, "standard object copy to DB");
+           console.log(userData, "standard object copy");
 
 
-
-
-
-    if (user) {
+    if (userData) {
       console.log("calling login function", userData);
-      //  const { userDataname,first_name, last_name, email, profilePicture } = userData;
-      //  const userData ={ userDataname, first_name, last_name, email, profilePicture}
-      localStorage.setItem("user", JSON.stringify(userData));
+      const userDB=checkUserByEmail(userData)
+      
+      localStorage.setItem("user", JSON.stringify(userDB));
 
 
      //call getUSerById and check if user exists in our DB
-     //only call post function if user doesn't exists
-      postUsers(userData);
+    
+    
 
       dispatch({
         type: types.login,
