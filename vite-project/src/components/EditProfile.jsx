@@ -17,9 +17,9 @@ export const EditProfile = () => {
 
   return (
     <>
-    <GlobalGridStyles/>
+    {/* <GlobalGridStyles/> */}
     <p>holaedit profile</p>
-      <Form className="main" action="" onSubmit={handleSubmit()}>
+      <Form action="" onSubmit={handleSubmit()}>
         <Column>
           <InputSmall
             type="text"

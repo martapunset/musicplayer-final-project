@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { HomeNavBar } from "../components/HomeNavBar";
-import { Button } from "../ui";
-import { ProfileImage } from "../ui/ProfileImage.style";
+import { ProfileImage } from "../ui/";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import Logo from "../components/Logo";
@@ -10,54 +8,37 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-//import { bottomNavigationActionClasses } from "@mui/material";
-// import { CallApi } from "../api/CallApi";
-import { getAlbums } from "../api/getAlbums";
 export const HomePage = () => {
 
-
-  //const navigate=useNavigate()
   const { isAuthenticated, user } = useAuth0();
-  
+
   const { login, authState } = useContext(AuthContext);
   const { isLogged } = authState;
   const userFromAuth0 = user; //rename
-  //const {given_name}=userFromAuth0
   useEffect(() => {
     login(userFromAuth0);
-   
+
   }, [userFromAuth0]);
 
- 
-   //copiariamos el objeto de auth0
-  //const { isLogged, user } = authState;
-
- 
-    console.log("isauthenticatedHomePAge", isAuthenticated)
-
-  
-    
-  // const { first_name } = userProfile;
-  //console.log(user);
+  console.log("isauthenticatedHomePAge", isAuthenticated)
 
   const [albumData, setAlbumData] = useState([]);
- const [playlistData, setPlaylistData] = useState([]);
+  const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
   // const fetchData = () => {
-   // const albumApi = "http://localhost:4000/album";
-    // const playlistApi = "http://localhost:4000/playlists";
-    // const artistApi = "http://localhost:4000/artists";
+  // const albumApi = "http://localhost:4000/album";
+  // const playlistApi = "http://localhost:4000/playlists";
+  // const artistApi = "http://localhost:4000/artists";
 
-   // const getAlbums = axios.get(albumApi);
-    // const getPlaylists = axios.get(playlistApi);
-    // const getArtists = axios.get(artistApi);
+  // const getAlbums = axios.get(albumApi);
+  // const getPlaylists = axios.get(playlistApi);
+  // const getArtists = axios.get(artistApi);
 
   // axios.all(getAlbums).then(
   //     axios.spread((...allData) => {
-     //  const allDataAlbums = allData[0].data;
+  //  const allDataAlbums = allData[0].data;
   //       // const allDataPlaylists = allData[1].data;
   //       // const allDataArtists = allData[2].data;
 
@@ -70,30 +51,30 @@ export const HomePage = () => {
   // };
 
   useEffect(() => {
-      // const data = async () => {
-      //   const jsonData = await getAlbums();
-      //   setAlbumData(jsonData);
-      // };
-      // data();
-      getAllAlbums()
-      getAllArtists()
-    }, []);
+    // const data = async () => {
+    //   const jsonData = await getAlbums();
+    //   setAlbumData(jsonData);
+    // };
+    // data();
+    getAllAlbums()
+    getAllArtists()
+  }, []);
 
-//petición al back
-    const getAllAlbums = async ()=>{
-      try {
-        const response = await axios.get("http://localhost:4000/album");
-        setAlbumData(response.data.data)
-      } catch (error) {
-        console.log(error)
-      }
+  //petición al back
+  const getAllAlbums = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/album");
+      setAlbumData(response.data.data)
+    } catch (error) {
+      console.log(error)
     }
+  }
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
   // console.log(followed);
 
-  const getAllArtists = async()=>{
+  const getAllArtists = async () => {
     try {
       const response = await axios.get("http://localhost:4000/artists")
       setArtistData(response.data.data)
@@ -103,13 +84,13 @@ export const HomePage = () => {
   }
   return (
     <>
-    
+
 
       <div className="home">
-      
-        
+
+
         <Logo />
- 
+
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
@@ -125,9 +106,9 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            
+
             {albumData?.map((album) => {
-            
+
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -182,9 +163,9 @@ export const HomePage = () => {
           </motion.div>
         </motion.div>
 
-        
+
       </div>
-      
+
     </>
   );
 };

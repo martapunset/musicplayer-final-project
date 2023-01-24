@@ -1,11 +1,7 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { MdArrowBackIos } from "react-icons/md";
-import facebook from "../assets/img/face.png";
 import { postUsers, getUsers } from "../api/postUsers";
 import { Navigate } from "react-router-dom";
 import { Form, InputSmall, Button, Column, Footer, FooterIcon, Spam, H1, P } from "../ui";
-import { AuthGridStyles } from "../ui/authGridStyles";
 import { useState } from "react";
 
 export const RegisterForm = () => {

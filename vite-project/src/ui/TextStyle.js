@@ -30,3 +30,12 @@ color: #288CE9;
 export const Titleh2 = styled.h2`
 color: #33fff3;
 `
+
+export const Texto = styled.div`
+font-family: 'Avenir Next';
+font-style: normal;
+font-weight: 700;
+font-size: 10.8426px;
+line-height: 15px;
+color: white;
+`

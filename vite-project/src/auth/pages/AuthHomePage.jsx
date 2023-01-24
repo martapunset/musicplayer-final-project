@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalGridStyles } from "../../ui/globalGridStyles";
 import { AuthContext } from "../authContext/AuthContext";
-import { ButtonShort, ContainerLogin, LinkStyled, P } from "../../ui";
+import { ButtonShort, ContainerLogin, P } from "../../ui";
 import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Header, IconBack, Textsmall, Spam, Column, Footer, Main } from "../../ui";

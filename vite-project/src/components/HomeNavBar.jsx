@@ -30,13 +30,8 @@ const WrapperNav = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  ${'' /* position: fixed; */}
-
-  ${'' /* z-index:3; */}
-  
   bottom: 0 vh;
   background: #18191e;
-
   
   .container {
     padding: 0;

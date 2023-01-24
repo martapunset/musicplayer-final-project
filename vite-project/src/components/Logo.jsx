@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/img/SpotifyVector.png";
-import { Button } from "../ui";
 import { LogoStyle } from "../ui/Logo.style";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
