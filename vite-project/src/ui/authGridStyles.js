@@ -10,7 +10,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #171A4A;
+  background: rgb(23,26,74);
+  background: linear-gradient(0deg, rgba(23,26,74,1) 10%, rgba(2,10,28,1) 89%);
 }
 
 code {
@@ -30,4 +31,6 @@ code {
                     "main main main"
                     "main main main"
                     "footer footer footer";                 
+  width: 100%;
+  height: 100vh;
 }`

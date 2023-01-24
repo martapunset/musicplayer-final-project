@@ -87,13 +87,7 @@ export const HomePage = () => {
 
       <div className="home">
 
-        <WelcomeCard>
-          <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
-          <Link to="/profile">
-            {" "}
-            <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-          </Link>
-        </WelcomeCard>
+
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">

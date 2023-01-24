@@ -34,20 +34,21 @@ code {
                     "footer footer footer";                 
 }
   
-${'' /* .container {
-grid-template-areas: "header sidebar sidebar sidebar"
+.container {
+grid-template-areas: "header header header header"
                     "main main main main"
-                    "main main main main"
+                    
                     "footer footer footer footer"
-} */}
+                    "sidebar sidebar sidebar sidebar"
+}
 
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
-grid-template-areas:    "header sidebar sidebar sidebar"
-                        "main main main main"
+grid-template-areas:    "header header header Z"
                         "main main main main"
                         "footer footer footer footer"
+                        "sidebar sidebar sidebar"
 }    
 }
 

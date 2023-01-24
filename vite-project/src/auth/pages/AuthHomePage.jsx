@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { GlobalGridStyles } from "../../ui/globalGridStyles";
+import { GlobalGridStyles, AuthGridStyles } from "../../ui/";
 import { AuthContext } from "../authContext/AuthContext";
 import { ButtonShort, ContainerLogin, P } from "../../ui";
 import { Navigate } from "react-router-dom";
@@ -28,7 +28,7 @@ export const AuthHomePage = () => {
   return (
     <>
       { /*isLogged && <Navigate to="/home" replace={true} />*/}
-      <GlobalGridStyles />
+      <AuthGridStyles />
 
       <ContainerLogin className="containerLogin">
         <Header className="header">
