@@ -1,7 +1,7 @@
 //demsa pantallas
 
 import { createGlobalStyle } from "styled-components";
-
+import homeBackground from "../assets/img/homeBackground.jpeg";
 export const GlobalGridStyles = createGlobalStyle`
 
 body {
@@ -11,7 +11,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #171A4A;
+  background: rgb(23,26,74);
+  background: linear-gradient(0deg, rgba(23,26,74,1) 10%, rgba(2,10,28,1) 89%);
 }
 
 code {
@@ -20,15 +21,25 @@ code {
 }
 
 /*Grid Area First Mobile*/
-
 /*min 640px*/
-.container {
+
+.containerLogin {
+  background-image: url(${homeBackground});
+  background-repeat: no-repeat; 
+  background-size: cover;
+  grid-template-areas: 
+                    "header header header"
+                    "main main main"
+                    "main main main"
+                    "footer footer footer";                 
+}
   
+${'' /* .container {
 grid-template-areas: "header sidebar sidebar sidebar"
                     "main main main main"
                     "main main main main"
                     "footer footer footer footer"
-}
+} */}
 
 /*min 768px*/
 @media screen and (min-width: 768px){
@@ -46,7 +57,7 @@ grid-template-areas:    "header sidebar sidebar sidebar"
 grid-template-areas:    "sidebar header header header"
                         "sidebar main main main"
                         "sidebar main main main"
-                        "sidebar footer footer footer"
+                        "footer footer footer footer"
 }
 }
 
@@ -57,7 +68,7 @@ grid-template-areas:    "sidebar header header header"
                         "sidebar header header header"
                         "sidebar main main main"
                         "sidebar main main main"
-                        "sidebar footer footer footer"
+                        "footer footer footer footer"
   }
 }
 

@@ -32,6 +32,7 @@ overflow-y: scroll;
 `
 
 export const Sidebar = styled.aside`
+width: 100%;
 grid-area: sidebar;
 display: flex;
 align-items: center;

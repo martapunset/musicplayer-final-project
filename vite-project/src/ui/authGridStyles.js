@@ -27,7 +27,7 @@ code {
   grid-template-areas: 
                     "header header header"
                     "main main main"
-                    "widget-1 widget-1 widget-1"
-                    "widget-2 widget-2 widget-2"
+                    "main main main"
+                    "main main main"
                     "footer footer footer";                 
 }`
