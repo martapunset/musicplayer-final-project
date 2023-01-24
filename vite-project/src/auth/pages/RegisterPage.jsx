@@ -1,6 +1,6 @@
 import React from "react";
 import { RegisterForm } from "../../components/RegisterForm";
-import { AuthGridStyles, GridRegisterLogin } from "../../ui";
+import { AuthGridStyles } from "../../ui";
 import {
   Form,
   InputSmall,

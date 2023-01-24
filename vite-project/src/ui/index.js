@@ -1,5 +1,4 @@
 export * from "./Form"
-export * from "./Gridstyle"
 export * from "./Img"
 export * from "./TextStyle"
 export * from "./globalGridStyles"

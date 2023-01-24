@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { HomeNavBar } from "../components/HomeNavBar";
 import { Button } from "../ui";
-import { GridRegisterLogin } from "../ui/Gridstyle";
 import { ProfileImage } from "../ui/ProfileImage.style";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
