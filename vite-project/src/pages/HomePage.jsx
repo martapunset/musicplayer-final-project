@@ -73,6 +73,7 @@ export const HomePage = () => {
       console.log(error)
     }
   }
+  
   return (
     <>
     
@@ -101,14 +102,15 @@ export const HomePage = () => {
             {albumData?.map((album) => {
             
               return (
-                <>
+                
                   <motion.div className="item" key={album.id}>
                     <img src={album.imageUrl} alt={album.name} />
                     <p>{album.name}</p>
                   </motion.div>
-                </>
+                
               );
             })}
+
           </motion.div>
         </motion.div>
 
@@ -139,7 +141,7 @@ export const HomePage = () => {
           >
             {artistData?.map((artists) => {
               return (
-                <>
+                
                   <motion.div className="item" key={artists.id}>
                     <img
                       className="artistsProfile"
@@ -148,7 +150,7 @@ export const HomePage = () => {
                     />
                     <p>{artists.name}</p>
                   </motion.div>
-                </>
+                
               );
             })}
           </motion.div>

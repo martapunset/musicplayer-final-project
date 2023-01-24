@@ -1,6 +1,6 @@
-export const getPlaylists = async () => {
+export const getPlaylists = async (id) => {
   try {
-    const url = "http://localhost:4000/playlists";
+    const url = `http://localhost:4000/playlists/${id}`;
 
     const resp = await fetch(url);
     const apiData = await resp.json();
@@ -9,3 +9,6 @@ export const getPlaylists = async () => {
     console.log("Algo fallo en la api");
   }
 };
+
+//button inside slider
+//button onclick(getPlaytlist(item.id))
