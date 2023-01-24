@@ -1,5 +1,5 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { Column, GlobalGridStyles, InputSmall } from "../ui";
+import { Column, InputSmall } from "../ui";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
@@ -17,8 +17,6 @@ export const EditProfile = () => {
 
   return (
     <>
-    {/* <GlobalGridStyles/> */}
-    <p>holaedit profile</p>
       <Form action="" onSubmit={handleSubmit()}>
         <Column>
           <InputSmall

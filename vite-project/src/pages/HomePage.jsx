@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProfileImage } from "../ui/";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import Logo from "../components/Logo";
 import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -87,9 +86,6 @@ export const HomePage = () => {
 
 
       <div className="home">
-
-
-        <Logo />
 
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>

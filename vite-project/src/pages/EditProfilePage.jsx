@@ -11,30 +11,14 @@ import { EditProfile } from "../components";
 export const EditProfilePage = () => {
   return (
     <>
-      <AuthGridStyles />
-      <Container className="contenedor">
-        <Header className="header">
-          <Link to="/">
-            <IconBack>
-              <MdArrowBackIos />
-            </IconBack>
-          </Link>
-          <center>
-            <LogoProfile>
-              <img src={logoHarmony} alt="Logo" />
-            </LogoProfile>
-          </center>
-        </Header>
         <Main className="">
           <Column>
             <UserProfile>
               <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
             </UserProfile>
-
             <EditProfile />
           </Column>
         </Main>
-      </Container>
     </>
   );
 };
