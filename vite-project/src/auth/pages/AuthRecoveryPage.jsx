@@ -4,8 +4,6 @@ import {
   Input,
   Textsmall,
   Title,
-  Main,
-  Sidebar,
   Header,
   Button,
   Widget,

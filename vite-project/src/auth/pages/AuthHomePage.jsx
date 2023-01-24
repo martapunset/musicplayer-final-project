@@ -1,11 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import homeBackground from "../../assets/img/homeBackground.jpeg";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import fondo from "../../assets/img/ejemplo1.jpg";
-import cara from "../../assets/img/ejemplo2.jpg";
-import { AuthProvider } from "../authContext/AuthProvider";
-//import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
 import { AuthGridStyles } from "../../ui/authGridStyles";
 import { AuthContext } from "../authContext/AuthContext";
 import { ButtonShort, ContainerLogin, LinkStyled, P } from "../../ui";
@@ -13,16 +8,11 @@ import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import {
   Header,
-  Sidebar,
-  Container,
   Widget,
   IconBack,
-  Title,
   Textsmall,
   Spam,
   Column,
-  Input,
-  Button,
   Footer,
   Main,
 } from "../../ui";

@@ -5,7 +5,6 @@ import {
   Textsmall,
   Title,
   Container,
-  Sidebar,
   Header,
   Button,
   Widget,
