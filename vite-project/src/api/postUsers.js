@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
 
-
+/*
 export const postUsers = async (userData) => {
 
     try {
@@ -19,6 +19,7 @@ export const postUsers = async (userData) => {
         console.log('can not create user');
     }
 }
+*/
 
 
 
@@ -51,7 +52,7 @@ export const getUsers = async () => {
 
 
 export const checkUserByEmail = async (userData) => {
-   // const {getAccessTokenSilently} = useAuth0()
+   
 console.log("entering checkemail function")
     const url = 'http://localhost:4000/user/exists';
 

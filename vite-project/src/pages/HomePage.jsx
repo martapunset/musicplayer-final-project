@@ -1,7 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { HomeNavBar } from "../components/HomeNavBar";
-import { Button } from "../ui";
-import { GridRegisterLogin } from "../ui/Gridstyle";
 import { ProfileImage } from "../ui/ProfileImage.style";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
@@ -11,29 +8,21 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-//import { bottomNavigationActionClasses } from "@mui/material";
-// import { CallApi } from "../api/CallApi";
-import { getAlbums } from "../api/getAlbums";
-import { checkUserByEmail, getUsers } from "../api/postUsers";
+
 
 
 export const HomePage = () => {
 
-
-  //const navigate=useNavigate()
   const { isAuthenticated, user } = useAuth0();
 
   const { login, authState } = useContext(AuthContext); //userDAta for profile
-//  const { isLogged, userData } = authState; //userDAta for profile
- // console.log("userDAta for Toni", userData) //userDAta for profile
-
-
- // const userFromAuth0 = user; //rename
 
   useEffect(() => {
-    login(user);
+    if (isAuthenticated) {
+      login(user);
+    }
+  
  //   checkUserByEmail(user);
   
    
@@ -45,14 +34,6 @@ export const HomePage = () => {
  const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
-  // const fetchData = () => {
-   // const albumApi = "http://localhost:4000/album";
-    // const playlistApi = "http://localhost:4000/playlists";
-    // const artistApi = "http://localhost:4000/artists";
-
-   // const getAlbums = axios.get(albumApi);
-    // const getPlaylists = axios.get(playlistApi);
-    // const getArtists = axios.get(artistApi);
 
   const getdata = async() => {
        
@@ -68,8 +49,6 @@ export const HomePage = () => {
  
   
     }, []);
-  //console.log(albumData)
-  //console.log(getUsers())
 
 
 //petición al back
