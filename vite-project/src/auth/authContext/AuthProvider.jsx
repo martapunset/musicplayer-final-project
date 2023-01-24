@@ -22,6 +22,8 @@ export const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(AuthReducer, {}, init); //init
 
   /*-------------------login------------*/
+
+
   const login = (user) => {
    
 
@@ -32,6 +34,7 @@ export const AuthProvider = ({ children }) => {
       lastName: user.family_name || "default_lastname",
       userName: user.nickName,
       email: user.email,
+      picture: user.picture
      // picture: user.picture,
       //following: [],
 
@@ -41,7 +44,8 @@ export const AuthProvider = ({ children }) => {
 
     if (userData) {
       console.log("calling login function", userData);
-      const userDB=checkUserByEmail(userData)
+      const userDB = checkUserByEmail(userData)
+      console.log(userDB)
       
       localStorage.setItem("user", JSON.stringify(userDB));
 
@@ -52,7 +56,7 @@ export const AuthProvider = ({ children }) => {
 
       dispatch({
         type: types.login,
-        payload: userData,
+        payload: userDB,
       });
     }
   };

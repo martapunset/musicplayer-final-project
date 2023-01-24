@@ -31,8 +31,7 @@ export const ProfilePage = () => {
   const { login, authState } = useContext(AuthContext); //userDAta for profile
   const { isLogged, userData } = authState; //userDAta for profile
   console.log("userDAta for Toni", userData) //userDAta for profile
- console.log(userData.given_name)
-
+ 
 
 
   return (
@@ -63,8 +62,8 @@ export const ProfilePage = () => {
                 </Link>
               </BtnEdit>
 
-            <InputProfile placeholder={userData.given_name + " " + userData.family_name}/>
-            <InputProfile  placeholder={userData.email}/>
+            <InputProfile placeholder={userData?.firstName + " " + userData?.lastName}/>
+            <InputProfile  placeholder={userData?.email}/>
             <LogoutButton />
             </UserProfile>
 
