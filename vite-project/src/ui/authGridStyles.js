@@ -1,3 +1,4 @@
+//pagina inicio
 import { createGlobalStyle } from "styled-components";
 import homeBackground from "../assets/img/homeBackground.jpeg";
 export const AuthGridStyles = createGlobalStyle`

@@ -1,3 +1,5 @@
+//demsa pantallas
+
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalGridStyles = createGlobalStyle`
@@ -10,7 +12,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #171A4A;
- 
 }
 
 code {
@@ -25,24 +26,17 @@ code {
   
 grid-template-areas: "header header header header"
                     "main main main main"
-                    
-                 
                     "footer footer footer footer"
                     "sidebar sidebar sidebar sidebar"
-;
 }
-
 
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
 grid-template-areas:    "header header header header"
                         "main main main main"
-                        
-                   
                         "footer footer footer footer"
                         "sidebar sidebar sidebar sidebar"
-;
 }    
 }
 
@@ -51,24 +45,21 @@ grid-template-areas:    "header header header header"
 .container{
 grid-template-areas:    "sidebar header header header"
                         "sidebar main main main"
-                      
-                     "sidebar main main main"
-                        "footer footer footer footer"
+                        "sidebar main main main"
+                        "sidebar footer footer footer"
 }
-
 }
 
 /*min 1280px*/
 @media screen and (min-width: 1280px){
   .container{
-    grid-template-areas:    "sidebar header header header"
+    grid-template-areas:    
+                        "sidebar header header header"
                         "sidebar main main main"
-                      
-                     "sidebar main main main"
-                        "footer footer footer footer"
+                        "sidebar main main main"
+                        "sidebar footer footer footer"
   }
 }
 
 /*min 1536px*/
-
 `;
