@@ -39,7 +39,6 @@ const WrapperNav = styled.div`
 
   
   .container {
-   
     padding: 0;
     margin-top: 3px;
     font-size: 45px;
