@@ -28,10 +28,10 @@ code {
   background-repeat: no-repeat; 
   background-size: cover;
   grid-template-areas: 
-                    "header header header"
-                    "main main main"
-                    "main main main"
-                    "footer footer footer";                 
+                    "header header header header"
+                    "main main main main"
+                    "main main main main"
+                    "footer footer footer footer";                 
 }
   
 .container {
@@ -44,10 +44,10 @@ grid-template-areas: "header header header header"
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
-grid-template-areas:    "header header header Z"
+grid-template-areas:    "header header header header"
                         "main main main main"
                         "footer footer footer footer"
-                        "sidebar sidebar sidebar"
+                        "sidebar sidebar sidebar sidebar"
 }    
 }
 
