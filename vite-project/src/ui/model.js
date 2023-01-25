@@ -4,16 +4,16 @@ export const Container = styled.div`
 width: 100%;
 display: grid;
 ${'' /* grid-gap: 20px; */}
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: repeat(4, auto);
+${'' /* grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, auto); */}
 height: 100vh;
 `
 export const ContainerLogin = styled.div`
 width: 80%;
 display: grid;
 grid-gap: 20px;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(4, auto);
+${'' /* grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, auto); */}
 `
 
 export const Header = styled.header`
