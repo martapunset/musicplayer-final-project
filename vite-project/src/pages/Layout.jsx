@@ -26,7 +26,7 @@ export const Layout = () => {
             </LogoProfile>
 
             <WelcomeCard>
-              <WelcomeTitle>{`Welcome ${user.firstName}`}</WelcomeTitle>
+              <WelcomeTitle>{`Welcome ${user?.firstName}`}</WelcomeTitle>
               <Link to="/profile">
                 {" "}
                 <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
