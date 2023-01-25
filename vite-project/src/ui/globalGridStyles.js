@@ -24,7 +24,7 @@ code {
 /*Grid Area First Mobile*/
 /*min 640px*/
 
-.containerLogin {
+${'' /* .containerLogin {
   background-image: url(${homeBackground});
   background-repeat: no-repeat; 
   background-size: cover;
@@ -33,7 +33,7 @@ code {
                     "main main main main main"
                     "main main main main main"
                     "footer footer footer footer footer";                 
-}
+} */}
   
 .container {
 grid-template-areas: "header header header header header"
