@@ -19,8 +19,8 @@ export const HomePage = () => {
     login(userFromAuth0);
 
   }, [userFromAuth0]);
+  
 
-  console.log("isauthenticatedHomePAge", isAuthenticated)
 
   const [albumData, setAlbumData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
