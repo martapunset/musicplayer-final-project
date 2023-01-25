@@ -45,14 +45,14 @@ const WrapperNav = styled.div`
   }
   .container li a {
     font-size: 3vh;
-    color: #33fff3; 
+    color: white; 
     
   }
 
-  .active {
-    border-top: 7px solid #33fff3;
+  .container .active {
+    border-top: 7px solid white;
     border-radius: 5px;
-    color: red;
+    color: yellow;
   }
   @media screen and (min-width: 768px){
     list-style: none;
@@ -75,10 +75,10 @@ const WrapperNav = styled.div`
       cursor: pointer;
     }
     .navbar li a {
-      color: #33fff3;
+      color: white;
     }
     .active {
-      border-top: 7px solid #33fff3;
+      border-top: 7px solid white;
       border-radius: 5px;
     }
   }
