@@ -37,7 +37,6 @@ code {
 .container {
 grid-template-areas: "header header header header"
                     "main main main main"
-                    
                     "footer footer footer footer"
                     "sidebar sidebar sidebar sidebar"
 }
