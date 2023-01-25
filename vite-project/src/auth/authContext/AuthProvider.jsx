@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
         });
     
      
-       localStorage.setItem("user", JSON.stringify(userDB));
+       //localStorage.setItem("user", JSON.stringify(userDB));
 
       }
       callAsync()

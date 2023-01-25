@@ -22,8 +22,8 @@ export const navBarData = [
     text: "Songs you like",
   },
   {
-    title: "Liked",
-    path: "/",
+    title: "Library",
+    path: "/library",
     icon: <BiLibrary />,
     text: "Library" ,
   },
