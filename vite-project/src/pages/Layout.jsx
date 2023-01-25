@@ -19,13 +19,13 @@ export const Layout = () => {
             <img src={logoHarmony} alt="Logo" width={'70px'}/>
           </LogoProfile>
           
-          <Titleh2><WelcomeCard>
+          <WelcomeCard>
             <WelcomeTitle>hola</WelcomeTitle>
             <Link to="/profile">
               {" "}
               <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
             </Link>
-          </WelcomeCard></Titleh2>
+          </WelcomeCard>
           </FlexSpace>
         </Header>
      

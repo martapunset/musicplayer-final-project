@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 width: 100%;
 display: grid;
-grid-gap: 20px;
+${'' /* grid-gap: 20px; */}
 grid-template-columns: repeat(4, 1fr);
 grid-template-rows: repeat(4, auto);
 height: 100vh;
@@ -30,10 +30,11 @@ grid-area: main;
 
 export const Sidebar = styled.aside`
 width: 100%;
+height: 100%;
 grid-area: sidebar;
 display: flex;
-align-items: center;
-justify-content: center;
+${'' /* align-items: center;
+justify-content: center; */}
 `
 
 export const Widget = styled.div`
@@ -45,7 +46,6 @@ justify-content: center;
 `
 
 export const Footer = styled.footer`
-padding: 1%;
 grid-area: footer;
 `
 
