@@ -85,6 +85,9 @@ export const SearchPage = () => {
               </Fragment>
             ))}
           </div>
+
+
+          
           <div className={searchpage.playlists_container}>
             <Playlists playlists={playlists} />
           </div>
