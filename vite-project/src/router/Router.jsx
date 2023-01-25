@@ -4,7 +4,6 @@ import { AuthHomePage } from "../auth/pages/index.js";
 import {
   ProfilePage,
   SearchPage,
-  WishPage,
   HomePage,
   LikedPlayList,
 } from "../pages";
@@ -36,9 +35,7 @@ const Router = () => {
             />
             <Route
               path="/editProfile"
-              element={
-
-                <EditProfilePage />
+              element={<EditProfilePage />
 
               }
             />
@@ -48,11 +45,8 @@ const Router = () => {
               path="/search"
               element={<SearchPage />}
 
-
-
-
             />
-            <Route path="/wish" element={<WishPage />} />
+           
             <Route path="/liked" element={<LikedPlayList />} />
           </Route>
         </Routes>

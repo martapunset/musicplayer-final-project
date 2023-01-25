@@ -19,7 +19,7 @@ export const EditProfile = () => {
   const { editId } = useParams();
   //   console.log(editId);
   const { logout, authState } = useContext(AuthContext);
-  const { isLogged, user } = authState;
+  const { isLogged, userData } = authState;
   const {
     register,
     handleSubmit,
@@ -32,22 +32,22 @@ export const EditProfile = () => {
         <Column>
           <InputSmall
             type="text"
-            placeholder={user?.username}
+            placeholder={userData?.username}
             {...register("username")}
           />
           <InputSmall
             type="text"
-            placeholder={user?.first_name}
+            placeholder={userData?.firstName}
             {...register("name")}
           />
           <InputSmall
             type="text"
-            placeholder={user?.last_name}
+            placeholder={userData?.lastName}
             {...register("last_name")}
           />
           <InputSmall
             type="email"
-            placeholder={user?.email}
+            placeholder={userData?.email}
             {...register("email")}
           />
           <InputSmall
