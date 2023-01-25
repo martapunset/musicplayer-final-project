@@ -18,7 +18,7 @@ export const LogoutButton = () => {
 
 
   return (
-    <button onClick={()=>logoutWrapper()}>Logout</button >
+    <ButtonShort onClick={()=>logoutWrapper()}>Logout</ButtonShort>
   )
 }
 

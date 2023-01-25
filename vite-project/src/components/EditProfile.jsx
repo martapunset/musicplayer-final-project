@@ -2,22 +2,11 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { Column, InputSmall } from "../ui";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
-//import { GlobalGridStyles } from "../styles/GlobalGridStyless";
 import { AuthContext } from "../auth/authContext/AuthContext";
-
-import {
-  Form,
-  Input,
-  Button,
-  UserProfile,
-  UserImg,
-  BtnEdit,
-  Texto,
-} from "../ui";
+import { Form, Button } from "../ui";
 
 export const EditProfile = () => {
   const { editId } = useParams();
-  //   console.log(editId);
   const { logout, authState } = useContext(AuthContext);
   const { isLogged, userData } = authState;
   const {
@@ -55,7 +44,6 @@ export const EditProfile = () => {
             placeholder="New Password"
             {...register("address")}
           />
-
           <Button type="submit">Save</Button>
         </Column>
       </Form>
