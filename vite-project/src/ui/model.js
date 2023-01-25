@@ -25,7 +25,8 @@ grid-area: header;
 
 export const Main = styled.main`
 grid-area: main;
-// overflow-y: scroll;
+overflow-x: hidden;
+    overfloy-y: scroll;
 `
 
 export const Sidebar = styled.aside`
@@ -48,9 +49,6 @@ justify-content: center;
 export const Footer = styled.footer`
 grid-area: footer;
 bottom: 0;
-
-
-
 `
 
 export const Column = styled.div`
@@ -119,16 +117,10 @@ border-radius: 40.6599px
 
 export const LogoProfile = styled.div`
 padding: 20px;
-
-
-
-
 `
 
 
 export const FlexSpace = styled.div`
 display: flex;
 justify-content: space-between;
-
-
 `
