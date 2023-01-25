@@ -4,6 +4,7 @@ import { checkUserByEmail } from "../../api/postUsers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Sync } from "@mui/icons-material";
 
 //import { Navigate } from "react-router-dom";
 export const AuthProvider = ({ children }) => {
@@ -35,31 +36,42 @@ export const AuthProvider = ({ children }) => {
 
 
   const login = (user) => {
+  
+
 
     const userData = {  //----------->need to mode to backend
       firstName: user.given_name || "default_name",
       lastName: user.family_name || "default_lastname",
-      userName: user.nickName,
+      userName: user.nickName || "DEFAULT NICKname",
       email: user.email,
       picture: user.picture
-   }
-           console.log(userData, "standard object copy");
+    }
+    console.log(userData, "standard object copy");
 
 
     if (userData) {
       console.log("calling login function", userData);
-      const userDB = checkUserByEmail(userData)
-      console.log(userDB)
-      
-      localStorage.setItem("user", JSON.stringify(userDB));
 
-      dispatch({
-        type: types.login,
-        payload: userDB,
-      });
-    }
-  };
+   
+  
+  
+      const callAsync = async () => {
+          
+        const userDB = await checkUserByEmail(userData)
+       // console.log(userData, userDB, "async function frontpage")
+        
+        dispatch({
+          type: types.login,
+          payload: userDB,
+        });
+    
+     
+        // localStorage.setItem("user", JSON.stringify(userDB));
 
+      }
+      callAsync()
+    };
+  }
 
 
 
