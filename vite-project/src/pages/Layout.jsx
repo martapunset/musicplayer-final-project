@@ -8,8 +8,12 @@ import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles"
 import { Link } from "react-router-dom";
 import "./prueba.css"
 import { ProfileImage } from "../ui"
-export const Layout = () => {
+import { AuthContext } from "../auth/authContext/AuthContext";
+import { useContext } from "react";
 
+export const Layout = () => {
+  const { login, authState } = useContext(AuthContext);
+  const { isLogged, user } = authState;
   return (
     <>
       <GlobalGridStyles />
@@ -22,7 +26,7 @@ export const Layout = () => {
             </LogoProfile>
 
             <WelcomeCard>
-              <WelcomeTitle>hola</WelcomeTitle>
+              <WelcomeTitle>{`Welcome ${user.firstName}`}</WelcomeTitle>
               <Link to="/profile">
                 {" "}
                 <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
