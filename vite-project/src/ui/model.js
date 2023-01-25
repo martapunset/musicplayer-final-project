@@ -4,28 +4,30 @@ export const Container = styled.div`
 width: 100%;
 display: grid;
 ${'' /* grid-gap: 20px; */}
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(5, 1fr);
 grid-template-rows: repeat(4, auto);
 height: 100vh;
+word-wrap: break-word;
+
 `
 export const ContainerLogin = styled.div`
 width: 80%;
 display: grid;
 grid-gap: 20px;
 grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(4, auto);
+grid-template-rows: repeat(3, auto);
 `
 
 export const Header = styled.header`
 grid-area: header;
-& > h1 {
-    margin-left: 2%;
-}
+
+justify-content: end;
 `
 
 export const Main = styled.main`
 grid-area: main;
-// overflow-y: scroll;
+overflow-x: hidden;
+    overfloy-y: scroll;
 `
 
 export const Sidebar = styled.aside`
@@ -47,6 +49,7 @@ justify-content: center;
 
 export const Footer = styled.footer`
 grid-area: footer;
+bottom: 0;
 `
 
 export const Column = styled.div`
@@ -63,7 +66,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 export const FooterIcon = styled.div`
 display: flex;
-justify-content: space-between
+justify-content: tween
 `
 
 export const H1 = styled.h1`
@@ -115,13 +118,9 @@ border-radius: 40.6599px
 
 export const LogoProfile = styled.div`
 padding: 20px;
-
 `
-
 
 export const FlexSpace = styled.div`
 display: flex;
 justify-content: space-between;
-
-
 `

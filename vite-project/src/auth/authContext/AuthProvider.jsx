@@ -4,12 +4,10 @@ import { checkUserByEmail } from "../../api/postUsers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Sync } from "@mui/icons-material";
+//import { Sync } from "@mui/icons-material";
 
 //import { Navigate } from "react-router-dom";
 export const AuthProvider = ({ children }) => {
-
-
 
   const initArgs = {
     isLogged: false,
@@ -23,17 +21,9 @@ export const AuthProvider = ({ children }) => {
     };
   };
 
-
-
   const [authState, dispatch] = useReducer(AuthReducer, {}, init); //init
-  
-
-
-
-
 
   /*-------------------login------------*/
-
 
   const login = (user) => {
   
@@ -48,13 +38,9 @@ export const AuthProvider = ({ children }) => {
     }
     console.log(userData, "standard object copy");
 
-
     if (userData) {
       console.log("calling login function", userData);
 
-   
-  
-  
       const callAsync = async () => {
           
         const userDB = await checkUserByEmail(userData)
@@ -66,7 +52,7 @@ export const AuthProvider = ({ children }) => {
         });
     
      
-        // localStorage.setItem("user", JSON.stringify(userDB));
+       localStorage.setItem("user", JSON.stringify(userDB));
 
       }
       callAsync()
@@ -77,16 +63,11 @@ export const AuthProvider = ({ children }) => {
 
   const logoutReducer = () => {
     localStorage.removeItem("user");
-  
+
     dispatch({
       type: types.logout, //logout reducer
     });
   };
-
-
-
-
-
   return (
     <AuthContext.Provider
       value={{
