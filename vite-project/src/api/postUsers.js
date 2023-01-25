@@ -75,17 +75,10 @@ export const checkUserByEmail = async (userData) => {
        const data = await res.json();
         //const { user } = data;
         console.log(data) ///checked is working
+        return data.data
 
 
-        console.log(user, "user front final")
-        if (res.status === 200 || res.status === 201) {
-            return res.data;
-        }
-        else if (res.status === 500) {   //need to create user in DB
-            console.log("need to create user in DB")
-            return res.data
-            
-        }
+       
     }
 
     catch (error) {

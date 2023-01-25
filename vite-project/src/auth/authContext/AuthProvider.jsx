@@ -13,11 +13,11 @@ export const AuthProvider = ({ children }) => {
     isLogged: false,
   };
   const init = () => {
-    const userData = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("user"));
 
     return {
-      isLogged: !!userData,
-      userData,
+      isLogged: !!user,
+      user,
     };
   };
 
@@ -44,15 +44,15 @@ export const AuthProvider = ({ children }) => {
       const callAsync = async () => {
           
         const userDB = await checkUserByEmail(userData)
-       // console.log(userData, userDB, "async function frontpage")
-        
+       console.log( userDB, "async function frontpage")
+             
+      localStorage.setItem("user", JSON.stringify(userDB));
         dispatch({
           type: types.login,
-          payload: userDB,
+          payload: user,
         });
     
-     
-       //localStorage.setItem("user", JSON.stringify(userDB));
+
 
       }
       callAsync()
