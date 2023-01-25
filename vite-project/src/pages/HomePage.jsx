@@ -1,67 +1,99 @@
 import React, { useContext, useEffect, useState } from "react";
-import { HomeNavBar } from "../components/HomeNavBar";
-import { Button } from "../ui";
-import { GridRegisterLogin } from "../ui/Gridstyle";
-import { ProfileImage } from "../ui/ProfileImage.style";
+import { ProfileImage } from "../ui/";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import Logo from "../components/Logo";
 import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
-
-
-import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
-
+import { useAuth0 } from "@auth0/auth0-react";
 export const HomePage = () => {
+
+  const { isAuthenticated, user } = useAuth0();
+
   const { login, authState } = useContext(AuthContext);
-  const { isLogged, user } = authState;
-  // const { first_name } = userProfile;
-  console.log(user);
+  const { isLogged } = authState;
+  const userFromAuth0 = user; //rename
+  useEffect(() => {
+    login(userFromAuth0);
+
+  }, [userFromAuth0]);
+
+  console.log("isauthenticatedHomePAge", isAuthenticated)
 
   const [albumData, setAlbumData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
-  const fetchData = () => {
-    const albumApi = "http://localhost:4000/albums";
-    const playlistApi = "http://localhost:4000/playlists";
-    const artistApi = "http://localhost:4000/artists";
+  // const fetchData = () => {
+  // const albumApi = "http://localhost:4000/album";
+  // const playlistApi = "http://localhost:4000/playlists";
+  // const artistApi = "http://localhost:4000/artists";
 
-    const getAlbumss = axios.get(albumApi);
-    const getPlaylists = axios.get(playlistApi);
-    const getArtists = axios.get(artistApi);
+  // const getAlbums = axios.get(albumApi);
+  // const getPlaylists = axios.get(playlistApi);
+  // const getArtists = axios.get(artistApi);
 
-    axios.all([getAlbumss, getPlaylists, getArtists]).then(
-      axios.spread((...allData) => {
-        const allDataAlbums = allData[0].data;
-        const allDataPlaylists = allData[1].data;
-        const allDataArtists = allData[2].data;
+  // axios.all(getAlbums).then(
+  //     axios.spread((...allData) => {
+  //  const allDataAlbums = allData[0].data;
+  //       // const allDataPlaylists = allData[1].data;
+  //       // const allDataArtists = allData[2].data;
 
-        setAlbumData(allDataAlbums);
-        setPlaylistData(allDataPlaylists);
-        setArtistData(allDataArtists[0]);
-      })
-    );
-  };
+  //       setAlbumData(allDataAlbums);
+  //       // setPlaylistData(allDataPlaylists);
+  //       // setArtistData(allDataArtists[0]);
+  //       console.log(allDataAlbums)
+  //     })
+  //   );
+  // };
+
+  const getdata = async() => {
+       
+    const { data } = await axios.get("http://localhost:4000/albums")
+    setAlbumData(data);
+  }
+    
   useEffect(() => {
-    fetchData();
+    // const data = async () => {
+    //   const jsonData = await getAlbums();
+    //   setAlbumData(jsonData);
+    // };
+    // data();
+    getAllAlbums()
+    getAllArtists()
   }, []);
 
+  //petición al back
+  const getAllAlbums = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/album");
+      setAlbumData(response.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
   // console.log(followed);
+
+  const getAllArtists = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/artists")
+      setArtistData(response.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <>
+
+
       <div className="home">
-        <Logo />
-        <WelcomeCard>
-          <WelcomeTitle>{user?.username}</WelcomeTitle>
-          <Link to ="/profile">  <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-          </Link></WelcomeCard>
+
+
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
@@ -70,7 +102,9 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {albumData.map((album) => {
+
+            {albumData?.map((album) => {
+
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -90,10 +124,10 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -780 }}
           >
-            {playlistData.map((album) => {
+            {playlistData?.map((album) => {
               return (
                 <motion.div className="item" key={album.id}>
-                  <img src={album.thumbnail} alt={album.name} />
+                  <img src={imageUrl} alt={album.name} />
                   <p>{album.name}</p>
                 </motion.div>
               );
@@ -108,24 +142,26 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {artistData.map((album) => {
+            {artistData?.map((artists) => {
               return (
                 <>
-                  <motion.div className="item" key={album.id}>
+                  <motion.div className="item" key={artists.id}>
                     <img
                       className="artistsProfile"
-                      src={album.photoUrl}
-                      alt={album.name}
+                      src={artists.photoUrl}
+                      alt={artists.name}
                     />
-                    <p>{album.name}</p>
+                    <p>{artists.name}</p>
                   </motion.div>
                 </>
               );
             })}
           </motion.div>
         </motion.div>
-        
+
+
       </div>
+
     </>
   );
 };

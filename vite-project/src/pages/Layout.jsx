@@ -1,35 +1,41 @@
-/** App.js */
-
-import H5AudioPlayer from "react-h5-audio-player";
-import { Outlet, Link } from "react-router-dom";
-import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayer";
+import { Outlet } from "react-router-dom";
+import AudioPlayer from "../components/Audio/AudioPlayer";
 import { HomeNavBar } from "../components/HomeNavBar";
-import {
-  Sidebar,
-  Container,
-  Main,
-  Header,
-  Footer,
-  GlobalGridStyles,
-} from "../ui";
-
+import { Sidebar, Container, Main, Header, Footer, GlobalGridStyles, Titleh2, LogoProfile } from "../ui";
+import logoHarmony from "../assets/img/logoHarmony.png"
+import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles"
+import { Link } from "react-router-dom";
+import {ProfileImage} from "../ui"
 export const Layout = () => {
+
   return (
     <>
       <GlobalGridStyles />
       <Container className="container">
         <Header className="header">
-          <h2>React Router v6 & Recoil Demo</h2>
+          <LogoProfile>
+            <img src={logoHarmony} alt="Logo" width={'70px'}/>
+          </LogoProfile>
+          <Titleh2><WelcomeCard>
+            <WelcomeTitle>hola</WelcomeTitle>
+            <Link to="/profile">
+              {" "}
+              <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+            </Link>
+          </WelcomeCard></Titleh2>
         </Header>
+
         <Main className="main">
           <Outlet className="main" />
         </Main>
         <Footer className="footer">
-          <AudioPlayerCool />
+
+          <AudioPlayer />
         </Footer>
         <Sidebar>
           {" "}
           <HomeNavBar className="sidebar" />
+
         </Sidebar>
       </Container>
     </>

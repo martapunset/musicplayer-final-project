@@ -1,43 +1,57 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LoginPage, RegisterPage, AuthHomePage } from "../auth/pages/index.js";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { AuthHomePage } from "../auth/pages/index.js";
 import {
   ProfilePage,
   SearchPage,
-  WishPage,
   HomePage,
   LikedPlayList,
 } from "../pages";
-
 import { EditProfilePage } from "../pages/EditProfilePage.jsx";
 import { AuthProvider } from "../auth/authContext/AuthProvider";
-
-import { EditProfile } from "../components";
-import { AuthRecoveryPage } from "../auth/pages/AuthRecoveryPage.jsx";
 import { Layout } from "../pages/Layout.jsx";
 
+
+
 const Router = () => {
+  const { isAuthenticated } = useAuth0();
+  console.log("islogged?Router: ", isAuthenticated);
+
+
   return (
     <>
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route path="/" element={<AuthHomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/recovery" element={<AuthRecoveryPage />} />
-            <Route element={<Layout />}>
-              <Route path="/home" element={<HomePage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/editProfile" element={<EditProfilePage />} />
-              {/* <Route path="/profile/:editId" element={<EditProfile />} /> */}
 
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/wish" element={<WishPage />} />
-              <Route path="/liked" element={<LikedPlayList />} />
-            </Route>
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route index path="/auth" element={isAuthenticated ? <Navigate to="/" /> : <AuthHomePage />} />
+
+          <Route element={<Layout />}>
+            <Route path="/" element={isAuthenticated ? <HomePage /> : <Navigate to="/auth" />} />
+            <Route
+              path="/profile"
+              element={isAuthenticated ? <ProfilePage /> : <Navigate to="/auth" />
+
+              }
+            />
+            <Route
+              path="/editProfile"
+              element={<EditProfilePage />
+
+              }
+            />
+          
+
+            <Route
+              path="/search"
+              element={<SearchPage />}
+
+            />
+           
+            <Route path="/liked" element={<LikedPlayList />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
+
     </>
   );
 };

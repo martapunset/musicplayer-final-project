@@ -1,4 +1,4 @@
-export * from "./EditProfile";
-export * from "./RegisterForm";
+
+export * from "./EditProfile"
 export * from "./HomeNavBar";
 

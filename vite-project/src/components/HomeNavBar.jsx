@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { navBarData } from "../utils/navBarData";
-
 import styled from "styled-components";
-//import { GlobalGridStyles } from "../styles/GlobalGridStyless";
 
 export const HomeNavBar = () => {
   
@@ -32,34 +30,27 @@ const WrapperNav = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  position: fixed;
-  bottom: 0;
-
-  z-index:3;
-  
   bottom: 0 vh;
-  background-color: #171A4A;
+  background: #18191e;
+  
   .container {
-   
     padding: 0;
     margin-top: 3px;
     font-size: 45px;
     cursor: pointer;
   }
   .container li a {
-    color: #9bfab0;
+    color: #33fff3; 
+    ${'' /* #dfff33 */}
   }
   .active {
-    border-top: 7px solid #9bfab0;
+    border-top: 7px solid #33fff3;
     border-radius: 5px;
   }
 
   @media only screen and (min-width: 1024px) {
     list-style: none;
-    //position: fixed;
-    //top: 10px;
-   // left: 0;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -71,10 +62,10 @@ const WrapperNav = styled.div`
       cursor: pointer;
     }
     .navbar li a {
-      color: #9bfab0;
+      color: #33fff3;
     }
     .active {
-      border-top: 7px solid #9bfab0;
+      border-top: 7px solid #33fff3;
       border-radius: 5px;
     }
   }

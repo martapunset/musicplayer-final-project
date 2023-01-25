@@ -1,55 +1,46 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import homeBackground from "../../assets/img/homeBackground.jpeg";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import fondo from "../../assets/img/ejemplo1.jpg";
-import cara from "../../assets/img/ejemplo2.jpg";
-import { AuthProvider } from "../authContext/AuthProvider";
-//import { Button, Column, Container, Header, Sidebar, Widget } from "../../ui"
-import { AuthGridStyles } from "../../ui/authGridStyles";
+import { GlobalGridStyles, AuthGridStyles } from "../../ui/";
 import { AuthContext } from "../authContext/AuthContext";
-import { ButtonShort, ContainerLogin, LinkStyled, P } from "../../ui";
+import { ButtonShort, ContainerLogin, P } from "../../ui";
 import { Navigate } from "react-router-dom";
-import {
-  Header,
-  Sidebar,
-  Container,
-  Widget,
-  IconBack,
-  Title,
-  Textsmall,
-  Spam,
-  Column,
-  Input,
-  Button,
-  Footer,
-  Main,
-} from "../../ui";
-
+import { useEffect } from "react";
+import { Header, IconBack, Textsmall, Spam, Column, Footer, Main } from "../../ui";
+import { LoginButton } from "../../components/Login/LoginButton";
+import { LogoutButton } from "../../components/Login/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 export const AuthHomePage = () => {
+
+  const navigate = useNavigate()
   const { authState } = useContext(AuthContext);
+  const { user } = authState;
   const { isLogged } = authState;
+  const { isAuthenticated } = useAuth0()
+
+  /*
+    useEffect(() => {
+      
+      isAuthenticated ? navigate("/") : console.log("itsNOTlogged")
+        , []
+    });
+  */
   return (
     <>
-      {isLogged && <Navigate to="/home" replace={true} />}
+      { /*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
 
       <ContainerLogin className="containerLogin">
         <Header className="header">
-          <IconBack>back</IconBack> {/* LINK en back */}
+          <IconBack></IconBack> {/* LINK en back */}
         </Header>
-        <Main className="main"></Main>
-        <Widget className="widget-1">
+        
+        <Main className="main">
           <Column>
-            <Link to="/login">
-              <ButtonShort>Sign in</ButtonShort>
-            </Link>
-            <Link to="/register">
-              <ButtonShort>Register</ButtonShort>
-            </Link>
+            <LoginButton></LoginButton>
+            <LogoutButton></LogoutButton>
           </Column>
-        </Widget>
-        <Widget className="widget-2"></Widget>
+        </Main>
         <Footer className="footer">
           <Column></Column>
           <Textsmall>

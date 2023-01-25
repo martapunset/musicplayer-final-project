@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "json": "json-server --watch  ./src/assets/db/db.json --port 4000"
+    "json": "json-server --watch  ./src/assets/db/db.json --port 4001"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.12.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@madzadev/audio-player": "^1.1.11",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.0",
     "axios": "^1.2.1",
