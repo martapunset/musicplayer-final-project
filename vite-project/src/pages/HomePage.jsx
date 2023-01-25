@@ -10,11 +10,11 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 export const HomePage = () => {
 
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, user:userFromAuth0 } = useAuth0();
 
   const { login, authState } = useContext(AuthContext);
-  const { isLogged } = authState;
-  const userFromAuth0 = user; //rename
+  const { isLogged, user } = authState;
+
   useEffect(() => {
     login(userFromAuth0);
 

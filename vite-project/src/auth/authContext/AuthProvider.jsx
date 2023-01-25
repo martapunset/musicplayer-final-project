@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("user", JSON.stringify(userDB));
         dispatch({
           type: types.login,
-          payload: user,
+          payload: userDB,
         });
     
 
