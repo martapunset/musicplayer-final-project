@@ -50,14 +50,14 @@ const WrapperNav = styled.div`
 
   @media only screen and (min-width: 1024px) {
     list-style: none;
-    height: 80vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
 
     .navbar {
       padding: 0;
-      margin-top: 3px;
+      ${'' /* margin-top: 3px; */}
       font-size: 45px;
       cursor: pointer;
     }
