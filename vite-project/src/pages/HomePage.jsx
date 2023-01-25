@@ -1,39 +1,53 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ProfileImage } from "../ui/ProfileImage.style";
+import { ProfileImage } from "../ui/";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import Logo from "../components/Logo";
 import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-
-
-
 export const HomePage = () => {
 
   const { isAuthenticated, user } = useAuth0();
 
-  const { login, authState } = useContext(AuthContext); //userDAta for profile
-
+  const { login, authState } = useContext(AuthContext);
+  const { isLogged } = authState;
+  const userFromAuth0 = user; //rename
   useEffect(() => {
-    if (isAuthenticated) {
-      login(user);
-    }
-  
- //   checkUserByEmail(user);
-  
-   
-  }, [user]);
+    login(userFromAuth0);
 
- ;
+  }, [userFromAuth0]);
+
+  console.log("isauthenticatedHomePAge", isAuthenticated)
 
   const [albumData, setAlbumData] = useState([]);
- const [playlistData, setPlaylistData] = useState([]);
+  const [playlistData, setPlaylistData] = useState([]);
   const [artistData, setArtistData] = useState([]);
 
+  // const fetchData = () => {
+  // const albumApi = "http://localhost:4000/album";
+  // const playlistApi = "http://localhost:4000/playlists";
+  // const artistApi = "http://localhost:4000/artists";
+
+  // const getAlbums = axios.get(albumApi);
+  // const getPlaylists = axios.get(playlistApi);
+  // const getArtists = axios.get(artistApi);
+
+  // axios.all(getAlbums).then(
+  //     axios.spread((...allData) => {
+  //  const allDataAlbums = allData[0].data;
+  //       // const allDataPlaylists = allData[1].data;
+  //       // const allDataArtists = allData[2].data;
+
+  //       setAlbumData(allDataAlbums);
+  //       // setPlaylistData(allDataPlaylists);
+  //       // setArtistData(allDataArtists[0]);
+  //       console.log(allDataAlbums)
+  //     })
+  //   );
+  // };
 
   const getdata = async() => {
        
@@ -42,30 +56,30 @@ export const HomePage = () => {
   }
     
   useEffect(() => {
-    
-      getAllAlbums()
-      getAllArtists()
-    getdata()
- 
-  
-    }, []);
+    // const data = async () => {
+    //   const jsonData = await getAlbums();
+    //   setAlbumData(jsonData);
+    // };
+    // data();
+    getAllAlbums()
+    getAllArtists()
+  }, []);
 
-
-//petición al back
-    const getAllAlbums = async ()=>{
-      try {
-        const response = await axios.get("http://localhost:4000/album");
-        setAlbumData(response.data.data)
-      } catch (error) {
-        console.log(error)
-      }
+  //petición al back
+  const getAllAlbums = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/album");
+      setAlbumData(response.data.data)
+    } catch (error) {
+      console.log(error)
     }
+  }
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
   // console.log(followed);
 
-  const getAllArtists = async()=>{
+  const getAllArtists = async () => {
     try {
       const response = await axios.get("http://localhost:4000/artists")
       setArtistData(response.data.data)
@@ -75,20 +89,11 @@ export const HomePage = () => {
   }
   return (
     <>
-    
+
 
       <div className="home">
-      
-        
-        <Logo />
- 
-        <WelcomeCard>
-          <WelcomeTitle>{user?.given_name}</WelcomeTitle>
-          <Link to="/profile">
-            {" "}
-            <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-          </Link>
-        </WelcomeCard>
+
+
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
@@ -97,9 +102,9 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            
+
             {albumData?.map((album) => {
-            
+
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -154,9 +159,9 @@ export const HomePage = () => {
           </motion.div>
         </motion.div>
 
-        
+
       </div>
-      
+
     </>
   );
 };
