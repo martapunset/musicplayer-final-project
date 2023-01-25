@@ -120,8 +120,7 @@ export const LogoProfile = styled.div`
 padding: 20px;
 `
 
-
 export const FlexSpace = styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 `
