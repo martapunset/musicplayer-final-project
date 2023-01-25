@@ -120,6 +120,9 @@ border-radius: 40.6599px
 export const LogoProfile = styled.div`
 padding: 20px;
 
+
+
+
 `
 
 
