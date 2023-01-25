@@ -6,6 +6,7 @@ import harmonyGuitar from "../assets/img/harmonyGuitar.png"
 import logoHarmony from "../assets/img/logoHarmony.png"
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles"
 import { Link } from "react-router-dom";
+import "./prueba.css"
 import {ProfileImage} from "../ui"
 export const Layout = () => {
 
@@ -14,19 +15,20 @@ export const Layout = () => {
       <GlobalGridStyles />
       <Container className="container">
    
-        <Header className="header">
-        <FlexSpace>
-          <LogoProfile>
+        <Header >
+        <FlexSpace >
+          <LogoProfile >
             <img src={logoHarmony} alt="Logo" width={'70px'}/>
           </LogoProfile>
           
-          <WelcomeCard>
-            <WelcomeTitle>hola</WelcomeTitle>
+          <WelcomeCard className="header">
+            <WelcomeTitle className="header">hola</WelcomeTitle>
             <Link to="/profile">
               {" "}
-              <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+              <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" className="header" />
             </Link>
           </WelcomeCard>
+       
           </FlexSpace>
         </Header>
      

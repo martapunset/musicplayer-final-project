@@ -7,6 +7,8 @@ ${'' /* grid-gap: 20px; */}
 grid-template-columns: repeat(5, 1fr);
 grid-template-rows: repeat(4, auto);
 height: 100vh;
+word-wrap: break-word;
+
 `
 export const ContainerLogin = styled.div`
 width: 80%;
@@ -18,9 +20,8 @@ grid-template-rows: repeat(3, auto);
 
 export const Header = styled.header`
 grid-area: header;
-& > h1 {
-    margin-left: 2%;
-}
+
+justify-content: end;
 `
 
 export const Main = styled.main`
@@ -65,7 +66,7 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 export const FooterIcon = styled.div`
 display: flex;
-justify-content: space-between
+justify-content: tween
 `
 
 export const H1 = styled.h1`
@@ -122,5 +123,5 @@ padding: 20px;
 
 export const FlexSpace = styled.div`
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 `
