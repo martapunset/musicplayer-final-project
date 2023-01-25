@@ -25,16 +25,16 @@ export const AuthProvider = ({ children }) => {
 
   /*-------------------login------------*/
 
-  const login = (user) => {
+  const login = (userLogin) => {
   
 
 
     const userData = {  //----------->need to mode to backend
-      firstName: user.given_name || "default_name",
-      lastName: user.family_name || "default_lastname",
-      userName: user.nickName || "DEFAULT NICKname",
-      email: user.email,
-      picture: user.picture
+      firstName: userLogin.given_name || "default_name",
+      lastName: userLogin.family_name || "default_lastname",
+      userName: userLogin.nickName || "DEFAULT NICKname",
+      email: userLogin.email,
+      picture: userLogin.picture
     }
     console.log(userData, "standard object copy");
 
