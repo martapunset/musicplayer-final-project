@@ -74,7 +74,7 @@ grid-template-areas:    "sidebar header header header header"
 }
 
 /*min 1536px*/
-@media screen and (min-width: 1536px){
+@media only screen and (min-width: 1536px){
   .container{
     grid-template-areas:    
                         "sidebar header header header header"
