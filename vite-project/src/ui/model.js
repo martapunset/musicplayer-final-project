@@ -25,7 +25,7 @@ grid-area: header;
 
 export const Main = styled.main`
 grid-area: main;
-overflow-y: scroll;
+// overflow-y: scroll;
 `
 
 export const Sidebar = styled.aside`
@@ -115,5 +115,13 @@ border-radius: 40.6599px
 
 export const LogoProfile = styled.div`
 padding: 20px;
+
+`
+
+
+export const FlexSpace = styled.div`
+display: flex;
+justify-content: space-between;
+
 
 `
