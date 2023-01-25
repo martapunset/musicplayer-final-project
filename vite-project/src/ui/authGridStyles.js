@@ -19,17 +19,14 @@ code {
     monospace;
 }
 
-/*Grid Area First Mobile*/
-/*min 640px*/
 .containerLogin {
   background-image: url(${homeBackground});
   background-repeat: no-repeat; 
   background-size: cover;
   grid-template-areas: 
-                    "header header header header"
-                    "header header header header"
-                    "main main main main"
-                    "footer footer footer footer";                 
+                    "9header header header"
+                    "main main main"
+                    "footer footer footer";                 
   width: 100%;
   height: 100vh;
 }`
