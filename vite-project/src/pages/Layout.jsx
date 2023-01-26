@@ -18,13 +18,14 @@ export const Layout = () => {
       <GlobalGridStyles />
       <Container className="container">
 
-        <Header >
-          <FlexSpace >
+        <Header className="header">
+          
             <LogoProfile className="side">
               <img src={logoHarmony} alt="Logo" width={'70px'} />
             </LogoProfile>
+        </Header>
 
-            <WelcomeCard>
+            <WelcomeCard >
               <WelcomeTitle>{`Welcome ${user?.firstName}`}</WelcomeTitle>
               <Link to="/profile">
                 {" "}
@@ -32,8 +33,7 @@ export const Layout = () => {
               </Link>
             </WelcomeCard>
 
-          </FlexSpace>
-        </Header>
+          
 
         <Main className="main">
           <Outlet className="main" />

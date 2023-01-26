@@ -120,6 +120,9 @@ padding: 20px;
 `
 
 export const FlexSpace = styled.div`
+.center{
 display: flex;
-${'' /* justify-content: space-between; */}
+justify-content: space-between;
+
+}
 `
