@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import { getApiData } from "../api/getApiData";
 import Song from "../components/Song";
-import Playlists from "../components/Playlists";
+
 import { HomeNavBar } from "../components/HomeNavBar";
 import { GlobalGridStyles } from "../ui";
 
@@ -85,9 +85,13 @@ export const SearchPage = () => {
               </Fragment>
             ))}
           </div>
+
+
+          {/* 
           <div className={searchpage.playlists_container}>
             <Playlists playlists={playlists} />
           </div>
+          */}
         </div>
       </div>
 
