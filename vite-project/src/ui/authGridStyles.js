@@ -24,9 +24,9 @@ code {
   background-repeat: no-repeat; 
   background-size: cover;
   grid-template-areas: 
-                    "header header header"
-                    "main main main"
-                    "footer footer footer";                 
+                    "header header header header header"
+                    "main main main main main"
+                    "footer footer footer footer footer";                 
   width: 100%;
   height: 100vh;
 }`

@@ -11,10 +11,10 @@ word-wrap: break-word;
 `
 
 export const ContainerLogin = styled.div`
-width: 80%;
+width: 100%;
 display: grid;
 grid-gap: 20px;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(5, 1fr);
 grid-template-rows: repeat(3, auto);
 `
 
@@ -120,6 +120,9 @@ padding: 20px;
 `
 
 export const FlexSpace = styled.div`
+.center{
 display: flex;
-${'' /* justify-content: space-between; */}
+justify-content: space-between;
+
+}
 `

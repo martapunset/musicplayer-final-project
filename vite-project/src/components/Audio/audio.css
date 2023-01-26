@@ -1,11 +1,13 @@
 ._oGACf{
   height: 100%;
   width: 100%;
+  padding: 0px;
+  margin: 0px;
   /* position: fixed; */
 }
 ._1EWMa{
   border-radius: 0px;
-  height: 200px;
+  height: 100%;
 }
 
 ._2_1sf {
@@ -15,7 +17,6 @@
   display: none;
   
 }
-
 
 ._3q4Ah{
   font-size: 15px;
