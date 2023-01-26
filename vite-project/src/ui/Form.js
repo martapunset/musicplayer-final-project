@@ -11,11 +11,10 @@ export const Form = styled.form`
   color: white;
 `;
 export const Button = styled.button`
-  /* Rectangle 19 */
-
+ 
   width: 325px;
   height: 80px;
-  margin: 5px;
+  margin: 100px;
   color: white;
   background: #64c27b;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -52,7 +51,6 @@ export const InputSmall = styled.input`
 `;
 
 export const ButtonShort = styled.button`
-  /* Rectangle 25 */
 
   width: 147px;
   height: 73px;

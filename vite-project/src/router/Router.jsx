@@ -2,9 +2,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthHomePage } from "../auth/pages/index.js";
 import {
+  LibraryPage,
   ProfilePage,
   SearchPage,
-  WishPage,
   HomePage,
   LikedPlayList,
 } from "../pages";
@@ -36,9 +36,7 @@ const Router = () => {
             />
             <Route
               path="/editProfile"
-              element={
-
-                <EditProfilePage />
+              element={<EditProfilePage />
 
               }
             />
@@ -52,7 +50,7 @@ const Router = () => {
 
 
             />
-            <Route path="/wish" element={<WishPage />} />
+             <Route path="/library" element={<LibraryPage />} />
             <Route path="/liked" element={<LikedPlayList />} />
           </Route>
         </Routes>
