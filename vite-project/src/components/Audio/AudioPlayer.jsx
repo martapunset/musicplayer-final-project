@@ -1,6 +1,6 @@
 import Player from "@madzadev/audio-player";
 import "@madzadev/audio-player";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import tracks from "../../api/tracks.json";
 import "./audio.css";
 

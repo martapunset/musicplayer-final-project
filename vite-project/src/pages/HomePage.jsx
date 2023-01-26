@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ProfileImage } from "../ui/";
-import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
+// import { ProfileImage } from "../ui/";
+// import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 export const HomePage = () => {
 
-  const { isAuthenticated, user:userFromAuth0 } = useAuth0();
+  const { isAuthenticated, user: userFromAuth0 } = useAuth0();
 
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
@@ -19,8 +19,6 @@ export const HomePage = () => {
     login(userFromAuth0);
 
   }, [userFromAuth0]);
-  
-
 
   const [albumData, setAlbumData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
@@ -49,12 +47,12 @@ export const HomePage = () => {
   //   );
   // };
 
-  const getdata = async() => {
-       
+  const getdata = async () => {
+
     const { data } = await axios.get("http://localhost:4000/albums")
     setAlbumData(data);
   }
-    
+
   useEffect(() => {
     // const data = async () => {
     //   const jsonData = await getAlbums();
@@ -87,14 +85,11 @@ export const HomePage = () => {
       console.log(error)
     }
   }
-  
+
   return (
     <>
 
-
       <div className="home">
-
-
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
@@ -107,12 +102,12 @@ export const HomePage = () => {
             {albumData?.map((album) => {
 
               return (
-                
-                  <motion.div className="item" key={album.id}>
-                    <img src={album.imageUrl} alt={album.name} />
-                    <p>{album.name}</p>
-                  </motion.div>
-                
+
+                <motion.div className="item" key={album.id}>
+                  <img src={album.imageUrl} alt={album.name} />
+                  <p>{album.name}</p>
+                </motion.div>
+
               );
             })}
 
@@ -146,21 +141,20 @@ export const HomePage = () => {
           >
             {artistData?.map((artists) => {
               return (
-                
-                  <motion.div className="item" key={artists.id}>
-                    <img
-                      className="artistsProfile"
-                      src={artists.photoUrl}
-                      alt={artists.name}
-                    />
-                    <p>{artists.name}</p>
-                  </motion.div>
-                
+
+                <motion.div className="item" key={artists.id}>
+                  <img
+                    className="artistsProfile"
+                    src={artists.photoUrl}
+                    alt={artists.name}
+                  />
+                  <p>{artists.name}</p>
+                </motion.div>
+
               );
             })}
           </motion.div>
         </motion.div>
-
 
       </div>
 
