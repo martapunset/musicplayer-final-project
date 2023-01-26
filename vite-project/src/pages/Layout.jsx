@@ -21,6 +21,7 @@ import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
 import { margin } from "@mui/system";
 import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayerCool";
+import { LogoutButton } from "../components/Login/LogoutButton";
 
 export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
