@@ -50,8 +50,8 @@ const WrapperNav = styled.div`
   }
 
   .container .active {
-    border-top: 7px solid white;
-    border-radius: 5px;
+    ${'' /* border-top: 7px solid white; */}
+    ${'' /* border-radius: 5px; */}
     color: yellow;
   }
   @media screen and (min-width: 768px){

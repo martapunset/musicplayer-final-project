@@ -24,7 +24,7 @@ code {
   background-repeat: no-repeat; 
   background-size: cover;
   grid-template-areas: 
-                    "9header header header"
+                    "header header header"
                     "main main main"
                     "footer footer footer";                 
   width: 100%;
