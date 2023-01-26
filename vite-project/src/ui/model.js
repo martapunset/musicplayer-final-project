@@ -4,7 +4,7 @@ export const Container = styled.div`
 width: 100%;
 display: grid;
 ${'' /* grid-gap: 20px; */}
-grid-template-columns: repeat(5, 1fr);
+grid-template-columns: 285px 1fr 1fr 1fr 1fr ;
 grid-template-rows: repeat(4, auto);
 height: 100vh;
 word-wrap: break-word;
@@ -52,7 +52,7 @@ bottom: 0;
 
 export const Column = styled.div`
 display: flex;
-flex-direction: column;
+justify-content: space-around;
 align-items: center;
 `
 

@@ -8,7 +8,8 @@ justify-content: space-around;
 align-items: start;
 padding-left: 15%;
 width: 10%;
-background: #18191e;
+// background: #18191e;
+background-color: black;
 
 .container {
     padding: 0;
@@ -30,6 +31,7 @@ background: #18191e;
 }
 
 .container li a span:nth-child(2){
+
 }
 
 .container li a {

@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgb(23,26,74);
   background: linear-gradient(0deg, rgba(23,26,74,1) 10%, rgba(2,10,28,1) 89%);
+
 }
 
 code {

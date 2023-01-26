@@ -10,7 +10,7 @@ import { ProfileImage } from "../ui"
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
 import { margin } from "@mui/system";
-
+import { LogoutButton } from "../components/Login/LogoutButton";
 export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
@@ -21,10 +21,7 @@ export const Layout = () => {
       <Container className="container">
 
         <Header className="header">
-          
-            <LogoProfile className="side">
-              <img src={logoHarmony} alt="Logo" width={'70px'} height={'50px'} />
-            </LogoProfile>
+        <LogoutButton/>
         </Header>
 
             <WelcomeCard >
