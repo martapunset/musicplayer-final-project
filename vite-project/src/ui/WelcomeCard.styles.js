@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const WelcomeCard = styled.div`
   margin: 25px auto;
   display: flex;
-  align-self: left;
-  width: 334px;
-  height: 118px;
+  align-items: center;
+  width: 275px;
+  height: 50px;
   background: #64c27b;
   border-radius: 30px;
 

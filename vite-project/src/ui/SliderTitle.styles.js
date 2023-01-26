@@ -15,7 +15,4 @@ export const SliderTitle = styled.div`
   /* or 147% */
   color: #ffffff;
 
-  @media only screen and (min-width: 1200px) {
-    margin-left: 300px;
-  }
 `;
