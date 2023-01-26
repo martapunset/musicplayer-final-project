@@ -26,6 +26,7 @@ export const Header = styled.header`
 export const Main = styled.main`
   grid-area: main;
   overflow-x: hidden;
+  min-height: 900px;
   overfloy-y: scroll;
 `;
 
