@@ -48,11 +48,12 @@ background: #18191e;
   ${'' /* justify-content: space-between */}
     width: 100%;
     padding: 0px;
+    justify-content: space-around;
+    align-items: center;
 
     .container li a span:nth-last-child(1){
-    display: hidden;
-    overflow: hidden;
-    color:red;
+    display: none;
+    overflow: none;
     }
 }
 
@@ -60,11 +61,14 @@ background: #18191e;
 
     width: 100%;
     padding: 0px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
 
     .container li a span:nth-last-child(1){
-    display: hidden;
-    overflow: hidden;
-    color:violet;
+    display: none;
+    overflow: none;
     }
 }
 
