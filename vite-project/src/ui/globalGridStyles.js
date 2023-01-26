@@ -25,7 +25,7 @@ code {
 /*min 640px*/
   
 .container {
-grid-template-areas: "header header header header side"
+grid-template-areas: "header header header header header"
                     "main main main main main"
                     "footer footer footer footer footer"
                     "sidebar sidebar sidebar sidebar sidebar"
@@ -34,7 +34,7 @@ grid-template-areas: "header header header header side"
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
-grid-template-areas:    "header header header header side"
+grid-template-areas:    "header header header header header"
                         "main main main main main"
                         "footer footer footer footer footer"
                         "sidebar sidebar sidebar sidebar sidebar"
@@ -44,7 +44,7 @@ grid-template-areas:    "header header header header side"
 /*min 1024px*/
 @media screen and (min-width: 1024px){
 .container{
-grid-template-areas:    "sidebar header header header side"
+grid-template-areas:    "sidebar header header header header"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
@@ -55,7 +55,7 @@ grid-template-areas:    "sidebar header header header side"
 @media screen and (min-width: 1280px){
   .container{
     grid-template-areas:    
-                        "sidebar header header header side"
+                        "sidebar header header header header"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
@@ -66,7 +66,7 @@ grid-template-areas:    "sidebar header header header side"
 @media only screen and (min-width: 1536px){
   .container{
     grid-template-areas:    
-                        "sidebar header header header side"
+                        "sidebar header header header header"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"

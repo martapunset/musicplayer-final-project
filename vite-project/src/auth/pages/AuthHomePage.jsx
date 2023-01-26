@@ -6,17 +6,24 @@ import { AuthContext } from "../authContext/AuthContext";
 import { ButtonShort, ContainerLogin, P } from "../../ui";
 import { Navigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Header, IconBack, Textsmall, Spam, Column, Footer, Main } from "../../ui";
+import {
+  Header,
+  IconBack,
+  Textsmall,
+  Spam,
+  Column,
+  Footer,
+  Main,
+} from "../../ui";
 import { LoginButton } from "../../components/Login/LoginButton";
 import { LogoutButton } from "../../components/Login/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 export const AuthHomePage = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { authState } = useContext(AuthContext);
   const { user } = authState;
   const { isLogged } = authState;
-  const { isAuthenticated } = useAuth0()
+  const { isAuthenticated } = useAuth0();
 
   /*
     useEffect(() => {
@@ -27,21 +34,18 @@ export const AuthHomePage = () => {
   */
   return (
     <>
-      { /*isLogged && <Navigate to="/home" replace={true} />*/}
+      {/*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
       <ContainerLogin className="containerLogin">
-    
+        <Column>
+          <Header className="header">
+            <IconBack></IconBack> {/* LINK en back */}
+          </Header>
 
-        <Header className="header">
-          <IconBack></IconBack> {/* LINK en back */}
-        </Header>
-
-        <Main className="main">
-          <Column>
+          <Main className="main">
             <LoginButton></LoginButton>
-          </Column>
-        </Main>
-
+          </Main>
+        </Column>
       </ContainerLogin>
     </>
   );
