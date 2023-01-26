@@ -20,7 +20,8 @@ import { ProfileImage } from "../ui";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
 import { margin } from "@mui/system";
-import { LogoutButton } from "../components/Login/LogoutButton";
+import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayerCool";
+
 export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
@@ -44,7 +45,8 @@ export const Layout = () => {
           <Outlet className="main" />
         </Main>
         <Footer className="footer">
-          <AudioPlayer />
+
+      <AudioPlayerCool></AudioPlayerCool>
         </Footer>
         <Sidebar>
           {" "}
