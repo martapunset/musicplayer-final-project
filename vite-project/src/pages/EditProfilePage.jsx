@@ -16,7 +16,10 @@ export const EditProfilePage = () => {
             <UserProfile>
               <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
             </UserProfile>
-            <EditProfile />
+          
+
+
+
           </Column>
         </Main>
     </>
