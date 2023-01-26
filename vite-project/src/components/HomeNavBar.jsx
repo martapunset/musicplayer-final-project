@@ -55,6 +55,11 @@ flex-direction: row;
 
   }
 
+  .container li a span:nth-child(2){
+    font-size: 20px;
+
+  }
+
   .container li a {
     font-size: 3vh;
     color: white; 
