@@ -9,18 +9,17 @@ console.log(window.location.origin)
 ReactDOM.createRoot(document.getElementById("root")).render(
   //<React.StrictMode>
 
+  <BrowserRouter>
+    <Auth0Provider
 
- <BrowserRouter>
-  <Auth0Provider
+      domain="bernersmusicapp.eu.auth0.com"
+      clientId="qFfW5qSqtLX9AnlXSIM7RfJyCvKsemal"
+      redirectUri={window.location.origin}
+      audience="https://express.sample"
 
-    domain="bernersmusicapp.eu.auth0.com"
-    clientId="qFfW5qSqtLX9AnlXSIM7RfJyCvKsemal"
-    redirectUri={window.location.origin}
-    audience="https://express.sample"
-  
-  >
-    <App />
+    >
+      <App />
     </Auth0Provider>
-    </BrowserRouter>
+  </BrowserRouter>
   //</React.StrictMode>
 );
