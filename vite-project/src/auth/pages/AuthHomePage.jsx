@@ -29,19 +29,18 @@ export const AuthHomePage = () => {
     <>
       { /*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
-
       <ContainerLogin className="containerLogin">
+
         <Header className="header">
           <IconBack></IconBack> {/* LINK en back */}
         </Header>
-        
+
         <Main className="main">
           <Column>
             <LoginButton></LoginButton>
-          
           </Column>
         </Main>
-       
+
       </ContainerLogin>
     </>
   );

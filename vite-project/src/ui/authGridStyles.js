@@ -27,6 +27,6 @@ code {
                     "header header header"
                     "main main main"
                     "footer footer footer";                 
-  width: 100%;
+  ${'' /* width: 100vh; */}
   height: 100vh;
 }`
