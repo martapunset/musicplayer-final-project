@@ -10,9 +10,11 @@ export const HomeNavBar = () => {
           return (
             <div key={index} className="container">
               <li>
-                <NavLink activeClassName="menu_link" to={item.path}>
-                  <span>{item.icon}</span>
+                <NavLink to={item.path}>
+                  <span>{item.icon} </span>
+                  <span>{item.text}</span>
                 </NavLink>
+                <NavLink to={item.path}></NavLink>
               </li>
             </div>
           );
@@ -26,8 +28,9 @@ const WrapperNav = styled.div`
   list-style: none;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  width: 100%;
+  align-items: start;
+  padding-left: 15%;
+  width: 10%;
   bottom: 0 vh;
   background: #18191e;
 
@@ -38,32 +41,41 @@ const WrapperNav = styled.div`
     cursor: pointer;
   }
   .container li a {
-    color: #33fff3;
-    ${"" /* #dfff33 */}
-  }
-  .active {
-    border-top: 7px solid #33fff3;
-    border-radius: 5px;
+    font-size: 3vh;
+    color: white; 
+    
   }
 
+  .container .active {
+    ${"" /* border-top: 7px solid white; */}
+    ${"" /* border-radius: 5px; */}
+    color: yellow;
+  }
+  @media screen and (min-width: 768px){
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: space-between
+    width: 100%;
+  }
   @media only screen and (min-width: 1024px) {
     list-style: none;
-    height: 80vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
 
     .navbar {
       padding: 0;
-      margin-top: 3px;
+      ${"" /* margin-top: 3px; */}
       font-size: 45px;
       cursor: pointer;
     }
     .navbar li a {
-      color: #33fff3;
+      color: white;
     }
     .active {
-      border-top: 7px solid #33fff3;
+      border-top: 7px solid white;
       border-radius: 5px;
     }
   }

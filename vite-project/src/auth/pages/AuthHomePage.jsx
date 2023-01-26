@@ -38,17 +38,10 @@ export const AuthHomePage = () => {
         <Main className="main">
           <Column>
             <LoginButton></LoginButton>
-            <LogoutButton></LogoutButton>
+          
           </Column>
         </Main>
-        <Footer className="footer">
-          <Column></Column>
-          <Textsmall>
-            {" "}
-            Not a member ? <Spam>Register now</Spam>
-          </Textsmall>
-        </Footer>{" "}
-        {/* LINK */}
+       
       </ContainerLogin>
     </>
   );

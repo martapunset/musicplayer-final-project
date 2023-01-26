@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthHomePage } from "../auth/pages/index.js";
 import {
+  LibraryPage,
   ProfilePage,
   SearchPage,
   HomePage,
@@ -45,8 +46,11 @@ const Router = () => {
               path="/search"
               element={<SearchPage />}
 
+
+
+
             />
-           
+             <Route path="/library" element={<LibraryPage />} />
             <Route path="/liked" element={<LikedPlayList />} />
           </Route>
         </Routes>

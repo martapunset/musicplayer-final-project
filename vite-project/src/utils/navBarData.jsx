@@ -7,25 +7,30 @@ export const navBarData = [
     title: "Home",
     path: "/",
     icon: <AiFillHome />,
-  },
-  {
-    title: "Liked",
-    path: "/liked",
-    icon: <AiOutlineHeart />,
-  },
-  {
-    title: "Liked",
-    path: "/",
-    icon: <BiLibrary />,
+    text: "Home",
   },
   {
     title: "Search",
     path: "/search",
     icon: <BsSearch />,
+    text: "Search" ,
+  },
+  {
+    title: "Liked",
+    path: "/liked",
+    icon: <AiOutlineHeart />,
+    text: "Songs you like",
+  },
+  {
+    title: "Library",
+    path: "/library",
+    icon: <BiLibrary />,
+    text: "Library" ,
   },
   {
     title: "Profile",
     path: "/profile",
     icon: <FaUserAlt />,
+    text: "Profile" ,
   },
 ];
