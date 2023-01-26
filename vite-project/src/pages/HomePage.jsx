@@ -18,89 +18,77 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { getAlbums } from "../api/getAlbums";
 import { getUsers } from "../api/postUsers";
 
-
 export const HomePage = () => {
-
-
   //const navigate=useNavigate()
   const { isAuthenticated, user } = useAuth0();
 
   const { login, authState } = useContext(AuthContext); //userDAta for profile
   const { isLogged, userData } = authState; //userDAta for profile
-  console.log("userDAta for Toni", userData) //userDAta for profile
-
+  console.log("userDAta for Toni", userData); //userDAta for profile
 
   const userFromAuth0 = user; //rename
 
   useEffect(() => {
     login(userFromAuth0);
-   
   }, [userFromAuth0]);
 
- ;
-
   const [albumData, setAlbumData] = useState([]);
- const [playlistData, setPlaylistData] = useState([]);
-  const [artistData, setArtistData] = useState([]);
+  const [playlistData, setPlaylistData] = useState([]);
 
   // const fetchData = () => {
-   // const albumApi = "http://localhost:4000/album";
-    // const playlistApi = "http://localhost:4000/playlists";
-    // const artistApi = "http://localhost:4000/artists";
+  // const albumApi = "http://localhost:4000/album";
+  // const playlistApi = "http://localhost:4000/playlists";
+  // const artistApi = "http://localhost:4000/artists";
 
-   // const getAlbums = axios.get(albumApi);
-    // const getPlaylists = axios.get(playlistApi);
-    // const getArtists = axios.get(artistApi);
+  // const getAlbums = axios.get(albumApi);
+  // const getPlaylists = axios.get(playlistApi);
+  // const getArtists = axios.get(artistApi);
 
-  const getdata = async() => {
-       
-    const { data } = await axios.get("http://localhost:4000/albums")
+  const postUsers = async () => {
+    const { data } = await axios.get("http://localhost:4000/api/v1/users/");
     setAlbumData(data);
-  }
-    
+  };
+
+  const getdata = async () => {
+    const { data } = await axios.get("http://localhost:4000/api/v1/albums");
+    setAlbumData(data);
+  };
+
   useEffect(() => {
-    
-      getAllAlbums()
-      getAllArtists()
-    getdata()
- 
-  
-    }, []);
-  console.log(albumData)
-  console.log(getUsers())
+    getAllAlbums();
+    postUsers();
+    getdata();
+  }, []);
+  console.log(albumData);
+  console.log(getUsers());
 
-
-//petición al back
-    const getAllAlbums = async ()=>{
-      try {
-        const response = await axios.get("http://localhost:4000/album");
-        setAlbumData(response.data.data)
-      } catch (error) {
-        console.log(error)
-      }
+  //petición al back
+  const getAllAlbums = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/api/v1/albums");
+      setAlbumData(response.data.data);
+    } catch (error) {
+      console.log(error);
     }
+  };
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
   // console.log(followed);
 
-  const getAllArtists = async()=>{
-    try {
-      const response = await axios.get("http://localhost:4000/artists")
-      setArtistData(response.data.data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const getAllArtists = async()=>{
+  //   try {
+  //     const response = await axios.get("http://localhost:4000/artists")
+  //     setArtistData(response.data.data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   return (
     <>
-    
-
       <div className="home">
-      
-        
         <Logo />
- 
+
         <WelcomeCard>
           <WelcomeTitle>{userFromAuth0?.given_name}</WelcomeTitle>
           <Link to="/profile">
@@ -116,9 +104,7 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            
             {albumData?.map((album) => {
-            
               return (
                 <>
                   <motion.div className="item" key={album.id}>
@@ -156,7 +142,7 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-            {artistData?.map((artists) => {
+            {/* {artistData?.map((artists) => {
               return (
                 <>
                   <motion.div className="item" key={artists.id}>
@@ -169,13 +155,10 @@ export const HomePage = () => {
                   </motion.div>
                 </>
               );
-            })}
+            })} */}
           </motion.div>
         </motion.div>
-
-        
       </div>
-      
     </>
   );
 };
