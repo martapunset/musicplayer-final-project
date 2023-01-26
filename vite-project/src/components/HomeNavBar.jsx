@@ -3,7 +3,6 @@ import { navBarData } from "../utils/navBarData";
 import styled from "styled-components";
 
 export const HomeNavBar = () => {
-  
   return (
     <>
       <WrapperNav>
@@ -11,7 +10,7 @@ export const HomeNavBar = () => {
           return (
             <div key={index} className="container">
               <li>
-                <NavLink className="menu_link" to={item.path}>
+                <NavLink activeClassName="menu_link" to={item.path}>
                   <span>{item.icon}</span>
                 </NavLink>
               </li>
@@ -24,7 +23,6 @@ export const HomeNavBar = () => {
 };
 
 const WrapperNav = styled.div`
-
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -32,7 +30,7 @@ const WrapperNav = styled.div`
   width: 100%;
   bottom: 0 vh;
   background: #18191e;
-  
+
   .container {
     padding: 0;
     margin-top: 3px;
@@ -40,8 +38,8 @@ const WrapperNav = styled.div`
     cursor: pointer;
   }
   .container li a {
-    color: #33fff3; 
-    ${'' /* #dfff33 */}
+    color: #33fff3;
+    ${"" /* #dfff33 */}
   }
   .active {
     border-top: 7px solid #33fff3;
