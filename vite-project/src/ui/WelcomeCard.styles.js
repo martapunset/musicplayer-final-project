@@ -4,18 +4,24 @@ export const WelcomeCard = styled.div`
   margin: 25px auto;
   display: flex;
   align-items: center;
-  width: 275px;
+  width: 120px;
   height: 50px;
-  background: #64c27b;
-  border-radius: 30px;
+
+
 
   @media only screen and (min-width: 1200px) {
     display: flex;
-    margin-top: 15px;
-    width: 275px;
-    height: 50px;
+    margin-top: 30px;
   }
+
+  @media only screen and (max-width: 800px) {
+    margin-top: 80px;
+    height: 10px;
+    width: 250px;
+  }
+  
 `;
+
 
 export const WelcomeTitle = styled.h1`
   width: 175px;

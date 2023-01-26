@@ -9,10 +9,12 @@ import { Link } from "react-router-dom";
 import { ProfileImage } from "../ui"
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
+import { margin } from "@mui/system";
 
 export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
+ 
   return (
     <>
       <GlobalGridStyles />
@@ -21,18 +23,18 @@ export const Layout = () => {
         <Header className="header">
           
             <LogoProfile className="side">
-              <img src={logoHarmony} alt="Logo" width={'70px'} />
+              <img src={logoHarmony} alt="Logo" width={'70px'} height={'50px'} />
             </LogoProfile>
         </Header>
 
             <WelcomeCard >
-              <WelcomeTitle>{`Welcome ${user?.firstName}`}</WelcomeTitle>
+              <WelcomeTitle> {user?.firstName}</WelcomeTitle>
               <Link to="/profile">
                 {" "}
-                <ProfileImage src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+                <ProfileImage src={user?.picture}/>
               </Link>
             </WelcomeCard>
-
+            {/* src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" */}
           
 
         <Main className="main">

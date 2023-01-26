@@ -12,4 +12,10 @@ export const ProfileImage = styled.img`
     height: 40px;
     border-radius: 54px;
   }
+  @media only screen and (max-width: 800px) {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 54px;
+  }
 `;
