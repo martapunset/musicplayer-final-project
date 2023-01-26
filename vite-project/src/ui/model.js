@@ -8,8 +8,8 @@ grid-template-columns: repeat(5, 1fr);
 grid-template-rows: repeat(4, auto);
 height: 100vh;
 word-wrap: break-word;
-
 `
+
 export const ContainerLogin = styled.div`
 width: 80%;
 display: grid;
@@ -20,8 +20,6 @@ grid-template-rows: repeat(3, auto);
 
 export const Header = styled.header`
 grid-area: header;
-
-justify-content: end;
 `
 
 export const Main = styled.main`
@@ -117,10 +115,11 @@ border-radius: 40.6599px
 `
 
 export const LogoProfile = styled.div`
+grid-area: side;
 padding: 20px;
 `
 
 export const FlexSpace = styled.div`
 display: flex;
-justify-content: space-between;
+${'' /* justify-content: space-between; */}
 `

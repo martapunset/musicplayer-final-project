@@ -6,7 +6,6 @@ import harmonyGuitar from "../assets/img/harmonyGuitar.png"
 import logoHarmony from "../assets/img/logoHarmony.png"
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles"
 import { Link } from "react-router-dom";
-import "./prueba.css"
 import { ProfileImage } from "../ui"
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
@@ -21,7 +20,7 @@ export const Layout = () => {
 
         <Header >
           <FlexSpace >
-            <LogoProfile >
+            <LogoProfile className="side">
               <img src={logoHarmony} alt="Logo" width={'70px'} />
             </LogoProfile>
 

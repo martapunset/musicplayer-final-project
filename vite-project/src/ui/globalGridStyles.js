@@ -21,19 +21,7 @@ code {
     monospace;
 }
 
-/*Grid Area First Mobile*/
 /*min 640px*/
-
-${'' /* .containerLogin {
-  background-image: url(${homeBackground});
-  background-repeat: no-repeat; 
-  background-size: cover;
-  grid-template-areas: 
-                    "header header header header header"
-                    "main main main main main"
-                    "main main main main main"
-                    "footer footer footer footer footer";                 
-} */}
   
 .container {
 grid-template-areas: "header header header header header"
@@ -45,7 +33,7 @@ grid-template-areas: "header header header header header"
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
-grid-template-areas:    "header header header header header"
+grid-template-areas:    "header header header header side"
                         "main main main main main"
                         "footer footer footer footer footer"
                         "sidebar sidebar sidebar sidebar sidebar"
@@ -55,7 +43,7 @@ grid-template-areas:    "header header header header header"
 /*min 1024px*/
 @media screen and (min-width: 1024px){
 .container{
-grid-template-areas:    "sidebar header header header header"
+grid-template-areas:    "sidebar header header header side"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
@@ -66,7 +54,7 @@ grid-template-areas:    "sidebar header header header header"
 @media screen and (min-width: 1280px){
   .container{
     grid-template-areas:    
-                        "sidebar header header header header"
+                        "sidebar header header header side"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
@@ -77,7 +65,7 @@ grid-template-areas:    "sidebar header header header header"
 @media only screen and (min-width: 1536px){
   .container{
     grid-template-areas:    
-                        "sidebar header header header header"
+                        "sidebar header header header side"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
