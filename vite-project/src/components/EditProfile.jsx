@@ -14,10 +14,11 @@ export const EditProfile = () => {
     handleSubmit,
     formState: { errors, isSubmitted },
   } = useForm();
+  const onSubmit = (data, e) => console.log("data Form",data, e);
 
   return (
     <>
-      <Form action="" onSubmit={handleSubmit()}>
+      <Form action="" onSubmit={handleSubmit(onSubmit)}>
         <Column>
           <InputSmall
             type="text"

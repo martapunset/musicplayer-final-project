@@ -24,7 +24,7 @@ code {
 /*min 640px*/
   
 .container {
-grid-template-areas: "header header header header header"
+grid-template-areas: "header header header header side"
                     "main main main main main"
                     "footer footer footer footer footer"
                     "sidebar sidebar sidebar sidebar sidebar"
