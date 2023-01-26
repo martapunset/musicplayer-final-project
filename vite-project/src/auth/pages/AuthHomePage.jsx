@@ -30,6 +30,7 @@ export const AuthHomePage = () => {
       { /*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
       <ContainerLogin className="containerLogin">
+    
 
         <Header className="header">
           <IconBack></IconBack> {/* LINK en back */}
