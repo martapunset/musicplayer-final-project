@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import { InputProfile, UserProfile, UserImg, BtnEdit, Texto } from "../ui";
+import { InputProfile, UserProfile, UserImg, BtnEdit, Texto,  BackgroundColour, TextArea, ProfileTableStyle } from "../ui";
 import { Column, Main } from "../ui/model";
 import { LogoutButton } from "../components/Login/LogoutButton";
 
@@ -16,7 +16,9 @@ export const ProfilePage = () => {
 
   return (
     <>
+       <BackgroundColour>
       <Main className="main">
+      
         <Column>
           <UserProfile>
             <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
@@ -27,13 +29,22 @@ export const ProfilePage = () => {
               </Link>
             </BtnEdit>
           </UserProfile>
-
-          <InputProfile placeholder={user.firstName}/>
-          <InputProfile placeholder={user.lastName}/>
-
+            <ProfileTableStyle>
+            
+             <div><label>Username</label><TextArea>{user?.userName}</TextArea></div> 
+              <div><label>Name</label><TextArea>{user?.firstName}</TextArea></div> 
+              <div><label>First Name</label><TextArea>{user?.lastName}</TextArea> </div> 
+              <div><label>Email</label><TextArea>{user?.userName}</TextArea></div> 
+     
+        
+</ProfileTableStyle>
+         
           <LogoutButton />
-        </Column>
+          </Column>
+      
+        
       </Main>
+      </BackgroundColour>
 
     </>
   );

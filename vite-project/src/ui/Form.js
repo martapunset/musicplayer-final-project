@@ -35,19 +35,19 @@ export const Input = styled.input`
   border-radius: 30px;
 `;
 
-export const InputSmall = styled.input`
+export const TextArea = styled.div`
   /* Rectangle 25 */
 
-  margin: 5px;
-  padding: 10px;
+
+  padding: 10px 10px;
   // color: white;
   box-sizing: border-box;
-  width: 333px;
+  width: 400px;
   height: 47px;
   // background: #171a4a;
   background-color: white;
   border: 1px solid grey;
-  border-radius: 30px;
+  //border-radius: 30px;
 `;
 
 export const ButtonShort = styled.button`
@@ -60,4 +60,19 @@ export const ButtonShort = styled.button`
 
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
   border-radius: 30px;
+`;
+
+export const InputSmall = styled.input`
+  /* Rectangle 25 */
+
+
+  padding: 10px 10px;
+  // color: white;
+  box-sizing: border-box;
+  width: 400px;
+  height: 47px;
+  // background: #171a4a;
+  background-color: white;
+  border: 1px solid grey;
+  //border-radius: 30px;
 `;

@@ -8,7 +8,8 @@ import { Form, Button } from "../ui";
 export const EditProfile = () => {
   const { editId } = useParams();
   const { logout, authState } = useContext(AuthContext);
-  const { isLogged, userData } = authState;
+  const { isLogged, user } = authState;
+  
   const {
     register,
     handleSubmit,
@@ -18,8 +19,25 @@ export const EditProfile = () => {
 
   return (
     <>
-      <Form action="" onSubmit={handleSubmit(onSubmit)}>
+        <Form action="" onSubmit={handleSubmit(onSubmit)}>
+
+      
+      <div><label>Username</label><InputSmall type="text"placeholder={user?.userName}    {...register("username")}/></div> 
+             <div><label>Name</label><InputSmall  type="text" placeholder={user?.firstName} {...register("firstname")}/></div> 
+             <div><label>First Name</label><InputSmall  type="text" placeholder={user?.lastName}    {...register("lastname")}/></div> 
+            <div><label>Email</label><InputSmall  type="email" placeholder={user?.email}    {...register("email")}/></div> 
+            <button>Save</button>
+    
+      </Form>
+      
+      {/* 
+      
+      
+
+
         <Column>
+          
+
           <InputSmall
             type="text"
             placeholder={userData?.username}
@@ -47,7 +65,8 @@ export const EditProfile = () => {
           />
           <Button type="submit">Save</Button>
         </Column>
-      </Form>
+          
+      */}
     </>
   );
 };
