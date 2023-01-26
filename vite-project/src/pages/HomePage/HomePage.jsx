@@ -1,19 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ProfileImage } from "../ui/";
-import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
-import { AuthContext } from "../auth/authContext/AuthContext";
-import Slider from "../components/Slider/Slider";
+import "./HomePage.css";
+import { ProfileImage } from "../../ui";
+import { WelcomeCard, WelcomeTitle } from "../../ui/WelcomeCard.styles";
+import { AuthContext } from "../../auth/authContext/AuthContext";
+import SlidersTitles from "../../components/SlidersTitles/SlidersTitles";
 import { motion } from "framer-motion";
 import axios from "axios";
-import "../components/Slider/Slider.css";
+import "../../components/SlidersTitles/Slider.css";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+
 export const HomePage = () => {
   const { isAuthenticated, user: userFromAuth0 } = useAuth0();
 
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
-
+  console.log(user);
   useEffect(() => {
     login(userFromAuth0);
   }, [userFromAuth0]);
@@ -91,7 +93,7 @@ export const HomePage = () => {
   return (
     <>
       <div className="home">
-        <Slider title="Recently Played" />
+        <SlidersTitles title="Recently Played" />
         <motion.div className="slider-container">
           <motion.div
             className="slider"
@@ -109,7 +111,7 @@ export const HomePage = () => {
           </motion.div>
         </motion.div>
 
-        <Slider title="Followed Playlists" />
+        <SlidersTitles title="Followed Playlists" />
         <motion.div className="slider-container">
           <motion.div
             className="slider"
@@ -127,7 +129,7 @@ export const HomePage = () => {
           </motion.div>
         </motion.div>
 
-        <Slider title="Popular Artists" />
+        <SlidersTitles title="Popular Artists" />
         <motion.div className="slider-container">
           <motion.div
             className="slider"
