@@ -13,12 +13,14 @@ export const ProfileTableStyle = styled.div`
 `;
 
 export const BackgroundColour = styled.div`
-height: 100%;
-width:100%
+  display: flex;
+  height: 100%;
+  width:100%
+  padding-left: 20%;
+  
   @media only screen and (max-width: 850px) {
-      .image{
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      ${'' /* justify-content: flex-end; */}
     }
 `
