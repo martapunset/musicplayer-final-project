@@ -4,14 +4,15 @@ export const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  //width: 300px;
   flex-direction: column;
-  //margin: 0 auto;
-  //gap: 10px;
   color: white;
-`;
+  .bt-save{
+    margin-top: 20px;
+    width: 100px;
+  }
+`
+
 export const Button = styled.button`
- 
   width: 325px;
   height: 80px;
   margin: 100px;
@@ -19,45 +20,49 @@ export const Button = styled.button`
   background: #64c27b;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
-`;
+`
 
 export const Input = styled.input`
-  /* Rectangle 25 */
-
   box-sizing: border-box;
   width: 334px;
   height: 80px;
   padding: 10px;
   margin: 10px;
-  //   opacity: 0.14;
   border: 1px solid white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
 `;
 
-export const InputSmall = styled.input`
-  /* Rectangle 25 */
-
-  margin: 5px;
-  padding: 10px;
-  // color: white;
+export const TextArea = styled.div`
+  ${'' /* padding: 10px 10px; */}
+  ${'' /* box-sizing: border-box; */}
+  ${'' /* text-align: center; */}
+  ${'' /* padding-left: 100px; */}
+  padding: 10px 10px;
   box-sizing: border-box;
-  width: 333px;
+  width: 400px;
   height: 47px;
-  // background: #171a4a;
   background-color: white;
-  border: 1px solid grey;
-  border-radius: 30px;
+  border: none;
+  border-bottom: 1px solid #0e0e0e;
+  display: block;
 `;
 
 export const ButtonShort = styled.button`
-
-  width: 147px;
-  height: 73px;
-
-  background: #64c27b;
-  /* xzz */
-
-  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
+  width: 150px;
+  height: 43px;
+  background: white;
+  ${'' /* border: none; */}
+  ${'' /* box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04); */}
   border-radius: 30px;
+`;
+
+export const InputSmall = styled.input`
+  padding: 10px 10px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 47px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #0e0e0e;
 `;

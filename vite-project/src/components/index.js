@@ -1,5 +1,3 @@
-
-export * from "./EditProfile"
+export * from "./EditProfile";
 export * from "./HomeNavBar";
-export * from "./ProfileTable";
-
+export * from "./ProfileForm/ProfileTable";

@@ -90,6 +90,7 @@ export const HomePage = () => {
     <>
 
       <div className="home">
+       
 
         <Slider title="Recently Played" />
         <motion.div className="slider-container">

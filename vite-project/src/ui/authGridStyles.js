@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgb(23,26,74);
   background: linear-gradient(0deg, rgba(23,26,74,1) 10%, rgba(2,10,28,1) 89%);
+
 }
 
 code {
@@ -24,9 +25,10 @@ code {
   background-repeat: no-repeat; 
   background-size: cover;
   grid-template-areas: 
-                    "header header header header header"
-                    "main main main main main"
-                    "footer footer footer footer footer";                 
+                    "main";                 
   width: 100%;
   height: 100vh;
+  align-icons: center;
+  justify-content: center;
+  padding-top: 15%;
 }`

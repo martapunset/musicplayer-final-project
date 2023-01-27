@@ -1,7 +1,4 @@
-//demsa pantallas
-
 import { createGlobalStyle } from "styled-components";
-import homeBackground from "../assets/img/homeBackground.jpeg";
 export const GlobalGridStyles = createGlobalStyle`
 
 body {
@@ -12,9 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(23,26,74);
-  background: linear-gradient(0deg, rgba(23,26,74,1) 10%, rgba(2,10,28,1) 89%);
-}
+  background: rgb(18,18,18);
+  background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(37,36,36,1) 100%);
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -24,7 +20,7 @@ code {
 /*min 640px*/
   
 .container {
-grid-template-areas: "header header header header side"
+grid-template-areas: "header header header header header"
                     "main main main main main"
                     "footer footer footer footer footer"
                     "sidebar sidebar sidebar sidebar sidebar"
@@ -33,7 +29,7 @@ grid-template-areas: "header header header header side"
 /*min 768px*/
 @media screen and (min-width: 768px){
 .container{
-grid-template-areas:    "header header header header side"
+grid-template-areas:    "header header header header header"
                         "main main main main main"
                         "footer footer footer footer footer"
                         "sidebar sidebar sidebar sidebar sidebar"
@@ -43,7 +39,7 @@ grid-template-areas:    "header header header header side"
 /*min 1024px*/
 @media screen and (min-width: 1024px){
 .container{
-grid-template-areas:    "sidebar header header header side"
+grid-template-areas:    "sidebar header header header header"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
@@ -54,7 +50,7 @@ grid-template-areas:    "sidebar header header header side"
 @media screen and (min-width: 1280px){
   .container{
     grid-template-areas:    
-                        "sidebar header header header side"
+                        "sidebar header header header header"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
@@ -65,10 +61,22 @@ grid-template-areas:    "sidebar header header header side"
 @media only screen and (min-width: 1536px){
   .container{
     grid-template-areas:    
-                        "sidebar header header header side"
+                        "sidebar header header header header"
                         "sidebar main main main main"
                         "sidebar main main main main"
                         "footer footer footer footer footer"
   }
 }
+
+@media only screen and (min-width: 1024px){
+  .logoResp{
+    display: none;
+  }
+}
+
+}
+@media only screen and (min-width: 850px) and (max-width: 1024px) {
+	.logoResp{
+    margin-right: 70%;
+  }
 `;

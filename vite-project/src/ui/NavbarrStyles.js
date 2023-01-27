@@ -8,7 +8,8 @@ justify-content: space-around;
 align-items: start;
 padding-left: 15%;
 width: 10%;
-background: #18191e;
+// background: #18191e;
+background-color: black;
 
 .container {
     padding: 0;
@@ -30,15 +31,16 @@ background: #18191e;
 }
 
 .container li a span:nth-child(2){
+    
 }
 
 .container li a {
     font-size: 3vh;
-    color: white; 
+    color: #31dae4; 
 }
 
 .container .active {
-    color: yellow;
+    color: rgb(234, 249, 44);
 }
 
 @media screen and (max-width: 768px){
@@ -55,6 +57,9 @@ background: #18191e;
     display: none;
     overflow: none;
     }
+    .side {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -69,6 +74,9 @@ background: #18191e;
     .container li a span:nth-last-child(1){
     display: none;
     overflow: none;
+    }
+    .side {
+        display: none;
     }
 }
 
