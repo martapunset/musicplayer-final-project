@@ -6,7 +6,7 @@ export const ProfileTableStyle = styled.div`
 .line{
   color: white;
 }
-
+@media only screen and 
 .space label{
   text-align: space-between;
 }
@@ -15,12 +15,10 @@ export const ProfileTableStyle = styled.div`
 export const BackgroundColour = styled.div`
 height: 100%;
 width:100%
-
-@media screen and (max-width: 850px) {
+  @media only screen and (max-width: 850px) {
       .image{
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-width: 500px;
     }
 `

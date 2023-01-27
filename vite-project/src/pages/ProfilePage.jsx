@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import { InputProfile, UserProfile, UserImg, BtnEdit, Texto, BackgroundColour, TextArea, ProfileTableStyle } from "../ui";
+import { UserProfile, UserImg, Texto, BackgroundColour, TextArea, ProfileTableStyle } from "../ui";
 import { Column, Main } from "../ui/model";
-import { LogoutButton } from "../components/Login/LogoutButton";
 
 export const ProfilePage = () => {
   // const { logout, authState } = useContext(AuthContext);
@@ -39,7 +38,6 @@ console.log(user);
               <div><label className="line">First Name:</label><TextArea> {user?.lastName}</TextArea></div>
               <div><label className="line">Email:</label><TextArea> {user?.email}</TextArea></div>
             </ProfileTableStyle>
-            {/* <LogoutButton /> */}
           </Column>
         </Main>
       </BackgroundColour>

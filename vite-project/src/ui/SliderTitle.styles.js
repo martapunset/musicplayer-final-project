@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SliderTitle = styled.div`
-  /* Recently played */
 
   width: 170px;
   height: 30px;
@@ -12,7 +11,5 @@ export const SliderTitle = styled.div`
   font-weight: 700;
   font-size: 19px;
   line-height: 28px;
-  /* or 147% */
   color: white;
-
 `;
