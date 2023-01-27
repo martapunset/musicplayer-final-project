@@ -20,6 +20,8 @@ export const ContainerLogin = styled.div`
 
 export const Header = styled.header`
   display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
   align-items: center;
   grid-area: header;
   background-color: #0e0e0e;
@@ -128,6 +130,15 @@ export const BtnEdit = styled.button`
   ${'' /* border: 1px solid #000000; */}
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   ${'' /* border-radius: 40.6599px; */}
+  box-sizing: border-box;
+  width: 94.87px;
+  height: 28.01px;
+  margin-right: 35px;
+  margin-left: 20px;
+  background: #64c27b;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40.6599px;
 `;
 
 export const LogoProfile = styled.div`

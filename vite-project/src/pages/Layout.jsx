@@ -1,7 +1,14 @@
 import { Outlet } from "react-router-dom";
 // import AudioPlayer from "../components/Audio/AudioPlayer";
 import { HomeNavBar } from "../components/HomeNavBar";
-import { Sidebar, Container, Main, Header, Footer, GlobalGridStyles } from "../ui";
+import {
+  Sidebar,
+  Container,
+  Main,
+  Header,
+  Footer,
+  GlobalGridStyles,
+} from "../ui";
 // import harmonyGuitar from "../assets/img/harmonyGuitar.png"
 // import logoHarmony from "../assets/img/logoHarmony.png";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
@@ -36,7 +43,6 @@ export const Layout = () => {
           <Outlet className="main" />
         </Main>
         <Footer className="footer">
-
           <AudioPlayerCool></AudioPlayerCool>
         </Footer>
         <Sidebar>
