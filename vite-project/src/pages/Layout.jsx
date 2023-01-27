@@ -20,6 +20,7 @@ import { useContext } from "react";
 import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayerCool";
 import { LogoutButton } from "../components/Login/LogoutButton";
 import { Dropdown } from "../components/Dropdown/Dropdown";
+import LogoHarmony from "../assets/img/logoHarmony.png"
 
 export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
@@ -37,6 +38,7 @@ export const Layout = () => {
       <GlobalGridStyles />
       <Container className="container">
         <Header className="header">
+       
           <Dropdown
             dropdownTitle={<ProfileImage src={user?.picture} />}
             items={items}
@@ -44,6 +46,12 @@ export const Layout = () => {
           <WelcomeCard>
             <WelcomeTitle> {user?.firstName}</WelcomeTitle>
           </WelcomeCard>
+         
+        
+          <div className="logoResp">
+            <img src={LogoHarmony} alt=""  width={"50px"}/>
+          </div>
+      
         </Header>
 
         <Main className="main">

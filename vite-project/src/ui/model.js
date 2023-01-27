@@ -26,6 +26,11 @@ export const Header = styled.header`
   align-items: center;
   grid-area: header;
   ${'' /* background-color: #0e0e0e; */}
+  @media screen and (max-width: 850px) {
+    display: flex;
+    justify-content: space-around
+  }
+
 `;
 
 export const Main = styled.main`
