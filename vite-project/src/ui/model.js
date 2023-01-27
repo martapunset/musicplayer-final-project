@@ -34,6 +34,10 @@ export const Main = styled.main`
   overflow-x: hidden;
   min-height: 100%;
   overfloy-y: scroll;
+
+  @media screen and (max-width: 850px) {
+    min-height: 50%;
+  }
 `;
 
 export const Sidebar = styled.aside`
@@ -106,6 +110,16 @@ export const UserProfile = styled.div`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
+
+  ${
+    "" /* *@media screen and (max-width: 783px) {
+    .non div>{
+      display: none;
+      overflow: none;
+      background-color:blue;
+    }
+  } */
+  }
 `;
 
 export const UserImg = styled.img`

@@ -2,7 +2,7 @@ import { useState, useEffect, Fragment } from "react";
 import { getApiData } from "../api/getApiData";
 import Song from "../components/Song";
 import { HomeNavBar } from "../components/HomeNavBar";
-import { GlobalGridStyles } from "../ui";
+import { GlobalGridStyles, Header } from "../ui";
 import searchpage from "../assets/sass/searchpage.module.scss";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -48,14 +48,13 @@ export const SearchPage = () => {
   const handleReset = () => {
     setValue("");
     asyncFetchData();
-
   };
 
   return (
     <>
-      <div className={searchpage.container}>
-        <div className={searchpage.search_input_container}>
+      <div className= {searchpage.container}>
 
+        <div className={searchpage.search_input_container}>
           <form onSubmit={handleSubmit}>
             <IconButton>
               <button style={{ border: "none" }} type="submit"> <SearchIcon /></button>
@@ -72,7 +71,7 @@ export const SearchPage = () => {
             <ClearIcon />
           </IconButton>
         </div>
-
+        
         <div className={searchpage.results_container}>
           <div className={searchpage.songs_container}>
             {tracks.map((song) => (
