@@ -18,7 +18,7 @@ export const ProfileTableStyle = styled.div`
 `;
 
 export const BackgroundColour = styled.div`
-background-color: white;
+background-color: yellow;
 height: 100%;
 width:100%
 

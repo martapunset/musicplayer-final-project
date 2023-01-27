@@ -20,13 +20,15 @@ export const ContainerLogin = styled.div`
 
 export const Header = styled.header`
   display: flex;
+  align-items: center;
   grid-area: header;
+  background-color: #0e0e0e;
 `;
 
 export const Main = styled.main`
   grid-area: main;
   overflow-x: hidden;
-  min-height: 900px;
+  min-height: 100%;
   overfloy-y: scroll;
 `;
 
