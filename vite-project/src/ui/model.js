@@ -102,6 +102,14 @@ export const UserProfile = styled.div`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
+
+  ${'' /* *@media screen and (max-width: 783px) {
+    .non div>{
+      display: none;
+      overflow: none;
+      background-color:blue;
+    }
+  } */}
 `;
 
 export const UserImg = styled.img`
@@ -111,14 +119,15 @@ export const UserImg = styled.img`
 `;
 
 export const BtnEdit = styled.button`
-  box-sizing: border-box;
-  width: 94.87px;
-  height: 28.01px;
+  ${'' /* box-sizing: border-box; */}
+  width: 100px;
+  height: 28px;
   margin-top: 10px;
-  background: #64c27b;
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 40.6599px;
+  background: white;
+  border: none;
+  ${'' /* border: 1px solid #000000; */}
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  ${'' /* border-radius: 40.6599px; */}
 `;
 
 export const LogoProfile = styled.div`

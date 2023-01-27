@@ -31,9 +31,6 @@ export const AuthHomePage = () => {
       <AuthGridStyles />
       <ContainerLogin className="containerLogin">
         <Column>
-          {/* <Header className="header"> */}
-          {/* <IconBack></IconBack> LINK en back */}
-          {/* </Header> */}
 
           <Main className="main">
           <center>
