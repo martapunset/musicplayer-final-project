@@ -16,11 +16,14 @@ export const BackgroundColour = styled.div`
   display: flex;
   height: 100%;
   width:100%
-  padding-left: 20%;
-  
+  gap: 20px;
+  padding: 5% 10%;
+  justify-content: space-around;
   @media only screen and (max-width: 850px) {
       display: flex;
       flex-direction: column;
-      ${'' /* justify-content: flex-end; */}
+      align-items: center;
+      padding: 2% 5%;
+      gap: 5px;
     }
 `

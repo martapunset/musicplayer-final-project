@@ -114,6 +114,13 @@ export const UserProfile = styled.div`
     ${'' /* margin-top: 20px; */}
     width: 100px;
   }
+  @media only screen and (max-width: 850px) {
+      display: flex;
+      ${'' /* flex-direction: column; */}
+      justify-content: center;
+      padding: 2% 5%;
+      gap: 5px;
+    }
 `;
 
 export const UserImg = styled.img`
