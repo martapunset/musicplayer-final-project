@@ -8,7 +8,6 @@ import { LogoProfile } from '../../ui';
 import logoHarmony from "../../assets/img/logoHarmony.png"
 import { Column, Main } from "../../ui";
 import { LoginButton } from "../../components/Login/LoginButton";
-// import { LogoutButton } from "../../components/Login/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const AuthHomePage = () => {
@@ -18,20 +17,11 @@ export const AuthHomePage = () => {
   const { isLogged } = authState;
   const { isAuthenticated } = useAuth0();
 
-  /*
-    useEffect(() => {
-      
-      isAuthenticated ? navigate("/") : console.log("itsNOTlogged")
-        , []
-    });
-  */
   return (
     <>
-      {/*isLogged && <Navigate to="/home" replace={true} />*/}
       <AuthGridStyles />
       <ContainerLogin className="containerLogin">
         <Column>
-
           <Main className="main">
           <center>
           <LogoProfile>
