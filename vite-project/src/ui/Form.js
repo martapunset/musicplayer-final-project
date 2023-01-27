@@ -52,14 +52,11 @@ export const TextArea = styled.div`
 
 export const ButtonShort = styled.button`
 
-  width: 147px;
+  width: 200px;
   height: 73px;
-
-  background: #64c27b;
-  /* xzz */
-
+  background: red;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
-  border-radius: 30px;
+  ${'' /* border-radius: 30px; */}
 `;
 
 export const InputSmall = styled.input`
