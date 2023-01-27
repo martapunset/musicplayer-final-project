@@ -63,6 +63,7 @@ export const Widget = styled.div`
 export const Footer = styled.footer`
   grid-area: footer;
   bottom: 0;
+  display: flex;
 `;
 
 export const Column = styled.div`

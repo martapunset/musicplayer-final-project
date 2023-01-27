@@ -66,9 +66,9 @@ export const AudioPlayerCool = () => {
 
   return (
     <>
-      <button onClick={() => audiofunction(0)}>play song 1</button>
+      {/* <button onClick={() => audiofunction(0)}>play song 1</button>
       <button onClick={() => audiofunction(1)}>play song 2</button>
-      <button onClick={() => audiofunction(2)}>play song 3</button>
+      <button onClick={() => audiofunction(2)}>play song 3</button> */}
 
       {
         <AudioPlayer

@@ -31,7 +31,7 @@ background-color: black;
 }
 
 .container li a span:nth-child(2){
-
+    
 }
 
 .container li a {
@@ -56,6 +56,9 @@ background-color: black;
     .container li a span:nth-last-child(1){
     display: none;
     overflow: none;
+    }
+    .side {
+        display: none;
     }
 }
 
