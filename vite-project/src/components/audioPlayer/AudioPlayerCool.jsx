@@ -9,41 +9,26 @@ import axios from "axios";
 import { MusicContext } from "../../musicProvider/MusicProvider";
 
 export const AudioPlayerCool = () => {
-  const {  query, setQuery, fetchData } = useContext(MusicContext);
-  const [datam, setData] = useState(['']);
+  const { query, setQuery, fetchData } = useContext(MusicContext);
+  const [data, setData] = useState([""]);
   //setQuery("hola")
-  console.log(datam)
-  
+  console.log(data);
 
   useEffect(() => {
-getdata()
-   
-  //setQuery("tracks/");
+    getdata();
+
+    //setQuery("tracks/");
   }, []);
 
-
-
-
-  
   const getdata = async () => {
     try {
-      const response  = await axios.get("http://localhost:4000/tracks");
+      const response = await axios.get("http://localhost:4000/tracks");
       //return response;${query}
       setData(response.data.data);
-    
     } catch (error) {
-      console.log(error)
-  }
-  
-
-
-  }
-  
-
-  
-          
-  
-
+      console.log(error);
+    }
+  };
 
   const tracks = [
     {
@@ -80,18 +65,15 @@ getdata()
   // const i = 0;
   const [currentTrack, setcurrentTrack] = useState(0);
   const [playing, setplaying] = useState(false);
-  const track = tracks[currentTrack].url;
+  const track = data[currentTrack].url;
 
-  if (!track) return null;
+  if (!data) return null;
 
   console.log("onplay", playing);
-  console.log(track);
-  console.log(tracks);
+  // console.log(track);
+  // console.log(tracks);
   console.log(currentTrack);
-  console.log("length", tracks.length);
-  // const tracksApi = "http://localhost:4000/tracks";
-
-  // const songList = await getApiData(tracksApi);
+  console.log("length", data.length);
 
   const player = useRef();
 
