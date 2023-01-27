@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: grid;
   ${"" /* grid-gap: 20px; */}
   grid-template-columns: 285px 1fr 1fr 1fr 1fr;
-  grid-template-rows: 80px 1fr 1fr 100px;
+  grid-template-rows: 80px 1fr 80px 100px;
   height: 100vh;
   word-wrap: break-word;
 `;
@@ -112,16 +112,15 @@ export const UserProfile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  ${'' /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */}
   color: grey;
+
   .bt-ed a div{
     color: black;
-    ${'' /* margin-top: 20px; */}
     width: 100px;
   }
+
   @media only screen and (max-width: 850px) {
       display: flex;
-      ${'' /* flex-direction: column; */}
       justify-content: center;
       padding: 2% 5%;
       gap: 5px;
