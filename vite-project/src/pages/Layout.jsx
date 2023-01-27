@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import AudioPlayer from "../components/Audio/AudioPlayer";
+// import AudioPlayer from "../components/Audio/AudioPlayer";
 import { HomeNavBar } from "../components/HomeNavBar";
 import {
   Sidebar,
@@ -8,18 +8,15 @@ import {
   Header,
   Footer,
   GlobalGridStyles,
-  Titleh2,
-  LogoProfile,
-  FlexSpace,
 } from "../ui";
 // import harmonyGuitar from "../assets/img/harmonyGuitar.png"
-import logoHarmony from "../assets/img/logoHarmony.png";
+// import logoHarmony from "../assets/img/logoHarmony.png";
 import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { Link } from "react-router-dom";
 import { ProfileImage } from "../ui";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { useContext } from "react";
-import { margin } from "@mui/system";
+// import { margin } from "@mui/system";
 import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayerCool";
 import { LogoutButton } from "../components/Login/LogoutButton";
 

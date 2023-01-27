@@ -25,9 +25,10 @@ code {
   background-repeat: no-repeat; 
   background-size: cover;
   grid-template-areas: 
-                    "header header header header header"
-                    "main main main main main"
-                    "footer footer footer footer footer";                 
+                    "main";                 
   width: 100%;
   height: 100vh;
+  align-icons: center;
+  justify-content: center;
+  padding-top: 15%;
 }`

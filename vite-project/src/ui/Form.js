@@ -52,13 +52,11 @@ export const TextArea = styled.div`
 
 export const ButtonShort = styled.button`
 
-  width: 147px;
-  height: 73px;
-
-  background: #64c27b;
-  /* xzz */
-
-  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04);
+  width: 150px;
+  height: 43px;
+  background: white;
+  ${'' /* border: none; */}
+  ${'' /* box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.04); */}
   border-radius: 30px;
 `;
 

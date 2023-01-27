@@ -14,8 +14,8 @@ export const ContainerLogin = styled.div`
   width: 100%;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(1, 1fr);
+  ${'' /* grid-template-rows: repeat(3, auto); */}
 `;
 
 export const Header = styled.header`
@@ -127,6 +127,9 @@ export const BtnEdit = styled.button`
 export const LogoProfile = styled.div`
   grid-area: side;
   padding: 20px;
+  .img{
+    aling-items: center;
+  }
 `;
 
 export const FlexSpace = styled.div`
