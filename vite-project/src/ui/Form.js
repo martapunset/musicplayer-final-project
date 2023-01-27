@@ -6,6 +6,10 @@ export const Form = styled.form`
   align-items: center;
   flex-direction: column;
   color: white;
+  .bt-save{
+    margin-top: 20px;
+    width: 100px;
+  }
 `
 
 export const Button = styled.button`
@@ -58,5 +62,6 @@ export const InputSmall = styled.input`
   width: 400px;
   height: 47px;
   background-color: white;
-  border: 1px solid grey;
+  border: none;
+  border-bottom: 1px solid #0e0e0e;
 `;
