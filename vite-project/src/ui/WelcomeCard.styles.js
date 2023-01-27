@@ -5,6 +5,7 @@ export const WelcomeCard = styled.div`
   align-items: center;
   width: 120px;
   height: 50px;
+  ${'' /* opacity: 100%; */}
 
   @media only screen and (min-width: 1200px) {
     display: flex;

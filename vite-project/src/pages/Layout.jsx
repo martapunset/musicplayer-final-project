@@ -19,24 +19,31 @@ import { useContext } from "react";
 // import { margin } from "@mui/system";
 import { AudioPlayerCool } from "../components/audioPlayer/AudioPlayerCool";
 import { LogoutButton } from "../components/Login/LogoutButton";
+import { Dropdown } from "../components/Dropdown/Dropdown";
 
 export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
+
+  const items = [
+    {
+      slug: "/profile",
+      anchor: "Profile",
+    },
+  ];
 
   return (
     <>
       <GlobalGridStyles />
       <Container className="container">
         <Header className="header">
+          <Dropdown
+            dropdownTitle={<ProfileImage src={user?.picture} />}
+            items={items}
+          />
           <WelcomeCard>
             <WelcomeTitle> {user?.firstName}</WelcomeTitle>
-            <Link to="/profile">
-              {" "}
-              <ProfileImage src={user?.picture} />
-            </Link>
           </WelcomeCard>
-          <LogoutButton />
         </Header>
 
         <Main className="main">

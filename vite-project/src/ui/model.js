@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: grid;
   ${"" /* grid-gap: 20px; */}
   grid-template-columns: 285px 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: 80px 1fr 1fr 100px;
   height: 100vh;
   word-wrap: break-word;
 `;
@@ -15,16 +15,17 @@ export const ContainerLogin = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(1, 1fr);
-  ${'' /* grid-template-rows: repeat(3, auto); */}
+  ${"" /* grid-template-rows: repeat(3, auto); */}
 `;
 
 export const Header = styled.header`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
   flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
   grid-area: header;
-  background-color: #0e0e0e;
+  ${'' /* background-color: #0e0e0e; */}
 `;
 
 export const Main = styled.main`
@@ -32,6 +33,10 @@ export const Main = styled.main`
   overflow-x: hidden;
   min-height: 100%;
   overfloy-y: scroll;
+
+  @media screen and (max-width: 850px) {
+    min-height: 50%;
+  }
 `;
 
 export const Sidebar = styled.aside`
@@ -57,6 +62,7 @@ export const Widget = styled.div`
 export const Footer = styled.footer`
   grid-area: footer;
   bottom: 0;
+  display: flex;
 `;
 
 export const Column = styled.div`
@@ -104,6 +110,16 @@ export const UserProfile = styled.div`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
+
+  ${
+    "" /* *@media screen and (max-width: 783px) {
+    .non div>{
+      display: none;
+      overflow: none;
+      background-color:blue;
+    }
+  } */
+  }
 `;
 
 export const UserImg = styled.img`
@@ -113,21 +129,22 @@ export const UserImg = styled.img`
 `;
 
 export const BtnEdit = styled.button`
-  box-sizing: border-box;
-  width: 94.87px;
-  height: 28.01px;
-  margin-right: 35px;
-  margin-left: 20px;
-  background: #64c27b;
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 40.6599px;
+  all: unset;
+  background-color: ghostwhite;
+  display: flex;
+  gap: 0.8rem;
+  color: #666666;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem;
+  transition: all 0.1s linear;
+  cursor: pointer;
 `;
 
 export const LogoProfile = styled.div`
   grid-area: side;
   padding: 20px;
-  .img{
+  .img {
     aling-items: center;
   }
 `;

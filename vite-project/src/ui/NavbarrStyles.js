@@ -31,16 +31,16 @@ background-color: black;
 }
 
 .container li a span:nth-child(2){
-
+    
 }
 
 .container li a {
     font-size: 3vh;
-    color: white; 
+    color: #31dae4; 
 }
 
 .container .active {
-    color: yellow;
+    color: rgb(234, 249, 44);
 }
 
 @media screen and (max-width: 768px){
@@ -56,6 +56,9 @@ background-color: black;
     .container li a span:nth-last-child(1){
     display: none;
     overflow: none;
+    }
+    .side {
+        display: none;
     }
 }
 
