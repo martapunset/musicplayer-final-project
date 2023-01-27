@@ -32,6 +32,10 @@ export const Main = styled.main`
   overflow-x: hidden;
   min-height: 100%;
   overfloy-y: scroll;
+
+  @media screen and (max-width: 850px) {
+    min-height: 50%;
+  }
 `;
 
 export const Sidebar = styled.aside`
