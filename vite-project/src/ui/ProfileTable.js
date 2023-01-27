@@ -17,7 +17,7 @@ export const BackgroundColour = styled.div`
   height: 100%;
   width:100%
   gap: 20px;
-  padding: 5% 10%;
+  padding: 10% 20%;
   justify-content: space-around;
   @media only screen and (max-width: 850px) {
       display: flex;
