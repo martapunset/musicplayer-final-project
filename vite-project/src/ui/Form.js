@@ -37,10 +37,11 @@ export const TextArea = styled.div`
   ${'' /* padding: 10px 10px; */}
   ${'' /* box-sizing: border-box; */}
   ${'' /* text-align: center; */}
-  padding: 0;
-  padding-left: 100px;
+  ${'' /* padding-left: 100px; */}
+  padding: 10px 10px;
+  box-sizing: border-box;
   width: 400px;
-  height: 30px;
+  height: 47px;
   background-color: white;
   border: none;
   border-bottom: 1px solid #0e0e0e;

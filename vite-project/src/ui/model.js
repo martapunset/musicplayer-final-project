@@ -23,10 +23,9 @@ export const Header = styled.header`
   flex-direction: row-reverse;
   flex-wrap: nowrap;
   justify-content: flex-start;
-
   align-items: center;
   grid-area: header;
-  background-color: #0e0e0e;
+  ${'' /* background-color: #0e0e0e; */}
 `;
 
 export const Main = styled.main`

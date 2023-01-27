@@ -4,8 +4,7 @@ export const ProfileTableStyle = styled.div`
   max-width: 400px;
 
 .line{
-  font-weight: bolder;
-  padding-left: 0px !important;
+  color: white;
 }
 
 .space label{
@@ -14,7 +13,7 @@ export const ProfileTableStyle = styled.div`
 `;
 
 export const BackgroundColour = styled.div`
-background-color: white;
+${'' /* background-color: white; */}
 height: 100%;
 width:100%
 `

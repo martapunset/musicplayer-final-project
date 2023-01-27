@@ -31,12 +31,12 @@ console.log(user.email);
             </div>
             </UserProfile>
             <ProfileTableStyle>
-              <div className="space"><TextArea><label className="line">Username:</label> {user?.userName}</TextArea></div>
-              <div><TextArea><label className="line">Name:</label> {user?.firstName}</TextArea></div>
-              <div><TextArea><label className="line">First Name:</label> {user?.lastName}</TextArea></div>
-              <div><TextArea><label className="line">Email:</label> {user?.email}</TextArea></div>
+              <div><label className="line">Username:</label><TextArea> {user?.userName}</TextArea></div>
+              <div><label className="line">Name:</label><TextArea> {user?.firstName}</TextArea></div>
+              <div><label className="line">First Name:</label><TextArea> {user?.lastName}</TextArea></div>
+              <div><label className="line">Email:</label><TextArea> {user?.email}</TextArea></div>
             </ProfileTableStyle>
-            <LogoutButton />
+            {/* <LogoutButton /> */}
           </Column>
         </Main>
       </BackgroundColour>
