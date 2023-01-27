@@ -46,8 +46,7 @@ export const Layout = () => {
           <Outlet className="main" />
         </Main>
         <Footer className="footer">
-
-      <AudioPlayerCool></AudioPlayerCool>
+          <AudioPlayerCool></AudioPlayerCool>
         </Footer>
         <Sidebar>
           {" "}
