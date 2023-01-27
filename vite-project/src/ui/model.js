@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: grid;
   ${"" /* grid-gap: 20px; */}
   grid-template-columns: 285px 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: 80px 1fr 1fr 100px;
   height: 100vh;
   word-wrap: break-word;
 `;
