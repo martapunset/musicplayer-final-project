@@ -13,6 +13,6 @@ export const SliderTitle = styled.div`
   font-size: 19px;
   line-height: 28px;
   /* or 147% */
-  color: black;
+  color: white;
 
 `;

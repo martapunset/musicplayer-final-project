@@ -36,11 +36,11 @@ background-color: black;
 
 .container li a {
     font-size: 3vh;
-    color: white; 
+    color: #31dae4; 
 }
 
 .container .active {
-    color: yellow;
+    color: rgb(234, 249, 44);
 }
 
 @media screen and (max-width: 768px){
