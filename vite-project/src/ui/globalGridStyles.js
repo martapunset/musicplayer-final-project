@@ -71,4 +71,11 @@ grid-template-areas:    "sidebar header header header header"
                         "footer footer footer footer footer"
   }
 }
+
+@media only screen and (min-width: 850px){
+  .logoResp{
+    display: none;
+  }
+}
+
 `;
