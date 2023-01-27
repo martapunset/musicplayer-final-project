@@ -14,6 +14,7 @@ export const ProfilePage = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
 console.log(user.email);
+console.log(user);
   return (
     <>
       <BackgroundColour>
@@ -21,8 +22,8 @@ console.log(user.email);
           <Column>
           <center>
             <UserProfile>
-            <div >
-              <UserImg className="image" src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+            <div className="image">
+              <UserImg src={user.picture} />
               <button className="bt-ed">
                 <Link to="/editProfile">
                   {" "}
