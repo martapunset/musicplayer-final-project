@@ -1,12 +1,50 @@
 import { containerClasses } from "@mui/material";
 import { positions } from "@mui/system";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./audioPlayer.css";
+import axios from "axios";
 
+import { MusicContext } from "../../musicProvider/MusicProvider";
 
 export const AudioPlayerCool = () => {
+  const {  query, setQuery, fetchData } = useContext(MusicContext);
+  const [datam, setData] = useState(['']);
+  //setQuery("hola")
+  console.log(datam)
+  
+
+  useEffect(() => {
+getdata()
+   
+  //setQuery("tracks/");
+  }, []);
+
+
+
+
+  
+  const getdata = async () => {
+    try {
+      const response  = await axios.get("http://localhost:4000/tracks");
+      //return response;${query}
+      setData(response.data.data);
+    
+    } catch (error) {
+      console.log(error)
+  }
+  
+
+
+  }
+  
+
+  
+          
+  
+
+
   const tracks = [
     {
       id: 1,

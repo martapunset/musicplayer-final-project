@@ -5,6 +5,7 @@ import { LibraryPage, ProfilePage, SearchPage, HomePage, LikedPlayList } from ".
 import { EditProfilePage } from "../pages/EditProfilePage.jsx";
 import { AuthProvider } from "../auth/authContext/AuthProvider";
 import { Layout } from "../pages/Layout.jsx";
+import { MusicProvider } from "../musicProvider/MusicProvider.jsx";
 
 const Router = () => {
   const { isAuthenticated } = useAuth0();
@@ -14,9 +15,10 @@ const Router = () => {
     <>
 
       <AuthProvider>
+      <MusicProvider>
         <Routes>
           <Route index path="/auth" element={isAuthenticated ? <Navigate to="/" /> : <AuthHomePage />} />
-
+       
           <Route element={<Layout />}>
             <Route path="/" element={isAuthenticated ? <HomePage /> : <Navigate to="/auth" />} />
             <Route
@@ -38,8 +40,10 @@ const Router = () => {
             />
             <Route path="/library" element={<LibraryPage />} />
             <Route path="/liked" element={<LikedPlayList />} />
-          </Route>
-        </Routes>
+            </Route>
+       
+          </Routes>
+          </MusicProvider>
       </AuthProvider>
 
     </>

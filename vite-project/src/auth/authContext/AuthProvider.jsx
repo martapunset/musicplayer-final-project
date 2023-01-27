@@ -74,6 +74,7 @@ export const AuthProvider = ({ children }) => {
         authState,
         login: login,
         logoutReducer: logoutReducer,
+        
       }}
     >
       {children}
