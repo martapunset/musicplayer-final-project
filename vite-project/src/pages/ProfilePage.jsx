@@ -19,17 +19,19 @@ console.log(user.email);
       <BackgroundColour>
         <Main className="main">
           <Column>
+          <center>
             <UserProfile>
-            <div className="non">
-              <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
-              <BtnEdit>
+            <div >
+              <UserImg className="image" src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
+              <button className="bt-ed">
                 <Link to="/editProfile">
                   {" "}
                   <Texto>Edit Profile</Texto>
                 </Link>
-              </BtnEdit>
+              </button>
             </div>
             </UserProfile>
+            </center>
             <ProfileTableStyle>
               <div><label className="line">Username:</label><TextArea> {user?.userName}</TextArea></div>
               <div><label className="line">Name:</label><TextArea> {user?.firstName}</TextArea></div>

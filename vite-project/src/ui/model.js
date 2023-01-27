@@ -44,8 +44,7 @@ export const Sidebar = styled.aside`
   height: 100%;
   grid-area: sidebar;
   display: flex;
-  ${
-    "" /* align-items: center;
+  ${"" /* align-items: center;
 justify-content: center; */
   }
 `;
@@ -108,17 +107,12 @@ export const UserProfile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: white;
-
-  ${
-    "" /* *@media screen and (max-width: 783px) {
-    .non div>{
-      display: none;
-      overflow: none;
-      background-color:blue;
-    }
-  } */
+  ${'' /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */}
+  color: grey;
+  .bt-ed a div{
+    color: black;
+    ${'' /* margin-top: 20px; */}
+    width: 100px;
   }
 `;
 
