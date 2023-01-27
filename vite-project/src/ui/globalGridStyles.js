@@ -73,9 +73,10 @@ grid-template-areas:    "sidebar header header header header"
     display: none;
   }
 }
+
+}
 @media only screen and (min-width: 850px) and (max-width: 1024px) {
 	.logoResp{
-    margin-right: 700px;
+    margin-right: 70%;
   }
-}
 `;
