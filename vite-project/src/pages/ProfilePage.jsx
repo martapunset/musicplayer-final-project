@@ -5,11 +5,7 @@ import { UserProfile, UserImg, Texto, BackgroundColour, TextArea, ProfileTableSt
 import { Column, Main } from "../ui/model";
 
 export const ProfilePage = () => {
-  // const { logout, authState } = useContext(AuthContext);
-  // const { isLogged, user } = authState;
-  // const { login, authState } = useContext(AuthContext); //userDAta for profile
-  // const { isLogged, userData } = authState; //userDAta for profile
-  // console.log("userDAta for Toni", userData); //userDAta for profile
+
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
   console.log(user.email);

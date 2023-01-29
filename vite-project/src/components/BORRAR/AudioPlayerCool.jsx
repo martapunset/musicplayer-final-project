@@ -1,15 +1,14 @@
-import { containerClasses } from "@mui/material";
-import { positions } from "@mui/system";
+
 import { useEffect, useState, useRef, useContext } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./audioPlayer.css";
-import axios from "axios";
+
 
 import { MusicContext } from "../../musicProvider/MusicProvider";
 
 
-export const AudioPlayerCool = (id ) => {
+ const AudioPlayerCool = (id ) => {
 
 
   const { data, query, setQuery, fetchData , playerRef} = useContext(MusicContext);
@@ -18,17 +17,7 @@ export const AudioPlayerCool = (id ) => {
 
   const [playing, setplaying] = useState(false);
  const track = data[currentTrack].url;
-/*
 
-  
-
-
- 
-
-
-  //const player = useRef();
-*/
-  
 useEffect(() => {
   //getData();
     setQuery("tracks");
@@ -43,17 +32,6 @@ playerRef.current.audio.current.play();
 
 console.log(track)
 };
-
-
-
-
-useEffect(() => {
-
-    
-  }, [currentTrack]);
-  
-
-
 
   return (
     <><h1>{track}</h1>
