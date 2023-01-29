@@ -5,21 +5,34 @@ import { HomeNavBar } from "../components/HomeNavBar";
 import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-
+import { ContentCutOutlined } from "@mui/icons-material";
+import { useContext } from "react";
+import { MusicContext } from "../musicProvider/MusicProvider";
 export const LikedPlayList = () => {
   const [likedSong, setLikedSong] = useState([]);
 
-  useEffect(() => {
-    const url = "http://localhost:4000/tracks";
-    const trackListData = async () => {
-      const data = await getApiData(url);
-      setLikedSong(data);
-    };
-    trackListData();
-  }, []);
+  const {
+    query,
+    setQuery,
+    track,
+    data,
+    currentTrack,
+    playTrackFunction,
+    playerRef,
+  } = useContext(MusicContext);
+
+  const [playing, setplaying] = useState(false);
+
+  console.log(data);
+
+  setQuery("tracks");
 
   return (
     <>
+      <button onClick={() => playTrackFunction(0)}>play song 1</button>
+      <button onClick={() => playTrackFunction(1)}>play song 2</button>
+      <button onClick={() => playTrackFunction(2)}>play song 3</button>
+
       <div className={likescss.container}>
         <div className={likescss.head}>
           <div className={likescss.head_gradient}></div>
@@ -44,14 +57,13 @@ export const LikedPlayList = () => {
             </div>
           </div>
 
-          {likedSong.map((song) => (
-            <Fragment key={song.id}>
+          {data.map((song) => (
+            <Fragment key={song?.id}>
               <Song song={song} />
             </Fragment>
           ))}
         </div>
       </div>
-
     </>
   );
 };
