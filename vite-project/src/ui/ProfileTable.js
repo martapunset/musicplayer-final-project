@@ -6,14 +6,24 @@ export const ProfileTableStyle = styled.div`
 .line{
   color: white;
 }
-
+@media only screen and 
 .space label{
   text-align: space-between;
 }
 `;
 
 export const BackgroundColour = styled.div`
-${'' /* background-color: white; */}
-height: 100%;
-width:100%
+  display: flex;
+  height: 100%;
+  width:100%
+  gap: 20px;
+  padding: 10% 20%;
+  justify-content: space-around;
+  @media only screen and (max-width: 850px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2% 5%;
+      gap: 5px;
+    }
 `

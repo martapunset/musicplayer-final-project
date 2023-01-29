@@ -75,6 +75,9 @@ background-color: black;
     display: none;
     overflow: none;
     }
+    .side {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 1024px) {

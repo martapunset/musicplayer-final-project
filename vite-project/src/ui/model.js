@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: grid;
   ${"" /* grid-gap: 20px; */}
   grid-template-columns: 285px 1fr 1fr 1fr 1fr;
-  grid-template-rows: 80px 1fr 1fr 100px;
+  grid-template-rows: 80px 1fr 80px 100px;
   height: 100vh;
   word-wrap: break-word;
 `;
@@ -26,6 +26,11 @@ export const Header = styled.header`
   align-items: center;
   grid-area: header;
   ${'' /* background-color: #0e0e0e; */}
+  @media screen and (max-width: 850px) {
+    display: flex;
+    justify-content: space-around
+  }
+
 `;
 
 export const Main = styled.main`
@@ -44,8 +49,7 @@ export const Sidebar = styled.aside`
   height: 100%;
   grid-area: sidebar;
   display: flex;
-  ${
-    "" /* align-items: center;
+  ${"" /* align-items: center;
 justify-content: center; */
   }
 `;
@@ -108,18 +112,19 @@ export const UserProfile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: white;
+  color: grey;
 
-  ${
-    "" /* *@media screen and (max-width: 783px) {
-    .non div>{
-      display: none;
-      overflow: none;
-      background-color:blue;
-    }
-  } */
+  .bt-ed a div{
+    color: black;
+    width: 100px;
   }
+
+  @media only screen and (max-width: 850px) {
+      display: flex;
+      justify-content: center;
+      padding: 2% 5%;
+      gap: 5px;
+    }
 `;
 
 export const UserImg = styled.img`
