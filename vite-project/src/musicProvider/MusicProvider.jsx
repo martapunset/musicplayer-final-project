@@ -8,7 +8,8 @@ import axios from "axios";
 export const MusicContext = React.createContext("codeInaBottle");
 import { useRef } from "react";
 import AudioPlayer from "react-h5-audio-player";
-
+import "react-h5-audio-player/lib/styles.css";
+import "./audioPlayer.css";
 export const MusicProvider = ({ children }) => {
   const [playing, setplaying] = useState(false);
   const [currentTrack, setcurrentTrack] = useState(0);

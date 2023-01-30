@@ -11,7 +11,7 @@ import searchpage from "../assets/sass/searchpage.module.scss";
 
 export const LibraryPage = () => {
   const [likedSong, setLikedSong] = useState([]);
-  const [tracks, setTracks] = useState([]);
+
   const [playlists, setPlaylists] = useState([]);
 
   const endPointTracks = "tracks";
