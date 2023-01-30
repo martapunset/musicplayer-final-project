@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain="bernersmusicapp.eu.auth0.com"
       clientId="qFfW5qSqtLX9AnlXSIM7RfJyCvKsemal"
       redirectUri={window.location.origin}
-      audience="https://bernersmusicapp.eu.auth0.com/api/v2/"
+      audience="https://express.sample"
     >
       <App />
     </Auth0Provider>

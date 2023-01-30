@@ -1,15 +1,12 @@
 import { useState, useEffect, Fragment } from "react";
 import { getApiData } from "../api/getApiData";
 import Song from "../components/Song";
-
 import { HomeNavBar } from "../components/HomeNavBar";
-import { GlobalGridStyles } from "../ui";
-
+import { GlobalGridStyles, Header } from "../ui";
 import searchpage from "../assets/sass/searchpage.module.scss";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-
 // import { SearchBar } from "./SearchBar";
 
 export const SearchPage = () => {
@@ -51,19 +48,17 @@ export const SearchPage = () => {
   const handleReset = () => {
     setValue("");
     asyncFetchData();
-    
   };
 
   return (
     <>
-      <div className={searchpage.container}>
-        <div className={searchpage.search_input_container}>
-         
+      <div className= {searchpage.container}>
 
+        <div className={searchpage.search_input_container}>
           <form onSubmit={handleSubmit}>
-          <IconButton>
-              <button style={{ border:"none"} }type="submit"> <SearchIcon /></button>
-          </IconButton>
+            <IconButton>
+              <button style={{ border: "none" }} type="submit"> <SearchIcon /></button>
+            </IconButton>
             <input
               type="text"
               onChange={(e) => setValue(e.target.value)}
@@ -76,7 +71,7 @@ export const SearchPage = () => {
             <ClearIcon />
           </IconButton>
         </div>
-
+        
         <div className={searchpage.results_container}>
           <div className={searchpage.songs_container}>
             {tracks.map((song) => (
@@ -86,7 +81,6 @@ export const SearchPage = () => {
             ))}
           </div>
 
-
           {/* 
           <div className={searchpage.playlists_container}>
             <Playlists playlists={playlists} />
@@ -95,7 +89,6 @@ export const SearchPage = () => {
         </div>
       </div>
 
-     
     </>
   );
 };

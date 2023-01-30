@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./HomePage.css";
-import { ProfileImage } from "../../ui";
-import { WelcomeCard, WelcomeTitle } from "../../ui/WelcomeCard.styles";
-import { AuthContext } from "../../auth/authContext/AuthContext";
-import SlidersTitles from "../../components/SlidersTitles/SlidersTitles";
+// import { ProfileImage } from "../ui/";
+// import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
+import { AuthContext } from "../auth/authContext/AuthContext";
+import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
-import "../../components/SlidersTitles/Slider.css";
-import { Link } from "react-router-dom";
+import "../components/Slider/Slider.css";
+// import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-export const HomePage = () => {
   const { isAuthenticated, user: userFromAuth0 } = useAuth0();
 
   const { login, authState } = useContext(AuthContext);
@@ -47,15 +45,11 @@ export const HomePage = () => {
   //   );
   // };
 
-  const postUsers = async () => {
-    const { data } = await axios.get("http://localhost:4000/api/v1/users/");
-    setAlbumData(data);
-  };
-
   const getdata = async () => {
-    const { data } = await axios.get("http://localhost:4000/api/v1/albums");
+
+    const { data } = await axios.get("http://localhost:4000/albums")
     setAlbumData(data);
-  };
+  }
 
   useEffect(() => {
     // const data = async () => {
@@ -88,12 +82,15 @@ export const HomePage = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   return (
     <>
+
       <div className="home">
-        <SlidersTitles title="Recently Played" />
+       
+
+        <Slider title="Recently Played" />
         <motion.div className="slider-container">
           <motion.div
             className="slider"
@@ -138,16 +135,16 @@ export const HomePage = () => {
           >
             {/* {artistData?.map((artists) => {
               return (
-                
-                  <motion.div className="item" key={artists.id}>
-                    <img
-                      className="artistsProfile"
-                      src={artists.photoUrl}
-                      alt={artists.name}
-                    />
-                    <p>{artists.name}</p>
-                  </motion.div>
-                
+
+                <motion.div className="item" key={artists.id}>
+                  <img
+                    className="artistsProfile"
+                    src={artists.photoUrl}
+                    alt={artists.name}
+                  />
+                  <p>{artists.name}</p>
+                </motion.div>
+
               );
             })} */}
           </motion.div>

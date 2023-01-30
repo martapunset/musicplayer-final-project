@@ -1,18 +1,10 @@
 import styled from "styled-components";
 
 export const WelcomeCard = styled.div`
-  display: grid;
-  grid-column: 5 / 6;
-  grid-row: 1 / 2;
-  margin: 25px auto;
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
-  margin-top: 15px;
-  width: 275px;
+  width: 120px;
   height: 50px;
-  background: #64c27b;
-  border-radius: 30px;
 
   @media only screen and (min-width: 1200px) {
     display: grid;
@@ -20,17 +12,24 @@ export const WelcomeCard = styled.div`
     grid-row: 1 / 2;
     display: flex;
     align-items: center;
-    margin-top: 15px;
-    width: 275px;
+    width: 120px;
+    height: 50px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    width: 120px;
     height: 50px;
   }
 `;
 
 export const WelcomeTitle = styled.h1`
-  margin: auto;
+  margin-right: 15px;
   display: flex;
   align-items: center;
-  width: fit-content;
+  justify-content: flex-end;
+  width: 150px;
   height: 40px;
   font-family: "Lato";
   font-style: normal;
@@ -40,10 +39,11 @@ export const WelcomeTitle = styled.h1`
   color: #ffffff;
 
   @media only screen and (min-width: 1200px) {
-    margin: auto;
+    margin-right: 15px;
     display: flex;
     align-items: center;
-    width: fit-content;
+    justify-content: flex-end;
+    width: 150px;
     height: 40px;
     font-family: "Lato";
     font-style: normal;

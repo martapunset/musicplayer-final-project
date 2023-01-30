@@ -3,10 +3,9 @@ import { AuthContext } from "./AuthContext";
 import { checkUserByEmail } from "../../api/postUsers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
-import { useAuth0 } from "@auth0/auth0-react";
-//import { Sync } from "@mui/icons-material";
 
-//import { Navigate } from "react-router-dom";
+
+
 export const AuthProvider = ({ children }) => {
 
   const initArgs = {
@@ -74,6 +73,7 @@ export const AuthProvider = ({ children }) => {
         authState,
         login: login,
         logoutReducer: logoutReducer,
+        
       }}
     >
       {children}

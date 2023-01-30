@@ -4,30 +4,43 @@ export const Container = styled.div`
   width: 100%;
   display: grid;
   ${"" /* grid-gap: 20px; */}
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, auto);
+  grid-template-columns: 285px 1fr 1fr 1fr 1fr;
+  grid-template-rows: 80px 1fr 80px 100px;
   height: 100vh;
   word-wrap: break-word;
 `;
 
 export const ContainerLogin = styled.div`
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(1, 1fr);
+  ${"" /* grid-template-rows: repeat(3, auto); */}
 `;
 
 export const Header = styled.header`
-  display: grid;
-  grid-column: 2 / 6;
-  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  grid-area: header;
+  ${"" /* background-color: #0e0e0e; */}
+  @media screen and (max-width: 850px) {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 export const Main = styled.main`
   grid-area: main;
   overflow-x: hidden;
+  min-height: 100%;
   overfloy-y: scroll;
+
+  @media screen and (max-width: 850px) {
+    min-height: 50%;
+  }
 `;
 
 export const Sidebar = styled.aside`
@@ -53,11 +66,12 @@ export const Widget = styled.div`
 export const Footer = styled.footer`
   grid-area: footer;
   bottom: 0;
+  display: flex;
 `;
 
 export const Column = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -98,8 +112,19 @@ export const UserProfile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: white;
+  color: grey;
+
+  .bt-ed a div {
+    color: black;
+    width: 100px;
+  }
+
+  @media only screen and (max-width: 850px) {
+    display: flex;
+    justify-content: center;
+    padding: 2% 5%;
+    gap: 5px;
+  }
 `;
 
 export const UserImg = styled.img`
@@ -109,24 +134,29 @@ export const UserImg = styled.img`
 `;
 
 export const BtnEdit = styled.button`
-  box-sizing: border-box;
-  width: 94.87px;
-  height: 28.01px;
-  margin-top: 10px;
-  background: #64c27b;
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 40.6599px;
+  all: unset;
+  background-color: ghostwhite;
+  display: flex;
+  gap: 0.8rem;
+  color: #666666;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem;
+  transition: all 0.1s linear;
+  cursor: pointer;
 `;
 
 export const LogoProfile = styled.div`
-  display: grid;
-  // grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-area: side;
   padding: 20px;
+  .img {
+    aling-items: center;
+  }
 `;
 
 export const FlexSpace = styled.div`
-  display: flex;
-  ${"" /* justify-content: space-between; */}
+  .center {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
