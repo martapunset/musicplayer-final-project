@@ -16,9 +16,8 @@ export const MusicProvider = ({ children }) => {
   const [query, setQuery] = useState(""); //need to move to musicDATA provider
   // data from the API to display on list
   const [data, setData] = useState([""]);
-  const [playlist, setPlaylist] = useState([""]);
-  console.log(data)
-  console.log(currentTrack)
+  const [currentPlaylist, setCurrentPlaylist] = useState([""]);
+
   const track = data[currentTrack].url ;// -----problems BIG
   const playerRef = useRef();
 
@@ -36,7 +35,7 @@ export const MusicProvider = ({ children }) => {
         console.log(error);
       }
     };
-   if(query!=="")
+   if(query!==""&& query!=="playlist")
     getdata();
   }, [query]);
 
@@ -95,7 +94,8 @@ export const MusicProvider = ({ children }) => {
         setplaying,
         playTrackFunction,
         getSongIndex,
-        playlist,
+        currentPlaylist,
+        setCurrentPlaylist
         //fetchData,
       }}
     >

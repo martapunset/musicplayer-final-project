@@ -17,7 +17,7 @@ import { SettingsSystemDaydreamTwoTone } from "@mui/icons-material";
 
 export const SearchPage = () => {
   const [tracks, setTracks] = useState([]);
-  const [playlists, setPlaylists] = useState([]);
+ 
 
 
   const [textValue, setValue] = useState("");
@@ -33,9 +33,11 @@ export const SearchPage = () => {
     currentTrack,
     playTrackFunction,
     playerRef,
+    currentPlaylist,
+    setCurrentPlaylist
   } = useContext(MusicContext);
 
-  if (query == "playlist") {
+  if (query =="" ) {
     
     setQuery("tracks");
   }
