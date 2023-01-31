@@ -37,7 +37,7 @@ export const LikedPlayList = () => {
 
   console.log(_id);
   const userId = user._id
-  console.log(userId, 'userid');
+
   return (
     <>
 
