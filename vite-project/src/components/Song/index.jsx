@@ -5,21 +5,19 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import songscss from "./songscss.module.scss";
 import PlaylistMenu from "../PlaylistMenu";
-import { getApiData } from "../../api/getApiData";
 import { MusicContext } from "../../musicProvider/MusicProvider";
 
 const Song = ({ song, playlist }) => {
   const [menu, setMenu] = useState(false);
- const {setcurrentTrack, playTrackFunction}=useContext(MusicContext)
-console.log(song, song.title)
-
+  const { playTrackFunction } = useContext(MusicContext)
+  console.log(song)
 
   return (
-   
+
     <div className={songscss.song_container}>
       <div className={songscss.left}>
-        <IconButton className={songscss.play_btn} onClick={() =>playTrackFunction(song.id)}>
-          <PlayArrowIcon  />
+        <IconButton className={songscss.play_btn} onClick={() => playTrackFunction(song.id)}>
+          <PlayArrowIcon />
         </IconButton>
         <img src={song?.thumbnail} alt={song?.title} />
         <p>{song?.title}</p>
@@ -32,15 +30,17 @@ console.log(song, song.title)
       <div className={songscss.right}>
         <Like songId={song?.id} />
         <p>4.30</p>
-        <IconButton className={songscss.menu_btn} onClick={() => setMenu(true)}>
+        <button>Add to Playlist</button>
+        {/* <IconButton className={songscss.menu_btn} onClick={() => setMenu(true)}>
           <MoreHorizIcon />
-        </IconButton>
+        </IconButton> */}
+
         {menu && (
           <PlaylistMenu playlist={playlist} closeMenu={() => setMenu(false)} />
         )}
       </div>
     </div>
-  
+
   );
 };
 

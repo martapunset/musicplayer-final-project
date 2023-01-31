@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import { UserProfile, UserImg, Texto, BackgroundColour, TextArea, ProfileTableStyle } from "../ui";
-import { Column, Main } from "../ui/model";
+import { UserProfile, UserImg, Texto, BackgroundColour, TextArea, ProfileTableStyle, Main } from "../ui";
+// import { Column, Main } from "../ui/model";
 
 export const ProfilePage = () => {
 
