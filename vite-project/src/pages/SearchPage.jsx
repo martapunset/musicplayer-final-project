@@ -19,8 +19,6 @@ export const SearchPage = () => {
   const [tracks, setTracks] = useState([]);
   const [playlists, setPlaylists] = useState([]);
 
-  const endPointTracks = "tracks";
-
 
   const [textValue, setValue] = useState("");
 
@@ -37,7 +35,10 @@ export const SearchPage = () => {
     playerRef,
   } = useContext(MusicContext);
 
-  setQuery("tracks");
+  if (query == "playlist") {
+    
+    setQuery("tracks");
+  }
 
 
   const handleSubmit = async (e) => {
