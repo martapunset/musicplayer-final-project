@@ -8,30 +8,34 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { ContentCutOutlined } from "@mui/icons-material";
 import { useContext } from "react";
 import { MusicContext } from "../musicProvider/MusicProvider";
+
+
+
 export const LikedPlayList = () => {
-  const [likedSong, setLikedSong] = useState([]);
+ // const [likedSong, setLikedSong] = useState([]);
 
   const {
     query,
     setQuery,
     track,
     data,
+    setplaying,
     currentTrack,
     playTrackFunction,
     playerRef,
+    playlist
   } = useContext(MusicContext);
 
-  const [playing, setplaying] = useState(false);
+ // const [playing, setplaying] = useState(false);
 
   console.log(data);
 
   setQuery("tracks");
 
+
   return (
     <>
-      <button onClick={() => playTrackFunction(0)}>play song 1</button>
-      <button onClick={() => playTrackFunction(1)}>play song 2</button>
-      <button onClick={() => playTrackFunction(2)}>play song 3</button>
+   
 
       <div className={likescss.container}>
         <div className={likescss.head}>

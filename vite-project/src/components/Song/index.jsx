@@ -8,20 +8,24 @@ import PlaylistMenu from "../PlaylistMenu";
 import { getApiData } from "../../api/getApiData";
 import { MusicContext } from "../../musicProvider/MusicProvider";
 
-const Song = ({ song, playlist }) => {
+const Song = ({ song, indexIn }) => {
   const [menu, setMenu] = useState(false);
- const {setcurrentTrack, playTrackFunction}=useContext(MusicContext)
-console.log(song, song.title)
+  const { setcurrentTrack, playTrackFunction, data , getSongIndex} = useContext(MusicContext)
+  
+ //const [index, setIndex]=useState(0)
+ // setIndex(indexIn+1)
+  
+ const index=getSongIndex(song, data)
 
 
   return (
    
     <div className={songscss.song_container}>
       <div className={songscss.left}>
-        <IconButton className={songscss.play_btn} onClick={() =>playTrackFunction(song.id)}>
+        <IconButton className={songscss.play_btn} onClick={() =>playTrackFunction(index)}>
           <PlayArrowIcon  />
         </IconButton>
-        <img src={song?.thumbnail} alt={song?.title} />
+        <img src={song?.thumbnail} alt={song?.title} ></img>
         <p>{song?.title}</p>
       </div>
 
@@ -30,7 +34,7 @@ console.log(song, song.title)
       </div>
 
       <div className={songscss.right}>
-        <Like songId={song?.id} />
+        <Like songId={song?.id} onClick={() =>likesong(song.id)}/>
         <p>4.30</p>
         <IconButton className={songscss.menu_btn} onClick={() => setMenu(true)}>
           <MoreHorizIcon />

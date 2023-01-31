@@ -8,41 +8,63 @@ import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 // import { SearchBar } from "./SearchBar";
+import { useContext } from "react";
+import { MusicContext } from "../musicProvider/MusicProvider";
+import { SettingsSystemDaydreamTwoTone } from "@mui/icons-material";
+
+
+
 
 export const SearchPage = () => {
   const [tracks, setTracks] = useState([]);
   const [playlists, setPlaylists] = useState([]);
 
   const endPointTracks = "tracks";
-  const endPointPlaylists = "playlists";
+
 
   const [textValue, setValue] = useState("");
 
+  const {
+    query,
+    setQuery,
+    setData,
+    track,
+    data,
+    setplaying,
+    resetCurrentTrack ,
+    currentTrack,
+    playTrackFunction,
+    playerRef,
+  } = useContext(MusicContext);
+
+ // setQuery("playlist");
+/*
   const asyncFetchData = async () => {
-    const urlTracks = `http://localhost:4000/${endPointTracks}`;
-    const urlPlaylists = `http://localhost:4000/${endPointPlaylists}`;
+    //const urlTracks = `http://localhost:4000/${endPointTracks}`;
+
 
     const awaitTracks = await getApiData(urlTracks);
-    const awaitPlaylist = await getApiData(urlPlaylists);
+
     // console.log(awaitTracks, awaitPlaylist);
 
     setTracks(awaitTracks);
-    setPlaylists(awaitPlaylist);
+   
   };
 
   useEffect(() => {
     asyncFetchData();
   }, []);
-
+*/
   const handleSubmit = async (e) => {
+    resetCurrentTrack ()
     e.preventDefault();
-    const urlTracks = `http://localhost:4000/${endPointTracks}?q=${textValue}`;
-    const urlPlaylists = `http://localhost:4000/${endPointPlaylists}?q=${textValue}`;
+    setplaying(false)
 
-    const newAwaitTracks = await getApiData(urlTracks);
-    const newAwaitPlaylist = await getApiData(urlPlaylists);
+    if(textValue.length>3)
+   setQuery(`tracks/search?title=${textValue}`);
 
-    return setTracks(newAwaitTracks), setPlaylists(newAwaitPlaylist);
+
+
   };
 
   const handleReset = () => {
@@ -50,8 +72,11 @@ export const SearchPage = () => {
     asyncFetchData();
   };
 
+  console.log(data)
   return (
     <>
+      
+     
       <div className= {searchpage.container}>
 
         <div className={searchpage.search_input_container}>
@@ -71,24 +96,26 @@ export const SearchPage = () => {
             <ClearIcon />
           </IconButton>
         </div>
-        
+         
         <div className={searchpage.results_container}>
           <div className={searchpage.songs_container}>
-            {tracks.map((song) => (
+            {
+             
+              data.map((song) => (
+              
               <Fragment key={song.id}>
                 <Song song={song} />
               </Fragment>
             ))}
           </div>
 
-          {/* 
-          <div className={searchpage.playlists_container}>
-            <Playlists playlists={playlists} />
-          </div>
-          */}
+     
+          
         </div>
+      
       </div>
-
+    
     </>
   );
 };
+      
