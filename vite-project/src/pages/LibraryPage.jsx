@@ -6,50 +6,36 @@ import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
 // import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Playlists from "../components/Playlists";
-
+import { useContext } from "react";
+import { MusicContext } from "../musicProvider/MusicProvider";
 import searchpage from "../assets/sass/searchpage.module.scss";
 
 export const LibraryPage = () => {
-  const [likedSong, setLikedSong] = useState([]);
-
-  const [playlists, setPlaylists] = useState([]);
-
-  const endPointTracks = "tracks";
-  const endPointPlaylists = "playlists";
-
-  const [textValue, setValue] = useState("");
-
-  const asyncFetchData = async () => {
-    //  const urlTracks = `http://localhost:4000/${endPointTracks}`;
-    const urlPlaylists = `http://localhost:4000/${endPointPlaylists}`;
-
-    //  const awaitTracks = await getApiData(urlTracks);
-    const awaitPlaylist = await getApiData(urlPlaylists);
-    // console.log(awaitTracks, awaitPlaylist);
-
-    //  setTracks(awaitTracks);
-    setPlaylists(awaitPlaylist);
-  };
-
-  useEffect(() => {
-    asyncFetchData();
-  }, []);
-
-  useEffect(() => {
-    const url = "http://localhost:4000/tracks";
-    const trackListData = async () => {
-      const data = await getApiData(url);
-      setLikedSong(data);
-    };
-    trackListData();
-  }, []);
+  //const [likedSong, setLikedSong] = useState([]);
 
 
-    
+  //const [textValue, setValue] = useState("");
+  const {
+    query,
+    setQuery,
+    track,
+    data,
+    setplaying,
+    currentTrack,
+    playTrackFunction,
+    playerRef,
+    playlist
+  } = useContext(MusicContext);
+  setQuery("playlist");
+
+console.log(data)
+/*
+  
+    */
   return (
     <>
 
-      {/* 
+  
       <div className={searchpage.container}>
         <div className={likescss.container}>
           <div className={likescss.head}>
@@ -66,18 +52,14 @@ export const LibraryPage = () => {
             </div>
 
             <div className={searchpage.playlists_container}>
-              <Playlists playlists={playlists} />
+              <Playlists playlists={data} />
             </div>
 
-            {/*likedSong.map((song) => (
-            <Fragment key={song.id}>
-              <Song song={song} />
-            </Fragment>
-          ))
+           
           </div>
         </div>
       </div>
-    */}
+
     </>
   );
 };
