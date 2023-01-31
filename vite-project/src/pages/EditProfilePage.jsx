@@ -1,5 +1,10 @@
 import React from "react";
-import { UserProfile, UserImg, ProfileTableStyle, BackgroundColour } from "../ui/index";
+import {
+  UserProfile,
+  UserImg,
+  ProfileTableStyle,
+  BackgroundColour,
+} from "../ui/index";
 import { Column, Main } from "../ui/model";
 import { EditProfile } from "../components";
 
@@ -15,8 +20,7 @@ export const EditProfilePage = () => {
             <UserImg src="https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true" />
           </UserProfile>
           <ProfileTableStyle>
-            <EditProfile>
-            </EditProfile>
+            <EditProfile></EditProfile>
           </ProfileTableStyle>
         </BackgroundColour>
       </Main>
