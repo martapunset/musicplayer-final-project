@@ -50,7 +50,7 @@ const userId = user._id
             <div className={likescss.playlist_info}>
               <p>Playlist</p>
               <h1>Playlists</h1>
-              <span>By {user.firstName}</span>
+              <span>by {user.firstName}</span>
             </div>
           </div>
           <div className={likescss.body}>
