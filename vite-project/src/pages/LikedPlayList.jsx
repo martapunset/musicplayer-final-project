@@ -28,13 +28,12 @@ export const LikedPlayList = () => {
 
  // const [playing, setplaying] = useState(false);
 
-  console.log(data);
+
 
   setQuery("tracks");
   const {_id} = user
-  console.log(_id);
   const userId = user._id
-  console.log(userId, 'userid');
+
   return (
     <>
 
