@@ -12,7 +12,7 @@ const PlaylistMenu = ({ closeMenu }) => {
       <div className={styles.menu}>
         <div className={styles.playlist_option}>
           <p>Add to Playlist</p>
-          <>
+          {/* <>
             <ArrowRightIcon />
             <div className={styles.playlists}>
               {playlists.map((playlist) => (
@@ -21,15 +21,15 @@ const PlaylistMenu = ({ closeMenu }) => {
                 </div>
               ))}
             </div>
-          </>
+          </> */}
         </div>
 
-        <div className={styles.option}>
+        {/* <div className={styles.option}>
           <p>Go to artist</p>
         </div>
         <div className={styles.option}>
           <p>Share</p>
-        </div>
+        </div> */}
       </div>
     </ClickAwayListener>
   );

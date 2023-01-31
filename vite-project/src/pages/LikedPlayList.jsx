@@ -1,12 +1,10 @@
 import { useState, useEffect, Fragment } from "react";
-import { getApiData } from "../api/getApiData";
 import Song from "../components/Song";
-import { HomeNavBar } from "../components/HomeNavBar";
 import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { ContentCutOutlined } from "@mui/icons-material";
 import { useContext } from "react";
+import { AuthContext } from "../auth/authContext/AuthContext";
 import { MusicContext } from "../musicProvider/MusicProvider";
 
 
@@ -31,11 +29,12 @@ export const LikedPlayList = () => {
   console.log(data);
 
   setQuery("tracks");
-
-
+  const {_id} = user
+  console.log(_id);
+  const userId = user._id
+  console.log(userId, 'userid');
   return (
     <>
-   
 
       <div className={likescss.container}>
         <div className={likescss.head}>
@@ -44,13 +43,12 @@ export const LikedPlayList = () => {
           <div className={likescss.playlist_info}>
             <p>Playlist</p>
             <h1>Liked Songs</h1>
-            <span>By Lokesh</span>
+            <p>user.name</p>
           </div>
         </div>
         <div className={likescss.body}>
           <div className={likescss.body_nav}>
             <div className={likescss.left}>
-              <span>#</span>
               <p>Title</p>
             </div>
             <div className={likescss.center}>
@@ -60,7 +58,8 @@ export const LikedPlayList = () => {
               <AccessTimeIcon />
             </div>
           </div>
-
+          {/* <button onClick={updateUsers(name,)}>Add to Playlist</button> */}
+          <button onClick={() => createPlaylist(userId)}>create</button>
           {data.map((song) => (
             <Fragment key={song?.id}>
               <Song song={song} />
