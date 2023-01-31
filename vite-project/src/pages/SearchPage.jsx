@@ -37,10 +37,10 @@ export const SearchPage = () => {
     setCurrentPlaylist
   } = useContext(MusicContext);
 
-  if (query =="" ) {
+
     
     setQuery("tracks");
-  }
+  
 
 
   const handleSubmit = async (e) => {

@@ -35,7 +35,7 @@ export const MusicProvider = ({ children }) => {
         console.log(error);
       }
     };
-   if(query!==""&& query!=="playlist")
+   if(query!=="")
     getdata();
   }, [query]);
 
