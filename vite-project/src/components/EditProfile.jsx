@@ -12,17 +12,17 @@ export const EditProfile = () => {
 
   const { _id } = user;
   // console.log(_id);
-
+ // const userId = _id;
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted },
   } = useForm();
 
-  const onSubmit = (data, userId, e) => {
-    console.log("data Form", data, e);
-    const userData = { userId, ...data };
-    console.log(userData);
+  const onSubmit = (data) => {
+    console.log("data Form", data);
+    const userData = { _id, ...data };
+    console.log("userData",userData);
     updateUsers(userData);
   };
 
@@ -34,7 +34,7 @@ export const EditProfile = () => {
           <InputSmall
             type="text"
             placeholder={user?.userName}
-            {...register("username")}
+            {...register("userName")}
           />
         </div>
         <div>
@@ -42,7 +42,7 @@ export const EditProfile = () => {
           <InputSmall
             type="text"
             placeholder={user?.firstName}
-            {...register("firstname")}
+            {...register("firstName")}
           />
         </div>
         <div>
@@ -50,7 +50,7 @@ export const EditProfile = () => {
           <InputSmall
             type="text"
             placeholder={user?.lastName}
-            {...register("lastname")}
+            {...register("lastName")}
           />
         </div>
         <div>
@@ -58,7 +58,8 @@ export const EditProfile = () => {
           <InputSmall
             type="email"
             placeholder={user?.email}
-            {...register("email")}
+            disabled
+   
           />
         </div>
         <button className="bt-save">Save</button>

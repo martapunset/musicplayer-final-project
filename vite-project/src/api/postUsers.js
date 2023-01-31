@@ -18,27 +18,27 @@ export const postUsers = async (userData) => {
   }
 };
 
-export const updateUsers = async (user) => {
-  const { firstName, lastName, userName, email, playlistId, userId } = user;
-  console.log(userId);
-  const updateUser = {
-    firstName: firstName,
-    lastName: lastName,
-    userName: userName,
-    email: email,
+export const updateUsers = async (userUpdated) => {
+  const { _id} = userUpdated;
+  console.log("user from updateUsers",userUpdated);
+ // const updateUser = {
+  //  firstName: firstName,
+   // lastName: lastName,
+    //userName: userName,
+    //email: email,
     // picture: newPicture,
     // likedTracks: [{}],
-    likedPlaylists: playlistId,
-  };
-  console.log(updateUser);
+    //likedPlaylists: playlistId}
+  
+ // console.log("userData in updateUsers",userUpdated);
   try {
-    const rawResponse = await fetch(`http://localhost:4000/user/${userId}`, {
+    const rawResponse = await fetch(`http://localhost:4000/user/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       //1.recoger info del formulario
-      body: JSON.stringify(updateUser),
+      body: JSON.stringify(userUpdated),
     });
     const content = await rawResponse.json();
     console.log("successfull addition DB", content);

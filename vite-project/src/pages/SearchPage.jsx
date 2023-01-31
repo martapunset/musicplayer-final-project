@@ -38,23 +38,8 @@ export const SearchPage = () => {
   } = useContext(MusicContext);
 
   setQuery("tracks");
-/*
-  const asyncFetchData = async () => {
-    //const urlTracks = `http://localhost:4000/${endPointTracks}`;
 
 
-    const awaitTracks = await getApiData(urlTracks);
-
-    // console.log(awaitTracks, awaitPlaylist);
-
-    setTracks(awaitTracks);
-   
-  };
-
-  useEffect(() => {
-    asyncFetchData();
-  }, []);
-*/
   const handleSubmit = async (e) => {
     resetCurrentTrack ()
     e.preventDefault();
