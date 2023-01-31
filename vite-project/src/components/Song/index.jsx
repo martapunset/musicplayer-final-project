@@ -10,7 +10,11 @@ import { updateUsers} from "../../api/postUsers"
 import { createPlaylist } from "../../api/getPlaylists";
 const Song = ({ song, playlist }) => {
   const [menu, setMenu] = useState(false);
-  const { playTrackFunction } = useContext(MusicContext)
+  const { playTrackFunction,setcurrentTrack, data , getSongIndex } = useContext(MusicContext)
+
+
+  
+ const index=getSongIndex(song, data)
   console.log(song)
 
   return (
