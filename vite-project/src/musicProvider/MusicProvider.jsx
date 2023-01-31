@@ -5,11 +5,12 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
 import axios from "axios";
-export const MusicContext = React.createContext("codeInaBottle");
+export const MusicContext = createContext();
 import { useRef } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./audioPlayer.css";
+
 export const MusicProvider = ({ children }) => {
   const [playing, setplaying] = useState(false);
   const [currentTrack, setcurrentTrack] = useState(0);

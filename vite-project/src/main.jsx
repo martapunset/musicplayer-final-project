@@ -6,7 +6,8 @@ import "./index.css";
 
 import "@madzadev/audio-player";
 import { BrowserRouter } from "react-router-dom";
-console.log(window.location.origin);
+// console.log(window.location.origin);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   //<React.StrictMode>
   <BrowserRouter>
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       clientId="qFfW5qSqtLX9AnlXSIM7RfJyCvKsemal"
       redirectUri={window.location.origin}
       audience="https://express.sample"
-    ></Auth0Provider>
+    >
+      <App />
+    </Auth0Provider>
   </BrowserRouter>
   //</React.StrictMode>
 );
