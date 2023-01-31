@@ -11,7 +11,6 @@ import { MusicContext } from "../musicProvider/MusicProvider";
 
 export const LikedPlayList = () => {
  // const [likedSong, setLikedSong] = useState([]);
-
   const {
     query,
     setQuery,
@@ -23,6 +22,7 @@ export const LikedPlayList = () => {
     playerRef,
     playlist
   } = useContext(MusicContext);
+
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState
 
@@ -45,7 +45,7 @@ export const LikedPlayList = () => {
           <div className={likescss.playlist_info}>
             <p>Playlist</p>
             <h1>Liked Songs</h1>
-            <p>user.name</p>
+            <span>by {user.firstName}</span>
           </div>
         </div>
         <div className={likescss.body}>

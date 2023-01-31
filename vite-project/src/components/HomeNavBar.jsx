@@ -11,8 +11,8 @@ export const HomeNavBar = () => {
       <WrapperNav>
           
       <LogoProfile className="side">
-              <img src={logoHarmony} alt="Logo" width={'70px'} height={'50px'} />
-            </LogoProfile>
+          <img src={logoHarmony} alt="Logo" width={'70px'} height={'50px'} />
+        </LogoProfile>
         {navBarData.map((item, index) => {
           return (
             <div key={index} className="container">
