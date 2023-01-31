@@ -4,21 +4,26 @@ import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { useContext } from "react";
-import { MusicContext } from "../musicProvider/MusicProvider";
 import { AuthContext } from "../auth/authContext/AuthContext";
+import { MusicContext } from "../musicProvider/MusicProvider";
+import { updateUsers } from "../api/postUsers";
+import { createPlaylist } from "../api/getPlaylists";
 
 export const LikedPlayList = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
 
-  const { setQuery, data} = useContext(MusicContext);
+  const { setQuery, data } = useContext(MusicContext);
 
   const [playing, setplaying] = useState(false);
 
   console.log(data);
 
   setQuery("tracks");
-
+  const {_id} = user
+  console.log(_id);
+  const userId = user._id
+  console.log(userId, 'userid');
   return (
     <>
 
@@ -44,7 +49,8 @@ export const LikedPlayList = () => {
               <AccessTimeIcon />
             </div>
           </div>
-
+          {/* <button onClick={updateUsers(name,)}>Add to Playlist</button> */}
+          <button onClick={() => createPlaylist(userId)}>create</button>
           {data.map((song) => (
             <Fragment key={song?.id}>
               <Song song={song} />

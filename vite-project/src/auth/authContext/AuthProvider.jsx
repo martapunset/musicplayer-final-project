@@ -21,12 +21,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const [authState, dispatch] = useReducer(AuthReducer, {}, init); //init
-
+  const {user} = authState;
+  console.log(user);
   /*-------------------login------------*/
 
   const login = (userLogin) => {
-  
-
 
     const userData = {  //----------->need to mode to backend
       firstName: userLogin.given_name || "default_name",
