@@ -15,7 +15,8 @@ const Song = ({ song, playlist }) => {
 
   
  const index=getSongIndex(song, data)
-  console.log(song)
+
+
 
   return (
 <>
@@ -33,7 +34,7 @@ const Song = ({ song, playlist }) => {
       </div>
 
       <div className={songscss.right}>
-        <Like songId={song?.id} onClick={() =>likesong(song.id)}/>
+        <Like likedTracks={song?._id} />
         <p>4.30</p>
         {/* <IconButton className={songscss.menu_btn} onClick={() => setMenu(true)}>
           <MoreHorizIcon />
