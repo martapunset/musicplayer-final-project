@@ -23,6 +23,8 @@ export const LikedPlayList = () => {
     playerRef,
     playlist
   } = useContext(MusicContext);
+  const { login, authState } = useContext(AuthContext);
+  const { isLogged, user } = authState
 
  // const [playing, setplaying] = useState(false);
 
