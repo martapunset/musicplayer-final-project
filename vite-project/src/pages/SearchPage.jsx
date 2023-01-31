@@ -37,7 +37,7 @@ export const SearchPage = () => {
     playerRef,
   } = useContext(MusicContext);
 
- // setQuery("playlist");
+  setQuery("tracks");
 /*
   const asyncFetchData = async () => {
     //const urlTracks = `http://localhost:4000/${endPointTracks}`;
