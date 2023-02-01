@@ -4,10 +4,6 @@ import App from "./App";
 import { Auth0Provider } from "@auth0/auth0-react";
 import "./index.css";
 
-<<<<<<< HEAD
-import "@madzadev/audio-player";
-=======
->>>>>>> 86ccb2106304126754a5ad57d1b1e8adff1bf67b
 import { BrowserRouter } from "react-router-dom";
 // console.log(window.location.origin);
 

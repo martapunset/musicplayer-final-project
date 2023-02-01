@@ -3,5 +3,6 @@ export const types = {
     login: 'LOGIN',
     logout: 'LOGOUT',
     error: 'ERROR',
-    field:'FIELD'
+    field: 'FIELD',
+    update:'UPDATE'
 };

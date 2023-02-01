@@ -8,8 +8,8 @@ import axios from "axios";
 import "../components/Slider/Slider.css";
 // import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-export const HomePage = () => {
 
+export const HomePage = () => {
   const { isAuthenticated, user: userFromAuth0 } = useAuth0();
 
   const { login, authState } = useContext(AuthContext);
@@ -17,61 +17,56 @@ export const HomePage = () => {
 
   useEffect(() => {
     login(userFromAuth0);
-
   }, [userFromAuth0]);
 
-  const [albumData, setAlbumData] = useState([]);
+  const [tracksData, setTracksData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
-  const [artistData, setArtistData] = useState([]);
+   const [artistData, setArtistData] = useState([]);
 
-  // const fetchData = () => {
-  // const albumApi = "http://localhost:4000/album";
-  // const playlistApi = "http://localhost:4000/playlists";
   // const artistApi = "http://localhost:4000/artists";
 
-  // const getAlbums = axios.get(albumApi);
-  // const getPlaylists = axios.get(playlistApi);
-  // const getArtists = axios.get(artistApi);
+  const getTracks = async () => {
+    const tracksApi = "http://localhost:4000/tracks";
 
-  // axios.all(getAlbums).then(
-  //     axios.spread((...allData) => {
-  //  const allDataAlbums = allData[0].data;
-  //       // const allDataPlaylists = allData[1].data;
-  //       // const allDataArtists = allData[2].data;
+    try {
+      const response = await axios.get(tracksApi);
+      setTracksData(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  //       setAlbumData(allDataAlbums);
-  //       // setPlaylistData(allDataPlaylists);
-  //       // setArtistData(allDataArtists[0]);
-  //       console.log(allDataAlbums)
-  //     })
-  //   );
-  // };
+  const getPlaylists = async () => {
+    const playlistApi = "http://localhost:4000/playlists";
+    try {
+      const response= await axios.get(playlistApi);
+      setPlaylistData(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const getdata = async () => {
-
-    const { data } = await axios.get("http://localhost:4000/albums")
-    setAlbumData(data);
-  }
+  console.log(tracksData);
+  console.log(playlistData);
+  console.log(artistData)
 
   useEffect(() => {
-    // const data = async () => {
-    //   const jsonData = await getAlbums();
-    //   setAlbumData(jsonData);
-    // };
-    // data();
-    getAllAlbums()
+    getTracks();
+    getPlaylists();
     getAllArtists()
   }, []);
 
   //petición al back
+
   const getAllAlbums = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/album");
+      const response = await axios.get("http://localhost:4000/albums");
       setAlbumData(response.data.data)
     } catch (error) {
       console.log(error)
     }
   }
+
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
   // });
@@ -86,12 +81,10 @@ export const HomePage = () => {
     }
   }
 
+
   return (
     <>
-
       <div className="home">
-       
-
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
           <motion.div
@@ -99,19 +92,14 @@ export const HomePage = () => {
             drag="x"
             dragConstraints={{ right: 0, left: -1910 }}
           >
-
-            {albumData?.map((album) => {
-
+            {tracksData?.map((album) => {
               return (
-
                 <motion.div className="item" key={album.id}>
-                  <img src={album.imageUrl} alt={album.name} />
-                  <p>{album.name}</p>
+                  <img src={album.thumbnail} alt={album.title} />
+                  <p>{album.title}</p>
                 </motion.div>
-
               );
             })}
-
           </motion.div>
         </motion.div>
 
@@ -125,14 +113,14 @@ export const HomePage = () => {
             {playlistData?.map((album) => {
               return (
                 <motion.div className="item" key={album.id}>
-                  <img src={imageUrl} alt={album.name} />
+                  <img src={album.thumbnail} alt={album.name} />
                   <p>{album.name}</p>
                 </motion.div>
               );
             })}
           </motion.div>
         </motion.div>
-
+   
         <Slider title="Popular Artists" />
         <motion.div className="slider-container">
           <motion.div
@@ -158,7 +146,6 @@ export const HomePage = () => {
         </motion.div>
 
       </div>
-
     </>
   );
 };

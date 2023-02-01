@@ -1,39 +1,46 @@
 import { types } from "./types";
 
-/*      SE DECLARARA EN EL PROVIDER
+     
 const init= {
   isLogged: false,
-  user,
+  playlist,
 };
-*/
 export const MusicReducer = (state = {}, action) => {
 
   switch (action.type) {
 
-    case types.field:
+    case types.homepage:
           return {
-              ...state,
-              user:action.payload
+            ...state,
+            isPlaying:false,
+            playlist:action.payload
           };
-    case types.login:
+    case types.search:
       return {
         ...state,
-        isLogged: true,
-        user: action.payload
+        isPlaying: false,
+        playlist: action.payload
         
       };
 
-    case types.logout:
+    case types.likedSongs:
       return {
         ...state,
-        isLogged: false,
-        user: {}
+        isPlaying: false,
+        playlist: action.payload
       };
-      case types.register:
+      case types.library:
         return {
           ...state,
-          isLogged: false,
-          user: action.payload
+          isPlaying: false,
+          playlist: action.payload
+          
+      };
+      case types.profile:
+        return {
+          ...state,
+          isPlaying: false,
+          playlist: action.payload
           
         };
   

@@ -29,10 +29,10 @@ export const AuthReducer = (state = {}, action) => {
         isLogged: false,
         user: {}
       };
-      case types.register:
+      case types.update:
         return {
           ...state,
-          isLogged: false,
+          isLogged: true,
           user: action.payload
           
         };
