@@ -25,8 +25,9 @@ export const MusicProvider = ({ children }) => {
   console.log("query",query)
   
 
-
+data[5].url
   const track = currentPlaylist[currentTrack].url; 
+
   const playerRef = useRef();
 
   useEffect(() => {

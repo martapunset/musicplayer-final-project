@@ -4,16 +4,13 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { updateUsers } from "../api/postUsers";
-
+import { types } from "../auth/authContext/types";
+import { useEffect } from "react";
 export const EditProfile = () => {
   const { editId } = useParams();
-  const { logout, authState } = useContext(AuthContext);
+  const { logout, authState, dispatch } = useContext(AuthContext);
   const { isLogged, user } = authState;
-  const [updatedUserInfo, setUpdatedUserInfo] = useState({
-    userName: user?.userName,
-    firstName: user?.firstName,
-    lastName: user?.lastName,
-  });
+  const [updatedUserInfo, setUpdatedUserInfo] = useState(user);
 
   const { _id } = user;
 
@@ -27,13 +24,19 @@ export const EditProfile = () => {
     defaultValues: updatedUserInfo,
   });
 
+  useEffect(() => {
+    
+  }, [updatedUserInfo]);
   console.log("errors", errors);
 
   const onSubmit = (data) => {
     console.log("data Form", data);
     const userData = { _id, ...data };
     console.log("userData", userData);
-    updateUsers(userData);
+     updateUsers(userData);
+   // console.log("user actualizado", user)
+
+    
     alert("Successfully updated");
     setUpdatedUserInfo(userData);
   };
