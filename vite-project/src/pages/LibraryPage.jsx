@@ -28,7 +28,7 @@ export const LibraryPage = () => {
     playlist
   } = useContext(MusicContext);
   
-  setQuery("playlist");
+  setQuery("playlists");
 
 console.log(data)
 /*
