@@ -9,26 +9,22 @@ export const EditProfile = () => {
   const { editId } = useParams();
   const { logout, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
-  // const [updatedUserInfo, setUpdatedUserInfo] = useState({
-  //   userName: user?.userName,
-  //   firstName: user?.firstName,
-  //   lastName: user?.lastName,
-  // });
+  const [updatedUserInfo, setUpdatedUserInfo] = useState({
+    userName: user?.userName,
+    firstName: user?.firstName,
+    lastName: user?.lastName,
+  });
 
   const { _id } = user;
 
-  // console.log(updatedUserInfo);
+  console.log(updatedUserInfo);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted },
   } = useForm({
-    defaultValues: {
-      userName: user?.userName,
-      firstName: user?.firstName,
-      lastName: user?.lastName,
-    },
+    defaultValues: updatedUserInfo,
   });
 
   console.log("errors", errors);
@@ -39,7 +35,7 @@ export const EditProfile = () => {
     console.log("userData", userData);
     updateUsers(userData);
     alert("Successfully updated");
-    // setUpdatedUserInfo(userData);
+    setUpdatedUserInfo(userData);
   };
 
   return (
