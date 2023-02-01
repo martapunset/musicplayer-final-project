@@ -19,9 +19,13 @@ export const ContainerLogin = styled.div`
 `;
 
 export const H1style = styled.h1`
-  font-size: 40px;
+  font-size: 60px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
   color: white;
   text-transform: capitalize;
+  margin-left: 10px;
 `;
 
 export const Header = styled.header`
