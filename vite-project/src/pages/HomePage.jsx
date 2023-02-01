@@ -1,18 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-// import { ProfileImage } from "../ui/";
-// import { WelcomeCard, WelcomeTitle } from "../ui/WelcomeCard.styles";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import Slider from "../components/Slider/Slider";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "../components/Slider/Slider.css";
-// import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const HomePage = () => {
   const { isAuthenticated, user: userFromAuth0 } = useAuth0();
-
-  const { login, authState } = useContext(AuthContext);
+const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
 
   useEffect(() => {
@@ -23,7 +19,7 @@ export const HomePage = () => {
   const [playlistData, setPlaylistData] = useState([]);
    const [artistData, setArtistData] = useState([]);
 
-  // const artistApi = "http://localhost:4000/artists";
+
 
   const getTracks = async () => {
     const tracksApi = "http://localhost:4000/tracks";
@@ -67,10 +63,6 @@ export const HomePage = () => {
     }
   }
 
-  // const followed = playlistData.map((f) => {
-  //   return f.isFollowed;
-  // });
-  // console.log(followed);
 
   const getAllArtists = async () => {
     try {

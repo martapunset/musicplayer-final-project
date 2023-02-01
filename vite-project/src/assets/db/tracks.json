@@ -15,6 +15,7 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/alone_rfib7a.jpg",
     "genre": "poprock",
     "likedBy": []
+   
   },
   {
     "id": 3,
@@ -50,7 +51,8 @@
     "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583924/tracks-dev/Social_Square_-_Tantalizing_Youth_eykq87.mp3",
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/Tantalizing_Youth_bfshzo.jpg",
     "genre": "rock",
-    "likedBy": []
+    "likedBy": [],
+    "search_title":"tantalizing_youth"
   },
   {
     "id": 7,

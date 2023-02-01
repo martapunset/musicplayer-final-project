@@ -32,7 +32,7 @@ export const SearchPage = () => {
     setCurrentPlaylist,
   } = useContext(MusicContext);
 
-  setQuery("tracks");
+  //setQuery("tracks");
 
   const handleSubmit = async (e) => {
     resetCurrentTrack();
@@ -46,6 +46,8 @@ export const SearchPage = () => {
     setValue("");
     asyncFetchData();
   };
+
+  if(query=="playlists")setQuery("tracks")
 
   console.log(data);
   return (
