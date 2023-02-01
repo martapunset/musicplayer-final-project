@@ -29,6 +29,8 @@ export const HomePage = () => {
       ? "Good morning, "
       : "Good afternoon, ";
 
+  // const artistApi = "http://localhost:4000/artists";
+
   const getTracks = async () => {
     const tracksApi = "http://localhost:4000/tracks";
 
