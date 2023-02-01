@@ -32,10 +32,10 @@ export const SearchPage = () => {
     setCurrentPlaylist,
   } = useContext(MusicContext);
 
-  setQuery("tracks");
+  //setQuery("tracks");
 
   const handleSubmit = async (e) => {
-    resetCurrentTrack();
+   // resetCurrentTrack();
     e.preventDefault();
     setplaying(false);
 
@@ -43,11 +43,19 @@ export const SearchPage = () => {
   };
 
   const handleReset = () => {
-    setValue("");
-    asyncFetchData();
+ setQuery("tracks");
+    
   };
 
+
+  useEffect(() => {
+    //setQuery("tracks");
+  }, []);
+
+  //if(query=="playlists")setQuery("tracks")
+
   console.log(data);
+
   return (
     <>
       <div className={searchpage.container}>
@@ -76,7 +84,11 @@ export const SearchPage = () => {
         </div>
 
         <div className={searchpage.results_container}>
+          
+      
+     
           <div className={searchpage.songs_container}>
+         
             {data.map((song) => (
               <Fragment key={song.id}>
                 <Song song={song} />

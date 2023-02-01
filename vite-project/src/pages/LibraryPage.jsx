@@ -1,18 +1,15 @@
 import { useState, useEffect, Fragment } from "react";
 import { getApiData } from "../api/getApiData";
-// import Song from "../components/Song";
-// import { HomeNavBar } from "../components/HomeNavBar";
 import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
-// import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Playlists from "../components/Playlists";
 import { useContext } from "react";
 import { MusicContext } from "../musicProvider/MusicProvider";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import searchpage from "../assets/sass/searchpage.module.scss";
-
+import axios from "axios";
 export const LibraryPage = () => {
-  //const [likedSong, setLikedSong] = useState([]);
+
 
 
   //const [textValue, setValue] = useState("");
@@ -28,16 +25,40 @@ export const LibraryPage = () => {
     playlist
   } = useContext(MusicContext);
   
-  setQuery("playlists");
+  //setQuery("playlists");
 
-console.log(data)
+//console.log(data)
 /*
   
     */
 const { login, authState } = useContext(AuthContext);
 const { isLogged, user } = authState
 const {_id} = user
-const userId = user._id
+  const userId = user._id
+
+
+
+  const [playlistDat, setPlaylistDat] = useState([]);
+
+  const getPlaylists = async () => {
+    const playlistApi = "http://localhost:4000/playlists";
+    try {
+      const response = await axios.get(playlistApi);
+      console.log("function execute")
+      setPlaylistDat(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  useEffect(() => {
+getPlaylists()
+    
+  }, []);
+
+
+console.log(playlistDat)
 
   return (
     <>
@@ -59,7 +80,7 @@ const userId = user._id
             </div>
 
             <div className={searchpage.playlists_container}>
-              <Playlists playlists={data} />
+              <Playlists playlists={playlistDat} />
             </div>
 
            

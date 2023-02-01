@@ -22,7 +22,7 @@ const Song = ({ song, playlist }) => {
 <>
     <div className={songscss.song_container}>
       <div className={songscss.left}>
-        <IconButton className={songscss.play_btn} onClick={() =>playTrackFunction(index)}>
+        <IconButton className={songscss.play_btn} onClick={() =>playTrackFunction(index, data)}>
           <PlayArrowIcon  />
         </IconButton>
         <img src={song?.thumbnail} alt={song?.title} ></img>
