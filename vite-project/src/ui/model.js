@@ -18,6 +18,16 @@ export const ContainerLogin = styled.div`
   ${"" /* grid-template-rows: repeat(3, auto); */}
 `;
 
+export const H1style = styled.h1`
+  font-size: 60px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  text-transform: capitalize;
+  margin-left: 10px;
+`;
+
 export const Header = styled.header`
   display: flex;
   flex-direction: row-reverse;
@@ -25,12 +35,11 @@ export const Header = styled.header`
   justify-content: flex-start;
   align-items: center;
   grid-area: header;
-  ${'' /* background-color: #0e0e0e; */}
+  ${"" /* background-color: #0e0e0e; */}
   @media screen and (max-width: 850px) {
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
   }
-
 `;
 
 export const Main = styled.main`
@@ -49,7 +58,8 @@ export const Sidebar = styled.aside`
   height: 100%;
   grid-area: sidebar;
   display: flex;
-  ${"" /* align-items: center;
+  ${
+    "" /* align-items: center;
 justify-content: center; */
   }
 `;
@@ -114,17 +124,17 @@ export const UserProfile = styled.div`
   align-items: center;
   color: grey;
 
-  .bt-ed a div{
+  .bt-ed a div {
     color: black;
     width: 100px;
   }
 
   @media only screen and (max-width: 850px) {
-      display: flex;
-      justify-content: center;
-      padding: 2% 5%;
-      gap: 5px;
-    }
+    display: flex;
+    justify-content: center;
+    padding: 2% 5%;
+    gap: 5px;
+  }
 `;
 
 export const UserImg = styled.img`

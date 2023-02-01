@@ -20,7 +20,7 @@ export const Layout = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
 
-  const { Player } = useContext(MusicContext)
+  const { Player } = useContext(MusicContext);
   const items = [
     {
       slug: "/profile",
@@ -33,11 +33,9 @@ export const Layout = () => {
       <GlobalGridStyles />
       <Container className="container">
         <Header className="header">
-
           <Dropdown
             dropdownTitle={<ProfileImage src={user?.picture} />}
             items={items}
-
           />
           <WelcomeCard>
             <WelcomeTitle> {user?.firstName}</WelcomeTitle>
@@ -46,7 +44,6 @@ export const Layout = () => {
           <div className="logoResp">
             <img src={LogoHarmony} alt="" width={"50px"} />
           </div>
-
         </Header>
 
         <Main className="main">
