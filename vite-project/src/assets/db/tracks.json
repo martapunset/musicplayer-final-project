@@ -80,12 +80,17 @@
     "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583924/tracks-dev/Social_Square_-_Tantalizing_Youth_eykq87.mp3",
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/Tantalizing_Youth_bfshzo.jpg",
     "genre": "rock",
+<<<<<<< HEAD
+"searchTags": ["tantalizing"]
+    
+=======
     "searchTags": [
       {
         "0": "tantalizing",
         "1": "youth"
       }
     ]
+>>>>>>> 709227ec3b27710cdf7cf2dd1d7e806602c2060e
   },
   {
     "id": 7,

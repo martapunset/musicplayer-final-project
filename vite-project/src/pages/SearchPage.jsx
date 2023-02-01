@@ -20,7 +20,11 @@ export const SearchPage = () => {
   //setQuery("tracks");
 
   const handleSubmit = async (e) => {
+<<<<<<< HEAD
     // resetCurrentTrack();
+=======
+  //resetCurrentTrack();
+>>>>>>> 0158e0cd97aba6d719af62f87f4494f6b44d6b4c
     e.preventDefault();
     setplaying(false);
 
@@ -32,7 +36,7 @@ export const SearchPage = () => {
   };
 
   useEffect(() => {
-    //setQuery("tracks");
+    setQuery("tracks");
   }, []);
 
   //if(query=="playlists")setQuery("tracks")

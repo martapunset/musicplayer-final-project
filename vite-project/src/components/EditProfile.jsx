@@ -4,35 +4,50 @@ import { useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { updateUsers } from "../api/postUsers";
+import { types } from "../auth/authContext/types";
 
 export const EditProfile = () => {
   const { editId } = useParams();
+<<<<<<< HEAD
 
   const { logout, authState } = useContext(AuthContext);
+=======
+  const { logout, authState, dispatch } = useContext(AuthContext);
+>>>>>>> 0158e0cd97aba6d719af62f87f4494f6b44d6b4c
   const { isLogged, user } = authState;
-  const [updatedUserInfo, setUpdatedUserInfo] = useState({
-    userName: user?.userName,
-    firstName: user?.firstName,
-    lastName: user?.lastName,
-  });
+  const [updatedUserInfo, setUpdatedUserInfo] = useState(user);
 
   const { _id } = user;
+
+  console.log(updatedUserInfo);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm({
+    defaultValues: updatedUserInfo,
+  });
+
+  useEffect(() => {
+    
+  }, [updatedUserInfo]);
+  console.log("errors", errors);
 
   const onSubmit = (data) => {
     console.log("data Form", data);
     const userData = { _id, ...data };
     console.log("userData", userData);
+     updateUsers(userData);
+   // console.log("user actualizado", user)
+
+    
+    alert("Successfully updated");
     updateUsers(userData);
     setUpdatedUserInfo(userData);
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    defaultValues: updatedUserInfo,
-  });
+
   console.log("errors", errors);
 
   return (

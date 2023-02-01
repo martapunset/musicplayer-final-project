@@ -20,7 +20,13 @@ export const MusicProvider = ({ children }) => {
   console.log("data", data);
   console.log("query", query);
 
+<<<<<<< HEAD
   const track = currentPlaylist[currentTrack].url;
+=======
+
+  const track = currentPlaylist[currentTrack].url; 
+
+>>>>>>> 0158e0cd97aba6d719af62f87f4494f6b44d6b4c
   const playerRef = useRef();
 
   useEffect(() => {
