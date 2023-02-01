@@ -8,6 +8,7 @@ import likeImg from "../assets/img/like.jpg";
 import Playlists from "../components/Playlists";
 import { useContext } from "react";
 import { MusicContext } from "../musicProvider/MusicProvider";
+import { AuthContext } from "../auth/authContext/AuthContext";
 import searchpage from "../assets/sass/searchpage.module.scss";
 
 export const LibraryPage = () => {
@@ -26,12 +27,18 @@ export const LibraryPage = () => {
     playerRef,
     playlist
   } = useContext(MusicContext);
+  
   setQuery("playlist");
 
 console.log(data)
 /*
   
     */
+const { login, authState } = useContext(AuthContext);
+const { isLogged, user } = authState
+const {_id} = user
+const userId = user._id
+
   return (
     <>
 
@@ -44,7 +51,7 @@ console.log(data)
             <div className={likescss.playlist_info}>
               <p>Playlist</p>
               <h1>Playlists</h1>
-              <span>By Lokesh</span>
+              <span>by {user.firstName}</span>
             </div>
           </div>
           <div className={likescss.body}>
