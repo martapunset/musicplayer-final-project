@@ -8,10 +8,10 @@ import axios from "axios";
 import "../components/Slider/Slider.css";
 // import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import { H1style } from "../ui";
 
 export const HomePage = () => {
   const { isAuthenticated, user: userFromAuth0 } = useAuth0();
-
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
 
@@ -21,7 +21,16 @@ export const HomePage = () => {
 
   const [tracksData, setTracksData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
-   const [artistData, setArtistData] = useState([]);
+  const [artistData, setArtistData] = useState([]);
+
+  const date = new Date();
+  const hour = date.getHours();
+  const welcome =
+    hour < 6 || hour > 18
+      ? "Good evening, "
+      : hour > 5 && hour < 13
+      ? "Good morning, "
+      : "Good afternoon, ";
 
   // const artistApi = "http://localhost:4000/artists";
 
@@ -39,7 +48,7 @@ export const HomePage = () => {
   const getPlaylists = async () => {
     const playlistApi = "http://localhost:4000/playlists";
     try {
-      const response= await axios.get(playlistApi);
+      const response = await axios.get(playlistApi);
       setPlaylistData(response.data.data);
     } catch (error) {
       console.log(error);
@@ -48,12 +57,12 @@ export const HomePage = () => {
 
   console.log(tracksData);
   console.log(playlistData);
-  console.log(artistData)
+  console.log(artistData);
 
   useEffect(() => {
     getTracks();
     getPlaylists();
-    getAllArtists()
+    getAllArtists();
   }, []);
 
   //petición al back
@@ -61,11 +70,11 @@ export const HomePage = () => {
   const getAllAlbums = async () => {
     try {
       const response = await axios.get("http://localhost:4000/albums");
-      setAlbumData(response.data.data)
+      setAlbumData(response.data.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   // const followed = playlistData.map((f) => {
   //   return f.isFollowed;
@@ -74,16 +83,16 @@ export const HomePage = () => {
 
   const getAllArtists = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/artists")
-      setArtistData(response.data.data)
+      const response = await axios.get("http://localhost:4000/artists");
+      setArtistData(response.data.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
+  };
 
   return (
     <>
+      <H1style>{`${welcome}${user?.firstName}`}</H1style>
       <div className="home">
         <Slider title="Recently Played" />
         <motion.div className="slider-container">
@@ -120,7 +129,7 @@ export const HomePage = () => {
             })}
           </motion.div>
         </motion.div>
-   
+
         <Slider title="Popular Artists" />
         <motion.div className="slider-container">
           <motion.div
@@ -130,7 +139,6 @@ export const HomePage = () => {
           >
             {artistData?.map((artists) => {
               return (
-
                 <motion.div className="item" key={artists.id}>
                   <img
                     className="artistsProfile"
@@ -139,12 +147,10 @@ export const HomePage = () => {
                   />
                   <p>{artists.name}</p>
                 </motion.div>
-
               );
             })}
           </motion.div>
         </motion.div>
-
       </div>
     </>
   );
