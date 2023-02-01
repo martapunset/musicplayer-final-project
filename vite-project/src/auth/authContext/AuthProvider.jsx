@@ -4,10 +4,7 @@ import { checkUserByEmail } from "../../api/postUsers";
 import { AuthReducer } from "./AuthReducer";
 import { types } from "./types";
 
-
-
 export const AuthProvider = ({ children }) => {
-
   const initArgs = {
     isLogged: false,
   };
@@ -21,43 +18,37 @@ export const AuthProvider = ({ children }) => {
   };
 
   const [authState, dispatch] = useReducer(AuthReducer, {}, init); //init
-  const {user} = authState;
+  const { user } = authState;
   console.log(user);
   /*-------------------login------------*/
 
   const login = (userLogin) => {
-
-    const userData = {  //----------->need to mode to backend
+    const userData = {
+      //----------->need to mode to backend
       firstName: userLogin.given_name || "default_name",
       lastName: userLogin.family_name || "default_lastname",
       userName: userLogin.nickName || "DEFAULT NICKname",
       email: userLogin.email,
-      picture: userLogin.picture
-    }
+      picture: userLogin.picture,
+    };
     console.log(userData, "standard object copy");
 
     if (userData) {
       console.log("calling login function", userData);
 
       const callAsync = async () => {
-          
-        const userDB = await checkUserByEmail(userData)
-       console.log( userDB, "async function frontpage")
-             
-      localStorage.setItem("user", JSON.stringify(userDB));
+        const userDB = await checkUserByEmail(userData);
+        console.log(userDB, "async function frontpage");
+
+        localStorage.setItem("user", JSON.stringify(userDB));
         dispatch({
           type: types.login,
           payload: userDB,
         });
-    
-
-
-      }
-      callAsync()
-    };
-  }
-
-
+      };
+      callAsync();
+    }
+  };
 
   const logoutReducer = () => {
     localStorage.removeItem("user");
@@ -66,13 +57,13 @@ export const AuthProvider = ({ children }) => {
       type: types.logout, //logout reducer
     });
   };
+
   return (
     <AuthContext.Provider
       value={{
         authState,
         login: login,
         logoutReducer: logoutReducer,
-        
       }}
     >
       {children}
