@@ -47,11 +47,12 @@ export const MusicProvider = ({ children }) => {
   const getSongIndex = (song, data) => {
     return data.indexOf(song);
   };
-
+/*
   const resetCurrentTrack = () => {
     setcurrentTrack(0);
     console.log("setting current track");
   };
+  */
   
   const playTrackFunction = (id,data) => {
     //change the index of current track with position of the song clicked or id
@@ -81,7 +82,7 @@ export const MusicProvider = ({ children }) => {
     <MusicContext.Provider
       value={{
         Player,
-        resetCurrentTrack,
+       // resetCurrentTrack,
         currentTrack,
         playerRef,
         setQuery,
