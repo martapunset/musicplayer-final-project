@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Form, InputSmall, TextArea } from "../ui";
+import { Form, InputSmall, ErrorsParagraph } from "../ui";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
@@ -12,17 +12,25 @@ export const EditProfile = () => {
 
   const { _id } = user;
   // console.log(_id);
- // const userId = _id;
+  // const userId = _id;
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      userName: user?.userName,
+      firstName: user?.firstName,
+      lastName: user?.lastName,
+    },
+  });
+
+  console.log("errors", errors);
 
   const onSubmit = (data) => {
     console.log("data Form", data);
     const userData = { _id, ...data };
-    console.log("userData",userData);
+    console.log("userData", userData);
     updateUsers(userData);
   };
 
@@ -31,38 +39,44 @@ export const EditProfile = () => {
       <Form action="" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Username</label>
+
           <InputSmall
             type="text"
             placeholder={user?.userName}
-            {...register("userName")}
+            {...register("userName", {
+              minLength: {
+                value: 5,
+                message: "Min length is 5",
+              },
+            })}
           />
         </div>
+        <ErrorsParagraph>{errors.userName?.message}</ErrorsParagraph>
         <div>
-          <label>Name</label>
+          <label>First Name</label>
           <InputSmall
             type="text"
             placeholder={user?.firstName}
             {...register("firstName")}
           />
         </div>
+        <ErrorsParagraph>{errors.firstName?.message}</ErrorsParagraph>
         <div>
-          <label>First Name</label>
+          <label>Last Name</label>
           <InputSmall
             type="text"
             placeholder={user?.lastName}
             {...register("lastName")}
           />
         </div>
+        <ErrorsParagraph>{errors.lastName?.message}</ErrorsParagraph>
         <div>
           <label>Email</label>
-          <InputSmall
-            type="email"
-            placeholder={user?.email}
-            disabled
-   
-          />
+          <InputSmall type="email" placeholder={user?.email} disabled />
         </div>
-        <button className="bt-save">Save</button>
+        <button type="submit" className="bt-save">
+          Save
+        </button>
       </Form>
     </>
   );
