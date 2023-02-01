@@ -32,7 +32,7 @@ export const ProfilePage = () => {
                 }
               />
               <button className="bt-ed">
-                <Link to={`/editProfile/${user._id}`}>
+                <Link to="/editProfile">
                   <Texto>Edit Profile</Texto>
                 </Link>
               </button>

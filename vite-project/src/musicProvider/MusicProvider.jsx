@@ -19,7 +19,7 @@ export const MusicProvider = ({ children }) => {
   const [data, setData] = useState([""]);
   const [currentPlaylist, setCurrentPlaylist] = useState([""]);
 
-  const track = data[currentTrack].url ;// -----problems BIG
+  const track = data[currentTrack].url; // -----problems BIG
   const playerRef = useRef();
 
   useEffect(() => {
@@ -28,43 +28,30 @@ export const MusicProvider = ({ children }) => {
       try {
         const response = await axios.get(`http://localhost:4000/${query}`);
         //return response;
-     
-          setData(response.data.data);
-        
- 
+        setData(response.data.data);
       } catch (error) {
         console.log(error);
       }
     };
-   if(query!=="")
-    getdata();
+    if (query !== "") getdata();
   }, [query]);
 
+  const getSongIndex = (song, data) => {
+    return data.indexOf(song);
+  };
 
-  const getSongIndex=(song, data)=>{
-  
-          return data.indexOf(song)
-
-  }
-
-   const resetCurrentTrack=()=>{
-    setcurrentTrack(0)
-    console.log("setting current track")
-
-   }
+  const resetCurrentTrack = () => {
+    setcurrentTrack(0);
+    console.log("setting current track");
+  };
   const playTrackFunction = (id) => {
     //change the index of current track with position of the song clicked or id
-   setplaying(true)
+    setplaying(true);
     setcurrentTrack(id);
     playerRef.current.audio.current.play();
   };
 
-
-
-
   const Player = () => (
-
-    
     <AudioPlayer
       className="audioPlayer"
       autoPlay={playing}
@@ -77,7 +64,6 @@ export const MusicProvider = ({ children }) => {
       onPlay={(e) => setplaying(true)}
       onEnded={() => setcurrentTrack(currentTrack + 1)}
     />
-  
   );
 
   return (
@@ -96,7 +82,7 @@ export const MusicProvider = ({ children }) => {
         playTrackFunction,
         getSongIndex,
         currentPlaylist,
-        setCurrentPlaylist
+        setCurrentPlaylist,
         //fetchData,
       }}
     >

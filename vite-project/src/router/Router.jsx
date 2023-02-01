@@ -41,7 +41,7 @@ const Router = () => {
                   isAuthenticated ? <ProfilePage /> : <Navigate to="/auth" />
                 }
               />
-              <Route path="/editProfile/:id" element={<EditProfilePage />} />
+              <Route path="/editProfile" element={<EditProfilePage />} />
 
               <Route path="/search" element={<SearchPage />} />
               <Route path="/library" element={<LibraryPage />} />

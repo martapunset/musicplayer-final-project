@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { Form, InputSmall, ErrorsParagraph } from "../ui";
+import { Form, InputSmall, ErrorsParagraph, UserImg } from "../ui";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
@@ -41,8 +41,6 @@ export const EditProfile = () => {
 
   return (
     <>
-      <UserImg src={user?.picture} />
-
       <Form action="" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Username</label>
