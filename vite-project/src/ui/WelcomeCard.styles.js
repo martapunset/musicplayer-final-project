@@ -21,7 +21,7 @@ export const WelcomeCard = styled.div`
   }
 `;
 
-export const WelcomeTitle = styled.h1`
+export const WelcomeTitle = styled.h2`
   margin-right: 15px;
   display: flex;
   align-items: center;

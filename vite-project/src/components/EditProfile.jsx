@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Form, InputSmall, ErrorsParagraph, UserImg } from "../ui";
 import { useForm } from "react-hook-form";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { updateUsers } from "../api/postUsers";
 
@@ -18,30 +18,26 @@ export const EditProfile = () => {
 
   const { _id } = user;
 
-  console.log(updatedUserInfo);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitted },
-  } = useForm({
-    defaultValues: updatedUserInfo,
-  });
-
-  console.log("errors", errors);
-
   const onSubmit = (data) => {
     console.log("data Form", data);
     const userData = { _id, ...data };
     console.log("userData", userData);
     updateUsers(userData);
-    alert("Successfully updated");
     setUpdatedUserInfo(userData);
   };
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: updatedUserInfo,
+  });
+  console.log("errors", errors);
+
   return (
     <>
-      <Form action="" onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Username</label>
 
@@ -80,9 +76,7 @@ export const EditProfile = () => {
           <InputSmall type="email" placeholder={user?.email} disabled />
         </div>
 
-        <button type="submit" className="bt-save">
-          Save
-        </button>
+        <button className="bt-save">Save</button>
       </Form>
     </>
   );

@@ -1,4 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useContext } from "react";
+import { AuthContext } from "../auth/authContext/AuthContext";
 
 export const postUsers = async (userData) => {
   try {
@@ -32,9 +34,12 @@ export const updateUsers = async (userUpdated) => {
       body: JSON.stringify(userUpdated),
     });
     const content = await rawResponse.json();
+    alert("Successfully updated");
     console.log("successfull addition DB", content);
+
     return content;
   } catch (error) {
+    alert("can not create user");
     console.log("can not create user");
   }
 };
