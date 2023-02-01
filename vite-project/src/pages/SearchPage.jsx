@@ -12,13 +12,8 @@ import { useContext } from "react";
 import { MusicContext } from "../musicProvider/MusicProvider";
 import { SettingsSystemDaydreamTwoTone } from "@mui/icons-material";
 
-
-
-
 export const SearchPage = () => {
   const [tracks, setTracks] = useState([]);
- 
-
 
   const [textValue, setValue] = useState("");
 
@@ -29,30 +24,22 @@ export const SearchPage = () => {
     track,
     data,
     setplaying,
-    resetCurrentTrack ,
+    resetCurrentTrack,
     currentTrack,
     playTrackFunction,
     playerRef,
     currentPlaylist,
-    setCurrentPlaylist
+    setCurrentPlaylist,
   } = useContext(MusicContext);
 
-
-    
-    setQuery("tracks");
-  
-
+  setQuery("tracks");
 
   const handleSubmit = async (e) => {
-    resetCurrentTrack ()
+    resetCurrentTrack();
     e.preventDefault();
-    setplaying(false)
+    setplaying(false);
 
-    if(textValue.length>3)
-   setQuery(`tracks/search?title=${textValue}`);
-
-
-
+    if (textValue.length > 3) setQuery(`tracks/search?title=${textValue}`);
   };
 
   const handleReset = () => {
@@ -60,22 +47,25 @@ export const SearchPage = () => {
     asyncFetchData();
   };
 
-  console.log(data)
+  console.log(data);
   return (
     <>
-      
-     
-      <div className= {searchpage.container}>
-
+      <div className={searchpage.container}>
         <div className={searchpage.search_input_container}>
           <form onSubmit={handleSubmit}>
             <IconButton>
-              <button style={{ border: "none" }} type="submit"> <SearchIcon /></button>
+              <button
+                style={{ border: "none", backgroundColor: "transparent" }}
+                type="submit"
+              >
+                {" "}
+                <SearchIcon />
+              </button>
             </IconButton>
             <input
               type="text"
               onChange={(e) => setValue(e.target.value)}
-              placeholder="Search tracks and playlists..."
+              placeholder="Search music..."
               value={textValue}
             />
           </form>
@@ -84,26 +74,17 @@ export const SearchPage = () => {
             <ClearIcon />
           </IconButton>
         </div>
-         
+
         <div className={searchpage.results_container}>
           <div className={searchpage.songs_container}>
-            {
-             
-              data.map((song) => (
-              
+            {data.map((song) => (
               <Fragment key={song.id}>
                 <Song song={song} />
               </Fragment>
             ))}
           </div>
-
-     
-          
         </div>
-      
       </div>
-    
     </>
   );
 };
-      

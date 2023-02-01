@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Form, InputSmall, ErrorsParagraph } from "../ui";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { updateUsers } from "../api/postUsers";
 
@@ -9,10 +9,16 @@ export const EditProfile = () => {
   const { editId } = useParams();
   const { logout, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
+  // const [updatedUserInfo, setUpdatedUserInfo] = useState({
+  //   userName: user?.userName,
+  //   firstName: user?.firstName,
+  //   lastName: user?.lastName,
+  // });
 
   const { _id } = user;
-  // console.log(_id);
-  // const userId = _id;
+
+  // console.log(updatedUserInfo);
+
   const {
     register,
     handleSubmit,
@@ -32,9 +38,9 @@ export const EditProfile = () => {
     const userData = { _id, ...data };
     console.log("userData", userData);
     updateUsers(userData);
+    alert("Successfully updated");
+    // setUpdatedUserInfo(userData);
   };
-
-
 
   return (
     <>
@@ -76,6 +82,7 @@ export const EditProfile = () => {
           <label>Email</label>
           <InputSmall type="email" placeholder={user?.email} disabled />
         </div>
+
         <button type="submit" className="bt-save">
           Save
         </button>
