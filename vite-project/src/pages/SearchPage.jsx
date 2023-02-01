@@ -28,8 +28,17 @@ export const SearchPage = () => {
     e.preventDefault();
     setplaying(false);
 
+    
     if (textValue.length > 3) setQuery(`tracks/search?title=${textValue}`);
   };
+
+  // const onSearchSubmit = (event)=>{
+  //   event.preventDefault()
+
+  //   if(searchText.trim().length <=1) return;
+
+  //   navigate(`?q=${searchText}`)
+  // }
 
   const handleReset = () => {
     setQuery("tracks");
