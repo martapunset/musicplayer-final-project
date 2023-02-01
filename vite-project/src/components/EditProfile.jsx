@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { Form, InputSmall, ErrorsParagraph } from "../ui";
 import { useForm } from "react-hook-form";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { updateUsers } from "../api/postUsers";
 import { types } from "../auth/authContext/types";
-import { useEffect } from "react";
+
 export const EditProfile = () => {
   const { editId } = useParams();
   const { logout, authState, dispatch } = useContext(AuthContext);
@@ -38,12 +38,16 @@ export const EditProfile = () => {
 
     
     alert("Successfully updated");
+    updateUsers(userData);
     setUpdatedUserInfo(userData);
   };
 
+
+  console.log("errors", errors);
+
   return (
     <>
-      <Form action="" onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Username</label>
 
@@ -82,9 +86,7 @@ export const EditProfile = () => {
           <InputSmall type="email" placeholder={user?.email} disabled />
         </div>
 
-        <button type="submit" className="bt-save">
-          Save
-        </button>
+        <button className="bt-save">Save</button>
       </Form>
     </>
   );
