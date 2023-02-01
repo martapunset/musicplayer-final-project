@@ -13,8 +13,9 @@ export const postUsers = async (userData) => {
       body: JSON.stringify(userData),
     });
     const content = await rawResponse.json();
-    console.log("successfull addition DB", content);
-    return content;
+    console.log("successfull addition DB", content.data);
+    console.log(content)
+    return content.data;
   } catch (error) {
     console.log("can not create user");
   }
