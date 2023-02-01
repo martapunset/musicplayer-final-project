@@ -50,6 +50,7 @@ export const LikedPlayList = () => {
             <h1>Liked Songs</h1>
             <span>by {user.firstName}</span>
           </div>
+          
         </div>
         <div className={likescss.body}>
           <div className={likescss.body_nav}>

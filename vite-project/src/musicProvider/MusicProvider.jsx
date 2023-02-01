@@ -1,9 +1,6 @@
-import { getApiData } from "../api/getApiData";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useContext } from "react";
-import { createContext } from "react";
 import axios from "axios";
 export const MusicContext = createContext();
 import { useRef } from "react";
@@ -14,12 +11,16 @@ import "./audioPlayer.css";
 export const MusicProvider = ({ children }) => {
   const [playing, setplaying] = useState(false);
   const [currentTrack, setcurrentTrack] = useState(0);
-  const [query, setQuery] = useState(""); //need to move to musicDATA provider
-  // data from the API to display on list
-  const [data, setData] = useState([""]);
-  const [currentPlaylist, setCurrentPlaylist] = useState([""]);
 
-  const track = data[currentTrack].url; // -----problems BIG
+  const [query, setQuery] = useState("");
+  // data from the API to display on list
+  const [data, setData] = useState([""]); //visualization
+  const [currentPlaylist, setCurrentPlaylist] = useState([""]); //player STate
+  console.log("currentplaylist", currentPlaylist);
+  console.log("data", data);
+  console.log("query", query);
+
+  const track = currentPlaylist[currentTrack].url;
   const playerRef = useRef();
 
   useEffect(() => {
@@ -39,14 +40,18 @@ export const MusicProvider = ({ children }) => {
   const getSongIndex = (song, data) => {
     return data.indexOf(song);
   };
-
+  /*
   const resetCurrentTrack = () => {
     setcurrentTrack(0);
     console.log("setting current track");
   };
-  const playTrackFunction = (id) => {
+  */
+
+  const playTrackFunction = (id, data) => {
     //change the index of current track with position of the song clicked or id
+
     setplaying(true);
+    setCurrentPlaylist(data); //stores data in the screen for the player
     setcurrentTrack(id);
     playerRef.current.audio.current.play();
   };
@@ -70,7 +75,7 @@ export const MusicProvider = ({ children }) => {
     <MusicContext.Provider
       value={{
         Player,
-        resetCurrentTrack,
+        // resetCurrentTrack,
         currentTrack,
         playerRef,
         setQuery,

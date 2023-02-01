@@ -17,17 +17,28 @@ export const SearchPage = () => {
   const { setQuery, data, setplaying, resetCurrentTrack } =
     useContext(MusicContext);
 
-  setQuery("tracks");
+  //setQuery("tracks");
 
   const handleSubmit = async (e) => {
-    resetCurrentTrack();
+    // resetCurrentTrack();
     e.preventDefault();
     setplaying(false);
 
     if (textValue.length > 3) setQuery(`tracks/search?title=${textValue}`);
   };
 
+  const handleReset = () => {
+    setQuery("tracks");
+  };
+
+  useEffect(() => {
+    //setQuery("tracks");
+  }, []);
+
+  //if(query=="playlists")setQuery("tracks")
+
   console.log(data);
+
   return (
     <>
       <div className={searchpage.container}>

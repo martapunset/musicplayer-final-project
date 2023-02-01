@@ -20,7 +20,7 @@ const Song = ({ song, playlist }) => {
         <div className={songscss.left}>
           <IconButton
             className={songscss.play_btn}
-            onClick={() => playTrackFunction(index)}
+            onClick={() => playTrackFunction(index, data)}
           >
             <PlayArrowIcon />
           </IconButton>
