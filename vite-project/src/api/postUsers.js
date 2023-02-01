@@ -19,18 +19,9 @@ export const postUsers = async (userData) => {
 };
 
 export const updateUsers = async (userUpdated) => {
-  const { _id} = userUpdated;
-  console.log("user from updateUsers",userUpdated);
- // const updateUser = {
-  //  firstName: firstName,
-   // lastName: lastName,
-    //userName: userName,
-    //email: email,
-    // picture: newPicture,
-    // likedTracks: [{}],
-    //likedPlaylists: playlistId}
-  
- // console.log("userData in updateUsers",userUpdated);
+  const { _id } = userUpdated;
+  console.log("user from updateUsers", userUpdated);
+
   try {
     const rawResponse = await fetch(`http://localhost:4000/user/${_id}`, {
       method: "PATCH",
