@@ -17,6 +17,11 @@ export const SearchPage = () => {
   const { setQuery, data, setplaying, resetCurrentTrack } =
     useContext(MusicContext);
 
+  const handleReset = () => {
+    setQuery("tracks");
+    setValue("")
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setplaying(false);
@@ -24,10 +29,7 @@ export const SearchPage = () => {
     
     if (textValue.length > 3) setQuery(`tracks/search?title=${textValue.toLowerCase()}`);
   };
-  const handleReset = () => {
-    setValue("")
-  setQuery("tracks")
-}
+ 
   useEffect(() => {
     setQuery("tracks");
   }, []);
@@ -53,8 +55,8 @@ export const SearchPage = () => {
             />
           </form>
 
-          <IconButton >
-            <ClearIcon onClick={handleReset}/>
+          <IconButton>
+            <ClearIcon onClick={() => handleReset()} />
           </IconButton>
         </div>
 
