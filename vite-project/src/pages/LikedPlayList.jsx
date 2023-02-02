@@ -50,7 +50,7 @@ export const LikedPlayList = () => {
             <h1>Liked Songs</h1>
             <span>by {user.firstName}</span>
           </div>
-          
+
         </div>
         <div className={likescss.body}>
           <div className={likescss.body_nav}>
@@ -67,7 +67,7 @@ export const LikedPlayList = () => {
           {/* <button onClick={updateUsers(name,)}>Add to Playlist</button> */}
           <button onClick={() => createPlaylist(userId)}>create</button>
           {data.map((song) => (
-            <Fragment key={song?.id}>
+            <Fragment key={song?._id}>
               <Song song={song} />
             </Fragment>
           ))}

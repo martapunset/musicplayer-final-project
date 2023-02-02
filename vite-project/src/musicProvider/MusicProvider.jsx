@@ -20,10 +20,6 @@ export const MusicProvider = ({ children }) => {
   // data from the API to display on list
   const [data, setData] = useState([""]);   //visualization
   const [currentPlaylist, setCurrentPlaylist] = useState([""]); //player STate
-  console.log("currentplaylist",currentPlaylist)
-  console.log("data", data)
-  console.log("query",query)
-  
 
 
   const track = currentPlaylist[currentTrack].url; 
@@ -35,8 +31,7 @@ export const MusicProvider = ({ children }) => {
     const getdata = async () => {
       try {
         const response = await axios.get(`http://localhost:4000/${query}`);
-        //return response;
-
+   
         setData(response.data.data);
       } catch (error) {
         console.log(error);
@@ -48,12 +43,7 @@ export const MusicProvider = ({ children }) => {
   const getSongIndex = (song, data) => {
     return data.indexOf(song);
   };
-/*
-  const resetCurrentTrack = () => {
-    setcurrentTrack(0);
-    console.log("setting current track");
-  };
-  */
+
   
   const playTrackFunction = (id,data) => {
     //change the index of current track with position of the song clicked or id
@@ -96,7 +86,7 @@ export const MusicProvider = ({ children }) => {
         getSongIndex,
         currentPlaylist,
         setCurrentPlaylist,
-        //fetchData,
+
       }}
     >
       {children}

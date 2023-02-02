@@ -6,13 +6,9 @@
     "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583924/tracks-dev/Rxbyn_-_better_off_alone_fvhwp8.mp3",
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/better_off_alone_gfmcby.jpg",
     "genre": "piano",
-    "searchTags": [
-      {
-        "0": "better",
-        "1": "of",
-        "2": "alone"
-      }
-    ]
+    "searchTags": ["better",
+       "of",
+        "alone"]
   },
   {
     "id": 2,
@@ -22,10 +18,10 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/alone_rfib7a.jpg",
     "genre": "poprock",
     "searchTags": [
-      {
-        "0": "alone",
-        "1": "color"
-      }
+      
+       "alone",
+      "color"
+      
     ]
   },
   {
@@ -36,11 +32,11 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/Maze_of_sorrow_r1crlr.jpg",
     "genre": "chillout",
     "searchTags": [
-      {
-        "0": "mahidevram",
-        "1": "maze",
-        "2": "sorrow"
-      }
+
+         "mahidevram",
+        "maze",
+       "sorrow"
+   
     ]
   },
   {
@@ -51,12 +47,11 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/aurora_omys8y.jpg",
     "genre": "indie",
     "searchTags": [
-      {
-        "0": "aurora",
-        "1": "smoking",
-        "2": "with",
-        "3": "poets"
-      }
+ 
+        "aurora",
+       "smoking",
+       "poets"
+      
     ]
   },
   {
@@ -67,10 +62,10 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583756/tracks-thumbnails-dev/Sensitive_unevif.jpg",
     "genre": "pop",
     "searchTags": [
-      {
-        "0": "sensitive",
-        "1": "infraction"
-      }
+    
+        "sensitive",
+        "infraction"
+     
     ]
   },
   {
@@ -80,17 +75,8 @@
     "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644583924/tracks-dev/Social_Square_-_Tantalizing_Youth_eykq87.mp3",
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644583757/tracks-thumbnails-dev/Tantalizing_Youth_bfshzo.jpg",
     "genre": "rock",
-<<<<<<< HEAD
 "searchTags": ["tantalizing"]
     
-=======
-    "searchTags": [
-      {
-        "0": "tantalizing",
-        "1": "youth"
-      }
-    ]
->>>>>>> 709227ec3b27710cdf7cf2dd1d7e806602c2060e
   },
   {
     "id": 7,
@@ -100,12 +86,11 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644584802/tracks-thumbnails-dev/Igor_Pumphonia_-_Point_Of_Light_urg7nn.jpg",
     "genre": "electronic",
     "searchTags": [
-      {
-        "0": "igor",
-        "1": "pumphonia",
-        "2": "point",
-        "3": "light"
-      }
+   "igor",
+        "pumphonia",
+         "point",
+         "light"
+      
     ]
   },
   {
@@ -116,11 +101,10 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644585151/tracks-thumbnails-dev/Lurence_Danova_oeew0j.jpg",
     "genre": "indie",
     "searchTags": [
-      {
-        "0": "marsupial",
-        "1": "laurence",
-        "2": "danova"
-      }
+      "marsupial",
+        "laurence",
+        "danova"
+      
     ]
   },
   {
@@ -131,13 +115,12 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644585210/tracks-thumbnails-dev/TAB_fxakq3.jpg",
     "genre": "electronic",
     "searchTags": [
-      {
-        "0": "chasing",
-        "1": "tomorrow",
-        "2": "feat",
-        "3": "jade",
-        "4": "gritty"
-      }
+     "chasing",
+         "tomorrow",
+        "feat",
+         "jade",
+        "gritty"
+      
     ]
   },
   {
@@ -148,11 +131,11 @@
     "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644523019/tracks/track-1644523017728_qb6wq4.mp3",
     "genre": "soul",
     "searchTags": [
-      {
-        "0": "healin",
-        "1": "my",
-        "2": "blues"
-      }
+      
+        "healin",
+         "my",
+         "blues"
+      
     ]
   },
   {
@@ -163,13 +146,13 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644585551/tracks-thumbnails-dev/Head_Over_Heels_Friend_Group_Remix_c9uatt.jpg",
     "genre": "poprock",
     "searchTags": [
-      {
-        "0": "head",
-        "1": "over",
-        "2": "heels",
-        "3": "friends",
-        "4": "remix"
-      }
+      
+         "head",
+         "over",
+         "heels",
+        "friends",
+         "remix"
+      
     ]
   },
   {
@@ -180,10 +163,10 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586423/tracks-thumbnails-dev/Under_Water_yoirsy.jpg",
     "genre": "electronic",
     "searchTags": [
-      {
-        "0": "under",
-        "1": "water"
-      }
+      
+         "under",
+         "water"
+      
     ]
   },
   {
@@ -194,9 +177,9 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586622/tracks-thumbnails-dev/A8_vxgyaf.jpg",
     "genre": "pop",
     "searchTags": [
-      {
-        "0": "better"
-      }
+      
+        "better"
+      
     ]
   },
   {
@@ -207,10 +190,10 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586719/tracks-thumbnails-dev/My_love_wqjuiz.jpg",
     "genre": "pop",
     "searchTags": [
-      {
-        "0": "my",
-        "1": "love"
-      }
+     
+      "my",
+    "love"
+      
     ]
   },
   {
@@ -221,10 +204,10 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644586816/tracks-thumbnails-dev/bebe_go_zdfn6e.jpg",
     "genre": "reggaeton",
     "searchTags": [
-      {
-        "0": "bebe",
-        "1": "go"
-      }
+      
+        "bebe",
+        "go"
+      
     ]
   },
   {
@@ -235,12 +218,12 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644587058/tracks-thumbnails-dev/Reflections_qvdzan.jpg",
     "genre": "alternative",
     "searchTags": [
-      {
-        "0": "reflections",
-        "1": "feat",
-        "2": "mathias",
-        "3": "hagen"
-      }
+      
+       "reflections",
+       "feat",
+      "mathias",
+         "hagen"
+      
     ]
   },
   {
@@ -251,14 +234,14 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644587222/tracks-thumbnails-dev/Un_ratito_m2aeq0.jpg",
     "genre": "reggaeton",
     "searchTags": [
-      {
-        "0": "un",
-        "1": "ratito",
-        "2": "nama",
-        "3": "prod",
-        "4": "duran",
-        "5": "coach"
-      }
+      
+        "un",
+        "ratito",
+         "nama",
+        "prod",
+   "duran",
+       "coach"
+   
     ]
   },
   {
@@ -269,12 +252,11 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644587960/tracks-thumbnails-dev/Sax_kgjfn8.jpg",
     "genre": "funk",
     "searchTags": [
-      {
-        "0": "sex",
-        "1": "is",
-        "2": "my",
-        "3": "cardio"
-      }
+ "sex",
+         "is",
+       "my",
+       "cardio"
+      
     ]
   },
   {
@@ -285,14 +267,14 @@
     "thumbnail": "https://res.cloudinary.com/dmkdsujzh/image/upload/v1644653692/tracks-thumbnails-dev/Chill_Lofi_Hip_Hop_Type_Beat_ltpm24.jpg",
     "genre": "groovy",
     "searchTags": [
-      {
-        "0": "chill",
-        "1": "lofi",
-        "2": "hip",
-        "3": "hop",
-        "4": "type",
-        "5": "beat"
-      }
+
+       "chill",
+         "lofi",
+      "hip",
+     "hop",
+      "type",
+        "beat"
+      
     ]
   },
   {
@@ -303,10 +285,10 @@
     "url": "https://res.cloudinary.com/dmkdsujzh/video/upload/v1644602494/tracks-dev/D_JAY_KOI_-_We_got_the_vibes___Feat_Fil_Straughan__uz9qw7.mp3",
     "genre": "folk",
     "searchTags": [
-      {
-        "0": "monday",
-        "1": "8am"
-      }
+    
+         "monday",
+         "8am"
+      
     ]
   }
 ]

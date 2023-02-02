@@ -32,15 +32,15 @@ export const SearchPage = () => {
     setCurrentPlaylist,
   } = useContext(MusicContext);
 
-  //setQuery("tracks");
+
 
   const handleSubmit = async (e) => {
   //resetCurrentTrack();
     e.preventDefault();
     setplaying(false);
-
+  
     
-    if (textValue.length > 3) setQuery(`tracks/search?title=${textValue}`);
+    if (textValue.length > 3) setQuery(`tracks/search?title=${textValue.toLowerCase()}`);
   };
 
   // const onSearchSubmit = (event)=>{
@@ -61,7 +61,7 @@ export const SearchPage = () => {
     setQuery("tracks");
   }, []);
 
-  //if(query=="playlists")setQuery("tracks")
+
 
   console.log(data);
 

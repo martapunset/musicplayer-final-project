@@ -1,6 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext } from "react";
-import { AuthContext } from "../auth/authContext/AuthContext";
+
 
 export const postUsers = async (userData) => {
   try {
@@ -23,7 +22,6 @@ export const postUsers = async (userData) => {
 
 export const updateUsers = async (userUpdated) => {
   const { _id } = userUpdated;
-  console.log("user from updateUsers", userUpdated);
 
   try {
     const rawResponse = await fetch(`http://localhost:4000/user/${_id}`, {
@@ -36,11 +34,11 @@ export const updateUsers = async (userUpdated) => {
     });
     const content = await rawResponse.json();
     alert("Successfully updated");
-    console.log("successfull addition DB", content);
+    
 
     return content;
   } catch (error) {
-    alert("can not create user");
+    alert("can not create user");  ///change this alert for toast/sweet alert
     console.log("can not create user");
   }
 };
@@ -68,7 +66,7 @@ export const getUsers = async () => {
 };
 
 export const checkUserByEmail = async (userData) => {
-  console.log("entering checkemail function");
+ 
   const url = "http://localhost:4000/user/create";
 
   try {

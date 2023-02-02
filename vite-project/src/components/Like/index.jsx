@@ -9,23 +9,34 @@ import { MusicContext } from "../../musicProvider/MusicProvider";
 import { updateUsers } from "../../api/postUsers";
 
 
-const Like = (likedTracks) => {
+const Like = (oneTrack, liked) => {
+
+
   const [like, setLike] = useState(false);
   const {authState} = useContext(AuthContext)
-  const {user} = authState
 
 
-  
+console.log(likedTracks)
+  //const { _id } = likedTracks;
+
 
 const likeSong = ()=>{
   setLike(!like)
   const {_id} = user
-console.log(_id)
+//console.log(_id)
 const updateLike = {
     _id,
-   ...likedTracks
+   ...oneTrack
 }
-updateUsers(updateLike)
+
+  if (liked) {
+     console.log("track already liked")
+  } else {
+    updateUsers(updateLike)
+
+  }
+    
+
 }
 
 

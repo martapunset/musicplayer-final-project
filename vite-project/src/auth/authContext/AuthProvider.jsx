@@ -34,11 +34,11 @@ export const AuthProvider = ({ children }) => {
     console.log(userData, "standard object copy");
 
     if (userData) {
-      console.log("calling login function", userData);
+     
 
       const callAsync = async () => {
         const userDB = await checkUserByEmail(userData);
-        console.log(userDB, "async function frontpage");
+       
 
         localStorage.setItem("user", JSON.stringify(userDB));
         dispatch({

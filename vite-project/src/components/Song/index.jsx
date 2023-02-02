@@ -8,15 +8,30 @@ import PlaylistMenu from "../PlaylistMenu";
 import { MusicContext } from "../../musicProvider/MusicProvider";
 import { updateUsers} from "../../api/postUsers"
 import { createPlaylist } from "../../api/getPlaylists";
+import { AuthContext } from "../../auth/authContext/AuthContext";
 const Song = ({ song, playlist }) => {
   const [menu, setMenu] = useState(false);
-  const { playTrackFunction,setcurrentTrack, data , getSongIndex } = useContext(MusicContext)
-
-
+  const { playTrackFunction, setcurrentTrack, data, getSongIndex } = useContext(MusicContext)
+  const {authState}=useContext(AuthContext)
+  const { user } = authState
+  const { likedTracks } = user
+  const[liked, setLiked]=useState(false)
+  
+console.log(likedTracks)
   
  const index=getSongIndex(song, data)
-
-
+  console.log(likedTracks.includes(song._id))
+  
+  if (likedTracks.includes(song._id)) {
+    setLiked(true)
+    console.log("track already liked")
+    
+      
+  } else {
+    setLiked(false)
+    console.log("track is not liked still")
+    
+  }
 
   return (
 <>
@@ -34,7 +49,7 @@ const Song = ({ song, playlist }) => {
       </div>
 
       <div className={songscss.right}>
-        <Like likedTracks={song?._id} />
+        <Like oneTrack={song} liked={liked} />
         <p>4.30</p>
         {/* <IconButton className={songscss.menu_btn} onClick={() => setMenu(true)}>
           <MoreHorizIcon />

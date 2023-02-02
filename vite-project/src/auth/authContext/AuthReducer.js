@@ -1,11 +1,6 @@
 import { types } from "./types";
 
-/*      SE DECLARARA EN EL PROVIDER
-const init= {
-  isLogged: false,
-  user,
-};
-*/
+
 export const AuthReducer = (state = {}, action) => {
   switch (action.type) {
     case types.field:
