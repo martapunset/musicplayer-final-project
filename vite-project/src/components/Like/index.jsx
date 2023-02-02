@@ -13,7 +13,8 @@ const Like = (oneTrack) => {
 
 
   const [like, setLike] = useState(false);
-  const {authState} = useContext(AuthContext)
+  const { authState } = useContext(AuthContext)
+  const {user}=authState
 
 
 

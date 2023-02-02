@@ -24,7 +24,10 @@ export const SearchPage = () => {
     
     if (textValue.length > 3) setQuery(`tracks/search?title=${textValue.toLowerCase()}`);
   };
-
+  const handleReset = () => {
+    setValue("")
+  setQuery("tracks")
+}
   useEffect(() => {
     setQuery("tracks");
   }, []);
@@ -50,8 +53,8 @@ export const SearchPage = () => {
             />
           </form>
 
-          <IconButton>
-            <ClearIcon />
+          <IconButton >
+            <ClearIcon onClick={handleReset}/>
           </IconButton>
         </div>
 
