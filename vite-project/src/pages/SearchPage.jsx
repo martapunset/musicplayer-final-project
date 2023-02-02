@@ -1,13 +1,13 @@
 import { useState, useEffect, Fragment } from "react";
+import { MusicContext } from "../musicProvider/MusicProvider";
+import { useContext } from "react";
 import Song from "../components/Song";
-import { GlobalGridStyles, Header } from "../ui";
+
+// Third party libraries
 import searchpage from "../assets/sass/searchpage.module.scss";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-// import { SearchBar } from "./SearchBar";
-import { useContext } from "react";
-import { MusicContext } from "../musicProvider/MusicProvider";
 
 export const SearchPage = () => {
   const [tracks, setTracks] = useState([]);
@@ -17,35 +17,16 @@ export const SearchPage = () => {
   const { setQuery, data, setplaying, resetCurrentTrack } =
     useContext(MusicContext);
 
-  //setQuery("tracks");
-
   const handleSubmit = async (e) => {
-    //resetCurrentTrack();
     e.preventDefault();
     setplaying(false);
 
     if (textValue.length > 3) setQuery(`tracks/search?title=${textValue}`);
   };
 
-  // const onSearchSubmit = (event)=>{
-  //   event.preventDefault()
-
-  //   if(searchText.trim().length <=1) return;
-
-  //   navigate(`?q=${searchText}`)
-  // }
-
-  const handleReset = () => {
-    setQuery("tracks");
-  };
-
   useEffect(() => {
     setQuery("tracks");
   }, []);
-
-  //if(query=="playlists")setQuery("tracks")
-
-  console.log(data);
 
   return (
     <>
@@ -57,7 +38,6 @@ export const SearchPage = () => {
                 style={{ border: "none", backgroundColor: "transparent" }}
                 type="submit"
               >
-                {" "}
                 <SearchIcon />
               </button>
             </IconButton>

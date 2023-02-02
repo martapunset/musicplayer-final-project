@@ -1,5 +1,8 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { MusicProvider } from "../musicProvider/MusicProvider.jsx";
+import { AuthProvider } from "../auth/authContext/AuthProvider";
+import { useAuth0 } from "@auth0/auth0-react";
+
 import { AuthHomePage } from "../auth/pages/index.js";
 import {
   LibraryPage,
@@ -8,10 +11,9 @@ import {
   HomePage,
   LikedPlayList,
 } from "../pages";
+
 import { EditProfilePage } from "../pages/EditProfilePage.jsx";
-import { AuthProvider } from "../auth/authContext/AuthProvider";
 import { Layout } from "../pages/Layout.jsx";
-import { MusicProvider } from "../musicProvider/MusicProvider.jsx";
 
 const Router = () => {
   const { isAuthenticated } = useAuth0();

@@ -3,7 +3,6 @@ import { navBarData } from "../utils/navBarData";
 import { WrapperNav } from "../ui/NavbarrStyles";
 import { LogoProfile } from "../ui";
 import logoHarmony from "../assets/img/logoHarmony.png";
-import { LogoutButton } from "./Login/LogoutButton";
 export const HomeNavBar = () => {
   return (
     <>

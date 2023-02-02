@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../auth/authContext/AuthContext";
 
 import {
@@ -15,8 +15,6 @@ import {
 export const ProfilePage = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
-  console.log(user.email);
-  // console.log(user);
 
   return (
     <>

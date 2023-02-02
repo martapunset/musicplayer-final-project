@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
-import Slider from "../components/Slider/Slider";
-import { motion } from "framer-motion";
-import axios from "axios";
-import "../components/Slider/Slider.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import { motion } from "framer-motion";
+import { toast } from "react-hot-toast";
+import axios from "axios";
+import Slider from "../components/Slider/Slider";
+import "../components/Slider/Slider.css";
 import { H1style } from "../ui";
 
 export const HomePage = () => {
@@ -29,8 +30,6 @@ export const HomePage = () => {
       ? "Good morning, "
       : "Good afternoon, ";
 
-  // const artistApi = "http://localhost:4000/artists";
-
   const getTracks = async () => {
     const tracksApi = "http://localhost:4000/tracks";
 
@@ -38,7 +37,7 @@ export const HomePage = () => {
       const response = await axios.get(tracksApi);
       setTracksData(response.data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong!");
     }
   };
 
@@ -48,13 +47,9 @@ export const HomePage = () => {
       const response = await axios.get(playlistApi);
       setPlaylistData(response.data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong!");
     }
   };
-
-  console.log(tracksData);
-  console.log(playlistData);
-  console.log(artistData);
 
   useEffect(() => {
     getTracks();
@@ -62,14 +57,14 @@ export const HomePage = () => {
     getAllArtists();
   }, []);
 
-  //petición al back
+  //Request to back
 
   const getAllAlbums = async () => {
     try {
       const response = await axios.get("http://localhost:4000/albums");
       setAlbumData(response.data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong!");
     }
   };
 
@@ -78,7 +73,7 @@ export const HomePage = () => {
       const response = await axios.get("http://localhost:4000/artists");
       setArtistData(response.data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong!");
     }
   };
 
