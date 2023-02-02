@@ -31,7 +31,7 @@ export const updateUsers = async (userUpdated) => {
       body: JSON.stringify(userUpdated),
     });
     const content = await rawResponse.json();
-    // toast.success("Successfully updated");
+    toast.success("Successfully updated");
 
     return content;
   } catch (error) {
