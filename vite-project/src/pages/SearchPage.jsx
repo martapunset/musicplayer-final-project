@@ -17,6 +17,11 @@ export const SearchPage = () => {
   const { setQuery, data, setplaying, resetCurrentTrack } =
     useContext(MusicContext);
 
+  const handleReset = () => {
+    setQuery("tracks");
+    setValue("")
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setplaying(false);
@@ -50,7 +55,7 @@ export const SearchPage = () => {
           </form>
 
           <IconButton>
-            <ClearIcon />
+            <ClearIcon onClick={() => handleReset()} />
           </IconButton>
         </div>
 
