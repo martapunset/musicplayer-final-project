@@ -13,7 +13,6 @@ const Song = ({ song, playlist }) => {
     useContext(MusicContext);
 
   const index = getSongIndex(song, data);
-
   return (
     <>
       <div className={songscss.song_container}>
@@ -34,14 +33,6 @@ const Song = ({ song, playlist }) => {
 
         <div className={songscss.right}>
           <Like likedTracks={song?._id} />
-          <p>4.30</p>
-          {/* <IconButton className={songscss.menu_btn} onClick={() => setMenu(true)}>
-          <MoreHorizIcon />
-        </IconButton> */}
-
-          {/* {menu && (
-          <PlaylistMenu playlist={playlist} closeMenu={() => setMenu(false)} />
-        )} */}
         </div>
       </div>
     </>
