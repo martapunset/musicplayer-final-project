@@ -55,8 +55,8 @@ export const SearchPage = () => {
             />
           </form>
 
-          <IconButton>
-            <ClearIcon onClick={() => handleReset()} />
+          <IconButton onClick={() => handleReset()}>
+            <ClearIcon  />
           </IconButton>
         </div>
 
