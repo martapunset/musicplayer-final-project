@@ -1,6 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext } from "react";
-import { AuthContext } from "../auth/authContext/AuthContext";
+import { toast } from "react-hot-toast";
 
 export const postUsers = async (userData) => {
   try {
@@ -9,21 +8,18 @@ export const postUsers = async (userData) => {
       headers: {
         "Content-Type": "application/json",
       },
-      //1.recoger info del formulario
       body: JSON.stringify(userData),
     });
     const content = await rawResponse.json();
-    console.log("successfull addition DB", content.data);
-    console.log(content)
+
     return content.data;
   } catch (error) {
-    console.log("can not create user");
+    toast.error(error.message);
   }
 };
 
 export const updateUsers = async (userUpdated) => {
   const { _id } = userUpdated;
-  console.log("user from updateUsers", userUpdated);
 
   try {
     const rawResponse = await fetch(`http://localhost:4000/user/${_id}`, {
@@ -35,13 +31,11 @@ export const updateUsers = async (userUpdated) => {
       body: JSON.stringify(userUpdated),
     });
     const content = await rawResponse.json();
-    alert("Successfully updated");
-    console.log("successfull addition DB", content);
+    toast.success("Successfully updated");
 
     return content;
   } catch (error) {
-    alert("can not create user");
-    console.log("can not create user");
+    toast.error("Can get user data, please, wait");
   }
 };
 
@@ -60,15 +54,13 @@ export const getUsers = async () => {
 
     const users = await response.json();
 
-    console.log(users, "user List");
     return users;
   } catch (error) {
-    console.log("api error fetching users");
+    toast.error("Api error fetching users");
   }
 };
 
 export const checkUserByEmail = async (userData) => {
-  console.log("entering checkemail function");
   const url = "http://localhost:4000/user/create";
 
   try {
@@ -77,17 +69,13 @@ export const checkUserByEmail = async (userData) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: `Bearer ${token}`,
       },
-      //sending user data
       body: JSON.stringify(userData),
     });
 
     const data = await res.json();
-    //const { user } = data;
-    console.log(data); ///checked is working
     return data.data;
   } catch (error) {
-    console.log("error");
+    toast.error("Something went wrong");
   }
 };
