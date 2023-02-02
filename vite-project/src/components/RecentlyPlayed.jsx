@@ -17,6 +17,7 @@ const RecentlyPlayed = () => {
     };
     data();
   }, []);
+
   return (
     <>
       <RecentlyPlayedText>
