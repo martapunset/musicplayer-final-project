@@ -19,7 +19,6 @@ export function Dropdown({ items = [], dropdownTitle }) {
   };
 
   const keyHandler = (event) => {
-    // console.log(event);
     if (event.key === "Escape" && isOpen) {
       setIsOpen(false);
     }
@@ -33,7 +32,6 @@ export function Dropdown({ items = [], dropdownTitle }) {
       ) {
         return;
       }
-
       setIsOpen(false);
     }
   };

@@ -1,37 +1,22 @@
-import { useState, useEffect, Fragment } from "react";
-import Song from "../components/Song";
-import likescss from "../assets/sass/likescss.module.scss";
-import likeImg from "../assets/img/like.jpg";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { Fragment } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { MusicContext } from "../musicProvider/MusicProvider";
 
+import Song from "../components/Song";
+import likescss from "../assets/sass/likescss.module.scss";
+import likeImg from "../assets/img/like.jpg";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+
 export const LikedPlayList = () => {
-  // const [likedSong, setLikedSong] = useState([]);
-  const {
-    query,
-    setQuery,
-    track,
-    data,
-    setplaying,
-    currentTrack,
-    playTrackFunction,
-    playerRef,
-    currentPlaylist,
-    setCurrentPlaylist,
-  } = useContext(MusicContext);
+  const { setQuery, data } = useContext(MusicContext);
 
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
 
-  // const [playing, setplaying] = useState(false);
-
-  console.log(data);
   const { _id } = user;
   setQuery(`user/${_id}`);
 
-  console.log(_id);
   const userId = user._id;
 
   return (

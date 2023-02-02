@@ -1,38 +1,18 @@
-import { useState, useEffect, Fragment } from "react";
-import { getApiData } from "../api/getApiData";
+import { useContext } from "react";
+import { useState, useEffect } from "react";
+import { MusicContext } from "../musicProvider/MusicProvider";
+import { AuthContext } from "../auth/authContext/AuthContext";
+
+import axios from "axios";
 import likescss from "../assets/sass/likescss.module.scss";
 import likeImg from "../assets/img/like.jpg";
 import Playlists from "../components/Playlists";
-import { useContext } from "react";
-import { MusicContext } from "../musicProvider/MusicProvider";
-import { AuthContext } from "../auth/authContext/AuthContext";
 import searchpage from "../assets/sass/searchpage.module.scss";
-import playlists from "../assets/sass/playlists.module.scss";
-import axios from "axios";
+import { toast } from "react-hot-toast";
+
 export const LibraryPage = () => {
-  //const [textValue, setValue] = useState("");
-  const {
-    query,
-    setQuery,
-    track,
-    data,
-    setplaying,
-    currentTrack,
-    playTrackFunction,
-    playerRef,
-    playlist,
-  } = useContext(MusicContext);
-
-  //setQuery("playlists");
-
-  //console.log(data)
-  /*
-  
-    */
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
-  const { _id } = user;
-  const userId = user._id;
 
   const [playlistDat, setPlaylistDat] = useState([]);
 
@@ -40,18 +20,16 @@ export const LibraryPage = () => {
     const playlistApi = "http://localhost:4000/playlists";
     try {
       const response = await axios.get(playlistApi);
-      console.log("function execute");
       setPlaylistDat(response.data.data);
+      // toast.success("Getting all playlist");
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
   useEffect(() => {
     getPlaylists();
   }, []);
-
-  console.log(playlistDat);
 
   return (
     <>
@@ -66,14 +44,12 @@ export const LibraryPage = () => {
               <span>by {user.firstName}</span>
             </div>
           </div>
-          <div className={playlists.body}>
-            {/* <div className={likescss.body_nav}> */}
+          <div className={likescss.body}>
+            <div className={likescss.body_nav}></div>
 
             <div className={searchpage.playlists_container}>
               <Playlists playlists={playlistDat} />
             </div>
-
-            {/* </div> */}
           </div>
         </div>
       </div>
