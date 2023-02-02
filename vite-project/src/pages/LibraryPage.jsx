@@ -20,7 +20,6 @@ export const LibraryPage = () => {
     const playlistApi = "http://localhost:4000/playlists";
     try {
       const response = await axios.get(playlistApi);
-
       setPlaylistDat(response.data.data);
       // toast.success("Getting all playlist");
     } catch (error) {
