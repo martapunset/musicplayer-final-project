@@ -7,11 +7,9 @@ import { useContext } from "react";
 import { MusicContext } from "../musicProvider/MusicProvider";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import searchpage from "../assets/sass/searchpage.module.scss";
+import playlists from "../assets/sass/playlists.module.scss";
 import axios from "axios";
 export const LibraryPage = () => {
-
-
-
   //const [textValue, setValue] = useState("");
   const {
     query,
@@ -22,21 +20,19 @@ export const LibraryPage = () => {
     currentTrack,
     playTrackFunction,
     playerRef,
-    playlist
+    playlist,
   } = useContext(MusicContext);
-  
+
   //setQuery("playlists");
 
-//console.log(data)
-/*
+  //console.log(data)
+  /*
   
     */
-const { login, authState } = useContext(AuthContext);
-const { isLogged, user } = authState
-const {_id} = user
-  const userId = user._id
-
-
+  const { login, authState } = useContext(AuthContext);
+  const { isLogged, user } = authState;
+  const { _id } = user;
+  const userId = user._id;
 
   const [playlistDat, setPlaylistDat] = useState([]);
 
@@ -44,26 +40,21 @@ const {_id} = user
     const playlistApi = "http://localhost:4000/playlists";
     try {
       const response = await axios.get(playlistApi);
-      console.log("function execute")
+      console.log("function execute");
       setPlaylistDat(response.data.data);
     } catch (error) {
       console.log(error);
     }
   };
 
-
   useEffect(() => {
-getPlaylists()
-    
+    getPlaylists();
   }, []);
 
-
-console.log(playlistDat)
+  console.log(playlistDat);
 
   return (
     <>
-
-  
       <div className={searchpage.container}>
         <div className={likescss.container}>
           <div className={likescss.head}>
@@ -75,19 +66,17 @@ console.log(playlistDat)
               <span>by {user.firstName}</span>
             </div>
           </div>
-          <div className={likescss.body}>
-            <div className={likescss.body_nav}>
-            </div>
+          <div className={playlists.body}>
+            {/* <div className={likescss.body_nav}> */}
 
             <div className={searchpage.playlists_container}>
               <Playlists playlists={playlistDat} />
             </div>
 
-           
+            {/* </div> */}
           </div>
         </div>
       </div>
-
     </>
   );
 };

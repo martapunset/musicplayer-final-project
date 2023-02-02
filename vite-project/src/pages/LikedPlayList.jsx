@@ -7,10 +7,8 @@ import { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import { MusicContext } from "../musicProvider/MusicProvider";
 
-
-
 export const LikedPlayList = () => {
- // const [likedSong, setLikedSong] = useState([]);
+  // const [likedSong, setLikedSong] = useState([]);
   const {
     query,
     setQuery,
@@ -21,26 +19,23 @@ export const LikedPlayList = () => {
     playTrackFunction,
     playerRef,
     currentPlaylist,
-    setCurrentPlaylist
+    setCurrentPlaylist,
   } = useContext(MusicContext);
 
   const { login, authState } = useContext(AuthContext);
-  const { isLogged, user } = authState
+  const { isLogged, user } = authState;
 
-
- // const [playing, setplaying] = useState(false);
+  // const [playing, setplaying] = useState(false);
 
   console.log(data);
-  const {_id} = user
+  const { _id } = user;
   setQuery(`user/${_id}`);
 
-
   console.log(_id);
-  const userId = user._id
+  const userId = user._id;
 
   return (
     <>
-
       <div className={likescss.container}>
         <div className={likescss.head}>
           <div className={likescss.head_gradient}></div>
@@ -50,7 +45,6 @@ export const LikedPlayList = () => {
             <h1>Liked Songs</h1>
             <span>by {user.firstName}</span>
           </div>
-          
         </div>
         <div className={likescss.body}>
           <div className={likescss.body_nav}>

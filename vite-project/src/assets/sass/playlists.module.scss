@@ -1,6 +1,7 @@
 .container {
   position: relative;
 
+
   .progress_container {
     height: 90vh;
     display: flex;
@@ -62,17 +63,18 @@
       }
     }
   }
-  .body {
+.body {
     padding: 1rem 3rem;
-    .body_nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-      color: var(--light-white);
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--light-white);
-      margin-bottom: 1rem;
+    display: flex;
+    // .body_nav {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   padding: 0.5rem 0;
+    //   color: var(--light-white);
+    //   font-size: 1.4rem;
+    //   text-transform: uppercase;
+    //   border-bottom: 1px solid var(--light-white);
+    //   margin-bottom: 1rem;
 
       .left {
         display: flex;
@@ -111,4 +113,4 @@
       }
     }
   }
-}
+
