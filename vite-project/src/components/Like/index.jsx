@@ -19,6 +19,7 @@ const Like = (likedTracks) => {
     console.log(_id);
     const updateLike = {
       _id,
+      ...user,
       ...likedTracks,
     };
     updateUsers(updateLike);
