@@ -82,7 +82,7 @@ Based on Agile methodologies we had daily reviews, sprint plannings and sprint r
 - [React-h5-audio-player](https://www.npmjs.com/package/react-h5-audio-player)
 - [React-icons](https://react-icons.github.io/react-icons/)
 - [Auth0](https://auth0.com/)
-- [Axios](https://mongoosejs.com/](https://www.npmjs.com/package/axios)
+- [Axios](https://www.npmjs.com/package/axios)
 - [MaterialUI](https://mui.com/)
 - [Framer-motion](https://www.framer.com/motion/)
 - [React-Router-Dom](https://reactrouter.com/en/main)
