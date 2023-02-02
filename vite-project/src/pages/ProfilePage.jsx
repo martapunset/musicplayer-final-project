@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../auth/authContext/AuthContext";
+
 import {
   UserProfile,
   UserImg,
@@ -10,13 +11,11 @@ import {
   ProfileTableStyle,
   Main,
 } from "../ui";
-// import { Column, Main } from "../ui/model";
 
 export const ProfilePage = () => {
   const { login, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
-  console.log(user.email);
-  console.log(user);
+
   return (
     <>
       <Main className="main">
@@ -32,7 +31,6 @@ export const ProfilePage = () => {
               />
               <button className="bt-ed">
                 <Link to="/editProfile">
-                  {" "}
                   <Texto>Edit Profile</Texto>
                 </Link>
               </button>

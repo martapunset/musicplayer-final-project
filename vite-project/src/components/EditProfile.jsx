@@ -1,49 +1,39 @@
-import { Link, useParams } from "react-router-dom";
-import { Form, InputSmall, ErrorsParagraph } from "../ui";
+import { AuthContext } from "../auth/authContext/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../auth/authContext/AuthContext";
+
 import { updateUsers } from "../api/postUsers";
-import { types } from "../auth/authContext/types";
+import { Form, InputSmall, ErrorsParagraph } from "../ui";
+import { toast } from "react-hot-toast";
 
 export const EditProfile = () => {
-  const { editId } = useParams();
-  const { logout, authState, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const { logout, authState } = useContext(AuthContext);
   const { isLogged, user } = authState;
   const [updatedUserInfo, setUpdatedUserInfo] = useState(user);
 
   const { _id } = user;
-
-  console.log(updatedUserInfo);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted },
   } = useForm({
-    defaultValues: updatedUserInfo,
+    defaultValues: user,
   });
 
-  useEffect(() => {
-    
-  }, [updatedUserInfo]);
-  console.log("errors", errors);
+  useEffect(() => {}, [updatedUserInfo]);
 
   const onSubmit = (data) => {
-    console.log("data Form", data);
     const userData = { _id, ...data };
-    console.log("userData", userData);
-     updateUsers(userData);
-   // console.log("user actualizado", user)
-
-    
-    alert("Successfully updated");
     updateUsers(userData);
     setUpdatedUserInfo(userData);
+
+    toast.success("Successfully updated");
+    navigate("/");
   };
-
-
-  console.log("errors", errors);
 
   return (
     <>
@@ -66,6 +56,7 @@ export const EditProfile = () => {
         <div>
           <label>First Name</label>
           <InputSmall
+            required
             type="text"
             placeholder={user?.firstName}
             {...register("firstName")}
@@ -75,6 +66,7 @@ export const EditProfile = () => {
         <div>
           <label>Last Name</label>
           <InputSmall
+            required
             type="text"
             placeholder={user?.lastName}
             {...register("lastName")}

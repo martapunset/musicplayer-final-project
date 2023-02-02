@@ -1,14 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthGridStyles } from "../../ui/";
+import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import { AuthContext } from "../authContext/AuthContext";
+
+import { AuthGridStyles } from "../../ui/";
 import { ContainerLogin, P } from "../../ui";
-import { LogoProfile } from '../../ui';
-import logoHarmony from "../../assets/img/logoHarmony.png"
+import { LogoProfile } from "../../ui";
 import { Column, Main } from "../../ui";
 import { LoginButton } from "../../components/Login/LoginButton";
-import { useAuth0 } from "@auth0/auth0-react";
+import logoHarmony from "../../assets/img/logoHarmony.png";
 
 export const AuthHomePage = () => {
   const navigate = useNavigate();
@@ -23,11 +23,11 @@ export const AuthHomePage = () => {
       <ContainerLogin className="containerLogin">
         <Column>
           <Main className="main">
-          <center>
-          <LogoProfile>
-            <img src={logoHarmony} alt="Logo" width={'80px'} />
-          </LogoProfile>
-          </center>
+            <center>
+              <LogoProfile>
+                <img src={logoHarmony} alt="Logo" width={"80px"} />
+              </LogoProfile>
+            </center>
             <LoginButton></LoginButton>
           </Main>
         </Column>

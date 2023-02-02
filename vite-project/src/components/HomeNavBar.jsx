@@ -1,17 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { navBarData } from "../utils/navBarData";
-import { WrapperNav } from "../ui/NavbarrStyles"
+import { WrapperNav } from "../ui/NavbarrStyles";
 import { LogoProfile } from "../ui";
-import logoHarmony from "../assets/img/logoHarmony.png"
-import { LogoutButton } from "./Login/LogoutButton";
+import logoHarmony from "../assets/img/logoHarmony.png";
 export const HomeNavBar = () => {
-
   return (
     <>
       <WrapperNav>
-          
-      <LogoProfile className="side">
-          <img src={logoHarmony} alt="Logo" width={'70px'} height={'50px'} />
+        <LogoProfile className="side">
+          <img src={logoHarmony} alt="Logo" width={"70px"} height={"50px"} />
         </LogoProfile>
         {navBarData.map((item, index) => {
           return (
@@ -23,8 +20,7 @@ export const HomeNavBar = () => {
                     <span>{item.text}</span>
                   </div>
                 </NavLink>
-                <NavLink to={item.path}>
-                </NavLink>
+                <NavLink to={item.path}></NavLink>
               </li>
             </div>
           );

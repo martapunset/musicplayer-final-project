@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../auth/authContext/AuthContext";
 import {
@@ -10,7 +8,6 @@ import {
   Main,
   Texto,
 } from "../ui/index";
-// import { Main } from "../ui/model";
 import { EditProfile } from "../components";
 
 export const EditProfilePage = () => {
@@ -30,12 +27,6 @@ export const EditProfilePage = () => {
                     : "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true"
                 }
               />
-              <button className="bt-ed">
-                <Link to="">
-                  {/* que lleve a cloudinary */}
-                  <Texto>Edit Image</Texto>
-                </Link>
-              </button>
             </div>
           </UserProfile>
           <ProfileTableStyle>

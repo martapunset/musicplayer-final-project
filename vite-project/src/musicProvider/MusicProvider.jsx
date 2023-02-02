@@ -1,28 +1,24 @@
-
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-export const MusicContext = React.createContext("codeInaBottle");
+export const MusicContext = React.createContext();
 import { useRef } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "./audioPlayer.css";
 
-
-
 export const MusicProvider = ({ children }) => {
-
   const [playing, setplaying] = useState(false);
   const [currentTrack, setcurrentTrack] = useState(0);
 
-  const [query, setQuery] = useState(""); 
+  const [query, setQuery] = useState("");
   // data from the API to display on list
-  const [data, setData] = useState([""]);   //visualization
+  const [data, setData] = useState([""]); //visualization
   const [currentPlaylist, setCurrentPlaylist] = useState([""]); //player STate
 
 
-  const track = currentPlaylist[currentTrack].url; 
+  const track = currentPlaylist[currentTrack].url;
 
   const playerRef = useRef();
 
@@ -31,7 +27,7 @@ export const MusicProvider = ({ children }) => {
     const getdata = async () => {
       try {
         const response = await axios.get(`http://localhost:4000/${query}`);
-   
+        //return response;
         setData(response.data.data);
       } catch (error) {
         console.log(error);
@@ -49,7 +45,7 @@ export const MusicProvider = ({ children }) => {
     //change the index of current track with position of the song clicked or id
 
     setplaying(true);
-    setCurrentPlaylist(data) //stores data in the screen for the player
+    setCurrentPlaylist(data); //stores data in the screen for the player
     setcurrentTrack(id);
     playerRef.current.audio.current.play();
   };
@@ -73,7 +69,7 @@ export const MusicProvider = ({ children }) => {
     <MusicContext.Provider
       value={{
         Player,
-       // resetCurrentTrack,
+        // resetCurrentTrack,
         currentTrack,
         playerRef,
         setQuery,
