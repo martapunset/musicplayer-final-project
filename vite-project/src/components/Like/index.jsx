@@ -8,37 +8,31 @@ import { AuthContext } from "../../auth/authContext/AuthContext";
 import { MusicContext } from "../../musicProvider/MusicProvider";
 import { updateUsers } from "../../api/postUsers";
 
-
 const Like = (likedTracks) => {
   const [like, setLike] = useState(false);
-  const {authState} = useContext(AuthContext)
-  const {user} = authState
+  const { authState } = useContext(AuthContext);
+  const { user } = authState;
 
-
-  
-
-const likeSong = ()=>{
-  setLike(!like)
-  const {_id} = user
-console.log(_id)
-const updateLike = {
-    _id,
-   ...likedTracks
-}
-updateUsers(updateLike)
-}
-
+  const likeSong = () => {
+    setLike(!like);
+    const { _id } = user;
+    console.log(_id);
+    const updateLike = {
+      _id,
+      ...likedTracks,
+    };
+    updateUsers(updateLike);
+  };
 
   return (
-    <IconButton className={likescss.like_btn} onClick={() =>likeSong()}>
+    <IconButton className={likescss.like_btn} onClick={() => likeSong()}>
       {!like ? (
-        <FavoriteBorderIcon className={likescss.like_outlined}  />
+        <FavoriteBorderIcon className={likescss.like_outlined} />
       ) : (
         <FavoriteIcon className={likescss.like_filled} />
       )}
     </IconButton>
   );
-}
-
+};
 
 export default Like;
