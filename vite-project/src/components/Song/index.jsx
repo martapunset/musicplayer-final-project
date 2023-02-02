@@ -20,18 +20,9 @@ const Song = ({ song, playlist }) => {
 console.log(likedTracks)
   
  const index=getSongIndex(song, data)
-  console.log(likedTracks.includes(song._id))
+
   
-  if (likedTracks.includes(song._id)) {
-    setLiked(true)
-    console.log("track already liked")
-    
-      
-  } else {
-    setLiked(false)
-    console.log("track is not liked still")
-    
-  }
+
 
   return (
     <>
