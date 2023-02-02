@@ -20,15 +20,10 @@ export const SearchPage = () => {
   //setQuery("tracks");
 
   const handleSubmit = async (e) => {
-<<<<<<< HEAD
-    // resetCurrentTrack();
-=======
-  //resetCurrentTrack();
->>>>>>> 0158e0cd97aba6d719af62f87f4494f6b44d6b4c
+    //resetCurrentTrack();
     e.preventDefault();
     setplaying(false);
 
-    
     if (textValue.length > 3) setQuery(`tracks/search?title=${textValue}`);
   };
 

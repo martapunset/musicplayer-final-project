@@ -8,12 +8,7 @@ import { types } from "../auth/authContext/types";
 
 export const EditProfile = () => {
   const { editId } = useParams();
-<<<<<<< HEAD
-
-  const { logout, authState } = useContext(AuthContext);
-=======
   const { logout, authState, dispatch } = useContext(AuthContext);
->>>>>>> 0158e0cd97aba6d719af62f87f4494f6b44d6b4c
   const { isLogged, user } = authState;
   const [updatedUserInfo, setUpdatedUserInfo] = useState(user);
 
@@ -29,24 +24,20 @@ export const EditProfile = () => {
     defaultValues: updatedUserInfo,
   });
 
-  useEffect(() => {
-    
-  }, [updatedUserInfo]);
+  useEffect(() => {}, [updatedUserInfo]);
   console.log("errors", errors);
 
   const onSubmit = (data) => {
     console.log("data Form", data);
     const userData = { _id, ...data };
     console.log("userData", userData);
-     updateUsers(userData);
-   // console.log("user actualizado", user)
+    updateUsers(userData);
+    // console.log("user actualizado", user)
 
-    
     alert("Successfully updated");
     updateUsers(userData);
     setUpdatedUserInfo(userData);
   };
-
 
   console.log("errors", errors);
 
