@@ -1,6 +1,6 @@
-# musicPlayer-final-project
-Music player with React
-# Harmony
+
+Music player with React and Node.js
+# Harmony 🎶
 
 Harmony is an open community of independent music lovers similar to Spotify, or Deezer. Harmony is a streaming music web application for personal use where users can listen their music and discover songs, playlists and artists.
 
